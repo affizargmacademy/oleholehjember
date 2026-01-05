@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Detail Produk Teh Rempah | OlehOlehJember</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/main.css" />
+</head>
+<body id="home">
+
+<header class="nav">
+  <div class="container nav__inner">
+    <a class="logo" href="index.html" aria-label="Beranda">
+      <span class="logo__mark" aria-hidden="true"></span>
+      <span class="logo__text">OlehOlehJember</span>
+    </a>
+    <nav class="nav__links" aria-label="Navigasi">
+      <a href="jember.html">Jember</a>
+      <a href="kategori.html">Kategori</a>
+      <a href="testimoni.html">Testimoni</a>
+    </nav>
+    <div class="nav__actions">
+      <button class="btn btn--primary" id="openOrder" type="button">Pesan</button>
+      <button class="menuBtn" id="menuBtn" aria-label="Buka menu" aria-expanded="false" aria-controls="mobileMenu">☰</button>
+    </div>
+  </div>
+
+  <div class="mobileMenu" id="mobileMenu" hidden>
+    <div class="container mobileMenu__inner">
+      <a href="jember.html">Jember</a>
+      <a href="kategori.html">Kategori</a>
+      <a href="testimoni.html">Testimoni</a>
+      <button class="btn btn--primary" id="openOrderMobile" type="button">Pesan</button>
+    </div>
+  </div>
+</header>
+
+<div class="modal" id="orderModal" hidden aria-hidden="true">
+  <div class="modal__backdrop" data-close></div>
+  <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="orderTitle">
+    <div class="modal__head">
+      <div>
+        <div class="modal__kicker">Form Pemesanan</div>
+        <h3 class="modal__title" id="orderTitle">Pesan Teh Rempah</h3>
+      </div>
+      <button class="modal__close" type="button" aria-label="Tutup" data-close>✕</button>
+    </div>
+
+    <form class="modal__body" id="orderForm">
+      <div class="formGrid">
+        <label class="field"><span>Nama</span><input name="nama" required placeholder="Nama kamu" /></label>
+        <label class="field"><span>No. WhatsApp</span><input name="wa" required placeholder="08xxxxxxxxxx" /></label>
+        <label class="field field--full"><span>Alamat (untuk pengiriman)</span><textarea name="alamat" rows="3" required placeholder="Jalan, kecamatan, kota, kode pos"></textarea></label>
+
+        <label class="field">
+          <span>Varian Teh</span>
+          <select name="produk" required>
+            <option value="Original" selected>Original</option>
+            <option value="Jahe">Jahe</option>
+            <option value="Kayu Manis">Kayu Manis</option>
+            <option value="Serai">Serai</option>
+            <option value="Mix Rempah">Mix Rempah</option>
+          </select>
+        </label>
+
+        <label class="field"><span>Jumlah (pcs)</span><input name="qty" type="number" min="1" value="1" required /></label>
+        <label class="field field--full"><span>Catatan (opsional)</span><input name="catatan" placeholder="Misal: lebih kuat jahe, dll." /></label>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="nota" aria-label="Nota sementara">
+        <div class="nota__head">
+          <h4>Nota sementara</h4>
+          <span class="nota__badge">Belum dibayar</span>
+        </div>
+        <div class="nota__grid">
+          <div class="nota__row"><span class="k">Varian</span><span class="v" id="notaProduk">Original</span></div>
+          <div class="nota__row"><span class="k">Jumlah</span><span class="v" id="notaQty">1</span></div>
+          <div class="nota__row"><span class="k">Harga</span><span class="v" id="notaHarga">Rp 0</span></div>
+          <div class="nota__row nota__row--total"><span class="k">Total Sementara</span><span class="v" id="notaTotal">Rp 0</span></div>
+        </div>
+        <div class="nota__note">*Total ini sementara. Ongkir/biaya tambahan (jika ada) akan dikonfirmasi admin.</div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="pay">
+        <div class="pay__head">
+          <h4>Pembayaran</h4>
+          <p>Pilih metode QRIS. Scan QR di bawah, lalu simpan bukti pembayaran.</p>
+        </div>
+
+        <div class="payMethods">
+          <label class="payOption">
+            <input type="radio" name="metode" value="QRIS BCA" checked />
+            <div class="payOption__box">
+              <div class="payOption__title">QRIS BCA</div>
+              <div class="payOption__sub">Scan QRIS BCA / aplikasi apa pun</div>
+            </div>
+          </label>
+          <label class="payOption">
+            <input type="radio" name="metode" value="QRIS Mandiri" />
+            <div class="payOption__box">
+              <div class="payOption__title">QRIS Mandiri</div>
+              <div class="payOption__sub">Scan QRIS Mandiri / aplikasi apa pun</div>
+            </div>
+          </label>
+        </div>
+
+        <div class="qrWrap">
+          <div class="qrCard" id="qrisBCA">
+            <div class="qrTitle">QRIS BCA</div>
+            <img class="qrImg" src="assets/qris-bca.png" alt="QRIS BCA">
+            <div class="qrNote">Ganti file QR kamu ke: <b>assets/qris-bca.png</b></div>
+          </div>
+          <div class="qrCard" id="qrisMandiri" hidden>
+            <div class="qrTitle">QRIS Mandiri</div>
+            <img class="qrImg" src="assets/qris-mandiri.png" alt="QRIS Mandiri">
+            <div class="qrNote">Ganti file QR kamu ke: <b>assets/qris-mandiri.png</b></div>
+          </div>
+        </div>
+
+        <label class="field field--full">
+          <span>Upload bukti bayar (opsional)</span>
+          <input type="file" name="bukti" accept="image/*" />
+          <small class="hint">Atau kirim bukti via WhatsApp setelah klik “Kirim Pesanan”.</small>
+        </label>
+      </div>
+
+      <div class="modal__foot">
+        <button class="btn" type="button" data-close>Batal</button>
+        <button class="btn btn--primary" type="submit">Kirim Pesanan</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<section class="hero heroPink" id="detail">
+  <div class="container heroGrid">
+    <div class="heroText">
+      <span class="heroBadge">🍵 Hangat & Wangi</span>
+      <h1>Teh Rempah</h1>
+      <p>Hangat dan wangi. Cocok buat teman sore, bantu rileks, dan enak diminum kapan aja.</p>
+
+      <div class="heroPriceRow">
+        <div class="priceBox">
+          <div class="priceLabel">Harga mulai</div>
+          <div class="priceValue">Rp 29.000</div>
+          <div class="priceNote">Per pcs (harga dapat berubah sesuai varian/paket)</div>
+        </div>
+        <div class="ctaBox">
+          <button class="btn btn--primary" type="button" id="buyNowTop">Pesan Sekarang</button>
+          <a class="btn" href="kategori.html">Lihat Produk Lain</a>
+        </div>
+      </div>
+
+      <div class="heroPerks">
+        <span class="perk">✅ Hangat</span>
+        <span class="perk">🌿 Wangi rempah</span>
+        <span class="perk">🧾 Nota & resi</span>
+        <span class="perk">📦 Packing aman</span>
+      </div>
+    </div>
+
+    <div class="heroImg heroImgPink">
+      <img src="https://images.unsplash.com/photo-1518976024611-488d4d0e9bcd?auto=format&fit=crop&w=1400&q=80" alt="Teh Rempah" />
+    </div>
+  </div>
+</section>
+
+<section class="section" id="info">
+  <div class="container detailGrid">
+
+    <div class="detailCard">
+      <div class="cardTop">
+        <h2>Detail Teh Rempah</h2>
+        <span class="chipMini">Fresh & Rapi</span>
+      </div>
+
+      <p>Racikan teh dan rempah pilihan yang memberi rasa <b>hangat</b>, <b>wangi</b>, dan nyaman di badan. Cocok untuk konsumsi harian atau hadiah.</p>
+
+      <div class="specGrid">
+        <div class="specItem"><div class="specK">Komposisi</div><div class="specV">Teh + rempah (jahe/serai/kayu manis)</div></div>
+        <div class="specItem"><div class="specK">Rasa</div><div class="specV">Hangat • aromatik • tidak bikin eneg</div></div>
+        <div class="specItem"><div class="specK">Varian</div><div class="specV">Original, Jahe, Kayu Manis, Serai, Mix</div></div>
+        <div class="specItem"><div class="specK">Berat</div><div class="specV">± 100–150g / pack</div></div>
+        <div class="specItem"><div class="specK">Ketahanan</div><div class="specV">± 2–3 bulan (kemasan tertutup)</div></div>
+        <div class="specItem"><div class="specK">Saran seduh</div><div class="specV">Air panas 200ml • 3–5 menit</div></div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="howRow">
+        <div class="how">
+          <div class="howTitle">Cara Pesan</div>
+          <ol class="howList">
+            <li>Klik tombol <b>“Pesan Sekarang”</b></li>
+            <li>Isi data & pilih varian + jumlah</li>
+            <li>Scan QRIS sesuai metode</li>
+            <li>Klik <b>“Kirim Pesanan”</b> (otomatis ke WhatsApp)</li>
+          </ol>
+        </div>
+
+        <div class="buyCard">
+          <div class="buyTitle">Checkout cepat</div>
+          <div class="buyPrice">Mulai Rp 29.000</div>
+          <div class="buyNote">Klik tombol di bawah untuk membuka form pemesanan.</div>
+          <button class="btn btn--primary" type="button" id="buyNowMid">Pesan Sekarang</button>
+          <div class="buyHint">Popup form pemesanan akan muncul.</div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="centerRow">
+        <button class="btn btn--primary" type="button" id="buyNowBottom">Pesan Sekarang</button>
+      </div>
+    </div>
+
+    <aside class="sideCard">
+      <div class="sideTitle">Galeri Teh Rempah</div>
+
+      <div class="galleryStatic" aria-label="Galeri foto teh rempah">
+        <figure class="gItem"><img src="https://images.unsplash.com/photo-1518976024611-488d4d0e9bcd?auto=format&fit=crop&w=1200&q=80" alt="Teh foto 1"></figure>
+        <figure class="gItem"><img src="https://images.unsplash.com/photo-1541586075118-2fd3f362b935?auto=format&fit=crop&w=1200&q=80" alt="Teh foto 2"></figure>
+        <figure class="gItem"><img src="https://images.unsplash.com/photo-1504805572947-34fad45aed93?auto=format&fit=crop&w=1200&q=80" alt="Teh foto 3"></figure>
+        <figure class="gItem"><img src="https://images.unsplash.com/photo-1499638673689-79a0b5115d87?auto=format&fit=crop&w=1200&q=80" alt="Teh foto 4"></figure>
+      </div>
+
+      <div class="sideDivider"></div>
+
+      <div class="sideTitle">Info singkat</div>
+      <div class="sideInfo">
+        <div class="infoRow"><span class="infoK">Estimasi proses</span><span class="infoV">24–48 jam</span></div>
+        <div class="infoRow"><span class="infoK">Packing</span><span class="infoV">Pack + Bubble</span></div>
+        <div class="infoRow"><span class="infoK">Pengiriman</span><span class="infoV">JNE / J&T / SiCepat</span></div>
+        <div class="infoRow"><span class="infoK">Jam admin</span><span class="infoV">08.00–21.00</span></div>
+      </div>
+
+      <div class="sideMiniNote">Tips: enak diminum hangat, bisa tambah madu atau lemon.</div>
+
+      <div class="sideDivider"></div>
+
+      <div class="sideTitle">Keunggulan</div>
+      <div class="sidePerks">
+        <div class="perkCard">🍵 Hangat</div>
+        <div class="perkCard">🌿 Wangi rempah</div>
+        <div class="perkCard">✅ QC sebelum kirim</div>
+        <div class="perkCard">🧾 Nota & resi</div>
+      </div>
+    </aside>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer__grid">
+    <div class="footer__brand">
+      <div class="footerLogo"><span class="logo__mark" aria-hidden="true"></span><b>OlehOlehJember</b></div>
+      <p class="footerMuted">Oleh-oleh khas Jember dengan pengemasan rapi, cocok untuk keluarga, teman, dan kebutuhan kantor.</p>
+      <div class="footerBadges" aria-label="Keunggulan singkat">
+        <span class="fBadge">📦 Packing Aman</span><span class="fBadge">✅ QC</span><span class="fBadge">🧾 Resi</span>
+      </div>
+    </div>
+
+    <div class="footer__col">
+      <div class="footer__title">Menu</div>
+      <a class="footer__link" href="index.html#lokasi">Jember</a>
+      <a class="footer__link" href="kategori.html">Kategori</a>
+      <a class="footer__link" href="testimoni.html">Testimoni</a>
+      <a class="footer__link" href="#detail">Detail Produk</a>
+    </div>
+
+    <div class="footer__col">
+      <div class="footer__title">Bantuan</div>
+      <a class="footer__link" href="index.html#cta">Cara Pesan</a>
+      <a class="footer__link" href="#">Pengiriman</a>
+      <a class="footer__link" href="#">Pembayaran</a>
+      <a class="footer__link" href="#">FAQ</a>
+    </div>
+
+    <div class="footer__col">
+      <div class="footer__title">Kontak</div>
+      <div class="footerContact">
+        <div class="fcItem"><span class="fcIcon" aria-hidden="true">📍</span><div><div class="fcLabel">Lokasi</div><div class="fcText">Jember, Jawa Timur</div></div></div>
+        <div class="fcItem"><span class="fcIcon" aria-hidden="true">💬</span><div><div class="fcLabel">WhatsApp</div><a class="fcText fcLink" href="#" target="_blank" rel="noopener">Klik untuk chat</a></div></div>
+        <div class="fcItem"><span class="fcIcon" aria-hidden="true">⏰</span><div><div class="fcLabel">Jam Operasional</div><div class="fcText">Setiap hari • 08.00–21.00</div></div></div>
+      </div>
+      <div class="footerSocial" aria-label="Sosial media">
+        <a class="socialBtn" href="#" aria-label="Instagram">IG</a>
+        <a class="socialBtn" href="#" aria-label="TikTok">TT</a>
+        <a class="socialBtn" href="#" aria-label="Shopee">SP</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer__bottom">
+    <div class="container footer__bottomInner">
+      <div class="footer__copy">© <span id="year"></span> OlehOlehJember • All rights reserved</div>
+      <a class="toTop" href="#home">↑ Kembali ke atas</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/main.js"></script>
+</body>
+</html>

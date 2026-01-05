@@ -1,0 +1,178 @@
+/* ===== Popup Order CSS (pakai variabel yang sudah ada di halaman kamu) ===== */
+
+/* Modal base */
+.modal[hidden]{ display:none; }
+.modal{ position:fixed; inset:0; z-index:999; }
+.modal__backdrop{ position:absolute; inset:0; background: rgba(0,0,0,.45); }
+
+/* Dialog */
+.modal__dialog{
+  position: relative;
+  width: min(860px, 92vw);
+  margin: 6vh auto;
+  border-radius: 22px;
+  border: 1px solid rgba(255,63,154,.18);
+  background:#fff;
+  box-shadow: var(--shadow, 0 18px 45px rgba(17,12,18,.08));
+  overflow:hidden;
+
+  max-height: 88vh;
+  display:flex;
+  flex-direction:column;
+}
+
+.modal__head{
+  padding: 16px 18px;
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap: 12px;
+  border-bottom: 1px solid var(--border, rgba(30,26,31,.10));
+  background: linear-gradient(135deg, var(--pinkSoft, rgba(255,63,154,.10)), #fff);
+  flex: 0 0 auto;
+}
+
+.modal__kicker{ color: var(--muted, rgba(30,26,31,.70)); font-weight: 800; font-size: 12px; }
+.modal__title{ margin: 4px 0 0; letter-spacing:-.3px; }
+
+.modal__close{
+  width: 42px; height: 42px;
+  border-radius: 14px;
+  border: 1px solid var(--border, rgba(30,26,31,.10));
+  background:#fff;
+  box-shadow: var(--shadow2, 0 10px 24px rgba(17,12,18,.06));
+  font-size: 16px;
+  cursor:pointer;
+}
+
+.modal__body{
+  padding: 16px 18px;
+  overflow:auto;
+  flex: 1 1 auto;
+}
+
+/* Form */
+.formGrid{ display:grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.field{ display:grid; gap: 8px; }
+.field--full{ grid-column: 1 / -1; }
+
+.field span{ font-weight: 900; font-size: 13px; letter-spacing:-.1px; }
+.field input, .field select, .field textarea{
+  width: 100%;
+  padding: 12px 12px;
+  border-radius: 14px;
+  border: 1px solid var(--border, rgba(30,26,31,.10));
+  outline: none;
+  font-weight: 650;
+  background:#fff;
+}
+.field input:focus, .field select:focus, .field textarea:focus{
+  border-color: rgba(255,63,154,.35);
+  box-shadow: 0 0 0 4px rgba(255,63,154,.10);
+}
+
+.hint{ color: var(--muted, rgba(30,26,31,.70)); font-weight: 650; line-height:1.6; }
+
+.divider{ height:1px; background: var(--border, rgba(30,26,31,.10)); margin: 16px 0; }
+
+/* Nota */
+.nota{
+  border: 1px solid rgba(255,63,154,.18);
+  background: linear-gradient(135deg, var(--pinkSoft, rgba(255,63,154,.10)), #fff);
+  border-radius: 18px;
+  padding: 14px;
+  margin-bottom: 8px;
+}
+.nota__head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.nota__head h4{ margin:0; letter-spacing:-.2px; }
+.nota__badge{
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,63,154,.18);
+  background:#fff;
+  font-weight: 900;
+  font-size: 12px;
+  color: var(--muted, rgba(30,26,31,.70));
+}
+.nota__grid{ display:grid; gap: 8px; }
+.nota__row{
+  display:flex;
+  justify-content:space-between;
+  gap: 12px;
+  padding: 10px 10px;
+  border-radius: 14px;
+  border: 1px solid var(--border, rgba(30,26,31,.10));
+  background:#fff;
+}
+.nota__row .k{ color: var(--muted, rgba(30,26,31,.70)); font-weight: 800; }
+.nota__row .v{ font-weight: 900; }
+.nota__row--total{ border-color: rgba(255,63,154,.22); }
+.nota__row--total .v{ color: var(--pink, #ff3f9a); }
+.nota__note{
+  margin-top: 10px;
+  color: var(--muted, rgba(30,26,31,.70));
+  font-weight: 650;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* Payment */
+.pay__head h4{ margin: 0 0 6px; letter-spacing:-.2px; }
+.pay__head p{ margin:0 0 12px; color: var(--muted, rgba(30,26,31,.70)); font-weight: 650; line-height:1.7; }
+
+.payMethods{ display:grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+
+.payOption{
+  display:flex;
+  gap: 10px;
+  align-items:flex-start;
+  border: 1px solid var(--border, rgba(30,26,31,.10));
+  border-radius: 18px;
+  padding: 12px;
+  background:#fff;
+  box-shadow: var(--shadow2, 0 10px 24px rgba(17,12,18,.06));
+  cursor:pointer;
+}
+.payOption input{ margin-top: 4px; }
+.payOption__title{ font-weight: 900; }
+.payOption__sub{ color: var(--muted, rgba(30,26,31,.70)); font-weight: 650; font-size: 13px; margin-top: 4px; line-height:1.6; }
+
+.qrWrap{ display:grid; grid-template-columns: 1fr; gap: 12px; margin-bottom: 12px; }
+.qrCard{
+  border: 1px solid rgba(255,63,154,.18);
+  border-radius: 18px;
+  padding: 12px;
+  background: linear-gradient(135deg, var(--pinkSoft, rgba(255,63,154,.10)), #fff);
+}
+.qrTitle{ font-weight: 900; margin-bottom: 10px; }
+.qrImg{
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  border-radius: 16px;
+  border: 1px solid var(--border, rgba(30,26,31,.10));
+  background:#fff;
+  display:block;
+}
+.qrNote{ margin-top: 10px; color: var(--muted, rgba(30,26,31,.70)); font-weight: 650; font-size: 13px; line-height:1.6; }
+
+/* Footer buttons */
+.modal__foot{
+  padding: 14px 18px 18px;
+  display:flex;
+  justify-content:flex-end;
+  gap: 10px;
+}
+
+@media (max-width: 700px){
+  .formGrid{ grid-template-columns: 1fr; }
+  .payMethods{ grid-template-columns: 1fr; }
+  .modal__dialog{ margin: 4vh auto; }
+}
