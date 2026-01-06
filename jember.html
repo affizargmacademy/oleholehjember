@@ -468,7 +468,7 @@
       background:#fff;
       display:block;
     }
-    .qrNote{ margin-top: 10px; color: var(--muted); font-weight: 650; font-size: 13px; line-height:1.6; }
+    .qrNote{ margin-top: 10px; color: var(--muted); font-weight: 650; font-size: 13px; line-height: 1.6; }
 
     .modal__foot{
       padding: 14px 18px 18px;
@@ -691,175 +691,176 @@
 
 <body id="home">
 
-  <!-- NAVBAR -->
-  <header class="nav">
-    <div class="container nav__inner">
-      <a class="logo" href="index.html" aria-label="Beranda">
-        <span class="logo__mark" aria-hidden="true"></span>
-        <span class="logo__text">OlehOlehJember</span>
-      </a>
+<!-- NAVBAR -->
+<header class="nav">
+  <div class="container nav__inner">
+    <a class="logo" href="index.html" aria-label="Beranda">
+      <span class="logo__mark" aria-hidden="true"></span>
+      <span class="logo__text">OlehOlehJember</span>
+    </a>
 
-      <nav class="nav__links" aria-label="Navigasi">
-        <a href="jember.html">Jember</a>
-        <a href="kategori.html">Kategori</a>
-        <a href="testimoni.html">Testimoni</a>
-        <a href="blog.html">Blog</a>
-      </nav>
+    <nav class="nav__links" aria-label="Navigasi">
+      <a href="index.html">Beranda</a>
+      <a href="jember.html">Tentang Jember</a>
+      <a href="kategori.html">Kategori</a>
+      <a href="blog.html">Blog</a>
+    </nav>
 
-      <div class="nav__actions">
-        <button class="btn btn--primary" id="openOrder" type="button">Pesan</button>
-        <button class="menuBtn" id="menuBtn" aria-label="Buka menu" aria-expanded="false" aria-controls="mobileMenu">☰</button>
-      </div>
-    </div>
-
-    <div class="mobileMenu" id="mobileMenu" hidden>
-      <div class="container mobileMenu__inner">
-        <a href="jember.html">Jember</a>
-        <a href="kategori.html">Kategori</a>
-        <a href="testimoni.html">Testimoni</a>
-        <button class="btn btn--primary" id="openOrderMobile" type="button">Pesan</button>
-      </div>
-    </div>
-  </header>
-
-  <!-- POPUP ORDER + PAYMENT -->
-  <div class="modal" id="orderModal" hidden aria-hidden="true">
-    <div class="modal__backdrop" data-close></div>
-
-    <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="orderTitle">
-      <div class="modal__head">
-        <div>
-          <div class="modal__kicker">Form Pemesanan</div>
-          <h3 class="modal__title" id="orderTitle">Pesan Oleh-Oleh Jember</h3>
-        </div>
-        <button class="modal__close" type="button" aria-label="Tutup" data-close>✕</button>
-      </div>
-
-      <form class="modal__body" id="orderForm">
-        <div class="formGrid">
-          <label class="field">
-            <span>Nama</span>
-            <input name="nama" required placeholder="Nama kamu" />
-          </label>
-
-          <label class="field">
-            <span>No. WhatsApp</span>
-            <input name="wa" required placeholder="08xxxxxxxxxx" />
-          </label>
-
-          <label class="field field--full">
-            <span>Alamat (untuk pengiriman)</span>
-            <textarea name="alamat" rows="3" required placeholder="Jalan, kecamatan, kota, kode pos"></textarea>
-          </label>
-
-          <label class="field">
-            <span>Pilih Produk</span>
-            <select name="produk" required>
-              <option value="">— Pilih —</option>
-              <option>Suwar-suwir Khas</option>
-              <option>Kopi Jember</option>
-              <option>Gift Box Mix</option>
-            </select>
-          </label>
-
-          <label class="field">
-            <span>Jumlah</span>
-            <input name="qty" type="number" min="1" value="1" required />
-          </label>
-
-          <label class="field field--full">
-            <span>Catatan (opsional)</span>
-            <input name="catatan" placeholder="Misal: minta kartu ucapan, pedas, tanpa kacang, dll." />
-          </label>
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="nota" aria-label="Nota sementara">
-          <div class="nota__head">
-            <h4>Nota sementara</h4>
-            <span class="nota__badge">Belum dibayar</span>
-          </div>
-
-          <div class="nota__grid">
-            <div class="nota__row">
-              <span class="k">Produk</span>
-              <span class="v" id="notaProduk">—</span>
-            </div>
-            <div class="nota__row">
-              <span class="k">Jumlah</span>
-              <span class="v" id="notaQty">1</span>
-            </div>
-            <div class="nota__row">
-              <span class="k">Harga</span>
-              <span class="v" id="notaHarga">Rp 0</span>
-            </div>
-
-            <div class="nota__row nota__row--total">
-              <span class="k">Total Sementara</span>
-              <span class="v" id="notaTotal">Rp 0</span>
-            </div>
-          </div>
-
-          <div class="nota__note">
-            *Total ini sementara. Ongkir/biaya tambahan (jika ada) akan dikonfirmasi admin.
-          </div>
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="pay">
-          <div class="pay__head">
-            <h4>Pembayaran</h4>
-            <p>Pilih metode QRIS. Scan QR di bawah, lalu simpan bukti pembayaran.</p>
-          </div>
-
-          <div class="payMethods">
-            <label class="payOption">
-              <input type="radio" name="metode" value="QRIS BCA" checked />
-              <div class="payOption__box">
-                <div class="payOption__title">QRIS BCA</div>
-                <div class="payOption__sub">Scan QRIS BCA / aplikasi apa pun</div>
-              </div>
-            </label>
-
-            <label class="payOption">
-              <input type="radio" name="metode" value="QRIS Mandiri" />
-              <div class="payOption__box">
-                <div class="payOption__title">QRIS Mandiri</div>
-                <div class="payOption__sub">Scan QRIS Mandiri / aplikasi apa pun</div>
-              </div>
-            </label>
-          </div>
-
-          <div class="qrWrap">
-            <div class="qrCard" id="qrisBCA">
-              <div class="qrTitle">QRIS BCA</div>
-              <img class="qrImg" src="assets/qris-bca.png" alt="QRIS BCA (ganti dengan QR kamu)" />
-              <div class="qrNote">Ganti dengan QRIS BCA milikmu: <b>assets/qris-bca.png</b></div>
-            </div>
-
-            <div class="qrCard" id="qrisMandiri" hidden>
-              <div class="qrTitle">QRIS Mandiri</div>
-              <img class="qrImg" src="assets/qris-mandiri.png" alt="QRIS Mandiri (ganti dengan QR kamu)" />
-              <div class="qrNote">Ganti dengan QRIS Mandiri milikmu: <b>assets/qris-mandiri.png</b></div>
-            </div>
-          </div>
-
-          <label class="field field--full">
-            <span>Upload bukti bayar (opsional)</span>
-            <input type="file" name="bukti" accept="image/*" />
-            <small class="hint">Atau kirim bukti via WhatsApp setelah klik “Kirim Pesanan”.</small>
-          </label>
-        </div>
-
-        <div class="modal__foot">
-          <button class="btn" type="button" data-close>Batal</button>
-          <button class="btn btn--primary" type="submit">Kirim Pesanan</button>
-        </div>
-      </form>
+    <div class="nav__actions">
+      <button class="btn btn--primary" id="openOrder" type="button">Pesan</button>
+      <button class="menuBtn" id="menuBtn" aria-label="Buka menu" aria-expanded="false" aria-controls="mobileMenu">☰</button>
     </div>
   </div>
+
+  <div class="mobileMenu" id="mobileMenu" hidden>
+    <div class="container mobileMenu__inner">
+      <a href="file:///C:/xampp/htdocs/Project%20Affizar/Oleh%20Oleh%20Khas%20Jember/jember.html">Jember</a>
+      <a href="file:///C:/xampp/htdocs/Project%20Affizar/Oleh%20Oleh%20Khas%20Jember/kategori.html">Kategori</a>
+      <a href="file:///C:/xampp/htdocs/Project%20Affizar/Oleh%20Oleh%20Khas%20Jember/testimoni.html">Testimoni</a>
+      <button class="btn btn--primary" id="openOrderMobile" type="button">Pesan</button>
+    </div>
+  </div>
+</header>
+
+<!-- POPUP ORDER + PAYMENT (SCROLL + NOTA) -->
+<div class="modal" id="orderModal" hidden aria-hidden="true">
+  <div class="modal__backdrop" data-close></div>
+
+  <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="orderTitle">
+    <div class="modal__head">
+      <div>
+        <div class="modal__kicker">Form Pemesanan</div>
+        <h3 class="modal__title" id="orderTitle">Pesan Oleh-Oleh Jember</h3>
+      </div>
+      <button class="modal__close" type="button" aria-label="Tutup" data-close>✕</button>
+    </div>
+
+    <form class="modal__body" id="orderForm">
+      <div class="formGrid">
+        <label class="field">
+          <span>Nama</span>
+          <input name="nama" required placeholder="Nama kamu" />
+        </label>
+
+        <label class="field">
+          <span>No. WhatsApp</span>
+          <input name="wa" required placeholder="08xxxxxxxxxx" />
+        </label>
+
+        <label class="field field--full">
+          <span>Alamat (untuk pengiriman)</span>
+          <textarea name="alamat" rows="3" required placeholder="Jalan, kecamatan, kota, kode pos"></textarea>
+        </label>
+
+        <label class="field">
+          <span>Pilih Produk</span>
+          <select name="produk" required>
+            <option value="">— Pilih —</option>
+            <option>Suwar-suwir Khas</option>
+            <option>Kopi Jember</option>
+            <option>Gift Box Mix</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span>Jumlah</span>
+          <input name="qty" type="number" min="1" value="1" required />
+        </label>
+
+        <label class="field field--full">
+          <span>Catatan (opsional)</span>
+          <input name="catatan" placeholder="Misal: minta kartu ucapan, pedas, tanpa kacang, dll." />
+        </label>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- NOTA SEMENTARA -->
+      <div class="nota" aria-label="Nota sementara">
+        <div class="nota__head">
+          <h4>Nota sementara</h4>
+          <span class="nota__badge">Belum dibayar</span>
+        </div>
+
+        <div class="nota__grid">
+          <div class="nota__row">
+            <span class="k">Produk</span>
+            <span class="v" id="notaProduk">—</span>
+          </div>
+          <div class="nota__row">
+            <span class="k">Jumlah</span>
+            <span class="v" id="notaQty">1</span>
+          </div>
+          <div class="nota__row">
+            <span class="k">Harga</span>
+            <span class="v" id="notaHarga">Rp 0</span>
+          </div>
+
+          <div class="nota__row nota__row--total">
+            <span class="k">Total Sementara</span>
+            <span class="v" id="notaTotal">Rp 0</span>
+          </div>
+        </div>
+
+        <div class="nota__note">
+          *Total ini sementara. Ongkir/biaya tambahan (jika ada) akan dikonfirmasi admin.
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="pay">
+        <div class="pay__head">
+          <h4>Pembayaran</h4>
+          <p>Pilih metode QRIS. Scan QR di bawah, lalu simpan bukti pembayaran.</p>
+        </div>
+
+        <div class="payMethods">
+          <label class="payOption">
+            <input type="radio" name="metode" value="QRIS BCA" checked />
+            <div class="payOption__box">
+              <div class="payOption__title">QRIS BCA</div>
+              <div class="payOption__sub">Scan QRIS BCA / aplikasi apa pun</div>
+            </div>
+          </label>
+
+          <label class="payOption">
+            <input type="radio" name="metode" value="QRIS Mandiri" />
+            <div class="payOption__box">
+              <div class="payOption__title">QRIS Mandiri</div>
+              <div class="payOption__sub">Scan QRIS Mandiri / aplikasi apa pun</div>
+            </div>
+          </label>
+        </div>
+
+        <div class="qrWrap">
+          <div class="qrCard" id="qrisBCA">
+            <div class="qrTitle">QRIS BCA</div>
+            <img class="qrImg" src="assets/qris-bca.png" alt="QRIS BCA (ganti dengan QR kamu)">
+            <div class="qrNote">Ganti dengan QRIS BCA milikmu: <b>assets/qris-bca.png</b></div>
+          </div>
+
+          <div class="qrCard" id="qrisMandiri" hidden>
+            <div class="qrTitle">QRIS Mandiri</div>
+            <img class="qrImg" src="assets/qris-mandiri.png" alt="QRIS Mandiri (ganti dengan QR kamu)">
+            <div class="qrNote">Ganti dengan QRIS Mandiri milikmu: <b>assets/qris-mandiri.png</b></div>
+          </div>
+        </div>
+
+        <label class="field field--full">
+          <span>Upload bukti bayar (opsional)</span>
+          <input type="file" name="bukti" accept="image/*" />
+          <small class="hint">Atau kirim bukti via WhatsApp setelah klik “Kirim Pesanan”.</small>
+        </label>
+      </div>
+
+      <div class="modal__foot">
+        <button class="btn" type="button" data-close>Batal</button>
+        <button class="btn btn--primary" type="submit">Kirim Pesanan</button>
+      </div>
+    </form>
+  </div>
+</div>
 
   <!-- HERO -->
   <section class="heroPink">
