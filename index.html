@@ -20,9 +20,9 @@
     </a>
 
     <nav class="nav__links" aria-label="Navigasi">
-      <a href="jember.html">Jember</a>
+      <a href="index.html">Beranda</a>
+      <a href="jember.html">Tentang Jember</a>
       <a href="kategori.html">Kategori</a>
-      <a href="testimoni.html">Testimoni</a>
       <a href="blog.html">Blog</a>
     </nav>
 
@@ -1287,6 +1287,14 @@ Saya akan bayar via QRIS.`;
       <button class="arrow arrow--right" aria-label="Berikutnya">›</button>
 
     </div>
+
+    <!-- ✅ TOMBOL LIHAT LEBIH BANYAK -->
+    <div class="testiMore">
+      <a href="testimoni.html" class="btn btn--primary">
+        Lihat lebih banyak testimoni →
+      </a>
+    </div>
+
   </div>
 </section>
 
@@ -1299,20 +1307,17 @@ Saya akan bayar via QRIS.`;
     gap: 10px;
   }
 
-  /* VIEWPORT (tidak bisa drag) */
   .testiViewport{
     overflow: hidden;
     width: 100%;
   }
 
-  /* TRACK */
   .testiTrack{
     display:flex;
     gap: 14px;
     transition: transform .35s ease;
   }
 
-  /* CARD */
   .quoteCard{
     flex: 0 0 320px;
     border-radius: var(--r2);
@@ -1338,7 +1343,6 @@ Saya akan bayar via QRIS.`;
     line-height: 1.8;
   }
 
-  /* TOMBOL PANAH */
   .arrow{
     width: 42px;
     height: 42px;
@@ -1360,6 +1364,12 @@ Saya akan bayar via QRIS.`;
   .arrow:disabled{
     opacity:.35;
     cursor: not-allowed;
+  }
+
+  /* ✅ WRAPPER BUTTON BAWAH */
+  .testiMore{
+    margin-top: 22px;
+    text-align: center;
   }
 
   @media (max-width: 520px){
