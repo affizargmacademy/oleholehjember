@@ -621,227 +621,163 @@ Saya akan bayar via QRIS.`;
 </script>
 
 
-  <!-- HERO (layout web biasa: kiri teks, kanan gambar/preview) -->
-  <main id="home">
-    <section class="hero">
-      <div class="container hero__grid">
-        <div class="hero__left">
-          <div class="badgeRow">
-            <span class="badge">Khas Jember</span>
-            <span class="badge badge--soft">Packing Aman</span>
-            <span class="badge badge--soft">Gift Ready</span>
-          </div>
+<!-- HERO (layout web biasa: kiri teks, kanan gambar/preview) -->
+<main id="home">
+  <section class="hero">
+    <div class="container hero__grid">
 
-          <h1>
-            Oleh-oleh khas <span class="grad">Jember</span><br/>
-            tampil premium, kirim tetap aman.
-          </h1>
-
-          <p class="hero__lead">
-            Pilih suwar-suwir, kopi, snack, sampai gift box untuk keluarga dan rekan.
-            Desain website bersih (background putih) dengan aksen pink yang profesional.
-          </p>
-
-          <div class="hero__cta">
-            <a class="btn btn--primary" href="#produk">Belanja Sekarang</a>
-            <a class="btn" href="#lokasi">Jember di mana?</a>
-          </div>
-
-          <div class="hero__miniStats">
-            <div class="miniStat">
-              <div class="miniStat__top">⭐ 4.8</div>
-              <div class="miniStat__bot">Rating</div>
-            </div>
-            <div class="miniStat">
-              <div class="miniStat__top">📦 Rapi</div>
-              <div class="miniStat__bot">Packing</div>
-            </div>
-            <div class="miniStat">
-              <div class="miniStat__top">⚡ 24–48j</div>
-              <div class="miniStat__bot">Proses</div>
-            </div>
-          </div>
+      <!-- KIRI -->
+      <div class="hero__left">
+        <div class="badgeRow">
+          <span class="badge">Khas Jember</span>
+          <span class="badge badge--soft">Packing Aman</span>
+          <span class="badge badge--soft">Gift Ready</span>
         </div>
 
-        <div class="hero__right" aria-label="Preview produk">
-          <div class="preview">
-            <div class="preview__head">
-              <div class="dots" aria-hidden="true">
-                <span></span><span></span><span></span>
-              </div>
-              <div class="preview__title">Best Seller Minggu Ini</div>
-            </div>
+        <h1>
+          Oleh-oleh khas <span class="grad">Jember</span><br />
+          tampil premium, kirim tetap aman.
+        </h1>
 
-            <div class="preview__list">
-              <div class="item">
-                <div class="item__icon" aria-hidden="true">🍬</div>
-                <div class="item__meta">
-                  <div class="item__name">Suwar-suwir</div>
-                  <div class="item__sub">Manis legit • favorit</div>
-                </div>
-                <div class="item__price">28K</div>
-              </div>
+        <p class="hero__lead">
+          Pilih suwar-suwir, kopi, snack, sampai gift box untuk keluarga dan rekan.
+          Desain website bersih (background putih) dengan aksen pink yang profesional.
+        </p>
 
-              <div class="item">
-                <div class="item__icon" aria-hidden="true">☕</div>
-                <div class="item__meta">
-                  <div class="item__name">Kopi Jember</div>
-                  <div class="item__sub">Wangi • cocok hadiah</div>
-                </div>
-                <div class="item__price">55K</div>
-              </div>
-
-              <div class="item">
-                <div class="item__icon" aria-hidden="true">🎁</div>
-                <div class="item__meta">
-                  <div class="item__name">Gift Box</div>
-                  <div class="item__sub">Mix snack + kartu</div>
-                </div>
-                <div class="item__price">99K+</div>
-              </div>
-            </div>
-
-            <div class="preview__foot">
-              <span class="pill">✅ QC sebelum kirim</span>
-              <span class="pill">🧾 Resi otomatis</span>
-              <span class="pill">📦 Bubble + kardus</span>
-            </div>
-          </div>
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="#produk">Belanja Sekarang</a>
+          <a class="btn" href="#lokasi">Jember di mana?</a>
         </div>
       </div>
-    </section>
+      <!-- /KIRI -->
 
-    <style>
-      .hero{
-        padding: 54px 0 26px;
-      }
-      .hero__grid{
-        display:grid;
-        grid-template-columns: 1.1fr .9fr;
-        gap: 34px;
-        align-items:center;
-      }
+      <!-- KANAN: FOTO RANDOM UNSPLASH (AUTO SLIDER) -->
+      <div class="hero__right" aria-label="Galeri oleh-oleh">
+        <div class="preview">
+          <div class="preview__head">
+            <div class="dots" aria-hidden="true">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="preview__title">Galeri Oleh-oleh Jember</div>
+          </div>
 
-      .badgeRow{ display:flex; gap:10px; flex-wrap:wrap; margin-bottom: 14px; }
-      .badge{
-        font-size: 12px;
-        font-weight: 900;
-        padding: 8px 10px;
-        border-radius: 999px;
-        color:#fff;
-        background: linear-gradient(135deg, var(--pink), var(--pink2));
-      }
-      .badge--soft{
-        color: var(--ink);
-        background: var(--pinkSoft);
-        border: 1px solid rgba(255,63,154,.22);
-      }
+          <div class="gallery" aria-label="Slider foto oleh-oleh">
+            <img class="gallery__img"
+              src="https://source.unsplash.com/1200x800/?indonesian-snack,traditional-food&sig=1"
+              alt="Snack khas Indonesia">
+            <img class="gallery__img"
+              src="https://source.unsplash.com/1200x800/?coffee-indonesia,coffee-beans&sig=2"
+              alt="Kopi Indonesia">
+            <img class="gallery__img"
+              src="https://source.unsplash.com/1200x800/?gift-box,food-packaging&sig=3"
+              alt="Gift box makanan">
+            <img class="gallery__img"
+              src="https://source.unsplash.com/1200x800/?indonesia-dessert,street-food&sig=4"
+              alt="Jajanan tradisional">
+          </div>
 
-      h1{
-        margin: 0 0 14px;
-        font-size: clamp(34px, 3.5vw, 52px);
-        line-height: 1.08;
-        letter-spacing: -0.9px;
-      }
-      .grad{
-        background: linear-gradient(135deg, var(--pink), var(--pink2));
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-      }
-      .hero__lead{
-        margin: 0 0 18px;
-        color: var(--muted);
-        line-height: 1.85;
-        font-weight: 600;
-        max-width: 64ch;
-      }
-      .hero__cta{ display:flex; gap: 12px; flex-wrap:wrap; margin-bottom: 18px; }
 
-      .hero__miniStats{
-        display:flex;
-        gap: 12px;
-        flex-wrap:wrap;
-      }
-      .miniStat{
-        padding: 12px 14px;
-        border-radius: 14px;
-        border: 1px solid var(--border);
-        background: #fff;
-        box-shadow: var(--shadow2);
-        min-width: 120px;
-      }
-      .miniStat__top{ font-weight: 900; letter-spacing:-.2px; }
-      .miniStat__bot{ margin-top: 6px; font-weight: 700; color: var(--muted); font-size: 13px; }
+        </div>
+      </div>
+      <!-- /KANAN -->
 
-      .preview{
-        border-radius: var(--r2);
-        border: 1px solid rgba(255,63,154,.18);
-        background: #fff;
-        box-shadow: var(--shadow);
-        overflow:hidden;
-      }
-      .preview__head{
-        padding: 14px 16px;
-        display:flex;
-        align-items:center;
-        gap: 12px;
-        border-bottom: 1px solid var(--border);
-        background: linear-gradient(180deg, rgba(255,63,154,.06), rgba(255,255,255,0));
-      }
-      .dots{ display:flex; gap:6px; }
-      .dots span{
-        width:10px; height:10px; border-radius: 999px;
-        background: rgba(30,26,31,.14);
-      }
-      .dots span:nth-child(1){ background: rgba(255,63,154,.55); }
-      .dots span:nth-child(2){ background: rgba(255,120,195,.45); }
-      .preview__title{ font-weight: 900; letter-spacing:-.2px; }
+    </div>
+  </section>
 
-      .preview__list{ padding: 14px 16px; display:grid; gap: 12px; }
-      .item{
-        display:flex;
-        align-items:center;
-        gap: 12px;
-        border: 1px solid var(--border);
-        border-radius: 16px;
-        padding: 12px;
-        background: #fff;
-      }
-      .item__icon{
-        width: 42px; height: 42px;
-        border-radius: 14px;
-        display:grid; place-items:center;
-        background: var(--pinkSoft);
-        border: 1px solid rgba(255,63,154,.18);
-        font-size: 20px;
-      }
-      .item__meta{ flex:1; }
-      .item__name{ font-weight: 900; letter-spacing:-.2px; }
-      .item__sub{ margin-top: 4px; font-weight: 700; color: var(--muted); font-size: 12.5px; }
-      .item__price{ font-weight: 900; color: var(--pink); }
+  <style>
+    .hero{ padding:54px 0 26px }
+    .hero__grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:34px;
+      align-items:center;
+    }
 
-      .preview__foot{
-        padding: 14px 16px 16px;
-        border-top: 1px solid var(--border);
-        display:flex;
-        gap: 10px;
-        flex-wrap:wrap;
-      }
-      .pill{
-        padding: 8px 10px;
-        border-radius: 999px;
-        border: 1px solid var(--border);
-        background: #fff;
-        font-weight: 800;
-        color: var(--muted);
-        font-size: 12px;
-      }
+    .badgeRow{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+    .badge{
+      font-size:12px;font-weight:900;padding:8px 10px;border-radius:999px;
+      color:#fff;background:linear-gradient(135deg,var(--pink),var(--pink2))
+    }
+    .badge--soft{
+      color:var(--ink);background:var(--pinkSoft);
+      border:1px solid rgba(255,63,154,.22)
+    }
 
-      @media (max-width: 980px){
-        .hero__grid{ grid-template-columns: 1fr; }
-      }
-    </style>
+    h1{
+      margin:0 0 14px;
+      font-size:clamp(34px,3.5vw,52px);
+      line-height:1.08;letter-spacing:-.9px
+    }
+    .grad{
+      background:linear-gradient(135deg,var(--pink),var(--pink2));
+      -webkit-background-clip:text;background-clip:text;color:transparent
+    }
+    .hero__lead{
+      margin:0 0 18px;color:var(--muted);
+      line-height:1.85;font-weight:600;max-width:64ch
+    }
+    .hero__cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+
+    .preview{
+      border-radius:var(--r2);
+      border:1px solid rgba(255,63,154,.18);
+      background:#fff;box-shadow:var(--shadow);overflow:hidden
+    }
+    .preview__head{
+      padding:14px 16px;display:flex;align-items:center;gap:12px;
+      border-bottom:1px solid var(--border);
+      background:linear-gradient(180deg,rgba(255,63,154,.06),transparent)
+    }
+    .dots{display:flex;gap:6px}
+    .dots span{width:10px;height:10px;border-radius:50%;background:rgba(30,26,31,.14)}
+    .dots span:nth-child(1){background:rgba(255,63,154,.55)}
+    .dots span:nth-child(2){background:rgba(255,120,195,.45)}
+    .preview__title{font-weight:900}
+
+    .gallery{
+      position:relative;
+      width:100%;
+      aspect-ratio:16/10;
+      overflow:hidden;
+      border-bottom:1px solid var(--border)
+    }
+    .gallery__img{
+      position:absolute;inset:0;
+      width:100%;height:100%;object-fit:cover;
+      opacity:0;transform:scale(1.03);
+      animation:fade 16s infinite ease-in-out
+    }
+    .gallery__img:nth-child(1){animation-delay:0s}
+    .gallery__img:nth-child(2){animation-delay:4s}
+    .gallery__img:nth-child(3){animation-delay:8s}
+    .gallery__img:nth-child(4){animation-delay:12s}
+
+    @keyframes fade{
+      0%{opacity:0}
+      6%{opacity:1}
+      25%{opacity:1}
+      31%{opacity:0}
+      100%{opacity:0}
+    }
+
+    .preview:hover .gallery__img{animation-play-state:paused}
+
+    .preview__foot{
+      padding:14px 16px 16px;
+      display:flex;gap:10px;flex-wrap:wrap
+    }
+    .pill{
+      padding:8px 10px;border-radius:999px;
+      border:1px solid var(--border);
+      background:#fff;font-weight:800;color:var(--muted);font-size:12px
+    }
+
+    @media(max-width:980px){
+      .hero__grid{grid-template-columns:1fr}
+    }
+  </style>
+</main>
+
 
 <!-- SECTION: LOKASI -->
 <section class="section" id="lokasi">
@@ -869,30 +805,29 @@ Saya akan bayar via QRIS.`;
         Inilah alasan kenapa Jember sering menjadi pilihan untuk buah tangan.
       </p>
 
-      <!-- 4 ICON RAPI -->
+      <!-- Kalau mau pakai ikon lagi, tinggal aktifkan blok ini
       <div class="lokasiIcons">
         <div class="iconBox">
           <div class="icon">📍</div>
           <div class="iconText">Jawa Timur</div>
         </div>
-
         <div class="iconBox">
           <div class="icon">🏝️</div>
           <div class="iconText">Pulau Jawa</div>
         </div>
-
         <div class="iconBox">
           <div class="icon">🎁</div>
           <div class="iconText">Pusat Oleh-oleh</div>
         </div>
-
         <div class="iconBox">
           <div class="icon">☕</div>
           <div class="iconText">Kopi & Kuliner</div>
         </div>
       </div>
+      -->
+
     </div>
-    <!-- ✅ PENTING: DIV lokasiText ditutup di sini -->
+    <!-- ✅ FIX: lokasiText DITUTUP dengan benar -->
 
     <!-- KANAN : FOTO REAL -->
     <div class="lokasiImage">
@@ -935,7 +870,7 @@ Saya akan bayar via QRIS.`;
     margin-bottom: 22px;
   }
 
-  /* 4 ICON */
+  /* 4 ICON (aman walau HTML ikon dihapus) */
   .lokasiIcons{
     display:grid;
     grid-template-columns: repeat(4, 1fr);
@@ -993,13 +928,13 @@ Saya akan bayar via QRIS.`;
 
   @media (max-width: 980px){
     .lokasiGrid{ grid-template-columns: 1fr; }
-
     .lokasiIcons{ grid-template-columns: 1fr 1fr; }
 
     .lokasiImage img{ height:200px; }
     .lokasiImage img:first-child{ height:240px; }
   }
 </style>
+
 
 
 <!-- SECTION: KATEGORI -->
@@ -1011,59 +946,63 @@ Saya akan bayar via QRIS.`;
       <p>Pilihan cepat seperti website toko pada umumnya.</p>
     </div>
 
-    <!-- KATEGORI SCROLL -->
-    <div class="kategoriScroll">
-      <div class="kategoriRow">
+    <div class="kategoriGrid">
 
-        <article class="catCard">
-          <div class="catCard__icon">🍬</div>
+      <article class="catCard">
+        <div class="catCard__media">
+          <img src="https://images.unsplash.com/photo-1604908177522-402d5a9ef7c5?auto=format&fit=crop&w=800&q=80" alt="Manisan khas">
+        </div>
+        <div class="catCard__body">
           <div class="catCard__title">Manisan & Kue</div>
           <div class="catCard__desc">Suwar-suwir, dodol, jajanan.</div>
-        </article>
+        </div>
+      </article>
 
-        <article class="catCard">
-          <div class="catCard__icon">☕</div>
+      <article class="catCard">
+        <div class="catCard__media">
+          <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=800&q=80" alt="Kopi Jember">
+        </div>
+        <div class="catCard__body">
           <div class="catCard__title">Kopi</div>
           <div class="catCard__desc">Bubuk & beans khas Jember.</div>
-        </article>
+        </div>
+      </article>
 
-        <article class="catCard">
-          <div class="catCard__icon">🥨</div>
+      <article class="catCard">
+        <div class="catCard__media">
+          <img src="https://images.unsplash.com/photo-1546549032-9571cd6b27df?auto=format&fit=crop&w=800&q=80" alt="Snack">
+        </div>
+        <div class="catCard__body">
           <div class="catCard__title">Snack</div>
           <div class="catCard__desc">Keripik, kacang, camilan.</div>
-        </article>
+        </div>
+      </article>
 
-        <article class="catCard">
-          <div class="catCard__icon">🎁</div>
+      <article class="catCard">
+        <div class="catCard__media">
+          <img src="https://images.unsplash.com/photo-1607344645866-009c320b63e0?auto=format&fit=crop&w=800&q=80" alt="Gift Box">
+        </div>
+        <div class="catCard__body">
           <div class="catCard__title">Gift Box</div>
           <div class="catCard__desc">Hampers & souvenir kantor.</div>
-        </article>
+        </div>
+      </article>
 
-        <!-- tambahan biar bisa scroll -->
-        <article class="catCard">
-          <div class="catCard__icon">🍌</div>
+      <!-- item tambahan DISIMPAN tapi tidak tampil -->
+      <article class="catCard">
+        <div class="catCard__media">
+          <img src="https://images.unsplash.com/photo-1598515213963-8b44bcd2d76c?auto=format&fit=crop&w=800&q=80" alt="Keripik Pisang">
+        </div>
+        <div class="catCard__body">
           <div class="catCard__title">Keripik Pisang</div>
           <div class="catCard__desc">Renyah & favorit wisatawan.</div>
-        </article>
+        </div>
+      </article>
 
-        <article class="catCard">
-          <div class="catCard__icon">🫛</div>
-          <div class="catCard__title">Edamame</div>
-          <div class="catCard__desc">Camilan gurih khas Jember.</div>
-        </article>
-
-        <article class="catCard">
-          <div class="catCard__icon">🍫</div>
-          <div class="catCard__title">Cokelat</div>
-          <div class="catCard__desc">Oleh-oleh manis premium.</div>
-        </article>
-
-      </div>
     </div>
 
-    <!-- BUTTON -->
     <div class="kategoriMore">
-      <a href="kategori.html" target="_blank" class="btn btn--primary">
+      <a href="kategori.html" class="btn btn--primary">
         Lihat selengkapnya
       </a>
     </div>
@@ -1072,68 +1011,43 @@ Saya akan bayar via QRIS.`;
 </section>
 
 <style>
-  /* HEAD */
-  .sectionHead{ margin-bottom: 18px; }
-  .sectionHead h2{
-    margin: 0 0 8px;
-    font-size: clamp(22px, 2.2vw, 30px);
-    letter-spacing:-.3px;
-  }
-  .sectionHead p{
-    margin: 0;
-    color: var(--muted);
-    font-weight: 600;
-    line-height: 1.8;
+  .kategoriGrid{
+    margin-top: 14px;
+    display:grid;
+    grid-template-columns: repeat(4, minmax(0,1fr));
+    gap: 16px;
   }
 
-  /* SCROLL */
-  .kategoriScroll{
-    margin-top: 12px;
+  /* tampilkan hanya 4 */
+  .kategoriGrid .catCard:nth-child(n+5){
+    display:none;
   }
 
-  .kategoriRow{
-    display:flex;
-    gap: 14px;
-    overflow-x: auto;
-    padding-bottom: 12px;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .kategoriRow::-webkit-scrollbar{ height: 8px; }
-  .kategoriRow::-webkit-scrollbar-thumb{
-    background: rgba(255,63,154,.25);
-    border-radius: 999px;
-  }
-  .kategoriRow::-webkit-scrollbar-track{
-    background: rgba(30,26,31,.06);
-  }
-
-  /* CARD */
   .catCard{
-    flex: 0 0 auto;
-    width: 220px;
     border-radius: var(--r2);
     border: 1px solid var(--border);
     background: #fff;
     box-shadow: var(--shadow2);
-    padding: 18px;
-    scroll-snap-align: start;
+    overflow:hidden;
   }
 
-  .catCard__icon{
-    width: 54px;
-    height: 54px;
-    border-radius: 18px;
-    display:grid;
-    place-items:center;
-    background: var(--pinkSoft);
-    border: 1px solid rgba(255,63,154,.18);
-    font-size: 22px;
+  .catCard__media{
+    height: 150px;
+    background:#f6f6f6;
+  }
+
+  .catCard__media img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+  }
+
+  .catCard__body{
+    padding: 14px 16px 16px;
   }
 
   .catCard__title{
-    margin-top: 12px;
     font-weight: 900;
     letter-spacing:-.2px;
   }
@@ -1142,17 +1056,25 @@ Saya akan bayar via QRIS.`;
     margin-top: 6px;
     color: var(--muted);
     font-weight: 650;
-    line-height: 1.7;
     font-size: 14px;
+    line-height: 1.7;
   }
 
-  /* BUTTON */
   .kategoriMore{
-    margin-top: 18px;
+    margin-top: 20px;
     display:flex;
     justify-content:center;
   }
+
+  /* RESPONSIVE */
+  @media (max-width: 980px){
+    .kategoriGrid{ grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 520px){
+    .kategoriGrid{ grid-template-columns: 1fr; }
+  }
 </style>
+
 
 
 <!-- SECTION: PRODUK -->
@@ -1293,199 +1215,106 @@ Saya akan bayar via QRIS.`;
 </style>
 
 
-<!-- SECTION: TESTIMONI (AUTO SCROLL) -->
+<!-- SECTION: TESTIMONI (BUTTON SLIDER) -->
 <section class="section" id="testimoni">
   <div class="container">
     <div class="sectionHead">
       <h2>Testimoni pelanggan</h2>
-      <p>Scroll berjalan otomatis. Kamu bisa geser manual juga.</p>
+      <p>Klik tombol panah untuk melihat testimoni lainnya.</p>
     </div>
 
-    <div class="testiWrap" aria-label="Slider testimoni">
-      <div class="testiTrack" id="testiTrack">
+    <div class="testiBox">
 
-        <!-- SET 1 -->
-        <article class="quoteCard">
-          <div class="quoteTop">
-            <div class="stars" aria-hidden="true">★★★★★</div>
-            <div class="who">Rani</div>
-          </div>
-          <p>“Packing rapi, sampai aman. Suwar-suwirnya enak!”</p>
-        </article>
+      <!-- TOMBOL KIRI -->
+      <button class="arrow arrow--left" aria-label="Sebelumnya">‹</button>
 
-        <article class="quoteCard">
-          <div class="quoteTop">
-            <div class="stars" aria-hidden="true">★★★★★</div>
-            <div class="who">Arif</div>
-          </div>
-          <p>“Gift box-nya cantik, cocok buat oleh-oleh kantor.”</p>
-        </article>
+      <!-- TRACK -->
+      <div class="testiViewport">
+        <div class="testiTrack" id="testiTrack">
 
-        <article class="quoteCard">
-          <div class="quoteTop">
-            <div class="stars" aria-hidden="true">★★★★★</div>
-            <div class="who">Dinda</div>
-          </div>
-          <p>“Kopi Jembernya wangi. Repeat order!”</p>
-        </article>
+          <article class="quoteCard">
+            <div class="quoteTop">
+              <div class="stars">★★★★★</div>
+              <div class="who">Rani</div>
+            </div>
+            <p>“Packing rapi, sampai aman. Suwar-suwirnya enak!”</p>
+          </article>
 
-        <article class="quoteCard">
-          <div class="quoteTop">
-            <div class="stars" aria-hidden="true">★★★★★</div>
-            <div class="who">Fajar</div>
-          </div>
-          <p>“Admin responsif, packing aman, sampai tepat waktu.”</p>
-        </article>
+          <article class="quoteCard">
+            <div class="quoteTop">
+              <div class="stars">★★★★★</div>
+              <div class="who">Arif</div>
+            </div>
+            <p>“Gift box-nya cantik, cocok buat oleh-oleh kantor.”</p>
+          </article>
 
-        <article class="quoteCard">
-          <div class="quoteTop">
-            <div class="stars" aria-hidden="true">★★★★★</div>
-            <div class="who">Salsa</div>
-          </div>
-          <p>“Snack-nya banyak pilihan. Cocok buat hampers.”</p>
-        </article>
+          <article class="quoteCard">
+            <div class="quoteTop">
+              <div class="stars">★★★★★</div>
+              <div class="who">Dinda</div>
+            </div>
+            <p>“Kopi Jembernya wangi. Repeat order!”</p>
+          </article>
 
-        <article class="quoteCard">
-          <div class="quoteTop">
-            <div class="stars" aria-hidden="true">★★★★★</div>
-            <div class="who">Nanda</div>
-          </div>
-          <p>“Kemasannya premium, kelihatan mahal padahal hemat.”</p>
-        </article>
+          <article class="quoteCard">
+            <div class="quoteTop">
+              <div class="stars">★★★★★</div>
+              <div class="who">Fajar</div>
+            </div>
+            <p>“Admin responsif, packing aman, sampai tepat waktu.”</p>
+          </article>
 
-        <article class="quoteCard">
-          <div class="quoteTop">
-            <div class="stars" aria-hidden="true">★★★★★</div>
-            <div class="who">Tika</div>
-          </div>
-          <p>“Suwar-suwirnya lembut, rasanya pas nggak eneg.”</p>
-        </article>
+          <article class="quoteCard">
+            <div class="quoteTop">
+              <div class="stars">★★★★★</div>
+              <div class="who">Salsa</div>
+            </div>
+            <p>“Snack-nya banyak pilihan. Cocok buat hampers.”</p>
+          </article>
 
-        <article class="quoteCard">
-          <div class="quoteTop">
-            <div class="stars" aria-hidden="true">★★★★★</div>
-            <div class="who">Bagas</div>
-          </div>
-          <p>“Buat kantor cocok, tinggal pesan banyak langsung beres.”</p>
-        </article>
+          <article class="quoteCard">
+            <div class="quoteTop">
+              <div class="stars">★★★★★</div>
+              <div class="who">Nanda</div>
+            </div>
+            <p>“Kemasannya premium, kelihatan mahal padahal hemat.”</p>
+          </article>
 
-        <!-- SET 2 (duplikat agar infinite scroll mulus) -->
-        <article class="quoteCard">
-          <div class="quoteTop">
-            <div class="stars" aria-hidden="true">★★★★★</div>
-            <div class="who">Rani</div>
-          </div>
-          <p>“Packing rapi, sampai aman. Suwar-suwirnya enak!”</p>
-        </article>
-
-        <article class="quoteCard">
-          <div class="quoteTop">
-            <div class="stars" aria-hidden="true">★★★★★</div>
-            <div class="who">Arif</div>
-          </div>
-          <p>“Gift box-nya cantik, cocok buat oleh-oleh kantor.”</p>
-        </article>
-
-        <article class="quoteCard">
-          <div class="quoteTop">
-            <div class="stars" aria-hidden="true">★★★★★</div>
-            <div class="who">Dinda</div>
-          </div>
-          <p>“Kopi Jembernya wangi. Repeat order!”</p>
-        </article>
-
-        <article class="quoteCard">
-          <div class="quoteTop">
-            <div class="stars" aria-hidden="true">★★★★★</div>
-            <div class="who">Fajar</div>
-          </div>
-          <p>“Admin responsif, packing aman, sampai tepat waktu.”</p>
-        </article>
-
-        <article class="quoteCard">
-          <div class="quoteTop">
-            <div class="stars" aria-hidden="true">★★★★★</div>
-            <div class="who">Salsa</div>
-          </div>
-          <p>“Snack-nya banyak pilihan. Cocok buat hampers.”</p>
-        </article>
-
-        <article class="quoteCard">
-          <div class="quoteTop">
-            <div class="stars" aria-hidden="true">★★★★★</div>
-            <div class="who">Nanda</div>
-          </div>
-          <p>“Kemasannya premium, kelihatan mahal padahal hemat.”</p>
-        </article>
-
-        <article class="quoteCard">
-          <div class="quoteTop">
-            <div class="stars" aria-hidden="true">★★★★★</div>
-            <div class="who">Tika</div>
-          </div>
-          <p>“Suwar-suwirnya lembut, rasanya pas nggak eneg.”</p>
-        </article>
-
-        <article class="quoteCard">
-          <div class="quoteTop">
-            <div class="stars" aria-hidden="true">★★★★★</div>
-            <div class="who">Bagas</div>
-          </div>
-          <p>“Buat kantor cocok, tinggal pesan banyak langsung beres.”</p>
-        </article>
-
+        </div>
       </div>
+
+      <!-- TOMBOL KANAN -->
+      <button class="arrow arrow--right" aria-label="Berikutnya">›</button>
+
     </div>
   </div>
 </section>
 
 <style>
-  /* wrapper biar rapi + ada fade sisi */
-  .testiWrap{
-    margin-top: 18px;
+  .testiBox{
     position: relative;
+    margin-top: 18px;
+    display:flex;
+    align-items:center;
+    gap: 10px;
+  }
+
+  /* VIEWPORT (tidak bisa drag) */
+  .testiViewport{
     overflow: hidden;
+    width: 100%;
   }
 
-  .testiWrap::before,
-  .testiWrap::after{
-    content:"";
-    position:absolute;
-    top:0; bottom:0;
-    width: 80px;
-    pointer-events:none;
-    z-index: 2;
-  }
-  .testiWrap::before{
-    left:0;
-    background: linear-gradient(90deg, #fff 0%, rgba(255,255,255,0) 100%);
-  }
-  .testiWrap::after{
-    right:0;
-    background: linear-gradient(270deg, #fff 0%, rgba(255,255,255,0) 100%);
-  }
-
-  /* track bergerak */
+  /* TRACK */
   .testiTrack{
     display:flex;
     gap: 14px;
-    width: max-content;
-    animation: testiMove 28s linear infinite;
+    transition: transform .35s ease;
   }
 
-  /* pause saat hover biar enak dibaca */
-  .testiWrap:hover .testiTrack{
-    animation-play-state: paused;
-  }
-
-  @keyframes testiMove{
-    0%   { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
-
+  /* CARD */
   .quoteCard{
-    flex: 0 0 auto;
-    width: 320px;
+    flex: 0 0 320px;
     border-radius: var(--r2);
     border: 1px solid var(--border);
     background: #fff;
@@ -1495,41 +1324,75 @@ Saya akan bayar via QRIS.`;
 
   .quoteTop{
     display:flex;
-    align-items:center;
     justify-content:space-between;
-    gap: 12px;
     margin-bottom: 10px;
   }
 
-  .stars{
-    color: var(--pink);
-    font-weight: 900;
-    letter-spacing: 1px;
-  }
-
-  .who{
-    font-weight: 900;
-    color: var(--ink);
-  }
+  .stars{ color: var(--pink); font-weight: 900; }
+  .who{ font-weight: 900; }
 
   .quoteCard p{
-    margin: 0;
+    margin:0;
     color: var(--muted);
     font-weight: 650;
     line-height: 1.8;
   }
 
+  /* TOMBOL PANAH */
+  .arrow{
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: #fff;
+    box-shadow: var(--shadow2);
+    font-size: 22px;
+    font-weight: 900;
+    cursor:pointer;
+    display:grid;
+    place-items:center;
+  }
+
+  .arrow:hover{
+    background: var(--pinkSoft);
+  }
+
+  .arrow:disabled{
+    opacity:.35;
+    cursor: not-allowed;
+  }
+
   @media (max-width: 520px){
-    .quoteCard{ width: 260px; }
-    .testiWrap::before,
-    .testiWrap::after{ width: 40px; }
+    .quoteCard{ flex-basis: 260px; }
   }
 </style>
 
 <script>
-  // Optional: biar mulus di HP, bisa swipe tanpa ganggu animasi
-  // (kalau mau full manual scroll, bilang, nanti aku ubah)
+  const track = document.getElementById('testiTrack');
+  const btnLeft = document.querySelector('.arrow--left');
+  const btnRight = document.querySelector('.arrow--right');
+
+  let index = 0;
+  const cardWidth = 334; // 320 + gap
+  const maxIndex = track.children.length - 1;
+
+  function update(){
+    track.style.transform = `translateX(-${index * cardWidth}px)`;
+    btnLeft.disabled = index === 0;
+    btnRight.disabled = index >= maxIndex - 2;
+  }
+
+  btnLeft.addEventListener('click', () => {
+    if(index > 0){ index--; update(); }
+  });
+
+  btnRight.addEventListener('click', () => {
+    if(index < maxIndex){ index++; update(); }
+  });
+
+  update();
 </script>
+
 
 
 <!-- FOOTER (PROFESIONAL) -->
@@ -1562,13 +1425,13 @@ Saya akan bayar via QRIS.`;
       <a class="footer__link" href="#testimoni">Testimoni</a>
     </div>
 
-    <!-- HELP -->
+    <!-- HELP (POPUP TRIGGER) -->
     <div class="footer__col">
       <div class="footer__title">Bantuan</div>
-      <a class="footer__link" href="#cta">Cara Pesan</a>
-      <a class="footer__link" href="#">Pengiriman</a>
-      <a class="footer__link" href="#">Pembayaran</a>
-      <a class="footer__link" href="#">FAQ</a>
+      <button class="footer__linkBtn" type="button" data-help="cara">Cara Pesan</button>
+      <button class="footer__linkBtn" type="button" data-help="pengiriman">Pengiriman</button>
+      <button class="footer__linkBtn" type="button" data-help="pembayaran">Pembayaran</button>
+      <button class="footer__linkBtn" type="button" data-help="faq">FAQ</button>
     </div>
 
     <!-- CONTACT -->
@@ -1602,10 +1465,30 @@ Saya akan bayar via QRIS.`;
       </div>
 
       <div class="footerSocial" aria-label="Sosial media">
-        <a class="socialBtn" href="#" aria-label="Instagram">IG</a>
-        <a class="socialBtn" href="#" aria-label="TikTok">TT</a>
-        <a class="socialBtn" href="#" aria-label="Shopee">SP</a>
+
+        <!-- INSTAGRAM -->
+        <a class="socialBtn" href="#" aria-label="Instagram" title="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5.5A4.5 4.5 0 1 0 16.5 12 4.5 4.5 0 0 0 12 7.5zm0 7.4A2.9 2.9 0 1 1 14.9 12 2.9 2.9 0 0 1 12 14.9zM17.8 6.2a1 1 0 1 1-1-1 1 1 0 0 1 1 1z"/>
+          </svg>
+        </a>
+      
+        <!-- TIKTOK -->
+        <a class="socialBtn" href="#" aria-label="TikTok" title="TikTok">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M16.5 2h-2.6v13.2a2.4 2.4 0 1 1-2-2.4V10a5 5 0 1 0 4.6 5V8.7a6.7 6.7 0 0 0 3.5 1.1V7.3a4.3 4.3 0 0 1-3.5-2.1z"/>
+          </svg>
+        </a>
+      
+        <!-- SHOPEE -->
+        <a class="socialBtn" href="#" aria-label="Shopee" title="Shopee">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M5 7h14l-1 14H6L5 7zm7-5a4 4 0 0 0-4 4h2a2 2 0 0 1 4 0h2a4 4 0 0 0-4-4z"/>
+          </svg>
+        </a>
+      
       </div>
+      
     </div>
 
   </div>
@@ -1616,12 +1499,40 @@ Saya akan bayar via QRIS.`;
       <div class="footer__copy">
         © <span id="year"></span> OlehOlehJember • All rights reserved
       </div>
-      <a class="toTop" href="#home">↑ Kembali ke atas</a>
     </div>
   </div>
 </footer>
 
+<!-- FLOATING TO TOP -->
+<button class="toTopFloat" id="toTopFloat" type="button" aria-label="Kembali ke atas" title="Kembali ke atas">
+  ↑
+</button>
+
+<!-- MODAL BANTUAN -->
+<div class="helpModal" id="helpModal" hidden aria-hidden="true">
+  <div class="helpModal__backdrop" data-close></div>
+
+  <div class="helpModal__dialog" role="dialog" aria-modal="true" aria-labelledby="helpTitle">
+    <div class="helpModal__head">
+      <div>
+        <div class="helpModal__kicker">Bantuan</div>
+        <h3 class="helpModal__title" id="helpTitle">FAQ</h3>
+      </div>
+      <button class="helpModal__close" type="button" aria-label="Tutup" data-close>✕</button>
+    </div>
+
+    <div class="helpModal__body" id="helpBody">
+      <!-- diisi dari JS -->
+    </div>
+
+    <div class="helpModal__foot">
+      <button class="btn" type="button" data-close>Tutup</button>
+    </div>
+  </div>
+</div>
+
 <style>
+  /* FOOTER BASE (punyamu tetap) */
   .footer{
     border-top: 1px solid var(--border);
     background: #fff;
@@ -1680,19 +1591,29 @@ Saya akan bayar via QRIS.`;
   }
   .footer__link:hover{ color: var(--ink); }
 
+  /* Bantuan jadi tombol */
+  .footer__linkBtn{
+    display:block;
+    width: 100%;
+    text-align:left;
+    padding: 8px 0;
+    border: 0;
+    background: transparent;
+    color: var(--muted);
+    font-weight: 750;
+    cursor:pointer;
+    font-family: inherit;
+    font-size: 14px;
+  }
+  .footer__linkBtn:hover{ color: var(--ink); }
+
   /* Contact */
   .footerContact{ display:grid; gap: 10px; margin-bottom: 14px; }
-  .fcItem{
-    display:flex;
-    gap: 10px;
-    align-items:flex-start;
-  }
+  .fcItem{ display:flex; gap: 10px; align-items:flex-start; }
   .fcIcon{
-    width: 34px;
-    height: 34px;
+    width: 34px; height: 34px;
     border-radius: 12px;
-    display:grid;
-    place-items:center;
+    display:grid; place-items:center;
     background: var(--pinkSoft);
     border: 1px solid rgba(255,63,154,.18);
     flex: 0 0 auto;
@@ -1713,17 +1634,11 @@ Saya akan bayar via QRIS.`;
   .fcLink:hover{ text-decoration: underline; }
 
   /* Social */
-  .footerSocial{
-    display:flex;
-    gap: 10px;
-    flex-wrap:wrap;
-  }
+  .footerSocial{ display:flex; gap: 10px; flex-wrap:wrap; }
   .socialBtn{
-    width: 42px;
-    height: 42px;
+    width: 42px; height: 42px;
     border-radius: 14px;
-    display:grid;
-    place-items:center;
+    display:grid; place-items:center;
     border: 1px solid rgba(255,63,154,.18);
     background: #fff;
     color: var(--ink);
@@ -1753,24 +1668,226 @@ Saya akan bayar via QRIS.`;
     font-weight: 700;
     font-size: 13px;
   }
-  .toTop{
-    padding: 10px 12px;
-    border-radius: 999px;
-    border: 1px solid rgba(255,63,154,.18);
-    background: #fff;
-    color: var(--muted);
-    font-weight: 900;
-  }
-  .toTop:hover{ background: var(--pinkSoft); color: var(--ink); }
 
   @media (max-width: 980px){
-    .footer__grid{
-      grid-template-columns: 1fr 1fr;
-    }
+    .footer__grid{ grid-template-columns: 1fr 1fr; }
   }
   @media (max-width: 520px){
-    .footer__grid{
-      grid-template-columns: 1fr;
-    }
+    .footer__grid{ grid-template-columns: 1fr; }
   }
+
+  /* FLOATING TO TOP */
+  .toTopFloat{
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    width: 52px;
+    height: 52px;
+    border-radius: 16px;
+    border: 1px solid rgba(255,63,154,.18);
+    background: #fff;
+    color: var(--ink);
+    font-weight: 900;
+    box-shadow: var(--shadow);
+    cursor:pointer;
+    display:none; /* muncul saat scroll */
+    z-index: 999;
+  }
+  .toTopFloat:hover{
+    background: var(--pinkSoft);
+  }
+
+  /* MODAL BANTUAN */
+  .helpModal[hidden]{ display:none; }
+  .helpModal{ position:fixed; inset:0; z-index: 9999; }
+  .helpModal__backdrop{ position:absolute; inset:0; background: rgba(0,0,0,.45); }
+
+  .helpModal__dialog{
+    position: relative;
+    width: min(760px, 92vw);
+    margin: 10vh auto;
+    border-radius: 22px;
+    border: 1px solid rgba(255,63,154,.18);
+    background:#fff;
+    box-shadow: var(--shadow);
+    overflow:hidden;
+    max-height: 80vh;
+    display:flex;
+    flex-direction:column;
+  }
+
+  .helpModal__head{
+    padding: 16px 18px;
+    display:flex;
+    align-items:flex-start;
+    justify-content:space-between;
+    gap: 12px;
+    border-bottom: 1px solid var(--border);
+    background: linear-gradient(135deg, var(--pinkSoft), #fff);
+  }
+
+  .helpModal__kicker{ color: var(--muted); font-weight: 800; font-size: 12px; }
+  .helpModal__title{ margin: 4px 0 0; letter-spacing:-.3px; }
+
+  .helpModal__close{
+    width: 42px; height: 42px;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    background:#fff;
+    box-shadow: var(--shadow2);
+    font-size: 16px;
+    cursor:pointer;
+  }
+
+  .helpModal__body{
+    padding: 16px 18px;
+    overflow:auto;
+  }
+
+  .helpModal__foot{
+    padding: 14px 18px 18px;
+    border-top: 1px solid var(--border);
+    display:flex;
+    justify-content:flex-end;
+    gap: 10px;
+  }
+
+  .helpList{
+    display:grid;
+    gap: 10px;
+  }
+
+  .helpItem{
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 12px 12px;
+    background:#fff;
+  }
+  .helpItem b{ display:block; margin-bottom: 6px; }
+  .helpItem p{ margin:0; color: var(--muted); font-weight: 650; line-height:1.75; }
 </style>
+
+<script>
+  // YEAR
+  const y = document.getElementById('year');
+  if(y) y.textContent = new Date().getFullYear();
+
+  // TO TOP FLOAT
+  const toTopFloat = document.getElementById('toTopFloat');
+  function toggleToTop(){
+    if(!toTopFloat) return;
+    toTopFloat.style.display = window.scrollY > 500 ? 'grid' : 'none';
+  }
+  window.addEventListener('scroll', toggleToTop, { passive:true });
+  toggleToTop();
+  toTopFloat?.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // HELP MODAL CONTENT
+  const helpModal = document.getElementById('helpModal');
+  const helpTitle = document.getElementById('helpTitle');
+  const helpBody = document.getElementById('helpBody');
+
+  const helpContent = {
+    cara: {
+      title: 'Cara Pesan',
+      html: `
+        <div class="helpList">
+          <div class="helpItem">
+            <b>1) Klik tombol “Pesan”</b>
+            <p>Isi nama, WhatsApp, alamat, produk, dan jumlah.</p>
+          </div>
+          <div class="helpItem">
+            <b>2) Cek nota sementara</b>
+            <p>Total akan muncul otomatis (ongkir dikonfirmasi admin).</p>
+          </div>
+          <div class="helpItem">
+            <b>3) Bayar via QRIS</b>
+            <p>Scan QR, simpan bukti bayar, lalu klik “Kirim Pesanan”.</p>
+          </div>
+        </div>`
+    },
+    pengiriman: {
+      title: 'Pengiriman',
+      html: `
+        <div class="helpList">
+          <div class="helpItem">
+            <b>Estimasi proses</b>
+            <p>Biasanya 24–48 jam setelah konfirmasi.</p>
+          </div>
+          <div class="helpItem">
+            <b>Packaging</b>
+            <p>Bubble wrap + kardus, QC sebelum kirim.</p>
+          </div>
+          <div class="helpItem">
+            <b>Resi</b>
+            <p>Resi akan dikirim setelah paket diserahkan ke ekspedisi.</p>
+          </div>
+        </div>`
+    },
+    pembayaran: {
+      title: 'Pembayaran',
+      html: `
+        <div class="helpList">
+          <div class="helpItem">
+            <b>Metode</b>
+            <p>QRIS (BCA / Mandiri). Bisa pakai aplikasi bank / e-wallet.</p>
+          </div>
+          <div class="helpItem">
+            <b>Bukti bayar</b>
+            <p>Upload bukti (opsional) atau kirim via WhatsApp setelah submit.</p>
+          </div>
+        </div>`
+    },
+    faq: {
+      title: 'FAQ',
+      html: `
+        <div class="helpList">
+          <div class="helpItem">
+            <b>Apakah bisa pesan banyak untuk kantor?</b>
+            <p>Bisa. Tulis jumlah & catatan di form, admin akan bantu rekap.</p>
+          </div>
+          <div class="helpItem">
+            <b>Apakah bisa request kartu ucapan?</b>
+            <p>Bisa. Isi di kolom catatan.</p>
+          </div>
+          <div class="helpItem">
+            <b>Ongkir gimana?</b>
+            <p>Ongkir dikonfirmasi admin sesuai alamat & berat paket.</p>
+          </div>
+        </div>`
+    }
+  };
+
+  function openHelp(key){
+    const data = helpContent[key];
+    if(!data || !helpModal) return;
+    helpTitle.textContent = data.title;
+    helpBody.innerHTML = data.html;
+
+    helpModal.removeAttribute('hidden');
+    helpModal.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeHelp(){
+    if(!helpModal) return;
+    helpModal.setAttribute('hidden','');
+    helpModal.setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('[data-help]').forEach(btn => {
+    btn.addEventListener('click', () => openHelp(btn.getAttribute('data-help')));
+  });
+
+  helpModal?.addEventListener('click', (e) => {
+    const t = e.target;
+    if(t && t.hasAttribute('data-close')) closeHelp();
+  });
+
+  window.addEventListener('keydown', (e) => {
+    if(e.key === 'Escape' && helpModal && !helpModal.hasAttribute('hidden')) closeHelp();
+  });
+</script>
