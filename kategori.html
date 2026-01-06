@@ -713,720 +713,688 @@
 
 <body id="home">
 
-  <!-- NAVBAR -->
-  <header class="nav">
-    <div class="container nav__inner">
-      <a class="logo" href="index.html" aria-label="Beranda">
+<!-- NAVBAR -->
+<header class="nav">
+  <div class="container nav__inner">
+    <a class="logo" href="index.html" aria-label="Beranda">
+      <span class="logo__mark" aria-hidden="true"></span>
+      <span class="logo__text">OlehOlehJember</span>
+    </a>
+
+    <nav class="nav__links" aria-label="Navigasi">
+      <a href="index.html">Beranda</a>
+      <a href="jember.html">Tentang Jember</a>
+      <a href="kategori.html">Kategori</a>
+      <a href="blog.html">Blog</a>
+    </nav>
+
+    <div class="nav__actions">
+      <button class="btn btn--primary" id="openOrder" type="button">Pesan</button>
+      <button class="menuBtn" id="menuBtn" aria-label="Buka menu" aria-expanded="false" aria-controls="mobileMenu">☰</button>
+    </div>
+  </div>
+
+  <div class="mobileMenu" id="mobileMenu" hidden>
+    <div class="container mobileMenu__inner">
+      <a href="file:///C:/xampp/htdocs/Project%20Affizar/Oleh%20Oleh%20Khas%20Jember/jember.html">Jember</a>
+      <a href="file:///C:/xampp/htdocs/Project%20Affizar/Oleh%20Oleh%20Khas%20Jember/kategori.html">Kategori</a>
+      <a href="file:///C:/xampp/htdocs/Project%20Affizar/Oleh%20Oleh%20Khas%20Jember/testimoni.html">Testimoni</a>
+      <button class="btn btn--primary" id="openOrderMobile" type="button">Pesan</button>
+    </div>
+  </div>
+</header>
+
+<!-- POPUP ORDER + PAYMENT (SCROLL + NOTA) -->
+<div class="modal" id="orderModal" hidden aria-hidden="true">
+  <div class="modal__backdrop" data-close></div>
+
+  <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="orderTitle">
+    <div class="modal__head">
+      <div>
+        <div class="modal__kicker">Form Pemesanan</div>
+        <h3 class="modal__title" id="orderTitle">Pesan Oleh-Oleh Jember</h3>
+      </div>
+      <button class="modal__close" type="button" aria-label="Tutup" data-close>✕</button>
+    </div>
+
+    <form class="modal__body" id="orderForm">
+      <div class="formGrid">
+        <label class="field">
+          <span>Nama</span>
+          <input name="nama" required placeholder="Nama kamu" />
+        </label>
+
+        <label class="field">
+          <span>No. WhatsApp</span>
+          <input name="wa" required placeholder="08xxxxxxxxxx" />
+        </label>
+
+        <label class="field field--full">
+          <span>Alamat (untuk pengiriman)</span>
+          <textarea name="alamat" rows="3" required placeholder="Jalan, kecamatan, kota, kode pos"></textarea>
+        </label>
+
+        <label class="field">
+          <span>Pilih Produk</span>
+          <select name="produk" id="produkSelect" required>
+            <option value="">— Pilih —</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span>Jumlah</span>
+          <input name="qty" type="number" min="1" value="1" required />
+        </label>
+
+        <label class="field field--full">
+          <span>Catatan (opsional)</span>
+          <input name="catatan" placeholder="Misal: minta kartu ucapan, pedas, tanpa kacang, dll." />
+        </label>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- NOTA SEMENTARA -->
+      <div class="nota" aria-label="Nota sementara">
+        <div class="nota__head">
+          <h4>Nota sementara</h4>
+          <span class="nota__badge">Belum dibayar</span>
+        </div>
+
+        <div class="nota__grid">
+          <div class="nota__row">
+            <span class="k">Produk</span>
+            <span class="v" id="notaProduk">—</span>
+          </div>
+          <div class="nota__row">
+            <span class="k">Jumlah</span>
+            <span class="v" id="notaQty">1</span>
+          </div>
+          <div class="nota__row">
+            <span class="k">Harga</span>
+            <span class="v" id="notaHarga">Rp 0</span>
+          </div>
+
+          <div class="nota__row nota__row--total">
+            <span class="k">Total Sementara</span>
+            <span class="v" id="notaTotal">Rp 0</span>
+          </div>
+        </div>
+
+        <div class="nota__note">
+          *Total ini sementara. Ongkir/biaya tambahan (jika ada) akan dikonfirmasi admin.
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="pay">
+        <div class="pay__head">
+          <h4>Pembayaran</h4>
+          <p>Pilih metode QRIS. Scan QR di bawah, lalu simpan bukti pembayaran.</p>
+        </div>
+
+        <div class="payMethods">
+          <label class="payOption">
+            <input type="radio" name="metode" value="QRIS BCA" checked />
+            <div class="payOption__box">
+              <div class="payOption__title">QRIS BCA</div>
+              <div class="payOption__sub">Scan QRIS BCA / aplikasi apa pun</div>
+            </div>
+          </label>
+
+          <label class="payOption">
+            <input type="radio" name="metode" value="QRIS Mandiri" />
+            <div class="payOption__box">
+              <div class="payOption__title">QRIS Mandiri</div>
+              <div class="payOption__sub">Scan QRIS Mandiri / aplikasi apa pun</div>
+            </div>
+          </label>
+        </div>
+
+        <div class="qrWrap">
+          <div class="qrCard" id="qrisBCA">
+            <div class="qrTitle">QRIS BCA</div>
+            <img class="qrImg" src="assets/qris-bca.png" alt="QRIS BCA (ganti dengan QR kamu)">
+            <div class="qrNote">Ganti dengan QRIS BCA milikmu: <b>assets/qris-bca.png</b></div>
+          </div>
+
+          <div class="qrCard" id="qrisMandiri" hidden>
+            <div class="qrTitle">QRIS Mandiri</div>
+            <img class="qrImg" src="assets/qris-mandiri.png" alt="QRIS Mandiri (ganti dengan QR kamu)">
+            <div class="qrNote">Ganti dengan QRIS Mandiri milikmu: <b>assets/qris-mandiri.png</b></div>
+          </div>
+        </div>
+
+        <label class="field field--full">
+          <span>Upload bukti bayar (opsional)</span>
+          <input type="file" name="bukti" accept="image/*" />
+          <small class="hint">Atau kirim bukti via WhatsApp setelah klik “Kirim Pesanan”.</small>
+        </label>
+      </div>
+
+      <div class="modal__foot">
+        <button class="btn" type="button" data-close>Batal</button>
+        <button class="btn btn--primary" type="submit">Kirim Pesanan</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="heroPink">
+  <div class="container heroGrid">
+    <div class="heroText">
+      <span class="heroBadge">🌸 Kategori & Produk</span>
+      <h1>Pilih Kategori, Cari Produk, Lalu Pesan</h1>
+      <p>
+        Tab kategori aktif akan menyaring produk otomatis. Gunakan kolom pencarian untuk menemukan produk lebih cepat.
+        Tombol <b>Pesan</b> selalu membuka popup pemesanan yang sama — dan jika kamu klik tombol Pesan di kartu produk,
+        produk tersebut akan langsung terpilih.
+      </p>
+
+      <div class="heroActions">
+        <a class="btn btn--primary" href="#kategori">Mulai dari Kategori</a>
+        <a class="btn" href="#produk">Langsung ke Produk</a>
+      </div>
+
+    </div>
+
+    <div class="heroImgPink">
+      <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1400&q=80" alt="Oleh-oleh">
+    </div>
+  </div>
+</section>
+
+<!-- KATEGORI -->
+<section class="section" id="kategori">
+  <div class="container">
+    <div class="sectionHead">
+      <h2>Kategori Populer</h2>
+      <p>Klik “Lihat Produk” untuk menyaring produk berdasarkan kategori.</p>
+    </div>
+
+    <div class="gridK">
+      <article class="kCard">
+        <div class="kCard__media">
+          <img src="https://images.unsplash.com/photo-1541976076758-347942db1972?auto=format&fit=crop&w=1200&q=80" alt="Makanan manis">
+        </div>
+        <div class="kCard__body">
+          <h3>Makanan Manis</h3>
+          <p>Suwar-suwir, dodol, cookies. Favorit untuk keluarga.</p>
+          <div class="kCard__meta">
+            <span class="tag">Terlaris</span>
+            <span class="tag tagSoft">Tahan perjalanan</span>
+          </div>
+          <div class="kCard__actions">
+            <a class="btn btn--primary" href="#produk" data-jump-filter="makanan">Lihat Produk</a>
+            <button class="btn" type="button" data-order="Suwar-suwir Khas">Pesan Cepat</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="kCard">
+        <div class="kCard__media">
+          <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=1200&q=80" alt="Kopi">
+        </div>
+        <div class="kCard__body">
+          <h3>Minuman</h3>
+          <p>Kopi dan teh rempah. Wangi, cocok hadiah.</p>
+          <div class="kCard__meta">
+            <span class="tag">Favorit</span>
+            <span class="tag tagSoft">Hadiah</span>
+          </div>
+          <div class="kCard__actions">
+            <a class="btn btn--primary" href="#produk" data-jump-filter="minuman">Lihat Produk</a>
+            <button class="btn" type="button" data-order="Kopi Jember">Pesan Cepat</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="kCard">
+        <div class="kCard__media">
+          <img src="https://images.unsplash.com/photo-1585238342028-4b2a05f52e6c?auto=format&fit=crop&w=1200&q=80" alt="Snack">
+        </div>
+        <div class="kCard__body">
+          <h3>Snack</h3>
+          <p>Keripik, edamame crispy, camilan gurih.</p>
+          <div class="kCard__meta">
+            <span class="tag">Gurih</span>
+            <span class="tag tagSoft">Sharing</span>
+          </div>
+          <div class="kCard__actions">
+            <a class="btn btn--primary" href="#produk" data-jump-filter="snack">Lihat Produk</a>
+            <button class="btn" type="button" data-order="Edamame Crispy">Pesan Cepat</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="kCard">
+        <div class="kCard__media">
+          <img src="https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&w=1200&q=80" alt="Hampers">
+        </div>
+        <div class="kCard__body">
+          <h3>Hampers</h3>
+          <p>Gift box & hampers kantor. Rapi dan elegan.</p>
+          <div class="kCard__meta">
+            <span class="tag">Rapi</span>
+            <span class="tag tagSoft">Kantor</span>
+          </div>
+          <div class="kCard__actions">
+            <a class="btn btn--primary" href="#produk" data-jump-filter="hampers">Lihat Produk</a>
+            <button class="btn" type="button" data-order="Hampers Kantor">Pesan Cepat</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="kCard">
+        <div class="kCard__media">
+          <img src="https://images.unsplash.com/photo-1546549032-9571cd6b27df?auto=format&fit=crop&w=1200&q=80" alt="Paket">
+        </div>
+        <div class="kCard__body">
+          <h3>Paket</h3>
+          <p>Paket campur hemat buat yang ingin praktis.</p>
+          <div class="kCard__meta">
+            <span class="tag">Rekomendasi</span>
+            <span class="tag tagSoft">Hemat</span>
+          </div>
+          <div class="kCard__actions">
+            <a class="btn btn--primary" href="#produk" data-jump-filter="paket">Lihat Produk</a>
+            <button class="btn" type="button" data-order="Paket Campur Hemat">Pesan Cepat</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="kCard">
+        <div class="kCard__media">
+          <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=1200&q=80" alt="Oleh-oleh kering">
+        </div>
+        <div class="kCard__body">
+          <h3>Oleh-oleh Kering</h3>
+          <p>Ringan, tahan lama, aman untuk perjalanan.</p>
+          <div class="kCard__meta">
+            <span class="tag">Praktis</span>
+            <span class="tag tagSoft">Tahan lama</span>
+          </div>
+          <div class="kCard__actions">
+            <a class="btn btn--primary" href="#produk" data-jump-filter="snack">Lihat Produk</a>
+            <button class="btn" type="button" data-order="Keripik Pisang">Pesan Cepat</button>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUK -->
+<section class="section" id="produk">
+  <div class="container">
+    <div class="sectionHead">
+      <h2>Produk</h2>
+      <p>Produk akan otomatis mengikuti kategori yang kamu pilih.</p>
+    </div>
+
+    <div class="prodTop">
+      <div class="searchWrap">
+        <input class="searchInput" id="searchInput" type="search"
+               placeholder="Cari produk... (contoh: kopi, suwar, keripik)"
+               aria-label="Cari produk">
+      </div>
+
+      <div class="hintBox" id="activeFilterHint" aria-live="polite">
+        Filter aktif: <b>Semua</b>
+      </div>
+    </div>
+
+    <div class="gridP" id="productGrid"></div>
+
+    <div class="emptyState" id="emptyState" hidden>
+      <div class="emptyIcon">🔎</div>
+      <h3>Produk tidak ditemukan</h3>
+      <p>Coba ganti kategori atau kata kunci pencarian.</p>
+      <button class="btn btn--primary" type="button" id="resetBtn">Reset Filter</button>
+    </div>
+
+    <div class="moreWrap">
+      <button class="btn btn--primary" type="button" id="openOrderBottom">Pesan Sekarang</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container footer__grid">
+
+    <div class="footer__brand">
+      <div class="footerLogo">
         <span class="logo__mark" aria-hidden="true"></span>
-        <span class="logo__text">OlehOlehJember</span>
-      </a>
+        <b>OlehOlehJember</b>
+      </div>
+      <p class="footerMuted">
+        Oleh-oleh khas Jember dengan pengemasan rapi, cocok untuk keluarga, teman, dan kebutuhan kantor.
+      </p>
 
-      <nav class="nav__links" aria-label="Navigasi">
-        <a href="jember.html">Jember</a>
-        <a class="isHere" href="kategori.html">Kategori</a>
-        <a href="testimoni.html">Testimoni</a>
-        <a href="blog.html">Blog</a>
-      </nav>
-
-      <div class="nav__actions">
-        <button class="btn btn--primary" id="openOrder" type="button">Pesan</button>
-        <button class="menuBtn" id="menuBtn" aria-label="Buka menu" aria-expanded="false" aria-controls="mobileMenu">☰</button>
+      <div class="footerBadges" aria-label="Keunggulan singkat">
+        <span class="fBadge">📦 Packing Aman</span>
+        <span class="fBadge">✅ QC</span>
+        <span class="fBadge">🧾 Resi</span>
       </div>
     </div>
 
-    <div class="mobileMenu" id="mobileMenu" hidden>
-      <div class="container mobileMenu__inner">
-        <a href="jember.html">Jember</a>
-        <a class="isHere" href="kategori.html">Kategori</a>
-        <a href="testimoni.html">Testimoni</a>
-        <button class="btn btn--primary" id="openOrderMobile" type="button">Pesan</button>
-      </div>
+    <div class="footer__col">
+      <div class="footer__title">Menu</div>
+      <a class="footer__link" href="jember.html">Jember</a>
+      <a class="footer__link" href="#kategori">Kategori</a>
+      <a class="footer__link" href="#produk">Produk</a>
+      <a class="footer__link" href="testimoni.html">Testimoni</a>
     </div>
-  </header>
 
-  <!-- ORDER MODAL -->
-  <div class="modal" id="orderModal" hidden aria-hidden="true">
-    <div class="modal__backdrop" data-close></div>
+    <div class="footer__col">
+      <div class="footer__title">Bantuan</div>
+      <button class="footer__linkBtn" type="button" data-help="cara">Cara Pesan</button>
+      <button class="footer__linkBtn" type="button" data-help="pengiriman">Pengiriman</button>
+      <button class="footer__linkBtn" type="button" data-help="pembayaran">Pembayaran</button>
+      <button class="footer__linkBtn" type="button" data-help="faq">FAQ</button>
+    </div>
 
-    <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="orderTitle">
-      <div class="modal__head">
-        <div>
-          <div class="modal__kicker">Form Pemesanan</div>
-          <h3 class="modal__title" id="orderTitle">Pesan Oleh-Oleh Jember</h3>
+    <div class="footer__col">
+      <div class="footer__title">Kontak</div>
+
+      <div class="footerContact">
+        <div class="fcItem">
+          <span class="fcIcon" aria-hidden="true">📍</span>
+          <div>
+            <div class="fcLabel">Lokasi</div>
+            <div class="fcText">Jember, Jawa Timur</div>
+          </div>
         </div>
-        <button class="modal__close" type="button" aria-label="Tutup" data-close>✕</button>
+
+        <div class="fcItem">
+          <span class="fcIcon" aria-hidden="true">💬</span>
+          <div>
+            <div class="fcLabel">WhatsApp</div>
+            <a class="fcText fcLink" href="#" target="_blank" rel="noopener">Klik untuk chat</a>
+          </div>
+        </div>
+
+        <div class="fcItem">
+          <span class="fcIcon" aria-hidden="true">⏰</span>
+          <div>
+            <div class="fcLabel">Jam Operasional</div>
+            <div class="fcText">Setiap hari • 08.00–21.00</div>
+          </div>
+        </div>
       </div>
 
-      <form class="modal__body" id="orderForm">
-        <div class="formGrid">
-          <label class="field">
-            <span>Nama</span>
-            <input name="nama" required placeholder="Nama kamu">
-          </label>
+      <div class="footerSocial" aria-label="Sosial media">
+        <!-- Instagram -->
+        <a class="socialBtn" href="#" aria-label="Instagram" title="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5.5A4.5 4.5 0 1 0 16.5 12 4.5 4.5 0 0 0 12 7.5zm0 7.4A2.9 2.9 0 1 1 14.9 12 2.9 2.9 0 0 1 12 14.9zM17.8 6.2a1 1 0 1 1-1-1 1 1 0 0 1 1 1z"/>
+          </svg>
+        </a>
 
-          <label class="field">
-            <span>No. WhatsApp</span>
-            <input name="wa" required placeholder="08xxxxxxxxxx">
-          </label>
+        <!-- TikTok -->
+        <a class="socialBtn" href="#" aria-label="TikTok" title="TikTok">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M16.5 2h-2.6v13.2a2.4 2.4 0 1 1-2-2.4V10a5 5 0 1 0 4.6 5V8.7a6.7 6.7 0 0 0 3.5 1.1V7.3a4.3 4.3 0 0 1-3.5-2.1z"/>
+          </svg>
+        </a>
 
-          <label class="field field--full">
-            <span>Alamat (untuk pengiriman)</span>
-            <textarea name="alamat" rows="3" required placeholder="Jalan, kecamatan, kota, kode pos"></textarea>
-          </label>
+        <!-- Shopee -->
+        <a class="socialBtn" href="#" aria-label="Shopee" title="Shopee">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M5 7h14l-1 14H6L5 7zm7-5a4 4 0 0 0-4 4h2a2 2 0 0 1 4 0h2a4 4 0 0 0-4-4z"/>
+          </svg>
+        </a>
+      </div>
 
-          <label class="field">
-            <span>Pilih Produk</span>
-            <select name="produk" id="produkSelect" required>
-              <option value="">— Pilih —</option>
-            </select>
-          </label>
-
-          <label class="field">
-            <span>Jumlah</span>
-            <input name="qty" type="number" min="1" value="1" required>
-          </label>
-
-          <label class="field field--full">
-            <span>Catatan (opsional)</span>
-            <input name="catatan" placeholder="Misal: minta kartu ucapan, pedas, tanpa kacang, dll.">
-          </label>
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="nota" aria-label="Nota sementara">
-          <div class="nota__head">
-            <h4>Nota sementara</h4>
-            <span class="nota__badge">Belum dibayar</span>
-          </div>
-
-          <div class="nota__grid">
-            <div class="nota__row">
-              <span class="k">Produk</span>
-              <span class="v" id="notaProduk">—</span>
-            </div>
-            <div class="nota__row">
-              <span class="k">Jumlah</span>
-              <span class="v" id="notaQty">1</span>
-            </div>
-            <div class="nota__row">
-              <span class="k">Harga</span>
-              <span class="v" id="notaHarga">Rp 0</span>
-            </div>
-
-            <div class="nota__row nota__row--total">
-              <span class="k">Total Sementara</span>
-              <span class="v" id="notaTotal">Rp 0</span>
-            </div>
-          </div>
-
-          <div class="nota__note">
-            *Total ini sementara. Ongkir/biaya tambahan (jika ada) akan dikonfirmasi admin.
-          </div>
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="pay">
-          <div class="pay__head">
-            <h4>Pembayaran</h4>
-            <p>Pilih metode QRIS. Scan QR di bawah, lalu simpan bukti pembayaran.</p>
-          </div>
-
-          <div class="payMethods">
-            <label class="payOption">
-              <input type="radio" name="metode" value="QRIS BCA" checked>
-              <div class="payOption__box">
-                <div class="payOption__title">QRIS BCA</div>
-                <div class="payOption__sub">Scan QRIS BCA / aplikasi apa pun</div>
-              </div>
-            </label>
-
-            <label class="payOption">
-              <input type="radio" name="metode" value="QRIS Mandiri">
-              <div class="payOption__box">
-                <div class="payOption__title">QRIS Mandiri</div>
-                <div class="payOption__sub">Scan QRIS Mandiri / aplikasi apa pun</div>
-              </div>
-            </label>
-          </div>
-
-          <div class="qrWrap">
-            <div class="qrCard" id="qrisBCA">
-              <div class="qrTitle">QRIS BCA</div>
-              <img class="qrImg" src="assets/qris-bca.png" alt="QRIS BCA (ganti dengan QR kamu)">
-              <div class="qrNote">Ganti file QRIS: <b>assets/qris-bca.png</b></div>
-            </div>
-
-            <div class="qrCard" id="qrisMandiri" hidden>
-              <div class="qrTitle">QRIS Mandiri</div>
-              <img class="qrImg" src="assets/qris-mandiri.png" alt="QRIS Mandiri (ganti dengan QR kamu)">
-              <div class="qrNote">Ganti file QRIS: <b>assets/qris-mandiri.png</b></div>
-            </div>
-          </div>
-
-          <label class="field field--full">
-            <span>Upload bukti bayar (opsional)</span>
-            <input type="file" name="bukti" accept="image/*">
-            <small class="hint">Atau kirim bukti via WhatsApp setelah klik “Kirim Pesanan”.</small>
-          </label>
-        </div>
-
-        <div class="modal__foot">
-          <button class="btn" type="button" data-close>Batal</button>
-          <button class="btn btn--primary" type="submit">Kirim Pesanan</button>
-        </div>
-      </form>
     </div>
+
   </div>
 
-  <!-- HERO -->
-  <section class="heroPink">
-    <div class="container heroGrid">
-      <div class="heroText">
-        <span class="heroBadge">🌸 Kategori & Produk</span>
-        <h1>Pilih Kategori, Cari Produk, Lalu Pesan</h1>
-        <p>
-          Tab kategori aktif akan menyaring produk otomatis. Gunakan kolom pencarian untuk menemukan produk lebih cepat.
-          Tombol <b>Pesan</b> selalu membuka popup pemesanan yang sama — dan jika kamu klik tombol Pesan di kartu produk,
-          produk tersebut akan langsung terpilih.
-        </p>
-
-        <div class="heroActions">
-          <a class="btn btn--primary" href="#kategori">Mulai dari Kategori</a>
-          <a class="btn" href="#produk">Langsung ke Produk</a>
-        </div>
-
-        <div class="heroMini">
-          <div class="miniCard">📦 Packing rapi</div>
-          <div class="miniCard">✅ QC sebelum kirim</div>
-          <div class="miniCard">🧾 Resi cepat</div>
-        </div>
-      </div>
-
-      <div class="heroImgPink">
-        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1400&q=80" alt="Oleh-oleh">
-      </div>
-    </div>
-  </section>
-
-  <!-- KATEGORI -->
-  <section class="section" id="kategori">
-    <div class="container">
-      <div class="sectionHead">
-        <h2>Kategori Populer</h2>
-        <p>Klik “Lihat Produk” untuk menyaring produk berdasarkan kategori.</p>
-      </div>
-
-      <div class="gridK">
-        <article class="kCard">
-          <div class="kCard__media">
-            <img src="https://images.unsplash.com/photo-1541976076758-347942db1972?auto=format&fit=crop&w=1200&q=80" alt="Makanan manis">
-          </div>
-          <div class="kCard__body">
-            <h3>Makanan Manis</h3>
-            <p>Suwar-suwir, dodol, cookies. Favorit untuk keluarga.</p>
-            <div class="kCard__meta">
-              <span class="tag">Terlaris</span>
-              <span class="tag tagSoft">Tahan perjalanan</span>
-            </div>
-            <div class="kCard__actions">
-              <a class="btn btn--primary" href="#produk" data-jump-filter="makanan">Lihat Produk</a>
-              <button class="btn" type="button" data-order="Suwar-suwir Khas">Pesan Cepat</button>
-            </div>
-          </div>
-        </article>
-
-        <article class="kCard">
-          <div class="kCard__media">
-            <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=1200&q=80" alt="Kopi">
-          </div>
-          <div class="kCard__body">
-            <h3>Minuman</h3>
-            <p>Kopi dan teh rempah. Wangi, cocok hadiah.</p>
-            <div class="kCard__meta">
-              <span class="tag">Favorit</span>
-              <span class="tag tagSoft">Hadiah</span>
-            </div>
-            <div class="kCard__actions">
-              <a class="btn btn--primary" href="#produk" data-jump-filter="minuman">Lihat Produk</a>
-              <button class="btn" type="button" data-order="Kopi Jember">Pesan Cepat</button>
-            </div>
-          </div>
-        </article>
-
-        <article class="kCard">
-          <div class="kCard__media">
-            <img src="https://images.unsplash.com/photo-1585238342028-4b2a05f52e6c?auto=format&fit=crop&w=1200&q=80" alt="Snack">
-          </div>
-          <div class="kCard__body">
-            <h3>Snack</h3>
-            <p>Keripik, edamame crispy, camilan gurih.</p>
-            <div class="kCard__meta">
-              <span class="tag">Gurih</span>
-              <span class="tag tagSoft">Sharing</span>
-            </div>
-            <div class="kCard__actions">
-              <a class="btn btn--primary" href="#produk" data-jump-filter="snack">Lihat Produk</a>
-              <button class="btn" type="button" data-order="Edamame Crispy">Pesan Cepat</button>
-            </div>
-          </div>
-        </article>
-
-        <article class="kCard">
-          <div class="kCard__media">
-            <img src="https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&w=1200&q=80" alt="Hampers">
-          </div>
-          <div class="kCard__body">
-            <h3>Hampers</h3>
-            <p>Gift box & hampers kantor. Rapi dan elegan.</p>
-            <div class="kCard__meta">
-              <span class="tag">Rapi</span>
-              <span class="tag tagSoft">Kantor</span>
-            </div>
-            <div class="kCard__actions">
-              <a class="btn btn--primary" href="#produk" data-jump-filter="hampers">Lihat Produk</a>
-              <button class="btn" type="button" data-order="Hampers Kantor">Pesan Cepat</button>
-            </div>
-          </div>
-        </article>
-
-        <article class="kCard">
-          <div class="kCard__media">
-            <img src="https://images.unsplash.com/photo-1546549032-9571cd6b27df?auto=format&fit=crop&w=1200&q=80" alt="Paket">
-          </div>
-          <div class="kCard__body">
-            <h3>Paket</h3>
-            <p>Paket campur hemat buat yang ingin praktis.</p>
-            <div class="kCard__meta">
-              <span class="tag">Rekomendasi</span>
-              <span class="tag tagSoft">Hemat</span>
-            </div>
-            <div class="kCard__actions">
-              <a class="btn btn--primary" href="#produk" data-jump-filter="paket">Lihat Produk</a>
-              <button class="btn" type="button" data-order="Paket Campur Hemat">Pesan Cepat</button>
-            </div>
-          </div>
-        </article>
-
-        <article class="kCard">
-          <div class="kCard__media">
-            <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=1200&q=80" alt="Oleh-oleh kering">
-          </div>
-          <div class="kCard__body">
-            <h3>Oleh-oleh Kering</h3>
-            <p>Ringan, tahan lama, aman untuk perjalanan.</p>
-            <div class="kCard__meta">
-              <span class="tag">Praktis</span>
-              <span class="tag tagSoft">Tahan lama</span>
-            </div>
-            <div class="kCard__actions">
-              <a class="btn btn--primary" href="#produk" data-jump-filter="snack">Lihat Produk</a>
-              <button class="btn" type="button" data-order="Keripik Pisang">Pesan Cepat</button>
-            </div>
-          </div>
-        </article>
-      </div>
-
-      <div class="moreWrap">
-        <a class="btn btn--primary" href="#produk">Scroll ke Produk ↓</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRODUK -->
-  <section class="section" id="produk">
-    <div class="container">
-      <div class="sectionHead">
-        <h2>Produk</h2>
-        <p>Produk akan otomatis mengikuti kategori yang kamu pilih.</p>
-      </div>
-
-      <div class="prodTop">
-        <div class="searchWrap">
-          <input class="searchInput" id="searchInput" type="search"
-                 placeholder="Cari produk... (contoh: kopi, suwar, keripik)"
-                 aria-label="Cari produk">
-        </div>
-
-        <div class="hintBox" id="activeFilterHint" aria-live="polite">
-          Filter aktif: <b>Semua</b>
-        </div>
-      </div>
-
-      <div class="gridP" id="productGrid"></div>
-
-      <div class="emptyState" id="emptyState" hidden>
-        <div class="emptyIcon">🔎</div>
-        <h3>Produk tidak ditemukan</h3>
-        <p>Coba ganti kategori atau kata kunci pencarian.</p>
-        <button class="btn btn--primary" type="button" id="resetBtn">Reset Filter</button>
-      </div>
-
-      <div class="moreWrap">
-        <button class="btn btn--primary" type="button" id="openOrderBottom">Pesan Sekarang</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container footer__grid">
-
-      <div class="footer__brand">
-        <div class="footerLogo">
-          <span class="logo__mark" aria-hidden="true"></span>
-          <b>OlehOlehJember</b>
-        </div>
-        <p class="footerMuted">
-          Oleh-oleh khas Jember dengan pengemasan rapi, cocok untuk keluarga, teman, dan kebutuhan kantor.
-        </p>
-
-        <div class="footerBadges" aria-label="Keunggulan singkat">
-          <span class="fBadge">📦 Packing Aman</span>
-          <span class="fBadge">✅ QC</span>
-          <span class="fBadge">🧾 Resi</span>
-        </div>
-      </div>
-
-      <div class="footer__col">
-        <div class="footer__title">Menu</div>
-        <a class="footer__link" href="jember.html">Jember</a>
-        <a class="footer__link" href="#kategori">Kategori</a>
-        <a class="footer__link" href="#produk">Produk</a>
-        <a class="footer__link" href="testimoni.html">Testimoni</a>
-      </div>
-
-      <div class="footer__col">
-        <div class="footer__title">Bantuan</div>
-        <button class="footer__linkBtn" type="button" data-help="cara">Cara Pesan</button>
-        <button class="footer__linkBtn" type="button" data-help="pengiriman">Pengiriman</button>
-        <button class="footer__linkBtn" type="button" data-help="pembayaran">Pembayaran</button>
-        <button class="footer__linkBtn" type="button" data-help="faq">FAQ</button>
-      </div>
-
-      <div class="footer__col">
-        <div class="footer__title">Kontak</div>
-
-        <div class="footerContact">
-          <div class="fcItem">
-            <span class="fcIcon" aria-hidden="true">📍</span>
-            <div>
-              <div class="fcLabel">Lokasi</div>
-              <div class="fcText">Jember, Jawa Timur</div>
-            </div>
-          </div>
-
-          <div class="fcItem">
-            <span class="fcIcon" aria-hidden="true">💬</span>
-            <div>
-              <div class="fcLabel">WhatsApp</div>
-              <a class="fcText fcLink" href="#" target="_blank" rel="noopener">Klik untuk chat</a>
-            </div>
-          </div>
-
-          <div class="fcItem">
-            <span class="fcIcon" aria-hidden="true">⏰</span>
-            <div>
-              <div class="fcLabel">Jam Operasional</div>
-              <div class="fcText">Setiap hari • 08.00–21.00</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="footerSocial" aria-label="Sosial media">
-          <!-- Instagram -->
-          <a class="socialBtn" href="#" aria-label="Instagram" title="Instagram">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5.5A4.5 4.5 0 1 0 16.5 12 4.5 4.5 0 0 0 12 7.5zm0 7.4A2.9 2.9 0 1 1 14.9 12 2.9 2.9 0 0 1 12 14.9zM17.8 6.2a1 1 0 1 1-1-1 1 1 0 0 1 1 1z"/>
-            </svg>
-          </a>
-
-          <!-- TikTok -->
-          <a class="socialBtn" href="#" aria-label="TikTok" title="TikTok">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M16.5 2h-2.6v13.2a2.4 2.4 0 1 1-2-2.4V10a5 5 0 1 0 4.6 5V8.7a6.7 6.7 0 0 0 3.5 1.1V7.3a4.3 4.3 0 0 1-3.5-2.1z"/>
-            </svg>
-          </a>
-
-          <!-- Shopee -->
-          <a class="socialBtn" href="#" aria-label="Shopee" title="Shopee">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M5 7h14l-1 14H6L5 7zm7-5a4 4 0 0 0-4 4h2a2 2 0 0 1 4 0h2a4 4 0 0 0-4-4z"/>
-            </svg>
-          </a>
-        </div>
-
-      </div>
-
-    </div>
-
-    <div class="footer__bottom">
-      <div class="container footer__bottomInner">
-        <div class="footer__copy">
-          © <span id="year"></span> OlehOlehJember • All rights reserved
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- FLOATING TO TOP -->
-  <button class="toTopFloat" id="toTopFloat" type="button" aria-label="Kembali ke atas" title="Kembali ke atas">↑</button>
-
-  <!-- HELP MODAL -->
-  <div class="helpModal" id="helpModal" hidden aria-hidden="true">
-    <div class="helpModal__backdrop" data-close></div>
-
-    <div class="helpModal__dialog" role="dialog" aria-modal="true" aria-labelledby="helpTitle">
-      <div class="helpModal__head">
-        <div>
-          <div class="helpModal__kicker">Bantuan</div>
-          <h3 class="helpModal__title" id="helpTitle">FAQ</h3>
-        </div>
-        <button class="helpModal__close" type="button" aria-label="Tutup" data-close>✕</button>
-      </div>
-
-      <div class="helpModal__body" id="helpBody"></div>
-
-      <div class="helpModal__foot">
-        <button class="btn" type="button" data-close>Tutup</button>
+  <div class="footer__bottom">
+    <div class="container footer__bottomInner">
+      <div class="footer__copy">
+        © <span id="year"></span> OlehOlehJember • All rights reserved
       </div>
     </div>
   </div>
+</footer>
 
-  <script>
-    // YEAR
-    const y = document.getElementById('year');
-    if(y) y.textContent = new Date().getFullYear();
+<!-- FLOATING TO TOP -->
+<button class="toTopFloat" id="toTopFloat" type="button" aria-label="Kembali ke atas" title="Kembali ke atas">↑</button>
 
-    // Mobile menu
-    const btnMenu = document.getElementById('menuBtn');
-    const menu = document.getElementById('mobileMenu');
-    btnMenu?.addEventListener('click', () => {
-      const open = !menu.hasAttribute('hidden');
-      if(open){
-        menu.setAttribute('hidden','');
-        btnMenu.setAttribute('aria-expanded','false');
+<!-- HELP MODAL -->
+<div class="helpModal" id="helpModal" hidden aria-hidden="true">
+  <div class="helpModal__backdrop" data-close></div>
+
+  <div class="helpModal__dialog" role="dialog" aria-modal="true" aria-labelledby="helpTitle">
+    <div class="helpModal__head">
+      <div>
+        <div class="helpModal__kicker">Bantuan</div>
+        <h3 class="helpModal__title" id="helpTitle">FAQ</h3>
+      </div>
+      <button class="helpModal__close" type="button" aria-label="Tutup" data-close>✕</button>
+    </div>
+
+    <div class="helpModal__body" id="helpBody"></div>
+
+    <div class="helpModal__foot">
+      <button class="btn" type="button" data-close>Tutup</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // YEAR
+  const y = document.getElementById('year');
+  if(y) y.textContent = new Date().getFullYear();
+
+  // Mobile menu
+  const btnMenu = document.getElementById('menuBtn');
+  const menu = document.getElementById('mobileMenu');
+  btnMenu?.addEventListener('click', () => {
+    const open = !menu.hasAttribute('hidden');
+    if(open){
+      menu.setAttribute('hidden','');
+      btnMenu.setAttribute('aria-expanded','false');
+    } else {
+      menu.removeAttribute('hidden');
+      btnMenu.setAttribute('aria-expanded','true');
+    }
+  });
+
+  // Helpers
+  const rupiah = (n) => "Rp " + (n || 0).toLocaleString("id-ID");
+
+  // PRODUCTS DATA
+  const products = [
+    { id:"suwar", name:"Suwar-suwir Khas", cat:"makanan", catLabel:"Makanan Manis", badge:"Terlaris", price:28000, img:"https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1200&q=80", desc:"Manisan khas Jember yang lembut, manisnya pas, cocok untuk oleh-oleh keluarga." },
+    { id:"dodol", name:"Dodol Susu", cat:"makanan", catLabel:"Makanan Manis", badge:"Favorit", price:25000, img:"https://images.unsplash.com/photo-1599785209796-786432b228bc?auto=format&fit=crop&w=1200&q=80", desc:"Dodol lembut dengan rasa susu yang gurih, aman dibawa perjalanan." },
+    { id:"kopi", name:"Kopi Jember", cat:"minuman", catLabel:"Minuman", badge:"Wangi", price:55000, img:"https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=1200&q=80", desc:"Kopi pilihan dengan aroma khas. Cocok untuk hadiah maupun stok di rumah." },
+    { id:"teh", name:"Teh Rempah", cat:"minuman", catLabel:"Minuman", badge:"Hangat", price:32000, img:"https://images.unsplash.com/photo-1547814789-9fdbf1a1b1b9?auto=format&fit=crop&w=1200&q=80", desc:"Teh rempah wangi dengan rasa hangat. Pas untuk dinikmati sore hari." },
+    { id:"edamame", name:"Edamame Crispy", cat:"snack", catLabel:"Snack", badge:"Gurih", price:26000, img:"https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=1200&q=80", desc:"Edamame crispy renyah, gurih, cocok untuk camilan dan sharing." },
+    { id:"pisang", name:"Keripik Pisang", cat:"snack", catLabel:"Snack", badge:"Renyah", price:24000, img:"https://images.unsplash.com/photo-1615486363976-2f54fbe38f40?auto=format&fit=crop&w=1200&q=80", desc:"Keripik pisang renyah dan tidak eneg. Favorit wisatawan." },
+    { id:"hampers", name:"Hampers Kantor", cat:"hampers", catLabel:"Hampers", badge:"Rapi", price:99000, img:"https://images.unsplash.com/photo-1607344645866-009c320b63e0?auto=format&fit=crop&w=1200&q=80", desc:"Hampers siap kirim untuk kantor/keluarga. Kemasan rapi dan elegan." },
+    { id:"giftbox", name:"Gift Box Mix", cat:"hampers", catLabel:"Hampers", badge:"Hadiah", price:89000, img:"https://images.unsplash.com/photo-1549465220-1a8d1b1b5f6b?auto=format&fit=crop&w=1200&q=80", desc:"Gift box isi campuran snack & manisan. Cocok buat hadiah." },
+    { id:"paket", name:"Paket Campur Hemat", cat:"paket", catLabel:"Paket", badge:"Hemat", price:75000, img:"https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=1200&q=80", desc:"Paket campur praktis dengan harga hemat. Cocok untuk yang ingin banyak varian." }
+  ];
+
+  // ✅ LINK DETAIL PER PRODUK (sesuai list kamu)
+  const detailLinks = {
+    suwar: "detailproduksuwarsuwir.html",
+    dodol: "detailprodukdodol.html",
+    kopi: "detailprodukkopi.html",
+    teh: "detailproduktehrempah.html",
+    edamame: "detailprodukedamamikrispy.html",
+    pisang: "detailprodukkeripikpisang.html",
+    hampers: "detailprodukhamperskantor.html",
+    giftbox: "detailprodukgiftboxmix.html",
+    paket: "detailprodukpakethemat.html"
+  };
+
+  // DOM
+  const productGrid = document.getElementById("productGrid");
+  const emptyState = document.getElementById("emptyState");
+  const resetBtn = document.getElementById("resetBtn");
+  const searchInput = document.getElementById("searchInput");
+  const activeFilterHint = document.getElementById("activeFilterHint");
+
+  // ✅ tombol scroll yang disembunyikan dulu
+  const scrollToProdukBtn = document.getElementById("scrollToProdukBtn");
+
+  let activeCat = "all";
+  let keyword = "";
+
+  function renderProducts(){
+    const list = products.filter(p => {
+      const byCat = activeCat === "all" ? true : p.cat === activeCat;
+      const byKey = keyword
+        ? (p.name.toLowerCase().includes(keyword) || p.desc.toLowerCase().includes(keyword))
+        : true;
+      return byCat && byKey;
+    });
+
+    productGrid.innerHTML = list.map(p => `
+      <article class="pCard">
+        <div class="pMedia">
+          <img src="${p.img}" alt="${p.name}">
+        </div>
+        <div class="pBody">
+          <div class="pTitleRow">
+            <h3 class="pTitle">${p.name}</h3>
+            <div class="pCat">${p.catLabel}</div>
+          </div>
+          <p class="pDesc">${p.desc}</p>
+          <div class="kCard__meta">
+            <span class="tag">${p.badge}</span>
+            <span class="tag tagSoft">Siap kirim</span>
+          </div>
+        </div>
+        <div class="pBottom">
+          <div class="pPrice">${rupiah(p.price)}</div>
+          <div class="pBtns">
+            <a class="btn" href="${detailLinks[p.id] || '#'}">Detail</a>
+            <button class="btn btn--primary" type="button" data-order="${p.name}">Pesan</button>
+          </div>
+        </div>
+      </article>
+    `).join("");
+
+    const isEmpty = list.length === 0;
+    emptyState.hidden = !isEmpty;
+    productGrid.style.display = isEmpty ? "none" : "grid";
+  }
+
+  function setHint(){
+    const map = { all: "Semua", makanan:"Makanan Manis", minuman:"Minuman", snack:"Snack", hampers:"Hampers", paket:"Paket" };
+    activeFilterHint.innerHTML = `Filter aktif: <b>${map[activeCat] || "Semua"}</b>`;
+  }
+
+  // Fill select produk
+  const produkSelect = document.getElementById("produkSelect");
+  function fillProdukSelect(){
+    const opt = products.map(p => `<option value="${p.name}">${p.name} — ${rupiah(p.price)}</option>`).join("");
+    produkSelect.insertAdjacentHTML("beforeend", opt);
+  }
+
+  // ORDER MODAL
+  const orderModal = document.getElementById('orderModal');
+  const openOrder = document.getElementById('openOrder');
+  const openOrderMobile = document.getElementById('openOrderMobile');
+  const openOrderBottom = document.getElementById('openOrderBottom');
+
+  function showOrder(selectedProductName = ""){
+    orderModal.removeAttribute('hidden');
+    orderModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+
+    if(selectedProductName){
+      produkSelect.value = selectedProductName;
+    }
+    setTimeout(updateNota, 0);
+  }
+  function hideOrder(){
+    orderModal.setAttribute('hidden','');
+    orderModal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  openOrder?.addEventListener('click', () => showOrder());
+  openOrderBottom?.addEventListener('click', () => showOrder());
+  openOrderMobile?.addEventListener('click', () => {
+    menu?.setAttribute('hidden','');
+    btnMenu?.setAttribute('aria-expanded','false');
+    showOrder();
+  });
+
+  orderModal?.addEventListener('click', (e) => {
+    const t = e.target;
+    if (t && t.hasAttribute('data-close')) hideOrder();
+  });
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && orderModal && !orderModal.hasAttribute('hidden')) hideOrder();
+  });
+
+  // QR toggle
+  const qrisBCA = document.getElementById('qrisBCA');
+  const qrisMandiri = document.getElementById('qrisMandiri');
+  document.getElementById('orderForm')?.addEventListener('change', (e) => {
+    const el = e.target;
+    if (el && el.name === 'metode') {
+      if (el.value === 'QRIS BCA') {
+        qrisBCA.hidden = false;
+        qrisMandiri.hidden = true;
       } else {
-        menu.removeAttribute('hidden');
-        btnMenu.setAttribute('aria-expanded','true');
+        qrisBCA.hidden = true;
+        qrisMandiri.hidden = false;
       }
-    });
-
-    // Helpers
-    const rupiah = (n) => "Rp " + (n || 0).toLocaleString("id-ID");
-
-    // PRODUCTS DATA
-    const products = [
-      { id:"suwar", name:"Suwar-suwir Khas", cat:"makanan", catLabel:"Makanan Manis", badge:"Terlaris", price:28000, img:"https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1200&q=80", desc:"Manisan khas Jember yang lembut, manisnya pas, cocok untuk oleh-oleh keluarga." },
-      { id:"dodol", name:"Dodol Susu", cat:"makanan", catLabel:"Makanan Manis", badge:"Favorit", price:25000, img:"https://images.unsplash.com/photo-1599785209796-786432b228bc?auto=format&fit=crop&w=1200&q=80", desc:"Dodol lembut dengan rasa susu yang gurih, aman dibawa perjalanan." },
-      { id:"kopi", name:"Kopi Jember", cat:"minuman", catLabel:"Minuman", badge:"Wangi", price:55000, img:"https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=1200&q=80", desc:"Kopi pilihan dengan aroma khas. Cocok untuk hadiah maupun stok di rumah." },
-      { id:"teh", name:"Teh Rempah", cat:"minuman", catLabel:"Minuman", badge:"Hangat", price:32000, img:"https://images.unsplash.com/photo-1547814789-9fdbf1a1b1b9?auto=format&fit=crop&w=1200&q=80", desc:"Teh rempah wangi dengan rasa hangat. Pas untuk dinikmati sore hari." },
-      { id:"edamame", name:"Edamame Crispy", cat:"snack", catLabel:"Snack", badge:"Gurih", price:26000, img:"https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=1200&q=80", desc:"Edamame crispy renyah, gurih, cocok untuk camilan dan sharing." },
-      { id:"pisang", name:"Keripik Pisang", cat:"snack", catLabel:"Snack", badge:"Renyah", price:24000, img:"https://images.unsplash.com/photo-1615486363976-2f54fbe38f40?auto=format&fit=crop&w=1200&q=80", desc:"Keripik pisang renyah dan tidak eneg. Favorit wisatawan." },
-      { id:"hampers", name:"Hampers Kantor", cat:"hampers", catLabel:"Hampers", badge:"Rapi", price:99000, img:"https://images.unsplash.com/photo-1607344645866-009c320b63e0?auto=format&fit=crop&w=1200&q=80", desc:"Hampers siap kirim untuk kantor/keluarga. Kemasan rapi dan elegan." },
-      { id:"giftbox", name:"Gift Box Mix", cat:"hampers", catLabel:"Hampers", badge:"Hadiah", price:89000, img:"https://images.unsplash.com/photo-1549465220-1a8d1b1b5f6b?auto=format&fit=crop&w=1200&q=80", desc:"Gift box isi campuran snack & manisan. Cocok buat hadiah." },
-      { id:"paket", name:"Paket Campur Hemat", cat:"paket", catLabel:"Paket", badge:"Hemat", price:75000, img:"https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=1200&q=80", desc:"Paket campur praktis dengan harga hemat. Cocok untuk yang ingin banyak varian." }
-    ];
-
-    // ✅ LINK DETAIL PER PRODUK (sesuai list kamu)
-    const detailLinks = {
-      suwar: "detailproduksuwarsuwir.html",
-      dodol: "detailprodukdodol.html",
-      kopi: "detailprodukkopi.html",
-      teh: "detailproduktehrempah.html",
-      edamame: "detailprodukedamamikrispy.html",
-      pisang: "detailprodukkeripikpisang.html",
-      hampers: "detailprodukhamperskantor.html",
-      giftbox: "detailprodukgiftboxmix.html",
-      paket: "detailprodukpakethemat.html"
-    };
-
-    // DOM
-    const productGrid = document.getElementById("productGrid");
-    const emptyState = document.getElementById("emptyState");
-    const resetBtn = document.getElementById("resetBtn");
-    const searchInput = document.getElementById("searchInput");
-    const activeFilterHint = document.getElementById("activeFilterHint");
-
-    let activeCat = "all";
-    let keyword = "";
-
-    function renderProducts(){
-      const list = products.filter(p => {
-        const byCat = activeCat === "all" ? true : p.cat === activeCat;
-        const byKey = keyword
-          ? (p.name.toLowerCase().includes(keyword) || p.desc.toLowerCase().includes(keyword))
-          : true;
-        return byCat && byKey;
-      });
-
-      productGrid.innerHTML = list.map(p => `
-        <article class="pCard">
-          <div class="pMedia">
-            <img src="${p.img}" alt="${p.name}">
-          </div>
-          <div class="pBody">
-            <div class="pTitleRow">
-              <h3 class="pTitle">${p.name}</h3>
-              <div class="pCat">${p.catLabel}</div>
-            </div>
-            <p class="pDesc">${p.desc}</p>
-            <div class="kCard__meta">
-              <span class="tag">${p.badge}</span>
-              <span class="tag tagSoft">Siap kirim</span>
-            </div>
-          </div>
-          <div class="pBottom">
-            <div class="pPrice">${rupiah(p.price)}</div>
-            <div class="pBtns">
-              <!-- ✅ DETAIL PINDAH KE HALAMAN SESUAI MAP -->
-              <a class="btn" href="${detailLinks[p.id] || '#'}">Detail</a>
-              <button class="btn btn--primary" type="button" data-order="${p.name}">Pesan</button>
-            </div>
-          </div>
-        </article>
-      `).join("");
-
-      const isEmpty = list.length === 0;
-      emptyState.hidden = !isEmpty;
-      productGrid.style.display = isEmpty ? "none" : "grid";
     }
+  });
 
-    function setHint(){
-      const map = { all: "Semua", makanan:"Makanan Manis", minuman:"Minuman", snack:"Snack", hampers:"Hampers", paket:"Paket" };
-      activeFilterHint.innerHTML = `Filter aktif: <b>${map[activeCat] || "Semua"}</b>`;
-    }
+  // Nota
+  const priceMap = Object.fromEntries(products.map(p => [p.name, p.price]));
+  function updateNota(){
+    const form = document.getElementById("orderForm");
+    if(!form) return;
 
-    // Jump filter
-    document.querySelectorAll('[data-jump-filter]').forEach(a => {
-      a.addEventListener('click', () => {
-        activeCat = a.getAttribute('data-jump-filter') || "all";
-        keyword = "";
-        searchInput.value = "";
-        setHint();
-        renderProducts();
-      });
-    });
+    const produk = form.produk.value;
+    const qty = parseInt(form.qty.value || "1", 10);
 
-    // Search
-    searchInput?.addEventListener("input", (e) => {
-      keyword = (e.target.value || "").trim().toLowerCase();
-      renderProducts();
-    });
+    const harga = priceMap[produk] || 0;
+    const total = harga * (isNaN(qty) ? 1 : qty);
 
-    // Reset
-    resetBtn?.addEventListener("click", () => {
-      activeCat = "all";
-      keyword = "";
-      searchInput.value = "";
-      setHint();
-      renderProducts();
-    });
+    document.getElementById("notaProduk").textContent = produk || "—";
+    document.getElementById("notaQty").textContent = isNaN(qty) ? "1" : String(qty);
+    document.getElementById("notaHarga").textContent = rupiah(harga);
+    document.getElementById("notaTotal").textContent = rupiah(total);
+  }
+  document.getElementById("orderForm")?.addEventListener("input", (e) => {
+    if(["produk","qty"].includes(e.target.name)) updateNota();
+  });
+  document.getElementById("orderForm")?.addEventListener("change", (e) => {
+    if(["produk","qty"].includes(e.target.name)) updateNota();
+  });
 
-    // Fill select produk
-    const produkSelect = document.getElementById("produkSelect");
-    function fillProdukSelect(){
-      const opt = products.map(p => `<option value="${p.name}">${p.name} — ${rupiah(p.price)}</option>`).join("");
-      produkSelect.insertAdjacentHTML("beforeend", opt);
-    }
+  // submit -> WhatsApp (ganti nomor toko)
+  document.getElementById('orderForm')?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const form = e.target;
 
-    // ORDER MODAL
-    const orderModal = document.getElementById('orderModal');
-    const openOrder = document.getElementById('openOrder');
-    const openOrderMobile = document.getElementById('openOrderMobile');
-    const openOrderBottom = document.getElementById('openOrderBottom');
+    const nama = form.nama.value.trim();
+    const wa = form.wa.value.trim();
+    const alamat = form.alamat.value.trim();
+    const produk = form.produk.value;
+    const qty = form.qty.value;
+    const catatan = form.catatan.value.trim();
+    const metode = form.metode.value;
 
-    function showOrder(selectedProductName = ""){
-      orderModal.removeAttribute('hidden');
-      orderModal.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
+    const harga = priceMap[produk] || 0;
+    const total = harga * parseInt(qty || "1", 10);
 
-      if(selectedProductName){
-        produkSelect.value = selectedProductName;
-      }
-      setTimeout(updateNota, 0);
-    }
-    function hideOrder(){
-      orderModal.setAttribute('hidden','');
-      orderModal.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-    }
-
-    openOrder?.addEventListener('click', () => showOrder());
-    openOrderBottom?.addEventListener('click', () => showOrder());
-    openOrderMobile?.addEventListener('click', () => {
-      menu?.setAttribute('hidden','');
-      btnMenu?.setAttribute('aria-expanded','false');
-      showOrder();
-    });
-
-    orderModal?.addEventListener('click', (e) => {
-      const t = e.target;
-      if (t && t.hasAttribute('data-close')) hideOrder();
-    });
-
-    window.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && orderModal && !orderModal.hasAttribute('hidden')) hideOrder();
-    });
-
-    // QR toggle
-    const qrisBCA = document.getElementById('qrisBCA');
-    const qrisMandiri = document.getElementById('qrisMandiri');
-    document.getElementById('orderForm')?.addEventListener('change', (e) => {
-      const el = e.target;
-      if (el && el.name === 'metode') {
-        if (el.value === 'QRIS BCA') {
-          qrisBCA.hidden = false;
-          qrisMandiri.hidden = true;
-        } else {
-          qrisBCA.hidden = true;
-          qrisMandiri.hidden = false;
-        }
-      }
-    });
-
-    // Nota
-    const priceMap = Object.fromEntries(products.map(p => [p.name, p.price]));
-    function updateNota(){
-      const form = document.getElementById("orderForm");
-      if(!form) return;
-
-      const produk = form.produk.value;
-      const qty = parseInt(form.qty.value || "1", 10);
-
-      const harga = priceMap[produk] || 0;
-      const total = harga * (isNaN(qty) ? 1 : qty);
-
-      document.getElementById("notaProduk").textContent = produk || "—";
-      document.getElementById("notaQty").textContent = isNaN(qty) ? "1" : String(qty);
-      document.getElementById("notaHarga").textContent = rupiah(harga);
-      document.getElementById("notaTotal").textContent = rupiah(total);
-    }
-    document.getElementById("orderForm")?.addEventListener("input", (e) => {
-      if(["produk","qty"].includes(e.target.name)) updateNota();
-    });
-    document.getElementById("orderForm")?.addEventListener("change", (e) => {
-      if(["produk","qty"].includes(e.target.name)) updateNota();
-    });
-
-    // submit -> WhatsApp (ganti nomor toko)
-    document.getElementById('orderForm')?.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const form = e.target;
-
-      const nama = form.nama.value.trim();
-      const wa = form.wa.value.trim();
-      const alamat = form.alamat.value.trim();
-      const produk = form.produk.value;
-      const qty = form.qty.value;
-      const catatan = form.catatan.value.trim();
-      const metode = form.metode.value;
-
-      const harga = priceMap[produk] || 0;
-      const total = harga * parseInt(qty || "1", 10);
-
-      const pesan =
+    const pesan =
 `Halo, saya mau pesan:
 - Nama: ${nama}
 - WA: ${wa}
@@ -1439,113 +1407,147 @@
 
 Saya akan bayar via QRIS.`;
 
-      const nomorToko = "6281234567890";
-      const url = `https://wa.me/${nomorToko}?text=${encodeURIComponent(pesan)}`;
-      window.open(url, "_blank", "noopener");
+    const nomorToko = "6281234567890";
+    const url = `https://wa.me/${nomorToko}?text=${encodeURIComponent(pesan)}`;
+    window.open(url, "_blank", "noopener");
 
-      hideOrder();
-      form.reset();
-      qrisBCA.hidden = false;
-      qrisMandiri.hidden = true;
-      updateNota();
+    hideOrder();
+    form.reset();
+    qrisBCA.hidden = false;
+    qrisMandiri.hidden = true;
+    updateNota();
+  });
+
+  // ✅ Jump filter (sekaligus munculkan tombol scroll-to-produk saat klik "Lihat Produk")
+  document.querySelectorAll('[data-jump-filter]').forEach(a => {
+    a.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      activeCat = a.getAttribute('data-jump-filter') || "all";
+      keyword = "";
+      searchInput.value = "";
+      setHint();
+      renderProducts();
+
+      // munculkan tombol scroll
+      if(scrollToProdukBtn) scrollToProdukBtn.hidden = false;
+
+      // scroll ke produk
+      document.getElementById("produk")?.scrollIntoView({ behavior: "smooth" });
     });
+  });
 
-    // Click handlers for dynamic buttons (hanya order)
-    document.addEventListener("click", (e) => {
-      const btn = e.target.closest("[data-order]");
-      if(!btn) return;
+  // Search
+  searchInput?.addEventListener("input", (e) => {
+    keyword = (e.target.value || "").trim().toLowerCase();
+    renderProducts();
+  });
 
-      if(btn.hasAttribute("data-order")){
-        const productName = btn.getAttribute("data-order");
-        showOrder(productName);
-      }
-    });
-
-    // TO TOP FLOAT
-    const toTopFloat = document.getElementById('toTopFloat');
-    function toggleToTop(){
-      if(!toTopFloat) return;
-      toTopFloat.style.display = window.scrollY > 500 ? 'grid' : 'none';
-    }
-    window.addEventListener('scroll', toggleToTop, { passive:true });
-    toggleToTop();
-    toTopFloat?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
-    // HELP MODAL
-    const helpModal = document.getElementById('helpModal');
-    const helpTitle = document.getElementById('helpTitle');
-    const helpBody = document.getElementById('helpBody');
-
-    const helpContent = {
-      cara: {
-        title: 'Cara Pesan',
-        html: `
-          <div class="helpList">
-            <div class="helpItem"><b>1) Klik tombol “Pesan”</b><p>Isi nama, WhatsApp, alamat, produk, dan jumlah.</p></div>
-            <div class="helpItem"><b>2) Cek nota sementara</b><p>Total muncul otomatis (ongkir dikonfirmasi admin).</p></div>
-            <div class="helpItem"><b>3) Bayar via QRIS</b><p>Scan QR, simpan bukti bayar, lalu klik “Kirim Pesanan”.</p></div>
-          </div>`
-      },
-      pengiriman: {
-        title: 'Pengiriman',
-        html: `
-          <div class="helpList">
-            <div class="helpItem"><b>Estimasi proses</b><p>Biasanya 24–48 jam setelah konfirmasi.</p></div>
-            <div class="helpItem"><b>Packaging</b><p>Bubble wrap + kardus, QC sebelum kirim.</p></div>
-            <div class="helpItem"><b>Resi</b><p>Resi dikirim setelah paket diserahkan ke ekspedisi.</p></div>
-          </div>`
-      },
-      pembayaran: {
-        title: 'Pembayaran',
-        html: `
-          <div class="helpList">
-            <div class="helpItem"><b>Metode</b><p>QRIS (BCA / Mandiri). Bisa pakai aplikasi bank / e-wallet.</p></div>
-            <div class="helpItem"><b>Bukti bayar</b><p>Upload bukti (opsional) atau kirim via WhatsApp setelah submit.</p></div>
-          </div>`
-      },
-      faq: {
-        title: 'FAQ',
-        html: `
-          <div class="helpList">
-            <div class="helpItem"><b>Apakah bisa pesan banyak untuk kantor?</b><p>Bisa. Tulis jumlah & catatan, admin bantu rekap.</p></div>
-            <div class="helpItem"><b>Apakah bisa request kartu ucapan?</b><p>Bisa. Isi di kolom catatan.</p></div>
-            <div class="helpItem"><b>Ongkir gimana?</b><p>Ongkir dikonfirmasi admin sesuai alamat & berat paket.</p></div>
-          </div>`
-      }
-    };
-
-    function openHelp(key){
-      const data = helpContent[key];
-      if(!data || !helpModal) return;
-      helpTitle.textContent = data.title;
-      helpBody.innerHTML = data.html;
-
-      helpModal.removeAttribute('hidden');
-      helpModal.setAttribute('aria-hidden','false');
-      document.body.style.overflow = 'hidden';
-    }
-    function closeHelp(){
-      if(!helpModal) return;
-      helpModal.setAttribute('hidden','');
-      helpModal.setAttribute('aria-hidden','true');
-      document.body.style.overflow = '';
-    }
-    document.querySelectorAll('[data-help]').forEach(btn => {
-      btn.addEventListener('click', () => openHelp(btn.getAttribute('data-help')));
-    });
-    helpModal?.addEventListener('click', (e) => {
-      const t = e.target;
-      if(t && t.hasAttribute('data-close')) closeHelp();
-    });
-    window.addEventListener('keydown', (e) => {
-      if(e.key === 'Escape' && helpModal && !helpModal.hasAttribute('hidden')) closeHelp();
-    });
-
-    // INIT
-    fillProdukSelect();
+  // Reset
+  resetBtn?.addEventListener("click", () => {
+    activeCat = "all";
+    keyword = "";
+    searchInput.value = "";
     setHint();
     renderProducts();
-    updateNota();
-  </script>
+  });
+
+  // Click handlers for dynamic buttons (hanya order)
+  document.addEventListener("click", (e) => {
+    const btn = e.target.closest("[data-order]");
+    if(!btn) return;
+
+    if(btn.hasAttribute("data-order")){
+      const productName = btn.getAttribute("data-order");
+      showOrder(productName);
+    }
+  });
+
+  // TO TOP FLOAT
+  const toTopFloat = document.getElementById('toTopFloat');
+  function toggleToTop(){
+    if(!toTopFloat) return;
+    toTopFloat.style.display = window.scrollY > 500 ? 'grid' : 'none';
+  }
+  window.addEventListener('scroll', toggleToTop, { passive:true });
+  toggleToTop();
+  toTopFloat?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  // HELP MODAL
+  const helpModal = document.getElementById('helpModal');
+  const helpTitle = document.getElementById('helpTitle');
+  const helpBody = document.getElementById('helpBody');
+
+  const helpContent = {
+    cara: {
+      title: 'Cara Pesan',
+      html: `
+        <div class="helpList">
+          <div class="helpItem"><b>1) Klik tombol “Pesan”</b><p>Isi nama, WhatsApp, alamat, produk, dan jumlah.</p></div>
+          <div class="helpItem"><b>2) Cek nota sementara</b><p>Total muncul otomatis (ongkir dikonfirmasi admin).</p></div>
+          <div class="helpItem"><b>3) Bayar via QRIS</b><p>Scan QR, simpan bukti bayar, lalu klik “Kirim Pesanan”.</p></div>
+        </div>`
+    },
+    pengiriman: {
+      title: 'Pengiriman',
+      html: `
+        <div class="helpList">
+          <div class="helpItem"><b>Estimasi proses</b><p>Biasanya 24–48 jam setelah konfirmasi.</p></div>
+          <div class="helpItem"><b>Packaging</b><p>Bubble wrap + kardus, QC sebelum kirim.</p></div>
+          <div class="helpItem"><b>Resi</b><p>Resi dikirim setelah paket diserahkan ke ekspedisi.</p></div>
+        </div>`
+    },
+    pembayaran: {
+      title: 'Pembayaran',
+      html: `
+        <div class="helpList">
+          <div class="helpItem"><b>Metode</b><p>QRIS (BCA / Mandiri). Bisa pakai aplikasi bank / e-wallet.</p></div>
+          <div class="helpItem"><b>Bukti bayar</b><p>Upload bukti (opsional) atau kirim via WhatsApp setelah submit.</p></div>
+        </div>`
+    },
+    faq: {
+      title: 'FAQ',
+      html: `
+        <div class="helpList">
+          <div class="helpItem"><b>Apakah bisa pesan banyak untuk kantor?</b><p>Bisa. Tulis jumlah & catatan, admin bantu rekap.</p></div>
+          <div class="helpItem"><b>Apakah bisa request kartu ucapan?</b><p>Bisa. Isi di kolom catatan.</p></div>
+          <div class="helpItem"><b>Ongkir gimana?</b><p>Ongkir dikonfirmasi admin sesuai alamat & berat paket.</p></div>
+        </div>`
+    }
+  };
+
+  function openHelp(key){
+    const data = helpContent[key];
+    if(!data || !helpModal) return;
+    helpTitle.textContent = data.title;
+    helpBody.innerHTML = data.html;
+
+    helpModal.removeAttribute('hidden');
+    helpModal.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeHelp(){
+    if(!helpModal) return;
+    helpModal.setAttribute('hidden','');
+    helpModal.setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+  }
+  document.querySelectorAll('[data-help]').forEach(btn => {
+    btn.addEventListener('click', () => openHelp(btn.getAttribute('data-help')));
+  });
+  helpModal?.addEventListener('click', (e) => {
+    const t = e.target;
+    if(t && t.hasAttribute('data-close')) closeHelp();
+  });
+  window.addEventListener('keydown', (e) => {
+    if(e.key === 'Escape' && helpModal && !helpModal.hasAttribute('hidden')) closeHelp();
+  });
+
+  // INIT
+  fillProdukSelect();
+  setHint();
+  renderProducts();
+  updateNota();
+</script>
 </body>
 </html>
