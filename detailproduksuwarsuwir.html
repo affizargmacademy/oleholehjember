@@ -819,90 +819,474 @@ Saya akan bayar via QRIS.`;
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container footer__grid">
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container footer__grid">
 
-      <div class="footer__brand">
-        <div class="footerLogo">
-          <img class="logo__img" src="assets/img/logo.png" alt="OlehOlehJember">
-        </div>
-        <p class="footerMuted">
-          Oleh-oleh khas Jember dengan pengemasan rapi, cocok untuk keluarga, teman, dan kebutuhan kantor.
-        </p>
-
-        <div class="footerBadges" aria-label="Keunggulan singkat">
-          <span class="fBadge">📦 Packing Aman</span>
-          <span class="fBadge">✅ QC</span>
-          <span class="fBadge">🧾 Resi</span>
-        </div>
+    <div class="footer__brand">
+      <div class="footerLogo">
+        <img class="logo__img" src="assets/img/logo.png" alt="OlehOlehJember">
       </div>
+      <p class="footerMuted">
+        Oleh-oleh khas Jember dengan pengemasan rapi, cocok untuk keluarga, teman, dan kebutuhan kantor.
+      </p>
 
-      <div class="footer__col">
-        <div class="footer__title">Menu</div>
-        <a class="footer__link" href="index.html#lokasi">Jember</a>
-        <a class="footer__link" href="kategori.html">Kategori</a>
-        <a class="footer__link" href="testimoni.html">Testimoni</a>
-        <a class="footer__link" href="#detail">Detail Produk</a>
+      <div class="footerBadges" aria-label="Keunggulan singkat">
+        <span class="fBadge">📦 Packing Aman</span>
+        <span class="fBadge">✅ QC</span>
+        <span class="fBadge">🧾 Resi</span>
       </div>
+    </div>
 
-      <div class="footer__col">
-        <div class="footer__title">Bantuan</div>
-        <a class="footer__link" href="index.html#cta">Cara Pesan</a>
-        <a class="footer__link" href="#">Pengiriman</a>
-        <a class="footer__link" href="#">Pembayaran</a>
-        <a class="footer__link" href="#">FAQ</a>
-      </div>
+    <div class="footer__col">
+      <div class="footer__title">Menu</div>
+      <a class="footer__link" href="#lokasi">Jember</a>
+      <a class="footer__link" href="#kategori">Kategori</a>
+      <a class="footer__link" href="#produk">Produk</a>
+      <a class="footer__link" href="#testimoni">Testimoni</a>
+    </div>
 
-      <div class="footer__col">
-        <div class="footer__title">Kontak</div>
+    <div class="footer__col">
+      <div class="footer__title">Bantuan</div>
+      <button class="footer__linkBtn" type="button" data-help="cara">Cara Pesan</button>
+      <button class="footer__linkBtn" type="button" data-help="pengiriman">Pengiriman</button>
+      <button class="footer__linkBtn" type="button" data-help="pembayaran">Pembayaran</button>
+      <button class="footer__linkBtn" type="button" data-help="faq">FAQ</button>
+    </div>
 
-        <div class="footerContact">
-          <div class="fcItem">
-            <span class="fcIcon" aria-hidden="true">📍</span>
-            <div>
-              <div class="fcLabel">Lokasi</div>
-              <div class="fcText">Jember, Jawa Timur</div>
-            </div>
-          </div>
+    <div class="footer__col">
+      <div class="footer__title">Kontak</div>
 
-          <div class="fcItem">
-            <span class="fcIcon" aria-hidden="true">💬</span>
-            <div>
-              <div class="fcLabel">WhatsApp</div>
-              <a class="fcText fcLink" href="#" target="_blank" rel="noopener">Klik untuk chat</a>
-            </div>
-          </div>
-
-          <div class="fcItem">
-            <span class="fcIcon" aria-hidden="true">⏰</span>
-            <div>
-              <div class="fcLabel">Jam Operasional</div>
-              <div class="fcText">Setiap hari • 08.00–21.00</div>
-            </div>
+      <div class="footerContact">
+        <div class="fcItem">
+          <span class="fcIcon" aria-hidden="true">📍</span>
+          <div>
+            <div class="fcLabel">Lokasi</div>
+            <div class="fcText">Jember, Jawa Timur</div>
           </div>
         </div>
 
-        <div class="footerSocial" aria-label="Sosial media">
-          <a class="socialBtn" href="#" aria-label="Instagram">IG</a>
-          <a class="socialBtn" href="#" aria-label="TikTok">TT</a>
-          <a class="socialBtn" href="#" aria-label="Shopee">SP</a>
+        <div class="fcItem">
+          <span class="fcIcon" aria-hidden="true">💬</span>
+          <div>
+            <div class="fcLabel">WhatsApp</div>
+            <!-- GANTI nomor di bawah -->
+            <a class="fcText fcLink" href="https://wa.me/6281234567890" target="_blank" rel="noopener">Klik untuk chat</a>
+          </div>
         </div>
+
+        <div class="fcItem">
+          <span class="fcIcon" aria-hidden="true">⏰</span>
+          <div>
+            <div class="fcLabel">Jam Operasional</div>
+            <div class="fcText">Setiap hari • 08.00–21.00</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footerSocial" aria-label="Sosial media">
+        <a class="socialBtn" href="#" aria-label="Instagram" title="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5.5A4.5 4.5 0 1 0 16.5 12 4.5 4.5 0 0 0 12 7.5zm0 7.4A2.9 2.9 0 1 1 14.9 12 2.9 2.9 0 0 1 12 14.9zM17.8 6.2a1 1 0 1 1-1-1 1 1 0 0 1 1 1z"/>
+          </svg>
+        </a>
+
+        <a class="socialBtn" href="#" aria-label="TikTok" title="TikTok">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M16.5 2h-2.6v13.2a2.4 2.4 0 1 1-2-2.4V10a5 5 0 1 0 4.6 5V8.7a6.7 6.7 0 0 0 3.5 1.1V7.3a4.3 4.3 0 0 1-3.5-2.1z"/>
+          </svg>
+        </a>
+
+        <a class="socialBtn" href="#" aria-label="Shopee" title="Shopee">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M5 7h14l-1 14H6L5 7zm7-5a4 4 0 0 0-4 4h2a2 2 0 0 1 4 0h2a4 4 0 0 0-4-4z"/>
+          </svg>
+        </a>
       </div>
 
     </div>
 
-    <div class="footer__bottom">
-      <div class="container footer__bottomInner">
-        <div class="footer__copy">
-          © <span id="year"></span> OlehOlehJember • All rights reserved
-        </div>
-        <a class="toTop" href="#home">↑ Kembali ke atas</a>
+  </div>
+
+  <div class="footer__bottom">
+    <div class="container footer__bottomInner">
+      <div class="footer__copy">
+        © <span id="year"></span> OlehOlehJember • All rights reserved
       </div>
     </div>
-  </footer>
+  </div>
+</footer>
 
-  <!-- MAIN JS -->
-  <script src="assets/main.js"></script>
+<!-- FLOATING TO TOP -->
+<button class="toTopFloat" id="toTopFloat" type="button" aria-label="Kembali ke atas" title="Kembali ke atas">
+  ↑
+</button>
+
+<!-- MODAL BANTUAN -->
+<div class="helpModal" id="helpModal" hidden aria-hidden="true">
+  <div class="helpModal__backdrop" data-close></div>
+
+  <div class="helpModal__dialog" role="dialog" aria-modal="true" aria-labelledby="helpTitle">
+    <div class="helpModal__head">
+      <div>
+        <div class="helpModal__kicker">Bantuan</div>
+        <h3 class="helpModal__title" id="helpTitle">FAQ</h3>
+      </div>
+      <button class="helpModal__close" type="button" aria-label="Tutup" data-close>✕</button>
+    </div>
+
+    <div class="helpModal__body" id="helpBody"></div>
+
+    <div class="helpModal__foot">
+      <button class="btn" type="button" data-close>Tutup</button>
+    </div>
+  </div>
+</div>
+
+<style>
+  .footer{
+    border-top: 1px solid var(--border);
+    background: #fff;
+    padding: 34px 0 0;
+  }
+
+  .footer__grid{
+    display:grid;
+    grid-template-columns: 1.3fr .9fr .9fr 1.2fr;
+    gap: 22px;
+    padding-bottom: 22px;
+  }
+
+  .footerLogo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-weight: 900;
+    letter-spacing:-.2px;
+  }
+
+  .footerMuted{
+    margin: 10px 0 14px;
+    color: var(--muted);
+    font-weight: 650;
+    line-height: 1.8;
+    max-width: 52ch;
+  }
+
+  .footerBadges{
+    display:flex;
+    gap: 10px;
+    flex-wrap:wrap;
+  }
+
+  .fBadge{
+    padding: 8px 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,63,154,.18);
+    background: var(--pinkSoft);
+    font-weight: 800;
+    font-size: 12.5px;
+  }
+
+  .footer__title{
+    font-weight: 900;
+    margin-bottom: 10px;
+    letter-spacing:-.2px;
+  }
+
+  .footer__link{
+    display:block;
+    padding: 8px 0;
+    color: var(--muted);
+    font-weight: 750;
+  }
+  .footer__link:hover{ color: var(--ink); }
+
+  .footer__linkBtn{
+    display:block;
+    width: 100%;
+    text-align:left;
+    padding: 8px 0;
+    border: 0;
+    background: transparent;
+    color: var(--muted);
+    font-weight: 750;
+    cursor:pointer;
+    font-family: inherit;
+    font-size: 14px;
+  }
+  .footer__linkBtn:hover{ color: var(--ink); }
+
+  .footerContact{ display:grid; gap: 10px; margin-bottom: 14px; }
+  .fcItem{ display:flex; gap: 10px; align-items:flex-start; }
+  .fcIcon{
+    width: 34px; height: 34px;
+    border-radius: 12px;
+    display:grid; place-items:center;
+    background: var(--pinkSoft);
+    border: 1px solid rgba(255,63,154,.18);
+    flex: 0 0 auto;
+  }
+  .fcLabel{
+    font-weight: 900;
+    font-size: 12px;
+    color: rgba(30,26,31,.62);
+    margin-bottom: 2px;
+  }
+  .fcText{
+    color: var(--muted);
+    font-weight: 650;
+    line-height: 1.6;
+    font-size: 13.5px;
+  }
+  .fcLink{ color: var(--pink); font-weight: 900; }
+  .fcLink:hover{ text-decoration: underline; }
+
+  .footerSocial{ display:flex; gap: 10px; flex-wrap:wrap; }
+  .socialBtn{
+    width: 42px; height: 42px;
+    border-radius: 14px;
+    display:grid; place-items:center;
+    border: 1px solid rgba(255,63,154,.18);
+    background: #fff;
+    color: var(--ink);
+    font-weight: 900;
+    box-shadow: var(--shadow2);
+  }
+  .socialBtn:hover{
+    background: var(--pinkSoft);
+    border-color: rgba(255,63,154,.26);
+  }
+
+  .footer__bottom{
+    border-top: 1px solid var(--border);
+    background: #fff;
+    padding: 14px 0;
+  }
+  .footer__bottomInner{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap: 12px;
+    flex-wrap:wrap;
+  }
+  .footer__copy{
+    color: var(--muted);
+    font-weight: 700;
+    font-size: 13px;
+  }
+
+  @media (max-width: 980px){
+    .footer__grid{ grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 520px){
+    .footer__grid{ grid-template-columns: 1fr; }
+  }
+
+  .toTopFloat{
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    width: 52px;
+    height: 52px;
+    border-radius: 16px;
+    border: 1px solid rgba(255,63,154,.18);
+    background: #fff;
+    color: var(--ink);
+    font-weight: 900;
+    box-shadow: var(--shadow);
+    cursor:pointer;
+    display:none;
+    z-index: 999;
+  }
+  .toTopFloat:hover{ background: var(--pinkSoft); }
+
+  .helpModal[hidden]{ display:none; }
+  .helpModal{ position:fixed; inset:0; z-index: 9999; }
+  .helpModal__backdrop{ position:absolute; inset:0; background: rgba(0,0,0,.45); }
+
+  .helpModal__dialog{
+    position: relative;
+    width: min(760px, 92vw);
+    margin: 10vh auto;
+    border-radius: 22px;
+    border: 1px solid rgba(255,63,154,.18);
+    background:#fff;
+    box-shadow: var(--shadow);
+    overflow:hidden;
+    max-height: 80vh;
+    display:flex;
+    flex-direction:column;
+  }
+
+  .helpModal__head{
+    padding: 16px 18px;
+    display:flex;
+    align-items:flex-start;
+    justify-content:space-between;
+    gap: 12px;
+    border-bottom: 1px solid var(--border);
+    background: linear-gradient(135deg, var(--pinkSoft), #fff);
+  }
+
+  .helpModal__kicker{ color: var(--muted); font-weight: 800; font-size: 12px; }
+  .helpModal__title{ margin: 4px 0 0; letter-spacing:-.3px; }
+
+  .helpModal__close{
+    width: 42px; height: 42px;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    background:#fff;
+    box-shadow: var(--shadow2);
+    font-size: 16px;
+    cursor:pointer;
+  }
+
+  .helpModal__body{
+    padding: 16px 18px;
+    overflow:auto;
+  }
+
+  .helpModal__foot{
+    padding: 14px 18px 18px;
+    border-top: 1px solid var(--border);
+    display:flex;
+    justify-content:flex-end;
+    gap: 10px;
+  }
+
+  .helpList{ display:grid; gap: 10px; }
+  .helpItem{
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 12px 12px;
+    background:#fff;
+  }
+  .helpItem b{ display:block; margin-bottom: 6px; }
+  .helpItem p{ margin:0; color: var(--muted); font-weight: 650; line-height:1.75; }
+</style>
+
+<script>
+  // YEAR
+  const y = document.getElementById('year');
+  if(y) y.textContent = new Date().getFullYear();
+
+  // TO TOP FLOAT
+  const toTopFloat = document.getElementById('toTopFloat');
+  function toggleToTop(){
+    if(!toTopFloat) return;
+    toTopFloat.style.display = window.scrollY > 500 ? 'grid' : 'none';
+  }
+  window.addEventListener('scroll', toggleToTop, { passive:true });
+  toggleToTop();
+  toTopFloat?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  // HELP MODAL CONTENT
+  const helpModal = document.getElementById('helpModal');
+  const helpTitle = document.getElementById('helpTitle');
+  const helpBody = document.getElementById('helpBody');
+
+  const helpContent = {
+    cara: {
+      title: 'Cara Pesan',
+      html: `
+        <div class="helpList">
+          <div class="helpItem">
+            <b>1) Klik tombol “Pesan”</b>
+            <p>Isi nama, WhatsApp, alamat, produk, dan jumlah.</p>
+          </div>
+          <div class="helpItem">
+            <b>2) Cek nota sementara</b>
+            <p>Total akan muncul otomatis (ongkir dikonfirmasi admin).</p>
+          </div>
+          <div class="helpItem">
+            <b>3) Bayar via QRIS</b>
+            <p>Scan QR, simpan bukti bayar, lalu klik “Kirim Pesanan”.</p>
+          </div>
+        </div>`
+    },
+    pengiriman: {
+      title: 'Pengiriman',
+      html: `
+        <div class="helpList">
+          <div class="helpItem">
+            <b>Estimasi proses</b>
+            <p>Biasanya 24–48 jam setelah konfirmasi.</p>
+          </div>
+          <div class="helpItem">
+            <b>Packaging</b>
+            <p>Bubble wrap + kardus, QC sebelum kirim.</p>
+          </div>
+          <div class="helpItem">
+            <b>Resi</b>
+            <p>Resi akan dikirim setelah paket diserahkan ke ekspedisi.</p>
+          </div>
+        </div>`
+    },
+    pembayaran: {
+      title: 'Pembayaran',
+      html: `
+        <div class="helpList">
+          <div class="helpItem">
+            <b>Metode</b>
+            <p>QRIS (BCA / Mandiri). Bisa pakai aplikasi bank / e-wallet.</p>
+          </div>
+          <div class="helpItem">
+            <b>Bukti bayar</b>
+            <p>Upload bukti (opsional) atau kirim via WhatsApp setelah submit.</p>
+          </div>
+        </div>`
+    },
+    faq: {
+      title: 'FAQ',
+      html: `
+        <div class="helpList">
+          <div class="helpItem">
+            <b>Apakah bisa pesan banyak untuk kantor?</b>
+            <p>Bisa. Tulis jumlah & catatan di form, admin akan bantu rekap.</p>
+          </div>
+          <div class="helpItem">
+            <b>Apakah bisa request kartu ucapan?</b>
+            <p>Bisa. Isi di kolom catatan.</p>
+          </div>
+          <div class="helpItem">
+            <b>Ongkir gimana?</b>
+            <p>Ongkir dikonfirmasi admin sesuai alamat & berat paket.</p>
+          </div>
+        </div>`
+    }
+  };
+
+  function openHelp(key){
+    const data = helpContent[key];
+    if(!data || !helpModal) return;
+    helpTitle.textContent = data.title;
+    helpBody.innerHTML = data.html;
+
+    helpModal.removeAttribute('hidden');
+    helpModal.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeHelp(){
+    if(!helpModal) return;
+    helpModal.setAttribute('hidden','');
+    helpModal.setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('[data-help]').forEach(btn => {
+    btn.addEventListener('click', () => openHelp(btn.getAttribute('data-help')));
+  });
+
+  helpModal?.addEventListener('click', (e) => {
+    const t = e.target;
+    if(t && t.hasAttribute('data-close')) closeHelp();
+  });
+
+  window.addEventListener('keydown', (e) => {
+    if(e.key === 'Escape' && helpModal && !helpModal.hasAttribute('hidden')) closeHelp();
+  });
+</script>
 </body>
 </html>
