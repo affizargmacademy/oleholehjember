@@ -20,9 +20,9 @@
 <header class="nav">
   <div class="container nav__inner">
     <a class="logo" href="index.html" aria-label="Beranda">
-      <span class="logo__mark" aria-hidden="true"></span>
-      <span class="logo__text">OlehOlehJember</span>
+      <img class="logo__img" src="assets/img/logo.png" alt="OlehOlehJember">
     </a>
+    
 
     <nav class="nav__links" aria-label="Navigasi">
       <a href="index.html">Beranda</a>
@@ -39,9 +39,9 @@
 
   <div class="mobileMenu" id="mobileMenu" hidden>
     <div class="container mobileMenu__inner">
-      <a href="file:///C:/xampp/htdocs/Project%20Affizar/Oleh%20Oleh%20Khas%20Jember/jember.html">Jember</a>
-      <a href="file:///C:/xampp/htdocs/Project%20Affizar/Oleh%20Oleh%20Khas%20Jember/kategori.html">Kategori</a>
-      <a href="file:///C:/xampp/htdocs/Project%20Affizar/Oleh%20Oleh%20Khas%20Jember/testimoni.html">Testimoni</a>
+      <a href="jember.html">Jember</a>
+      <a href="kategori.html">Kategori</a>
+      <a href="testimoni.html">Testimoni</a>
       <button class="btn btn--primary" id="openOrderMobile" type="button">Pesan</button>
     </div>
   </div>
@@ -188,6 +188,12 @@
 </div>
 
 <style>
+  .logo__img{
+  height: 50px;
+  width: auto;
+  display: block;
+}
+
   :root{
     --bg: #ffffff;
     --ink: #1e1a1f;
@@ -582,6 +588,17 @@
     if(["produk","qty"].includes(e.target.name)) updateNota();
   });
 
+  // helper: open modal + optionally prefill product
+  function openOrderWithProduct(productName){
+    const form = document.getElementById("orderForm");
+    showModal();
+    if(form && productName){
+      form.produk.value = productName;
+      updateNota();
+      form.produk.dispatchEvent(new Event("change"));
+    }
+  }
+
   // submit -> WhatsApp
   document.getElementById('orderForm')?.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -623,6 +640,9 @@ Saya akan bayar via QRIS.`;
     qrisMandiri.hidden = true;
     updateNota();
   });
+
+  // expose to global (for onclick)
+  window.openOrderWithProduct = openOrderWithProduct;
 </script>
 
   <!-- HERO / DETAIL PRODUK -->
@@ -804,8 +824,7 @@ Saya akan bayar via QRIS.`;
 
       <div class="footer__brand">
         <div class="footerLogo">
-          <span class="logo__mark" aria-hidden="true"></span>
-          <b>OlehOlehJember</b>
+          <img class="logo__img" src="assets/img/logo.png" alt="OlehOlehJember">
         </div>
         <p class="footerMuted">
           Oleh-oleh khas Jember dengan pengemasan rapi, cocok untuk keluarga, teman, dan kebutuhan kantor.
