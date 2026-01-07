@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Detail Produk Gift Box Mix | OlehOlehJember</title>
+  <title>Detail Produk Hampers Kantor | OlehOlehJember</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
@@ -46,7 +46,7 @@
     <div class="modal__head">
       <div>
         <div class="modal__kicker">Form Pemesanan</div>
-        <h3 class="modal__title" id="orderTitle">Pesan Gift Box Mix</h3>
+        <h3 class="modal__title" id="orderTitle">Pesan Hampers Kantor</h3>
       </div>
       <button class="modal__close" type="button" aria-label="Tutup" data-close>✕</button>
     </div>
@@ -58,17 +58,17 @@
         <label class="field field--full"><span>Alamat (untuk pengiriman)</span><textarea name="alamat" rows="3" required placeholder="Jalan, kecamatan, kota, kode pos"></textarea></label>
 
         <label class="field">
-          <span>Paket Gift Box</span>
+          <span>Paket Hampers</span>
           <select name="produk" required>
-            <option value="Regular" selected>Regular</option>
+            <option value="Standar" selected>Standar</option>
             <option value="Premium">Premium</option>
-            <option value="Deluxe">Deluxe</option>
-            <option value="Custom">Custom (request isi)</option>
+            <option value="Eksklusif">Eksklusif</option>
+            <option value="Custom">Custom (request)</option>
           </select>
         </label>
 
-        <label class="field"><span>Jumlah (box)</span><input name="qty" type="number" min="1" value="1" required /></label>
-        <label class="field field--full"><span>Catatan (opsional)</span><input name="catatan" placeholder="Misal: tulis kartu ucapan, request isi, dll." /></label>
+        <label class="field"><span>Jumlah (set)</span><input name="qty" type="number" min="1" value="1" required /></label>
+        <label class="field field--full"><span>Catatan (opsional)</span><input name="catatan" placeholder="Misal: untuk event kantor, nama tim, request isi, dll." /></label>
       </div>
 
       <div class="divider"></div>
@@ -79,7 +79,7 @@
           <span class="nota__badge">Belum dibayar</span>
         </div>
         <div class="nota__grid">
-          <div class="nota__row"><span class="k">Paket</span><span class="v" id="notaProduk">Regular</span></div>
+          <div class="nota__row"><span class="k">Paket</span><span class="v" id="notaProduk">Standar</span></div>
           <div class="nota__row"><span class="k">Jumlah</span><span class="v" id="notaQty">1</span></div>
           <div class="nota__row"><span class="k">Harga</span><span class="v" id="notaHarga">Rp 0</span></div>
           <div class="nota__row nota__row--total"><span class="k">Total Sementara</span><span class="v" id="notaTotal">Rp 0</span></div>
@@ -143,15 +143,15 @@
 <section class="hero heroPink" id="detail">
   <div class="container heroGrid">
     <div class="heroText">
-      <span class="heroBadge">🎁 Siap Kirim</span>
-      <h1>Gift Box Mix</h1>
-      <p>Mix snack + kopi + kartu ucapan. Siap kirim. Cocok untuk hadiah ulang tahun, teman, keluarga, atau rekan kerja.</p>
+      <span class="heroBadge">🏢 Rapi & Profesional</span>
+      <h1>Hampers Kantor</h1>
+      <p>Isi rapi, cocok untuk event kantor & hadiah tim. Bisa request jumlah banyak dan custom isi sesuai kebutuhan.</p>
 
       <div class="heroPriceRow">
         <div class="priceBox">
           <div class="priceLabel">Harga mulai</div>
-          <div class="priceValue">Rp 99.000</div>
-          <div class="priceNote">Per box (harga dapat berubah sesuai paket/isi)</div>
+          <div class="priceValue">Rp 149.000</div>
+          <div class="priceNote">Per set (harga dapat berubah sesuai paket/isi)</div>
         </div>
         <div class="ctaBox">
           <button class="btn btn--primary" type="button" id="buyNowTop">Pesan Sekarang</button>
@@ -161,14 +161,14 @@
 
       <div class="heroPerks">
         <span class="perk">✅ Rapi</span>
-        <span class="perk">🎁 Cocok hadiah</span>
+        <span class="perk">🏢 Untuk kantor</span>
         <span class="perk">🧾 Nota & resi</span>
         <span class="perk">📦 Packing aman</span>
       </div>
     </div>
 
     <div class="heroImg heroImgPink">
-      <img src="https://images.unsplash.com/photo-1513201099705-a9746e1e201f?auto=format&fit=crop&w=1400&q=80" alt="Gift Box Mix" />
+      <img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=1400&q=80" alt="Hampers Kantor" />
     </div>
   </div>
 </section>
@@ -178,19 +178,19 @@
 
     <div class="detailCard">
       <div class="cardTop">
-        <h2>Detail Gift Box Mix</h2>
-        <span class="chipMini">Hadiah Praktis</span>
+        <h2>Detail Hampers Kantor</h2>
+        <span class="chipMini">Event Ready</span>
       </div>
 
-      <p>Gift box isi mix snack & kopi yang disusun <b>rapi</b> + bisa tambah <b>kartu ucapan</b>. Tinggal pesan, kami siapkan dan kirim.</p>
+      <p>Hampers untuk kebutuhan kantor: hadiah tim, apresiasi, atau event. Disusun <b>rapi</b>, packing aman, dan bisa request <b>custom</b>.</p>
 
       <div class="specGrid">
-        <div class="specItem"><div class="specK">Isi</div><div class="specV">Snack mix + kopi + kartu ucapan (sesuai paket)</div></div>
-        <div class="specItem"><div class="specK">Cocok untuk</div><div class="specV">Hadiah • hampers kecil • event</div></div>
-        <div class="specItem"><div class="specK">Paket</div><div class="specV">Regular, Premium, Deluxe, Custom</div></div>
-        <div class="specItem"><div class="specK">Kemasan</div><div class="specV">Box + filler + pita (opsional)</div></div>
-        <div class="specItem"><div class="specK">Estimasi proses</div><div class="specV">1–2 hari kerja</div></div>
-        <div class="specItem"><div class="specK">Catatan</div><div class="specV">Bisa request kartu ucapan</div></div>
+        <div class="specItem"><div class="specK">Isi</div><div class="specV">Mix snack & minuman (sesuai paket)</div></div>
+        <div class="specItem"><div class="specK">Cocok untuk</div><div class="specV">Event kantor • hadiah tim • apresiasi</div></div>
+        <div class="specItem"><div class="specK">Paket</div><div class="specV">Standar, Premium, Eksklusif, Custom</div></div>
+        <div class="specItem"><div class="specK">Kemasan</div><div class="specV">Box/koper hampers + filler</div></div>
+        <div class="specItem"><div class="specK">Estimasi proses</div><div class="specV">1–3 hari (tergantung jumlah)</div></div>
+        <div class="specItem"><div class="specK">Catatan</div><div class="specV">Bisa request kartu ucapan/logo</div></div>
       </div>
 
       <div class="divider"></div>
@@ -201,14 +201,14 @@
           <ol class="howList">
             <li>Klik tombol <b>“Pesan Sekarang”</b></li>
             <li>Isi data & pilih paket + jumlah</li>
-            <li>Tambahkan catatan (kartu ucapan / custom)</li>
+            <li>Tulis catatan (event, tanggal, custom)</li>
             <li>Klik <b>“Kirim Pesanan”</b> (otomatis ke WhatsApp)</li>
           </ol>
         </div>
 
         <div class="buyCard">
           <div class="buyTitle">Checkout cepat</div>
-          <div class="buyPrice">Mulai Rp 99.000</div>
+          <div class="buyPrice">Mulai Rp 149.000</div>
           <div class="buyNote">Klik tombol di bawah untuk membuka form pemesanan.</div>
           <button class="btn btn--primary" type="button" id="buyNowMid">Pesan Sekarang</button>
           <div class="buyHint">Popup form pemesanan akan muncul.</div>
@@ -223,34 +223,34 @@
     </div>
 
     <aside class="sideCard">
-      <div class="sideTitle">Galeri Gift Box</div>
+      <div class="sideTitle">Galeri Hampers</div>
 
-      <div class="galleryStatic" aria-label="Galeri foto gift box">
-        <figure class="gItem"><img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=1200&q=80" alt="Gift box foto 1"></figure>
-        <figure class="gItem"><img src="assets/img/gift.avif" alt="Gift box foto 2"></figure>
-        <figure class="gItem"><img src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=1200&q=80" alt="Gift box foto 3"></figure>
-        <figure class="gItem"><img src="https://images.unsplash.com/photo-1512909006721-3d6018887383?auto=format&fit=crop&w=1200&q=80" alt="Gift box foto 4"></figure>
+      <div class="galleryStatic" aria-label="Galeri foto hampers kantor">
+        <figure class="gItem"><img src="https://images.unsplash.com/photo-1512909006721-3d6018887383?auto=format&fit=crop&w=1200&q=80" alt="Hampers foto 1"></figure>
+        <figure class="gItem"><img src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=1200&q=80" alt="Hampers foto 2"></figure>
+        <figure class="gItem"><img src="assets/img/gift.avif" alt="Hampers foto 3"></figure>
+        <figure class="gItem"><img src="https://images.unsplash.com/photo-1513201099705-a9746e1e201f?auto=format&fit=crop&w=1200&q=80" alt="Hampers foto 4"></figure>
       </div>
 
       <div class="sideDivider"></div>
 
       <div class="sideTitle">Info singkat</div>
       <div class="sideInfo">
-        <div class="infoRow"><span class="infoK">Estimasi proses</span><span class="infoV">24–48 jam</span></div>
+        <div class="infoRow"><span class="infoK">Estimasi proses</span><span class="infoV">24–72 jam</span></div>
         <div class="infoRow"><span class="infoK">Packing</span><span class="infoV">Box + Bubble</span></div>
         <div class="infoRow"><span class="infoK">Pengiriman</span><span class="infoV">JNE / J&T / SiCepat</span></div>
         <div class="infoRow"><span class="infoK">Jam admin</span><span class="infoV">08.00–21.00</span></div>
       </div>
 
-      <div class="sideMiniNote">Tips: tulis ucapan singkat di catatan, nanti kami tuliskan di kartu.</div>
+      <div class="sideMiniNote">Tips: untuk pesanan banyak, tulis tanggal event & jumlah di catatan.</div>
 
       <div class="sideDivider"></div>
 
       <div class="sideTitle">Keunggulan</div>
       <div class="sidePerks">
-        <div class="perkCard">🎁 Siap kirim</div>
+        <div class="perkCard">🏢 Event ready</div>
         <div class="perkCard">✅ Rapi</div>
-        <div class="perkCard">📝 Kartu ucapan</div>
+        <div class="perkCard">📦 Aman kirim</div>
         <div class="perkCard">🧾 Nota & resi</div>
       </div>
     </aside>
