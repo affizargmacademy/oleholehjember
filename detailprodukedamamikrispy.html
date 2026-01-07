@@ -3,26 +3,34 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Detail Produk Edamame Crispy | OlehOlehJember</title>
+  <title>Detail Produk Dodol Jember | OlehOlehJember</title>
+
+  <!-- FONT -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- MAIN CSS -->
   <link rel="stylesheet" href="assets/main.css" />
 </head>
+
 <body id="home">
 
+<!-- NAVBAR -->
 <header class="nav">
   <div class="container nav__inner">
     <div class="container nav__inner">
       <a class="logo" href="index.html" aria-label="Beranda">
         <img class="logo__img" src="assets/img/logo.png" alt="OlehOlehJember">
       </a>
-      <nav class="nav__links" aria-label="Navigasi">
-        <a href="index.html">Beranda</a>
-        <a href="jember.html">Tentang Jember</a>
-        <a href="kategori.html">Kategori</a>
-        <a href="blog.html">Blog</a>
-      </nav>
+
+    <nav class="nav__links" aria-label="Navigasi">
+      <a href="index.html">Beranda</a>
+      <a href="jember.html">Tentang Jember</a>
+      <a href="kategori.html">Kategori</a>
+      <a href="blog.html">Blog</a>
+    </nav>
+
     <div class="nav__actions">
       <button class="btn btn--primary" id="openOrder" type="button">Pesan</button>
       <button class="menuBtn" id="menuBtn" aria-label="Buka menu" aria-expanded="false" aria-controls="mobileMenu">☰</button>
@@ -40,52 +48,89 @@
   </div>
 </header>
 
+<!-- POPUP ORDER + PAYMENT (SCROLL + NOTA) -->
 <div class="modal" id="orderModal" hidden aria-hidden="true">
   <div class="modal__backdrop" data-close></div>
+
   <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="orderTitle">
     <div class="modal__head">
       <div>
         <div class="modal__kicker">Form Pemesanan</div>
-        <h3 class="modal__title" id="orderTitle">Pesan Edamame Crispy</h3>
+        <h3 class="modal__title" id="orderTitle">Pesan Oleh-Oleh Jember</h3>
       </div>
       <button class="modal__close" type="button" aria-label="Tutup" data-close>✕</button>
     </div>
 
     <form class="modal__body" id="orderForm">
       <div class="formGrid">
-        <label class="field"><span>Nama</span><input name="nama" required placeholder="Nama kamu" /></label>
-        <label class="field"><span>No. WhatsApp</span><input name="wa" required placeholder="08xxxxxxxxxx" /></label>
-        <label class="field field--full"><span>Alamat (untuk pengiriman)</span><textarea name="alamat" rows="3" required placeholder="Jalan, kecamatan, kota, kode pos"></textarea></label>
+        <label class="field">
+          <span>Nama</span>
+          <input name="nama" required placeholder="Nama kamu" />
+        </label>
 
         <label class="field">
-          <span>Varian Edamame</span>
+          <span>No. WhatsApp</span>
+          <input name="wa" required placeholder="08xxxxxxxxxx" />
+        </label>
+
+        <label class="field field--full">
+          <span>Alamat (untuk pengiriman)</span>
+          <textarea name="alamat" rows="3" required placeholder="Jalan, kecamatan, kota, kode pos"></textarea>
+        </label>
+
+        <label class="field">
+          <span>Pilih Produk</span>
           <select name="produk" required>
-            <option value="Original" selected>Original</option>
-            <option value="Sea Salt">Sea Salt</option>
-            <option value="BBQ">BBQ</option>
-            <option value="Pedas">Pedas</option>
-            <option value="Balado">Balado</option>
+            <option value="">— Pilih —</option>
+            <option>Suwar-suwir Khas</option>
+            <option>Kopi Jember</option>
+            <option>Gift Box Mix</option>
           </select>
         </label>
 
-        <label class="field"><span>Jumlah (pcs)</span><input name="qty" type="number" min="1" value="1" required /></label>
-        <label class="field field--full"><span>Catatan (opsional)</span><input name="catatan" placeholder="Misal: pedas level 1/2/3, dll." /></label>
+        <label class="field">
+          <span>Jumlah</span>
+          <input name="qty" type="number" min="1" value="1" required />
+        </label>
+
+        <label class="field field--full">
+          <span>Catatan (opsional)</span>
+          <input name="catatan" placeholder="Misal: minta kartu ucapan, pedas, tanpa kacang, dll." />
+        </label>
       </div>
 
       <div class="divider"></div>
 
+      <!-- NOTA SEMENTARA -->
       <div class="nota" aria-label="Nota sementara">
         <div class="nota__head">
           <h4>Nota sementara</h4>
           <span class="nota__badge">Belum dibayar</span>
         </div>
+
         <div class="nota__grid">
-          <div class="nota__row"><span class="k">Varian</span><span class="v" id="notaProduk">Original</span></div>
-          <div class="nota__row"><span class="k">Jumlah</span><span class="v" id="notaQty">1</span></div>
-          <div class="nota__row"><span class="k">Harga</span><span class="v" id="notaHarga">Rp 0</span></div>
-          <div class="nota__row nota__row--total"><span class="k">Total Sementara</span><span class="v" id="notaTotal">Rp 0</span></div>
+          <div class="nota__row">
+            <span class="k">Produk</span>
+            <span class="v" id="notaProduk">—</span>
+          </div>
+          <div class="nota__row">
+            <span class="k">Jumlah</span>
+            <span class="v" id="notaQty">1</span>
+          </div>
+          <div class="nota__row">
+            <span class="k">Harga</span>
+            <span class="v" id="notaHarga">Rp 0</span>
+          </div>
+
+          <div class="nota__row nota__row--total">
+            <span class="k">Total Sementara</span>
+            <span class="v" id="notaTotal">Rp 0</span>
+          </div>
         </div>
-        <div class="nota__note">*Total ini sementara. Ongkir/biaya tambahan (jika ada) akan dikonfirmasi admin.</div>
+
+        <div class="nota__note">
+          *Total ini sementara. Ongkir/biaya tambahan (jika ada) akan dikonfirmasi admin.
+        </div>
       </div>
 
       <div class="divider"></div>
@@ -104,6 +149,7 @@
               <div class="payOption__sub">Scan QRIS BCA / aplikasi apa pun</div>
             </div>
           </label>
+
           <label class="payOption">
             <input type="radio" name="metode" value="QRIS Mandiri" />
             <div class="payOption__box">
@@ -116,13 +162,14 @@
         <div class="qrWrap">
           <div class="qrCard" id="qrisBCA">
             <div class="qrTitle">QRIS BCA</div>
-            <img class="qrImg" src="assets/qris-bca.png" alt="QRIS BCA">
-            <div class="qrNote">Ganti file QR kamu ke: <b>assets/qris-bca.png</b></div>
+            <img class="qrImg" src="assets/qris-bca.png" alt="QRIS BCA (ganti dengan QR kamu)">
+            <div class="qrNote">Ganti dengan QRIS BCA milikmu: <b>assets/qris-bca.png</b></div>
           </div>
+
           <div class="qrCard" id="qrisMandiri" hidden>
             <div class="qrTitle">QRIS Mandiri</div>
-            <img class="qrImg" src="assets/qris-mandiri.png" alt="QRIS Mandiri">
-            <div class="qrNote">Ganti file QR kamu ke: <b>assets/qris-mandiri.png</b></div>
+            <img class="qrImg" src="assets/qris-mandiri.png" alt="QRIS Mandiri (ganti dengan QR kamu)">
+            <div class="qrNote">Ganti dengan QRIS Mandiri milikmu: <b>assets/qris-mandiri.png</b></div>
           </div>
         </div>
 
@@ -141,123 +188,622 @@
   </div>
 </div>
 
-<section class="hero heroPink" id="detail">
-  <div class="container heroGrid">
-    <div class="heroText">
-      <span class="heroBadge">🫘 Gurih Renyah</span>
-      <h1>Edamame Crispy</h1>
-      <p>Cemilan gurih renyah, cocok buat sharing. Praktis buat nonton, kerja, atau ngemil santai.</p>
+<style>
+  :root{
+    --bg: #ffffff;
+    --ink: #1e1a1f;
+    --muted: rgba(30,26,31,.70);
 
-      <div class="heroPriceRow">
-        <div class="priceBox">
-          <div class="priceLabel">Harga mulai</div>
-          <div class="priceValue">Rp 24.000</div>
-          <div class="priceNote">Per pcs (harga dapat berubah sesuai varian/paket)</div>
+    --pink: #ff3f9a;
+    --pink2:#ff78c3;
+    --pinkSoft: rgba(255,63,154,.10);
+    --pinkSoft2: rgba(255,63,154,.16);
+
+    --border: rgba(30,26,31,.10);
+    --card: #ffffff;
+    --shadow: 0 18px 45px rgba(17,12,18,.08);
+    --shadow2: 0 10px 24px rgba(17,12,18,.06);
+
+    --r: 16px;
+    --r2: 22px;
+    --container: 1120px;
+  }
+
+  *{ box-sizing:border-box; }
+  html,body{ height:100%; }
+  body{
+    margin:0;
+    font-family:"Plus Jakarta Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+  }
+  a{ color:inherit; text-decoration:none; }
+  .container{ width:min(var(--container), 92vw); margin-inline:auto; }
+
+  /* NAV */
+  .nav{
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    background: rgba(255,255,255,.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav__inner{
+    height: 72px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap: 14px;
+  }
+  .logo{ display:flex; align-items:center; gap:10px; font-weight: 900; letter-spacing:-.2px; }
+  .logo__mark{
+    width: 12px; height: 12px; border-radius: 999px;
+    background: linear-gradient(135deg, var(--pink), var(--pink2));
+    box-shadow: 0 0 0 6px var(--pinkSoft);
+  }
+  .logo__img{
+  height: 40px;      /* ukuran aman untuk navbar 72px */
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+  .nav__links{
+    display:flex;
+    gap: 18px;
+    align-items:center;
+    color: var(--muted);
+    font-weight: 700;
+  }
+  .nav__links a{ padding: 10px 10px; border-radius: 12px; }
+  .nav__links a:hover{ background: var(--pinkSoft); color: var(--ink); }
+
+  .nav__actions{ display:flex; gap:10px; align-items:center; }
+
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center;
+    padding: 10px 14px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: #fff;
+    box-shadow: var(--shadow2);
+    font-weight: 800;
+    transition: transform .12s ease, box-shadow .12s ease;
+    white-space:nowrap;
+    cursor:pointer;
+  }
+  .btn:hover{ transform: translateY(-1px); box-shadow: var(--shadow); }
+
+  .btn--primary{
+    border: none;
+    background: linear-gradient(135deg, var(--pink), var(--pink2));
+    color:#fff;
+    box-shadow: 0 18px 40px rgba(255,63,154,.18);
+  }
+
+  .menuBtn{
+    display:none;
+    width:42px; height:42px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: #fff;
+    box-shadow: var(--shadow2);
+    font-size: 18px;
+    cursor:pointer;
+  }
+
+  .mobileMenu{
+    border-top: 1px solid var(--border);
+    background: #fff;
+  }
+  .mobileMenu__inner{
+    padding: 14px 0 18px;
+    display:grid;
+    gap: 10px;
+  }
+  .mobileMenu__inner a{
+    padding: 12px 12px;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    background: #fff;
+    font-weight: 800;
+    color: var(--muted);
+  }
+  .mobileMenu__inner a:hover{ background: var(--pinkSoft); color: var(--ink); }
+
+  @media (max-width: 920px){
+    .nav__links{ display:none; }
+    .menuBtn{ display:inline-grid; place-items:center; }
+  }
+
+  /* MODAL (SCROLLABLE) */
+  .modal[hidden]{ display:none; }
+  .modal{ position:fixed; inset:0; z-index: 999; }
+  .modal__backdrop{ position:absolute; inset:0; background: rgba(0,0,0,.45); }
+
+  .modal__dialog{
+    position: relative;
+    width: min(860px, 92vw);
+    margin: 6vh auto;
+    border-radius: 22px;
+    border: 1px solid rgba(255,63,154,.18);
+    background:#fff;
+    box-shadow: var(--shadow);
+    overflow:hidden;
+
+    max-height: 88vh;
+    display:flex;
+    flex-direction:column;
+  }
+
+  .modal__head{
+    padding: 16px 18px;
+    display:flex;
+    align-items:flex-start;
+    justify-content:space-between;
+    gap: 12px;
+    border-bottom: 1px solid var(--border);
+    background: linear-gradient(135deg, var(--pinkSoft), #fff);
+    flex: 0 0 auto;
+  }
+  .modal__kicker{ color: var(--muted); font-weight: 800; font-size: 12px; }
+  .modal__title{ margin: 4px 0 0; letter-spacing:-.3px; }
+  .modal__close{
+    width: 42px; height: 42px;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    background:#fff;
+    box-shadow: var(--shadow2);
+    font-size: 16px;
+    cursor:pointer;
+  }
+
+  .modal__body{
+    padding: 16px 18px;
+    overflow:auto;
+    flex: 1 1 auto;
+  }
+
+  .formGrid{ display:grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+  .field{ display:grid; gap: 8px; }
+  .field--full{ grid-column: 1 / -1; }
+
+  .field span{ font-weight: 900; font-size: 13px; letter-spacing:-.1px; }
+  .field input, .field select, .field textarea{
+    width: 100%;
+    padding: 12px 12px;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    outline: none;
+    font-weight: 650;
+    background:#fff;
+  }
+  .field input:focus, .field select:focus, .field textarea:focus{
+    border-color: rgba(255,63,154,.35);
+    box-shadow: 0 0 0 4px rgba(255,63,154,.10);
+  }
+  .hint{ color: var(--muted); font-weight: 650; line-height:1.6; }
+
+  .divider{ height:1px; background: var(--border); margin: 16px 0; }
+
+  /* NOTA */
+  .nota{
+    border: 1px solid rgba(255,63,154,.18);
+    background: linear-gradient(135deg, var(--pinkSoft), #fff);
+    border-radius: 18px;
+    padding: 14px;
+    margin-bottom: 8px;
+  }
+  .nota__head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .nota__head h4{ margin:0; letter-spacing:-.2px; }
+  .nota__badge{
+    padding: 8px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,63,154,.18);
+    background:#fff;
+    font-weight: 900;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .nota__grid{ display:grid; gap: 8px; }
+  .nota__row{
+    display:flex;
+    justify-content:space-between;
+    gap: 12px;
+    padding: 10px 10px;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    background:#fff;
+  }
+  .nota__row .k{ color: var(--muted); font-weight: 800; }
+  .nota__row .v{ font-weight: 900; }
+  .nota__row--total{ border-color: rgba(255,63,154,.22); }
+  .nota__row--total .v{ color: var(--pink); }
+  .nota__note{
+    margin-top: 10px;
+    color: var(--muted);
+    font-weight: 650;
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .pay__head h4{ margin: 0 0 6px; letter-spacing:-.2px; }
+  .pay__head p{ margin:0 0 12px; color: var(--muted); font-weight: 650; line-height:1.7; }
+
+  .payMethods{ display:grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+  .payOption{
+    display:flex;
+    gap: 10px;
+    align-items:flex-start;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 12px;
+    background:#fff;
+    box-shadow: var(--shadow2);
+    cursor:pointer;
+  }
+  .payOption input{ margin-top: 4px; }
+  .payOption__title{ font-weight: 900; }
+  .payOption__sub{ color: var(--muted); font-weight: 650; font-size: 13px; margin-top: 4px; line-height:1.6; }
+
+  .qrWrap{ display:grid; grid-template-columns: 1fr; gap: 12px; margin-bottom: 12px; }
+  .qrCard{
+    border: 1px solid rgba(255,63,154,.18);
+    border-radius: 18px;
+    padding: 12px;
+    background: linear-gradient(135deg, var(--pinkSoft), #fff);
+  }
+  .qrTitle{ font-weight: 900; margin-bottom: 10px; }
+  .qrImg{
+    width: 100%;
+    max-width: 320px;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    background:#fff;
+    display:block;
+  }
+  .qrNote{ margin-top: 10px; color: var(--muted); font-weight: 650; font-size: 13px; line-height:1.6; }
+
+  .modal__foot{
+    padding: 14px 18px 18px;
+    display:flex;
+    justify-content:flex-end;
+    gap: 10px;
+  }
+
+  @media (max-width: 700px){
+    .formGrid{ grid-template-columns: 1fr; }
+    .payMethods{ grid-template-columns: 1fr; }
+    .modal__dialog{ margin: 4vh auto; }
+  }
+</style>
+
+<script>
+  // Mobile menu toggle
+  const btnMenu = document.getElementById('menuBtn');
+  const menu = document.getElementById('mobileMenu');
+  btnMenu?.addEventListener('click', () => {
+    const open = !menu.hasAttribute('hidden');
+    if(open){
+      menu.setAttribute('hidden','');
+      btnMenu.setAttribute('aria-expanded','false');
+    } else {
+      menu.removeAttribute('hidden');
+      btnMenu.setAttribute('aria-expanded','true');
+    }
+  });
+
+  // Modal logic
+  const orderModal = document.getElementById('orderModal');
+  const openOrder = document.getElementById('openOrder');
+  const openOrderMobile = document.getElementById('openOrderMobile');
+
+  function showModal(){
+    orderModal.removeAttribute('hidden');
+    orderModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    setTimeout(updateNota, 0);
+  }
+  function hideModal(){
+    orderModal.setAttribute('hidden','');
+    orderModal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  openOrder?.addEventListener('click', showModal);
+  openOrderMobile?.addEventListener('click', () => {
+    menu?.setAttribute('hidden','');
+    btnMenu?.setAttribute('aria-expanded','false');
+    showModal();
+  });
+
+  // close on backdrop / close button
+  orderModal?.addEventListener('click', (e) => {
+    const t = e.target;
+    if (t && t.hasAttribute('data-close')) hideModal();
+  });
+
+  // close on ESC
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !orderModal.hasAttribute('hidden')) hideModal();
+  });
+
+  // toggle QR cards
+  const qrisBCA = document.getElementById('qrisBCA');
+  const qrisMandiri = document.getElementById('qrisMandiri');
+
+  document.getElementById('orderForm')?.addEventListener('change', (e) => {
+    const el = e.target;
+    if (el && el.name === 'metode') {
+      if (el.value === 'QRIS BCA') {
+        qrisBCA.hidden = false;
+        qrisMandiri.hidden = true;
+      } else {
+        qrisBCA.hidden = true;
+        qrisMandiri.hidden = false;
+      }
+    }
+  });
+
+  // NOTA SEMENTARA (auto update)
+  const hargaProduk = {
+    "Suwar-suwir Khas": 28000,
+    "Kopi Jember": 55000,
+    "Gift Box Mix": 99000
+  };
+
+  function rupiah(n){
+    return "Rp " + (n || 0).toLocaleString("id-ID");
+  }
+
+  function updateNota(){
+    const form = document.getElementById("orderForm");
+    if(!form) return;
+
+    const produk = form.produk.value;
+    const qty = parseInt(form.qty.value || "1", 10);
+
+    const harga = hargaProduk[produk] || 0;
+    const total = harga * (isNaN(qty) ? 1 : qty);
+
+    document.getElementById("notaProduk").textContent = produk || "—";
+    document.getElementById("notaQty").textContent = isNaN(qty) ? "1" : String(qty);
+    document.getElementById("notaHarga").textContent = rupiah(harga);
+    document.getElementById("notaTotal").textContent = rupiah(total);
+  }
+
+  document.getElementById("orderForm")?.addEventListener("input", (e) => {
+    if(["produk","qty"].includes(e.target.name)) updateNota();
+  });
+  document.getElementById("orderForm")?.addEventListener("change", (e) => {
+    if(["produk","qty"].includes(e.target.name)) updateNota();
+  });
+
+  // submit -> WhatsApp
+  document.getElementById('orderForm')?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const form = e.target;
+
+    const nama = form.nama.value.trim();
+    const wa = form.wa.value.trim();
+    const alamat = form.alamat.value.trim();
+    const produk = form.produk.value;
+    const qty = form.qty.value;
+    const catatan = form.catatan.value.trim();
+    const metode = form.metode.value;
+
+    const harga = hargaProduk[produk] || 0;
+    const total = harga * parseInt(qty || "1", 10);
+
+    const pesan =
+`Halo, saya mau pesan:
+- Nama: ${nama}
+- WA: ${wa}
+- Produk: ${produk}
+- Jumlah: ${qty}
+- Alamat: ${alamat}
+- Metode Bayar: ${metode}
+- Total Sementara: ${rupiah(total)}
+- Catatan: ${catatan || '-'}
+
+Saya akan bayar via QRIS.`;
+
+    // GANTI nomor WA toko kamu di sini (format internasional tanpa +)
+    const nomorToko = "6281234567890";
+    const url = `https://wa.me/${nomorToko}?text=${encodeURIComponent(pesan)}`;
+
+    window.open(url, "_blank", "noopener");
+
+    hideModal();
+    form.reset();
+    qrisBCA.hidden = false;
+    qrisMandiri.hidden = true;
+    updateNota();
+  });
+</script>
+
+
+  <!-- HERO / DETAIL PRODUK -->
+  <section class="hero heroPink" id="detail">
+    <div class="container heroGrid">
+      <div class="heroText">
+        <span class="heroBadge">🍯 Oleh-oleh Khas Jember</span>
+        <h1>Dodol Jember</h1>
+        <p>
+          Dodol khas Jember yang kenyal-manis dengan aroma legit. Cocok untuk buah tangan keluarga,
+          teman, dan oleh-oleh kantor karena tahan perjalanan dan rapi untuk dibawa.
+        </p>
+
+        <div class="heroPriceRow">
+          <div class="priceBox">
+            <div class="priceLabel">Harga mulai</div>
+            <div class="priceValue">Rp 25.000</div>
+            <div class="priceNote">Per pcs (harga dapat berubah sesuai varian/paket)</div>
+          </div>
+
+          <div class="ctaBox">
+            <button class="btn btn--primary" type="button" id="buyNowTop">Pesan Sekarang</button>
+            <a class="btn" href="kategori.html">Lihat Produk Lain</a>
+          </div>
         </div>
-        <div class="ctaBox">
-          <button class="btn btn--primary" type="button" id="buyNowTop">Pesan Sekarang</button>
-          <a class="btn" href="kategori.html">Lihat Produk Lain</a>
+
+        <div class="heroPerks">
+          <span class="perk">✅ Kenyal & legit</span>
+          <span class="perk">📦 Packing aman</span>
+          <span class="perk">🧾 Nota & resi</span>
+          <span class="perk">⚡ Fast response</span>
         </div>
       </div>
 
-      <div class="heroPerks">
-        <span class="perk">✅ Renyah</span>
-        <span class="perk">🫘 Edamame pilihan</span>
-        <span class="perk">🧾 Nota & resi</span>
-        <span class="perk">📦 Packing aman</span>
+      <div class="heroImg heroImgPink">
+        <img
+          src="assets/img/kue manis 2.avif"
+          alt="Dodol Jember"
+        />
       </div>
     </div>
+  </section>
 
-    <div class="heroImg heroImgPink">
-      <img src="assets/img/keripikpisang.avif" alt="Edamame Crispy" />
-    </div>
-  </div>
-</section>
+  <!-- DETAIL + GALERI -->
+  <section class="section" id="info">
+    <div class="container detailGrid">
 
-<section class="section" id="info">
-  <div class="container detailGrid">
-
-    <div class="detailCard">
-      <div class="cardTop">
-        <h2>Detail Edamame Crispy</h2>
-        <span class="chipMini">Gurih & Rapi</span>
-      </div>
-
-      <p>Edamame crispy yang digoreng kering dengan bumbu meresap. Tekstur <b>renyah</b>, rasa <b>gurih</b>, cocok untuk cemilan harian atau oleh-oleh.</p>
-
-      <div class="specGrid">
-        <div class="specItem"><div class="specK">Komposisi</div><div class="specV">Edamame • tepung tipis • bumbu (sesuai varian)</div></div>
-        <div class="specItem"><div class="specK">Rasa</div><div class="specV">Gurih • renyah • ringan</div></div>
-        <div class="specItem"><div class="specK">Varian</div><div class="specV">Original, Sea Salt, BBQ, Pedas, Balado</div></div>
-        <div class="specItem"><div class="specK">Berat</div><div class="specV">± 80–110g / pack</div></div>
-        <div class="specItem"><div class="specK">Ketahanan</div><div class="specV">± 2–3 bulan (kemasan tertutup)</div></div>
-        <div class="specItem"><div class="specK">Saran simpan</div><div class="specV">Tutup rapat • hindari panas/lembap</div></div>
-      </div>
-
-      <div class="divider"></div>
-
-      <div class="howRow">
-        <div class="how">
-          <div class="howTitle">Cara Pesan</div>
-          <ol class="howList">
-            <li>Klik tombol <b>“Pesan Sekarang”</b></li>
-            <li>Isi data & pilih varian + jumlah</li>
-            <li>Scan QRIS sesuai metode</li>
-            <li>Klik <b>“Kirim Pesanan”</b> (otomatis ke WhatsApp)</li>
-          </ol>
+      <div class="detailCard">
+        <div class="cardTop">
+          <h2>Detail Dodol Jember</h2>
+          <span class="chipMini">Fresh & Rapi</span>
         </div>
 
-        <div class="buyCard">
-          <div class="buyTitle">Checkout cepat</div>
-          <div class="buyPrice">Mulai Rp 24.000</div>
-          <div class="buyNote">Klik tombol di bawah untuk membuka form pemesanan.</div>
-          <button class="btn btn--primary" type="button" id="buyNowMid">Pesan Sekarang</button>
-          <div class="buyHint">Popup form pemesanan akan muncul.</div>
+        <p>
+          Dodol ini dibuat dengan proses masak perlahan sampai tekstur <b>kenyal</b>, <b>legit</b>, dan tidak mudah
+          hancur saat dibawa. Cocok untuk oleh-oleh karena rasanya stabil, mudah disajikan, dan disukai banyak orang.
+        </p>
+
+        <div class="specGrid">
+          <div class="specItem">
+            <div class="specK">Bahan</div>
+            <div class="specV">Tepung ketan, gula, santan, perisa varian</div>
+          </div>
+          <div class="specItem">
+            <div class="specK">Tekstur</div>
+            <div class="specV">Kenyal • legit • tidak lengket berlebihan</div>
+          </div>
+          <div class="specItem">
+            <div class="specK">Varian</div>
+            <div class="specV">Original, Gula Aren, Durian, Cokelat, Mix</div>
+          </div>
+          <div class="specItem">
+            <div class="specK">Berat</div>
+            <div class="specV">± 200–250g / pcs (menyesuaikan produksi)</div>
+          </div>
+          <div class="specItem">
+            <div class="specK">Ketahanan</div>
+            <div class="specV">± 7–14 hari (tergantung penyimpanan)</div>
+          </div>
+          <div class="specItem">
+            <div class="specK">Saran simpan</div>
+            <div class="specV">Suhu ruang sejuk / wadah tertutup</div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="howRow">
+          <div class="how">
+            <div class="howTitle">Cara Pesan</div>
+            <ol class="howList">
+              <li>Klik tombol <b>“Pesan Sekarang”</b></li>
+              <li>Isi data & pilih varian + jumlah</li>
+              <li>Scan QRIS sesuai metode</li>
+              <li>Klik <b>“Kirim Pesanan”</b> (otomatis ke WhatsApp)</li>
+            </ol>
+          </div>
+
+          <div class="buyCard">
+            <div class="buyTitle">Checkout cepat</div>
+            <div class="buyPrice">Mulai Rp 25.000</div>
+            <div class="buyNote">Klik tombol di bawah untuk membuka form pemesanan.</div>
+            <button class="btn btn--primary" type="button" id="buyNowMid">Pesan Sekarang</button>
+            <div class="buyHint">Popup form pemesanan akan muncul.</div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="centerRow">
+          <button class="btn btn--primary" type="button" id="buyNowBottom">Pesan Sekarang</button>
         </div>
       </div>
 
-      <div class="divider"></div>
+      <aside class="sideCard">
+        <div class="sideTitle">Galeri Dodol Jember</div>
 
-      <div class="centerRow">
-        <button class="btn btn--primary" type="button" id="buyNowBottom">Pesan Sekarang</button>
-      </div>
+        <div class="galleryStatic" aria-label="Galeri foto dodol">
+          <figure class="gItem">
+            <img src="assets/img/keripikpisang.avif" alt="Dodol foto 1">
+          </figure>
+          <figure class="gItem">
+            <img src="assets/img/gift.avif" alt="Dodol foto 2">
+          </figure>
+          <figure class="gItem">
+            <img src="assets/img/kuemanis.avif" alt="Dodol foto 3">
+          </figure>
+          <figure class="gItem">
+            <img src="assets/img/teh.avif" alt="Dodol foto 4">
+          </figure>
+        </div>
+
+        <div class="sideDivider"></div>
+
+        <!-- ISI KEKOSONGAN -->
+        <div class="sideTitle">Info singkat</div>
+
+        <div class="sideInfo">
+          <div class="infoRow">
+            <span class="infoK">Estimasi proses</span>
+            <span class="infoV">24–48 jam</span>
+          </div>
+          <div class="infoRow">
+            <span class="infoK">Packing</span>
+            <span class="infoV">Bubble + Kardus</span>
+          </div>
+          <div class="infoRow">
+            <span class="infoK">Pengiriman</span>
+            <span class="infoV">JNE / J&T / SiCepat</span>
+          </div>
+          <div class="infoRow">
+            <span class="infoK">Jam admin</span>
+            <span class="infoV">08.00–21.00</span>
+          </div>
+        </div>
+
+        <div class="sideMiniNote">
+          Tips: kalau untuk hadiah, tulis di catatan ya—biar kami tambahkan kartu ucapan & packing lebih rapi.
+        </div>
+
+        <div class="sideDivider"></div>
+
+        <div class="sideTitle">Keunggulan</div>
+        <div class="sidePerks">
+          <div class="perkCard">🍯 Kenyal & legit</div>
+          <div class="perkCard">📦 Packing aman</div>
+          <div class="perkCard">✅ QC sebelum kirim</div>
+          <div class="perkCard">🧾 Nota & resi</div>
+        </div>
+      </aside>
+
     </div>
-
-    <aside class="sideCard">
-      <div class="sideTitle">Galeri Edamame Crispy</div>
-
-      <div class="galleryStatic" aria-label="Galeri foto edamame crispy">
-        <figure class="gItem"><img src="https://images.unsplash.com/photo-1623428454614-abaf00244e52?auto=format&fit=crop&w=1200&q=80" alt="Edamame foto 1"></figure>
-        <figure class="gItem"><img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=1200&q=80" alt="Edamame foto 2"></figure>
-        <figure class="gItem"><img src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?auto=format&fit=crop&w=1200&q=80" alt="Edamame foto 3"></figure>
-        <figure class="gItem"><img src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1200&q=80" alt="Edamame foto 4"></figure>
-      </div>
-
-      <div class="sideDivider"></div>
-
-      <div class="sideTitle">Info singkat</div>
-      <div class="sideInfo">
-        <div class="infoRow"><span class="infoK">Estimasi proses</span><span class="infoV">24–48 jam</span></div>
-        <div class="infoRow"><span class="infoK">Packing</span><span class="infoV">Pack + Bubble</span></div>
-        <div class="infoRow"><span class="infoK">Pengiriman</span><span class="infoV">JNE / J&T / SiCepat</span></div>
-        <div class="infoRow"><span class="infoK">Jam admin</span><span class="infoV">08.00–21.00</span></div>
-      </div>
-
-      <div class="sideMiniNote">Tips: paling enak untuk sharing, request level pedas di catatan.</div>
-
-      <div class="sideDivider"></div>
-
-      <div class="sideTitle">Keunggulan</div>
-      <div class="sidePerks">
-        <div class="perkCard">🫘 Edamame pilihan</div>
-        <div class="perkCard">✅ Renyah</div>
-        <div class="perkCard">🍿 Cocok sharing</div>
-        <div class="perkCard">🧾 Nota & resi</div>
-      </div>
-    </aside>
-
-  </div>
-</section>
+  </section>
 
 <!-- FOOTER -->
 <footer class="footer">
