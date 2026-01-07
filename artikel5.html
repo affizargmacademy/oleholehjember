@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Cara Packing Aman Biar Tidak Remuk | OlehOlehJember</title>
+
+  <!-- FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#fff;
+      --ink:#1e1a1f;
+      --muted:rgba(30,26,31,.7);
+      --pink:#ff3f9a;
+      --pink2:#ff78c3;
+      --pinkSoft:rgba(255,63,154,.10);
+      --border:rgba(30,26,31,.1);
+      --shadow:0 18px 45px rgba(17,12,18,.08);
+      --shadow2:0 10px 24px rgba(17,12,18,.06);
+      --r:16px;
+      --r2:22px;
+      --container:1120px;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:"Plus Jakarta Sans",system-ui,sans-serif;
+      background:var(--bg);
+      color:var(--ink);
+    }
+    img{max-width:100%;display:block}
+    a{text-decoration:none;color:inherit}
+    .container{width:min(var(--container),92vw);margin:auto}
+
+    /* NAV */
+    .nav{
+      position:sticky;top:0;z-index:20;
+      background:rgba(255,255,255,.92);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--border)
+    }
+    .nav__inner{
+      height:72px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center
+    }
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight:900
+    }
+    .logo__mark{
+      width:12px;height:12px;border-radius:999px;
+      background:linear-gradient(135deg,var(--pink),var(--pink2));
+      box-shadow:0 0 0 6px var(--pinkSoft)
+    }
+    .nav__links{
+      display:flex;gap:18px;
+      font-weight:800;color:var(--muted)
+    }
+    .nav__links a:hover{color:var(--ink)}
+
+    /* HERO ARTICLE */
+    .articleHero{
+      padding:56px 0 36px;
+      background:linear-gradient(180deg,var(--pinkSoft),#fff)
+    }
+    .articleHero img{
+      width:100%;
+      height:360px;
+      object-fit:cover;
+      border-radius:var(--r2);
+      box-shadow:var(--shadow)
+    }
+    .articleMeta{
+      margin-top:18px;
+      color:var(--muted);
+      font-weight:700
+    }
+    .articleMeta span{margin-right:12px}
+
+    /* CONTENT */
+    .articleWrap{padding:48px 0}
+    .article{
+      max-width:820px;
+      margin:auto
+    }
+    .article h1{
+      font-size:clamp(26px,3vw,40px);
+      letter-spacing:-.6px;
+      margin-bottom:14px
+    }
+    .article h2{
+      margin-top:32px;
+      letter-spacing:-.3px
+    }
+    .article p{
+      line-height:1.9;
+      font-weight:650;
+      color:rgba(30,26,31,.85)
+    }
+    .tagRow{
+      display:flex;gap:10px;flex-wrap:wrap;
+      margin:22px 0
+    }
+    .tag{
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,63,154,.18);
+      background:var(--pinkSoft);
+      font-weight:800;
+      font-size:13px
+    }
+
+    /* CTA */
+    .ctaBox{
+      margin-top:48px;
+      border-radius:var(--r2);
+      border:1px solid rgba(255,63,154,.18);
+      background:linear-gradient(135deg,var(--pinkSoft),#fff);
+      padding:22px;
+      text-align:center;
+      box-shadow:var(--shadow2)
+    }
+    .ctaBox h3{margin:0 0 10px}
+    .btn{
+      display:inline-flex;
+      padding:12px 18px;
+      border-radius:14px;
+      font-weight:900;
+      background:linear-gradient(135deg,var(--pink),var(--pink2));
+      color:#fff;
+      box-shadow:0 18px 40px rgba(255,63,154,.18)
+    }
+
+    /* FOOTER */
+    .footer{
+      border-top:1px solid var(--border);
+      padding:22px 0;
+      text-align:center;
+      color:var(--muted);
+      font-weight:700
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="container nav__inner">
+    <a class="logo" href="index.html">
+      <span class="logo__mark"></span>
+      <span>OlehOlehJember</span>
+    </a>
+    <nav class="nav__links">
+      <a href="index.html">Beranda</a>
+      <a href="kategori.html">Kategori</a>
+      <a href="blog.html">Blog</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="articleHero">
+  <div class="container">
+    <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=1400&q=80" alt="Packing aman">
+    <div class="articleMeta">
+      <span>📦 Packing</span>
+      <span>✅ Aman</span>
+      <span>🗓 2025</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<section class="articleWrap">
+  <article class="article">
+    <h1>Cara Packing Aman Biar Tidak Remuk</h1>
+
+    <p>
+      Salah satu kekhawatiran saat kirim oleh-oleh adalah produk remuk atau penyok.
+      Dengan teknik packing yang tepat, risiko kerusakan bisa jauh berkurang,
+      bahkan untuk pengiriman luar kota.
+    </p>
+
+    <div class="tagRow">
+      <span class="tag">packing</span>
+      <span class="tag">aman</span>
+      <span class="tag">pengiriman</span>
+    </div>
+
+    <h2>1. Gunakan Lapisan Pelindung</h2>
+    <p>
+      Bubble wrap adalah standar utama. Untuk produk rapuh, gunakan 2–3 lapis,
+      lalu tambahkan kertas isian (paper filler) agar barang tidak bergerak.
+    </p>
+
+    <h2>2. Pilih Kardus yang Kokoh</h2>
+    <p>
+      Kardus tebal dengan ukuran pas lebih aman dibanding kardus terlalu besar.
+      Semakin banyak ruang kosong, semakin besar risiko barang berguncang.
+    </p>
+
+    <h2>3. Kunci Produk di Tengah</h2>
+    <p>
+      Letakkan produk di tengah kardus, beri bantalan di semua sisi:
+      bawah, samping, atas. Prinsipnya: <b>barang tidak boleh bisa “geser”</b>.
+    </p>
+
+    <h2>4. Double Packing untuk Pengiriman Jauh</h2>
+    <p>
+      Untuk pengiriman luar pulau atau perjalanan panjang,
+      gunakan metode double box (kardus kecil di dalam kardus besar)
+      agar daya tahan lebih kuat.
+    </p>
+
+    <h2>5. Tambahkan Label</h2>
+    <p>
+      Tempel label “Fragile / Jangan Dibanting” atau “This Side Up”
+      agar kurir lebih hati-hati. Ini sederhana, tapi efektif.
+    </p>
+
+    <div class="ctaBox">
+      <h3>Mau Oleh-oleh yang Sudah Dipacking Rapi?</h3>
+      <p>Kami bantu packing aman + QC sebelum kirim.</p>
+      <a href="kategori.html" class="btn">Lihat Produk & Paket</a>
+    </div>
+  </article>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  © 2025 OlehOlehJember • All rights reserved
+</footer>
+
+</body>
+</html>
