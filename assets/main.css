@@ -50,6 +50,12 @@
     background:linear-gradient(135deg, var(--pink), var(--pink2));
     box-shadow:0 0 0 6px var(--pinkSoft);
   }
+  .logo__img{
+    height: 40px;      /* ukuran aman untuk navbar 72px */
+    width: auto;
+    display: block;
+    object-fit: contain;
+  }
   
   .nav__links{
     display:flex;
