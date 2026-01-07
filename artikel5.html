@@ -156,17 +156,631 @@
 <!-- NAV -->
 <header class="nav">
   <div class="container nav__inner">
-    <a class="logo" href="index.html">
-      <span class="logo__mark"></span>
-      <span>OlehOlehJember</span>
+    <a class="logo" href="index.html" aria-label="Beranda">
+      <img class="logo__img" src="assets/img/logo.png" alt="OlehOlehJember">
     </a>
-    <nav class="nav__links">
+    
+
+    <nav class="nav__links" aria-label="Navigasi">
       <a href="index.html">Beranda</a>
+      <a href="jember.html">Tentang Jember</a>
       <a href="kategori.html">Kategori</a>
       <a href="blog.html">Blog</a>
     </nav>
+
+    <div class="nav__actions">
+      <button class="btn btn--primary" id="openOrder" type="button">Pesan</button>
+      <button class="menuBtn" id="menuBtn" aria-label="Buka menu" aria-expanded="false" aria-controls="mobileMenu">☰</button>
+    </div>
+  </div>
+
+  <div class="mobileMenu" id="mobileMenu" hidden>
+    <div class="container mobileMenu__inner">
+      <a href="jember.html">Jember</a>
+      <a href="kategori.html">Kategori</a>
+      <a href="testimoni.html">Testimoni</a>
+      <button class="btn btn--primary" id="openOrderMobile" type="button">Pesan</button>
+    </div>
   </div>
 </header>
+
+<!-- POPUP ORDER + PAYMENT (SCROLL + NOTA) -->
+<div class="modal" id="orderModal" hidden aria-hidden="true">
+  <div class="modal__backdrop" data-close></div>
+
+  <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="orderTitle">
+    <div class="modal__head">
+      <div>
+        <div class="modal__kicker">Form Pemesanan</div>
+        <h3 class="modal__title" id="orderTitle">Pesan Oleh-Oleh Jember</h3>
+      </div>
+      <button class="modal__close" type="button" aria-label="Tutup" data-close>✕</button>
+    </div>
+
+    <form class="modal__body" id="orderForm">
+      <div class="formGrid">
+        <label class="field">
+          <span>Nama</span>
+          <input name="nama" required placeholder="Nama kamu" />
+        </label>
+
+        <label class="field">
+          <span>No. WhatsApp</span>
+          <input name="wa" required placeholder="08xxxxxxxxxx" />
+        </label>
+
+        <label class="field field--full">
+          <span>Alamat (untuk pengiriman)</span>
+          <textarea name="alamat" rows="3" required placeholder="Jalan, kecamatan, kota, kode pos"></textarea>
+        </label>
+
+        <label class="field">
+          <span>Pilih Produk</span>
+          <select name="produk" required>
+            <option value="">— Pilih —</option>
+            <option>Suwar-suwir Khas</option>
+            <option>Kopi Jember</option>
+            <option>Gift Box Mix</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span>Jumlah</span>
+          <input name="qty" type="number" min="1" value="1" required />
+        </label>
+
+        <label class="field field--full">
+          <span>Catatan (opsional)</span>
+          <input name="catatan" placeholder="Misal: minta kartu ucapan, pedas, tanpa kacang, dll." />
+        </label>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- NOTA SEMENTARA -->
+      <div class="nota" aria-label="Nota sementara">
+        <div class="nota__head">
+          <h4>Nota sementara</h4>
+          <span class="nota__badge">Belum dibayar</span>
+        </div>
+
+        <div class="nota__grid">
+          <div class="nota__row">
+            <span class="k">Produk</span>
+            <span class="v" id="notaProduk">—</span>
+          </div>
+          <div class="nota__row">
+            <span class="k">Jumlah</span>
+            <span class="v" id="notaQty">1</span>
+          </div>
+          <div class="nota__row">
+            <span class="k">Harga</span>
+            <span class="v" id="notaHarga">Rp 0</span>
+          </div>
+
+          <div class="nota__row nota__row--total">
+            <span class="k">Total Sementara</span>
+            <span class="v" id="notaTotal">Rp 0</span>
+          </div>
+        </div>
+
+        <div class="nota__note">
+          *Total ini sementara. Ongkir/biaya tambahan (jika ada) akan dikonfirmasi admin.
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="pay">
+        <div class="pay__head">
+          <h4>Pembayaran</h4>
+          <p>Pilih metode QRIS. Scan QR di bawah, lalu simpan bukti pembayaran.</p>
+        </div>
+
+        <div class="payMethods">
+          <label class="payOption">
+            <input type="radio" name="metode" value="QRIS BCA" checked />
+            <div class="payOption__box">
+              <div class="payOption__title">QRIS BCA</div>
+              <div class="payOption__sub">Scan QRIS BCA / aplikasi apa pun</div>
+            </div>
+          </label>
+
+          <label class="payOption">
+            <input type="radio" name="metode" value="QRIS Mandiri" />
+            <div class="payOption__box">
+              <div class="payOption__title">QRIS Mandiri</div>
+              <div class="payOption__sub">Scan QRIS Mandiri / aplikasi apa pun</div>
+            </div>
+          </label>
+        </div>
+
+        <div class="qrWrap">
+          <div class="qrCard" id="qrisBCA">
+            <div class="qrTitle">QRIS BCA</div>
+            <img class="qrImg" src="assets/qris-bca.png" alt="QRIS BCA (ganti dengan QR kamu)">
+            <div class="qrNote">Ganti dengan QRIS BCA milikmu: <b>assets/qris-bca.png</b></div>
+          </div>
+
+          <div class="qrCard" id="qrisMandiri" hidden>
+            <div class="qrTitle">QRIS Mandiri</div>
+            <img class="qrImg" src="assets/qris-mandiri.png" alt="QRIS Mandiri (ganti dengan QR kamu)">
+            <div class="qrNote">Ganti dengan QRIS Mandiri milikmu: <b>assets/qris-mandiri.png</b></div>
+          </div>
+        </div>
+
+        <label class="field field--full">
+          <span>Upload bukti bayar (opsional)</span>
+          <input type="file" name="bukti" accept="image/*" />
+          <small class="hint">Atau kirim bukti via WhatsApp setelah klik “Kirim Pesanan”.</small>
+        </label>
+      </div>
+
+      <div class="modal__foot">
+        <button class="btn" type="button" data-close>Batal</button>
+        <button class="btn btn--primary" type="submit">Kirim Pesanan</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<style>
+  .logo__img{
+  height: 50px;
+  width: auto;
+  display: block;
+}
+
+  :root{
+    --bg: #ffffff;
+    --ink: #1e1a1f;
+    --muted: rgba(30,26,31,.70);
+
+    --pink: #ff3f9a;
+    --pink2:#ff78c3;
+    --pinkSoft: rgba(255,63,154,.10);
+    --pinkSoft2: rgba(255,63,154,.16);
+
+    --border: rgba(30,26,31,.10);
+    --card: #ffffff;
+    --shadow: 0 18px 45px rgba(17,12,18,.08);
+    --shadow2: 0 10px 24px rgba(17,12,18,.06);
+
+    --r: 16px;
+    --r2: 22px;
+    --container: 1120px;
+  }
+
+  *{ box-sizing:border-box; }
+  html,body{ height:100%; }
+  body{
+    margin:0;
+    font-family:"Plus Jakarta Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+  }
+  a{ color:inherit; text-decoration:none; }
+  .container{ width:min(var(--container), 92vw); margin-inline:auto; }
+
+  /* NAV */
+  .nav{
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    background: rgba(255,255,255,.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav__inner{
+    height: 72px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap: 14px;
+  }
+  .logo{ display:flex; align-items:center; gap:10px; font-weight: 900; letter-spacing:-.2px; }
+  .logo__mark{
+    width: 12px; height: 12px; border-radius: 999px;
+    background: linear-gradient(135deg, var(--pink), var(--pink2));
+    box-shadow: 0 0 0 6px var(--pinkSoft);
+  }
+
+  .nav__links{
+    display:flex;
+    gap: 18px;
+    align-items:center;
+    color: var(--muted);
+    font-weight: 700;
+  }
+  .nav__links a{ padding: 10px 10px; border-radius: 12px; }
+  .nav__links a:hover{ background: var(--pinkSoft); color: var(--ink); }
+
+  .nav__actions{ display:flex; gap:10px; align-items:center; }
+
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center;
+    padding: 10px 14px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: #fff;
+    box-shadow: var(--shadow2);
+    font-weight: 800;
+    transition: transform .12s ease, box-shadow .12s ease;
+    white-space:nowrap;
+    cursor:pointer;
+  }
+  .btn:hover{ transform: translateY(-1px); box-shadow: var(--shadow); }
+
+  .btn--primary{
+    border: none;
+    background: linear-gradient(135deg, var(--pink), var(--pink2));
+    color:#fff;
+    box-shadow: 0 18px 40px rgba(255,63,154,.18);
+  }
+
+  .menuBtn{
+    display:none;
+    width:42px; height:42px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: #fff;
+    box-shadow: var(--shadow2);
+    font-size: 18px;
+    cursor:pointer;
+  }
+
+  .mobileMenu{
+    border-top: 1px solid var(--border);
+    background: #fff;
+  }
+  .mobileMenu__inner{
+    padding: 14px 0 18px;
+    display:grid;
+    gap: 10px;
+  }
+  .mobileMenu__inner a{
+    padding: 12px 12px;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    background: #fff;
+    font-weight: 800;
+    color: var(--muted);
+  }
+  .mobileMenu__inner a:hover{ background: var(--pinkSoft); color: var(--ink); }
+
+  @media (max-width: 920px){
+    .nav__links{ display:none; }
+    .menuBtn{ display:inline-grid; place-items:center; }
+  }
+
+  /* MODAL (SCROLLABLE) */
+  .modal[hidden]{ display:none; }
+  .modal{ position:fixed; inset:0; z-index: 999; }
+  .modal__backdrop{ position:absolute; inset:0; background: rgba(0,0,0,.45); }
+
+  .modal__dialog{
+    position: relative;
+    width: min(860px, 92vw);
+    margin: 6vh auto;
+    border-radius: 22px;
+    border: 1px solid rgba(255,63,154,.18);
+    background:#fff;
+    box-shadow: var(--shadow);
+    overflow:hidden;
+
+    max-height: 88vh;
+    display:flex;
+    flex-direction:column;
+  }
+
+  .modal__head{
+    padding: 16px 18px;
+    display:flex;
+    align-items:flex-start;
+    justify-content:space-between;
+    gap: 12px;
+    border-bottom: 1px solid var(--border);
+    background: linear-gradient(135deg, var(--pinkSoft), #fff);
+    flex: 0 0 auto;
+  }
+  .modal__kicker{ color: var(--muted); font-weight: 800; font-size: 12px; }
+  .modal__title{ margin: 4px 0 0; letter-spacing:-.3px; }
+  .modal__close{
+    width: 42px; height: 42px;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    background:#fff;
+    box-shadow: var(--shadow2);
+    font-size: 16px;
+    cursor:pointer;
+  }
+
+  .modal__body{
+    padding: 16px 18px;
+    overflow:auto;
+    flex: 1 1 auto;
+  }
+
+  .formGrid{ display:grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+  .field{ display:grid; gap: 8px; }
+  .field--full{ grid-column: 1 / -1; }
+
+  .field span{ font-weight: 900; font-size: 13px; letter-spacing:-.1px; }
+  .field input, .field select, .field textarea{
+    width: 100%;
+    padding: 12px 12px;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    outline: none;
+    font-weight: 650;
+    background:#fff;
+  }
+  .field input:focus, .field select:focus, .field textarea:focus{
+    border-color: rgba(255,63,154,.35);
+    box-shadow: 0 0 0 4px rgba(255,63,154,.10);
+  }
+  .hint{ color: var(--muted); font-weight: 650; line-height:1.6; }
+
+  .divider{ height:1px; background: var(--border); margin: 16px 0; }
+
+  /* NOTA */
+  .nota{
+    border: 1px solid rgba(255,63,154,.18);
+    background: linear-gradient(135deg, var(--pinkSoft), #fff);
+    border-radius: 18px;
+    padding: 14px;
+    margin-bottom: 8px;
+  }
+  .nota__head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .nota__head h4{ margin:0; letter-spacing:-.2px; }
+  .nota__badge{
+    padding: 8px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,63,154,.18);
+    background:#fff;
+    font-weight: 900;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .nota__grid{ display:grid; gap: 8px; }
+  .nota__row{
+    display:flex;
+    justify-content:space-between;
+    gap: 12px;
+    padding: 10px 10px;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    background:#fff;
+  }
+  .nota__row .k{ color: var(--muted); font-weight: 800; }
+  .nota__row .v{ font-weight: 900; }
+  .nota__row--total{ border-color: rgba(255,63,154,.22); }
+  .nota__row--total .v{ color: var(--pink); }
+  .nota__note{
+    margin-top: 10px;
+    color: var(--muted);
+    font-weight: 650;
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .pay__head h4{ margin: 0 0 6px; letter-spacing:-.2px; }
+  .pay__head p{ margin:0 0 12px; color: var(--muted); font-weight: 650; line-height:1.7; }
+
+  .payMethods{ display:grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+  .payOption{
+    display:flex;
+    gap: 10px;
+    align-items:flex-start;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 12px;
+    background:#fff;
+    box-shadow: var(--shadow2);
+    cursor:pointer;
+  }
+  .payOption input{ margin-top: 4px; }
+  .payOption__title{ font-weight: 900; }
+  .payOption__sub{ color: var(--muted); font-weight: 650; font-size: 13px; margin-top: 4px; line-height:1.6; }
+
+  .qrWrap{ display:grid; grid-template-columns: 1fr; gap: 12px; margin-bottom: 12px; }
+  .qrCard{
+    border: 1px solid rgba(255,63,154,.18);
+    border-radius: 18px;
+    padding: 12px;
+    background: linear-gradient(135deg, var(--pinkSoft), #fff);
+  }
+  .qrTitle{ font-weight: 900; margin-bottom: 10px; }
+  .qrImg{
+    width: 100%;
+    max-width: 320px;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    background:#fff;
+    display:block;
+  }
+  .qrNote{ margin-top: 10px; color: var(--muted); font-weight: 650; font-size: 13px; line-height:1.6; }
+
+  .modal__foot{
+    padding: 14px 18px 18px;
+    display:flex;
+    justify-content:flex-end;
+    gap: 10px;
+  }
+
+  @media (max-width: 700px){
+    .formGrid{ grid-template-columns: 1fr; }
+    .payMethods{ grid-template-columns: 1fr; }
+    .modal__dialog{ margin: 4vh auto; }
+  }
+</style>
+
+<script>
+  // Mobile menu toggle
+  const btnMenu = document.getElementById('menuBtn');
+  const menu = document.getElementById('mobileMenu');
+  btnMenu?.addEventListener('click', () => {
+    const open = !menu.hasAttribute('hidden');
+    if(open){
+      menu.setAttribute('hidden','');
+      btnMenu.setAttribute('aria-expanded','false');
+    } else {
+      menu.removeAttribute('hidden');
+      btnMenu.setAttribute('aria-expanded','true');
+    }
+  });
+
+  // Modal logic
+  const orderModal = document.getElementById('orderModal');
+  const openOrder = document.getElementById('openOrder');
+  const openOrderMobile = document.getElementById('openOrderMobile');
+
+  function showModal(){
+    orderModal.removeAttribute('hidden');
+    orderModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    setTimeout(updateNota, 0);
+  }
+  function hideModal(){
+    orderModal.setAttribute('hidden','');
+    orderModal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  openOrder?.addEventListener('click', showModal);
+  openOrderMobile?.addEventListener('click', () => {
+    menu?.setAttribute('hidden','');
+    btnMenu?.setAttribute('aria-expanded','false');
+    showModal();
+  });
+
+  // close on backdrop / close button
+  orderModal?.addEventListener('click', (e) => {
+    const t = e.target;
+    if (t && t.hasAttribute('data-close')) hideModal();
+  });
+
+  // close on ESC
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !orderModal.hasAttribute('hidden')) hideModal();
+  });
+
+  // toggle QR cards
+  const qrisBCA = document.getElementById('qrisBCA');
+  const qrisMandiri = document.getElementById('qrisMandiri');
+
+  document.getElementById('orderForm')?.addEventListener('change', (e) => {
+    const el = e.target;
+    if (el && el.name === 'metode') {
+      if (el.value === 'QRIS BCA') {
+        qrisBCA.hidden = false;
+        qrisMandiri.hidden = true;
+      } else {
+        qrisBCA.hidden = true;
+        qrisMandiri.hidden = false;
+      }
+    }
+  });
+
+  // NOTA SEMENTARA (auto update)
+  const hargaProduk = {
+    "Suwar-suwir Khas": 28000,
+    "Kopi Jember": 55000,
+    "Gift Box Mix": 99000
+  };
+
+  function rupiah(n){
+    return "Rp " + (n || 0).toLocaleString("id-ID");
+  }
+
+  function updateNota(){
+    const form = document.getElementById("orderForm");
+    if(!form) return;
+
+    const produk = form.produk.value;
+    const qty = parseInt(form.qty.value || "1", 10);
+
+    const harga = hargaProduk[produk] || 0;
+    const total = harga * (isNaN(qty) ? 1 : qty);
+
+    document.getElementById("notaProduk").textContent = produk || "—";
+    document.getElementById("notaQty").textContent = isNaN(qty) ? "1" : String(qty);
+    document.getElementById("notaHarga").textContent = rupiah(harga);
+    document.getElementById("notaTotal").textContent = rupiah(total);
+  }
+
+  document.getElementById("orderForm")?.addEventListener("input", (e) => {
+    if(["produk","qty"].includes(e.target.name)) updateNota();
+  });
+  document.getElementById("orderForm")?.addEventListener("change", (e) => {
+    if(["produk","qty"].includes(e.target.name)) updateNota();
+  });
+
+  // helper: open modal + optionally prefill product
+  function openOrderWithProduct(productName){
+    const form = document.getElementById("orderForm");
+    showModal();
+    if(form && productName){
+      form.produk.value = productName;
+      updateNota();
+      form.produk.dispatchEvent(new Event("change"));
+    }
+  }
+
+  // submit -> WhatsApp
+  document.getElementById('orderForm')?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const form = e.target;
+
+    const nama = form.nama.value.trim();
+    const wa = form.wa.value.trim();
+    const alamat = form.alamat.value.trim();
+    const produk = form.produk.value;
+    const qty = form.qty.value;
+    const catatan = form.catatan.value.trim();
+    const metode = form.metode.value;
+
+    const harga = hargaProduk[produk] || 0;
+    const total = harga * parseInt(qty || "1", 10);
+
+    const pesan =
+`Halo, saya mau pesan:
+- Nama: ${nama}
+- WA: ${wa}
+- Produk: ${produk}
+- Jumlah: ${qty}
+- Alamat: ${alamat}
+- Metode Bayar: ${metode}
+- Total Sementara: ${rupiah(total)}
+- Catatan: ${catatan || '-'}
+
+Saya akan bayar via QRIS.`;
+
+    // GANTI nomor WA toko kamu di sini (format internasional tanpa +)
+    const nomorToko = "6281234567890";
+    const url = `https://wa.me/${nomorToko}?text=${encodeURIComponent(pesan)}`;
+
+    window.open(url, "_blank", "noopener");
+
+    hideModal();
+    form.reset();
+    qrisBCA.hidden = false;
+    qrisMandiri.hidden = true;
+    updateNota();
+  });
+
+  // expose to global (for onclick)
+  window.openOrderWithProduct = openOrderWithProduct;
+</script>
 
 <!-- HERO -->
 <section class="articleHero">
@@ -238,8 +852,473 @@
 
 <!-- FOOTER -->
 <footer class="footer">
-  © 2025 OlehOlehJember • All rights reserved
+  <div class="container footer__grid">
+
+    <div class="footer__brand">
+      <div class="footerLogo">
+        <img class="logo__img" src="assets/img/logo.png" alt="OlehOlehJember">
+      </div>
+      <p class="footerMuted">
+        Oleh-oleh khas Jember dengan pengemasan rapi, cocok untuk keluarga, teman, dan kebutuhan kantor.
+      </p>
+
+      <div class="footerBadges" aria-label="Keunggulan singkat">
+        <span class="fBadge">📦 Packing Aman</span>
+        <span class="fBadge">✅ QC</span>
+        <span class="fBadge">🧾 Resi</span>
+      </div>
+    </div>
+
+    <div class="footer__col">
+      <div class="footer__title">Menu</div>
+      <a class="footer__link" href="#lokasi">Jember</a>
+      <a class="footer__link" href="#kategori">Kategori</a>
+      <a class="footer__link" href="#produk">Produk</a>
+      <a class="footer__link" href="#testimoni">Testimoni</a>
+    </div>
+
+    <div class="footer__col">
+      <div class="footer__title">Bantuan</div>
+      <button class="footer__linkBtn" type="button" data-help="cara">Cara Pesan</button>
+      <button class="footer__linkBtn" type="button" data-help="pengiriman">Pengiriman</button>
+      <button class="footer__linkBtn" type="button" data-help="pembayaran">Pembayaran</button>
+      <button class="footer__linkBtn" type="button" data-help="faq">FAQ</button>
+    </div>
+
+    <div class="footer__col">
+      <div class="footer__title">Kontak</div>
+
+      <div class="footerContact">
+        <div class="fcItem">
+          <span class="fcIcon" aria-hidden="true">📍</span>
+          <div>
+            <div class="fcLabel">Lokasi</div>
+            <div class="fcText">Jember, Jawa Timur</div>
+          </div>
+        </div>
+
+        <div class="fcItem">
+          <span class="fcIcon" aria-hidden="true">💬</span>
+          <div>
+            <div class="fcLabel">WhatsApp</div>
+            <!-- GANTI nomor di bawah -->
+            <a class="fcText fcLink" href="https://wa.me/6281234567890" target="_blank" rel="noopener">Klik untuk chat</a>
+          </div>
+        </div>
+
+        <div class="fcItem">
+          <span class="fcIcon" aria-hidden="true">⏰</span>
+          <div>
+            <div class="fcLabel">Jam Operasional</div>
+            <div class="fcText">Setiap hari • 08.00–21.00</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footerSocial" aria-label="Sosial media">
+        <a class="socialBtn" href="#" aria-label="Instagram" title="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5.5A4.5 4.5 0 1 0 16.5 12 4.5 4.5 0 0 0 12 7.5zm0 7.4A2.9 2.9 0 1 1 14.9 12 2.9 2.9 0 0 1 12 14.9zM17.8 6.2a1 1 0 1 1-1-1 1 1 0 0 1 1 1z"/>
+          </svg>
+        </a>
+
+        <a class="socialBtn" href="#" aria-label="TikTok" title="TikTok">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M16.5 2h-2.6v13.2a2.4 2.4 0 1 1-2-2.4V10a5 5 0 1 0 4.6 5V8.7a6.7 6.7 0 0 0 3.5 1.1V7.3a4.3 4.3 0 0 1-3.5-2.1z"/>
+          </svg>
+        </a>
+
+        <a class="socialBtn" href="#" aria-label="Shopee" title="Shopee">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M5 7h14l-1 14H6L5 7zm7-5a4 4 0 0 0-4 4h2a2 2 0 0 1 4 0h2a4 4 0 0 0-4-4z"/>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="footer__bottom">
+    <div class="container footer__bottomInner">
+      <div class="footer__copy">
+        © <span id="year"></span> OlehOlehJember • All rights reserved
+      </div>
+    </div>
+  </div>
 </footer>
+
+<!-- FLOATING TO TOP -->
+<button class="toTopFloat" id="toTopFloat" type="button" aria-label="Kembali ke atas" title="Kembali ke atas">
+  ↑
+</button>
+
+<!-- MODAL BANTUAN -->
+<div class="helpModal" id="helpModal" hidden aria-hidden="true">
+  <div class="helpModal__backdrop" data-close></div>
+
+  <div class="helpModal__dialog" role="dialog" aria-modal="true" aria-labelledby="helpTitle">
+    <div class="helpModal__head">
+      <div>
+        <div class="helpModal__kicker">Bantuan</div>
+        <h3 class="helpModal__title" id="helpTitle">FAQ</h3>
+      </div>
+      <button class="helpModal__close" type="button" aria-label="Tutup" data-close>✕</button>
+    </div>
+
+    <div class="helpModal__body" id="helpBody"></div>
+
+    <div class="helpModal__foot">
+      <button class="btn" type="button" data-close>Tutup</button>
+    </div>
+  </div>
+</div>
+
+<style>
+  .footer{
+    border-top: 1px solid var(--border);
+    background: #fff;
+    padding: 34px 0 0;
+  }
+
+  .footer__grid{
+    display:grid;
+    grid-template-columns: 1.3fr .9fr .9fr 1.2fr;
+    gap: 22px;
+    padding-bottom: 22px;
+  }
+
+  .footerLogo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-weight: 900;
+    letter-spacing:-.2px;
+  }
+
+  .footerMuted{
+    margin: 10px 0 14px;
+    color: var(--muted);
+    font-weight: 650;
+    line-height: 1.8;
+    max-width: 52ch;
+  }
+
+  .footerBadges{
+    display:flex;
+    gap: 10px;
+    flex-wrap:wrap;
+  }
+
+  .fBadge{
+    padding: 8px 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,63,154,.18);
+    background: var(--pinkSoft);
+    font-weight: 800;
+    font-size: 12.5px;
+  }
+
+  .footer__title{
+    font-weight: 900;
+    margin-bottom: 10px;
+    letter-spacing:-.2px;
+  }
+
+  .footer__link{
+    display:block;
+    padding: 8px 0;
+    color: var(--muted);
+    font-weight: 750;
+  }
+  .footer__link:hover{ color: var(--ink); }
+
+  .footer__linkBtn{
+    display:block;
+    width: 100%;
+    text-align:left;
+    padding: 8px 0;
+    border: 0;
+    background: transparent;
+    color: var(--muted);
+    font-weight: 750;
+    cursor:pointer;
+    font-family: inherit;
+    font-size: 14px;
+  }
+  .footer__linkBtn:hover{ color: var(--ink); }
+
+  .footerContact{ display:grid; gap: 10px; margin-bottom: 14px; }
+  .fcItem{ display:flex; gap: 10px; align-items:flex-start; }
+  .fcIcon{
+    width: 34px; height: 34px;
+    border-radius: 12px;
+    display:grid; place-items:center;
+    background: var(--pinkSoft);
+    border: 1px solid rgba(255,63,154,.18);
+    flex: 0 0 auto;
+  }
+  .fcLabel{
+    font-weight: 900;
+    font-size: 12px;
+    color: rgba(30,26,31,.62);
+    margin-bottom: 2px;
+  }
+  .fcText{
+    color: var(--muted);
+    font-weight: 650;
+    line-height: 1.6;
+    font-size: 13.5px;
+  }
+  .fcLink{ color: var(--pink); font-weight: 900; }
+  .fcLink:hover{ text-decoration: underline; }
+
+  .footerSocial{ display:flex; gap: 10px; flex-wrap:wrap; }
+  .socialBtn{
+    width: 42px; height: 42px;
+    border-radius: 14px;
+    display:grid; place-items:center;
+    border: 1px solid rgba(255,63,154,.18);
+    background: #fff;
+    color: var(--ink);
+    font-weight: 900;
+    box-shadow: var(--shadow2);
+  }
+  .socialBtn:hover{
+    background: var(--pinkSoft);
+    border-color: rgba(255,63,154,.26);
+  }
+
+  .footer__bottom{
+    border-top: 1px solid var(--border);
+    background: #fff;
+    padding: 14px 0;
+  }
+  .footer__bottomInner{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap: 12px;
+    flex-wrap:wrap;
+  }
+  .footer__copy{
+    color: var(--muted);
+    font-weight: 700;
+    font-size: 13px;
+  }
+
+  @media (max-width: 980px){
+    .footer__grid{ grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 520px){
+    .footer__grid{ grid-template-columns: 1fr; }
+  }
+
+  .toTopFloat{
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    width: 52px;
+    height: 52px;
+    border-radius: 16px;
+    border: 1px solid rgba(255,63,154,.18);
+    background: #fff;
+    color: var(--ink);
+    font-weight: 900;
+    box-shadow: var(--shadow);
+    cursor:pointer;
+    display:none;
+    z-index: 999;
+  }
+  .toTopFloat:hover{ background: var(--pinkSoft); }
+
+  .helpModal[hidden]{ display:none; }
+  .helpModal{ position:fixed; inset:0; z-index: 9999; }
+  .helpModal__backdrop{ position:absolute; inset:0; background: rgba(0,0,0,.45); }
+
+  .helpModal__dialog{
+    position: relative;
+    width: min(760px, 92vw);
+    margin: 10vh auto;
+    border-radius: 22px;
+    border: 1px solid rgba(255,63,154,.18);
+    background:#fff;
+    box-shadow: var(--shadow);
+    overflow:hidden;
+    max-height: 80vh;
+    display:flex;
+    flex-direction:column;
+  }
+
+  .helpModal__head{
+    padding: 16px 18px;
+    display:flex;
+    align-items:flex-start;
+    justify-content:space-between;
+    gap: 12px;
+    border-bottom: 1px solid var(--border);
+    background: linear-gradient(135deg, var(--pinkSoft), #fff);
+  }
+
+  .helpModal__kicker{ color: var(--muted); font-weight: 800; font-size: 12px; }
+  .helpModal__title{ margin: 4px 0 0; letter-spacing:-.3px; }
+
+  .helpModal__close{
+    width: 42px; height: 42px;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    background:#fff;
+    box-shadow: var(--shadow2);
+    font-size: 16px;
+    cursor:pointer;
+  }
+
+  .helpModal__body{
+    padding: 16px 18px;
+    overflow:auto;
+  }
+
+  .helpModal__foot{
+    padding: 14px 18px 18px;
+    border-top: 1px solid var(--border);
+    display:flex;
+    justify-content:flex-end;
+    gap: 10px;
+  }
+
+  .helpList{ display:grid; gap: 10px; }
+  .helpItem{
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 12px 12px;
+    background:#fff;
+  }
+  .helpItem b{ display:block; margin-bottom: 6px; }
+  .helpItem p{ margin:0; color: var(--muted); font-weight: 650; line-height:1.75; }
+</style>
+
+<script>
+  // YEAR
+  const y = document.getElementById('year');
+  if(y) y.textContent = new Date().getFullYear();
+
+  // TO TOP FLOAT
+  const toTopFloat = document.getElementById('toTopFloat');
+  function toggleToTop(){
+    if(!toTopFloat) return;
+    toTopFloat.style.display = window.scrollY > 500 ? 'grid' : 'none';
+  }
+  window.addEventListener('scroll', toggleToTop, { passive:true });
+  toggleToTop();
+  toTopFloat?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  // HELP MODAL CONTENT
+  const helpModal = document.getElementById('helpModal');
+  const helpTitle = document.getElementById('helpTitle');
+  const helpBody = document.getElementById('helpBody');
+
+  const helpContent = {
+    cara: {
+      title: 'Cara Pesan',
+      html: `
+        <div class="helpList">
+          <div class="helpItem">
+            <b>1) Klik tombol “Pesan”</b>
+            <p>Isi nama, WhatsApp, alamat, produk, dan jumlah.</p>
+          </div>
+          <div class="helpItem">
+            <b>2) Cek nota sementara</b>
+            <p>Total akan muncul otomatis (ongkir dikonfirmasi admin).</p>
+          </div>
+          <div class="helpItem">
+            <b>3) Bayar via QRIS</b>
+            <p>Scan QR, simpan bukti bayar, lalu klik “Kirim Pesanan”.</p>
+          </div>
+        </div>`
+    },
+    pengiriman: {
+      title: 'Pengiriman',
+      html: `
+        <div class="helpList">
+          <div class="helpItem">
+            <b>Estimasi proses</b>
+            <p>Biasanya 24–48 jam setelah konfirmasi.</p>
+          </div>
+          <div class="helpItem">
+            <b>Packaging</b>
+            <p>Bubble wrap + kardus, QC sebelum kirim.</p>
+          </div>
+          <div class="helpItem">
+            <b>Resi</b>
+            <p>Resi akan dikirim setelah paket diserahkan ke ekspedisi.</p>
+          </div>
+        </div>`
+    },
+    pembayaran: {
+      title: 'Pembayaran',
+      html: `
+        <div class="helpList">
+          <div class="helpItem">
+            <b>Metode</b>
+            <p>QRIS (BCA / Mandiri). Bisa pakai aplikasi bank / e-wallet.</p>
+          </div>
+          <div class="helpItem">
+            <b>Bukti bayar</b>
+            <p>Upload bukti (opsional) atau kirim via WhatsApp setelah submit.</p>
+          </div>
+        </div>`
+    },
+    faq: {
+      title: 'FAQ',
+      html: `
+        <div class="helpList">
+          <div class="helpItem">
+            <b>Apakah bisa pesan banyak untuk kantor?</b>
+            <p>Bisa. Tulis jumlah & catatan di form, admin akan bantu rekap.</p>
+          </div>
+          <div class="helpItem">
+            <b>Apakah bisa request kartu ucapan?</b>
+            <p>Bisa. Isi di kolom catatan.</p>
+          </div>
+          <div class="helpItem">
+            <b>Ongkir gimana?</b>
+            <p>Ongkir dikonfirmasi admin sesuai alamat & berat paket.</p>
+          </div>
+        </div>`
+    }
+  };
+
+  function openHelp(key){
+    const data = helpContent[key];
+    if(!data || !helpModal) return;
+    helpTitle.textContent = data.title;
+    helpBody.innerHTML = data.html;
+
+    helpModal.removeAttribute('hidden');
+    helpModal.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeHelp(){
+    if(!helpModal) return;
+    helpModal.setAttribute('hidden','');
+    helpModal.setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('[data-help]').forEach(btn => {
+    btn.addEventListener('click', () => openHelp(btn.getAttribute('data-help')));
+  });
+
+  helpModal?.addEventListener('click', (e) => {
+    const t = e.target;
+    if(t && t.hasAttribute('data-close')) closeHelp();
+  });
+
+  window.addEventListener('keydown', (e) => {
+    if(e.key === 'Escape' && helpModal && !helpModal.hasAttribute('hidden')) closeHelp();
+  });
+</script>
 
 </body>
 </html>
