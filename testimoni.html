@@ -771,8 +771,7 @@
 <header class="nav">
   <div class="container nav__inner">
     <a class="logo" href="index.html" aria-label="Beranda">
-      <span class="logo__mark" aria-hidden="true"></span>
-      <span class="logo__text">OlehOlehJember</span>
+      <img class="logo__img" src="assets/img/logo.png" alt="OlehOlehJember">
     </a>
 
     <nav class="nav__links" aria-label="Navigasi">
@@ -992,6 +991,12 @@
     background: linear-gradient(135deg, var(--pink), var(--pink2));
     box-shadow: 0 0 0 6px var(--pinkSoft);
   }
+  .logo__img{
+  height: 40px;      /* ukuran aman untuk navbar 72px */
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
 
   .nav__links{
     display:flex;
@@ -1663,8 +1668,7 @@ Saya akan bayar via QRIS.`;
     <div class="container footer__grid">
       <div class="footer__brand">
         <div class="footerLogo">
-          <span class="logo__mark" aria-hidden="true"></span>
-          <b>OlehOlehJember</b>
+          <img class="logo__img" src="assets/img/logo.png" alt="OlehOlehJember">
         </div>
         <p class="footerMuted">
           Oleh-oleh khas Jember dengan pengemasan rapi, cocok untuk keluarga, teman, dan kebutuhan kantor.
