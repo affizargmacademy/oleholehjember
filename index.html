@@ -11,6 +11,7 @@
 </head>
 
 <body>
+
 <!-- NAVBAR -->
 <header class="nav">
   <div class="container nav__inner">
@@ -34,9 +35,9 @@
 
   <div class="mobileMenu" id="mobileMenu" hidden>
     <div class="container mobileMenu__inner">
-      <a href="file:///C:/xampp/htdocs/Project%20Affizar/Oleh%20Oleh%20Khas%20Jember/jember.html">Jember</a>
-      <a href="file:///C:/xampp/htdocs/Project%20Affizar/Oleh%20Oleh%20Khas%20Jember/kategori.html">Kategori</a>
-      <a href="file:///C:/xampp/htdocs/Project%20Affizar/Oleh%20Oleh%20Khas%20Jember/testimoni.html">Testimoni</a>
+      <a href="jember.html">Jember</a>
+      <a href="kategori.html">Kategori</a>
+      <a href="testimoni.html">Testimoni</a>
       <button class="btn btn--primary" id="openOrderMobile" type="button">Pesan</button>
     </div>
   </div>
@@ -577,6 +578,17 @@
     if(["produk","qty"].includes(e.target.name)) updateNota();
   });
 
+  // helper: open modal + optionally prefill product
+  function openOrderWithProduct(productName){
+    const form = document.getElementById("orderForm");
+    showModal();
+    if(form && productName){
+      form.produk.value = productName;
+      updateNota();
+      form.produk.dispatchEvent(new Event("change"));
+    }
+  }
+
   // submit -> WhatsApp
   document.getElementById('orderForm')?.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -618,15 +630,16 @@ Saya akan bayar via QRIS.`;
     qrisMandiri.hidden = true;
     updateNota();
   });
+
+  // expose to global (for onclick)
+  window.openOrderWithProduct = openOrderWithProduct;
 </script>
 
-
-<!-- HERO (layout web biasa: kiri teks, kanan gambar/preview) -->
+<!-- HERO -->
 <main id="home">
   <section class="hero">
     <div class="container hero__grid">
 
-      <!-- KIRI -->
       <div class="hero__left">
         <div class="badgeRow">
           <span class="badge">Khas Jember</span>
@@ -649,9 +662,8 @@ Saya akan bayar via QRIS.`;
           <a class="btn" href="#lokasi">Jember di mana?</a>
         </div>
       </div>
-      <!-- /KIRI -->
 
-      <!-- KANAN: FOTO RANDOM UNSPLASH (AUTO SLIDER) -->
+      <!-- KANAN: slider gambar FIXED (tidak random) -->
       <div class="hero__right" aria-label="Galeri oleh-oleh">
         <div class="preview">
           <div class="preview__head">
@@ -662,24 +674,22 @@ Saya akan bayar via QRIS.`;
           </div>
 
           <div class="gallery" aria-label="Slider foto oleh-oleh">
+            <!-- FIXED UNSPLASH PHOTO IDs (stable) -->
             <img class="gallery__img"
-              src="https://source.unsplash.com/1200x800/?indonesian-snack,traditional-food&sig=1"
-              alt="Snack khas Indonesia">
+              src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1400&q=80"
+              alt="Aneka snack dan camilan">
             <img class="gallery__img"
-              src="https://source.unsplash.com/1200x800/?coffee-indonesia,coffee-beans&sig=2"
-              alt="Kopi Indonesia">
+              src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=1400&q=80"
+              alt="Kopi dan biji kopi">
             <img class="gallery__img"
-              src="https://source.unsplash.com/1200x800/?gift-box,food-packaging&sig=3"
-              alt="Gift box makanan">
+              src="https://images.unsplash.com/photo-1512909006721-3d6018887383?auto=format&fit=crop&w=1400&q=80"
+              alt="Gift box dan packaging">
             <img class="gallery__img"
-              src="https://source.unsplash.com/1200x800/?indonesia-dessert,street-food&sig=4"
-              alt="Jajanan tradisional">
+              src="https://images.unsplash.com/photo-1526318472351-c75fcf070305?auto=format&fit=crop&w=1400&q=80"
+              alt="Makanan manis dan oleh-oleh">
           </div>
-
-
         </div>
       </div>
-      <!-- /KANAN -->
 
     </div>
   </section>
@@ -762,28 +772,16 @@ Saya akan bayar via QRIS.`;
 
     .preview:hover .gallery__img{animation-play-state:paused}
 
-    .preview__foot{
-      padding:14px 16px 16px;
-      display:flex;gap:10px;flex-wrap:wrap
-    }
-    .pill{
-      padding:8px 10px;border-radius:999px;
-      border:1px solid var(--border);
-      background:#fff;font-weight:800;color:var(--muted);font-size:12px
-    }
-
     @media(max-width:980px){
       .hero__grid{grid-template-columns:1fr}
     }
   </style>
 </main>
 
-
 <!-- SECTION: LOKASI -->
 <section class="section" id="lokasi">
   <div class="container lokasiGrid">
 
-    <!-- KIRI : PENJELASAN -->
     <div class="lokasiText">
       <h2>Jember, Jawa Timur</h2>
 
@@ -804,36 +802,14 @@ Saya akan bayar via QRIS.`;
         sangat cocok untuk <b>keluarga</b>, <b>teman</b>, maupun <b>kebutuhan kantor</b>.
         Inilah alasan kenapa Jember sering menjadi pilihan untuk buah tangan.
       </p>
-
-      <!-- Kalau mau pakai ikon lagi, tinggal aktifkan blok ini
-      <div class="lokasiIcons">
-        <div class="iconBox">
-          <div class="icon">📍</div>
-          <div class="iconText">Jawa Timur</div>
-        </div>
-        <div class="iconBox">
-          <div class="icon">🏝️</div>
-          <div class="iconText">Pulau Jawa</div>
-        </div>
-        <div class="iconBox">
-          <div class="icon">🎁</div>
-          <div class="iconText">Pusat Oleh-oleh</div>
-        </div>
-        <div class="iconBox">
-          <div class="icon">☕</div>
-          <div class="iconText">Kopi & Kuliner</div>
-        </div>
-      </div>
-      -->
-
     </div>
-    <!-- ✅ FIX: lokasiText DITUTUP dengan benar -->
 
-    <!-- KANAN : FOTO REAL -->
+    <!-- KANAN : FOTO FIXED (tidak berubah) -->
     <div class="lokasiImage">
-      <img src="https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?auto=format&fit=crop&w=1200&q=80" alt="Pantai Papuma Jember">
-      <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80" alt="Kuliner khas Indonesia">
-      <img src="https://images.unsplash.com/photo-1583248369069-9d91f1640fe6?auto=format&fit=crop&w=1200&q=80" alt="Kopi Indonesia">
+      <!-- NOTE: ini bukan random query. Ini foto fixed ID (stabil) -->
+      <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1400&q=80" alt="Pemandangan alam Jawa Timur">
+      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=80" alt="Suasana perjalanan wisata">
+      <img src="https://images.unsplash.com/photo-1498654896293-37aacf113fd9?auto=format&fit=crop&w=1400&q=80" alt="Kuliner dan kopi">
     </div>
 
   </div>
@@ -870,42 +846,6 @@ Saya akan bayar via QRIS.`;
     margin-bottom: 22px;
   }
 
-  /* 4 ICON (aman walau HTML ikon dihapus) */
-  .lokasiIcons{
-    display:grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 14px;
-    max-width: 520px;
-  }
-
-  .iconBox{
-    border-radius: 18px;
-    border: 1px solid rgba(255,63,154,.18);
-    background: #fff;
-    box-shadow: var(--shadow2);
-    padding: 16px 12px;
-    text-align:center;
-  }
-
-  .icon{
-    width:44px;
-    height:44px;
-    margin: 0 auto 8px;
-    border-radius: 14px;
-    display:grid;
-    place-items:center;
-    font-size: 22px;
-    background: var(--pinkSoft);
-    border: 1px solid rgba(255,63,154,.22);
-  }
-
-  .iconText{
-    font-weight: 800;
-    font-size: 13px;
-    color: var(--ink);
-  }
-
-  /* IMAGE */
   .lokasiImage{
     display:grid;
     grid-template-columns: 1fr 1fr;
@@ -919,6 +859,7 @@ Saya akan bayar via QRIS.`;
     border-radius: 20px;
     border: 1px solid rgba(255,63,154,.18);
     box-shadow: var(--shadow2);
+    background:#f6f6f6;
   }
 
   .lokasiImage img:first-child{
@@ -928,14 +869,10 @@ Saya akan bayar via QRIS.`;
 
   @media (max-width: 980px){
     .lokasiGrid{ grid-template-columns: 1fr; }
-    .lokasiIcons{ grid-template-columns: 1fr 1fr; }
-
     .lokasiImage img{ height:200px; }
     .lokasiImage img:first-child{ height:240px; }
   }
 </style>
-
-
 
 <!-- SECTION: KATEGORI -->
 <section class="section" id="kategori">
@@ -950,7 +887,7 @@ Saya akan bayar via QRIS.`;
 
       <article class="catCard">
         <div class="catCard__media">
-          <img src="https://images.unsplash.com/photo-1604908177522-402d5a9ef7c5?auto=format&fit=crop&w=800&q=80" alt="Manisan khas">
+          <img src="assets/img/kue manis 2.avif" alt="Manisan khas">
         </div>
         <div class="catCard__body">
           <div class="catCard__title">Manisan & Kue</div>
@@ -960,17 +897,17 @@ Saya akan bayar via QRIS.`;
 
       <article class="catCard">
         <div class="catCard__media">
-          <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=800&q=80" alt="Kopi Jember">
+          <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=1200&q=80" alt="Kopi">
         </div>
         <div class="catCard__body">
           <div class="catCard__title">Kopi</div>
-          <div class="catCard__desc">Bubuk & beans khas Jember.</div>
+          <div class="catCard__desc">Bubuk & beans khas.</div>
         </div>
       </article>
 
       <article class="catCard">
         <div class="catCard__media">
-          <img src="https://images.unsplash.com/photo-1546549032-9571cd6b27df?auto=format&fit=crop&w=800&q=80" alt="Snack">
+          <img src="https://images.unsplash.com/photo-1546549032-9571cd6b27df?auto=format&fit=crop&w=1200&q=80" alt="Snack">
         </div>
         <div class="catCard__body">
           <div class="catCard__title">Snack</div>
@@ -980,7 +917,7 @@ Saya akan bayar via QRIS.`;
 
       <article class="catCard">
         <div class="catCard__media">
-          <img src="https://images.unsplash.com/photo-1607344645866-009c320b63e0?auto=format&fit=crop&w=800&q=80" alt="Gift Box">
+          <img src="https://images.unsplash.com/photo-1512909006721-3d6018887383?auto=format&fit=crop&w=1200&q=80" alt="Gift box">
         </div>
         <div class="catCard__body">
           <div class="catCard__title">Gift Box</div>
@@ -991,10 +928,10 @@ Saya akan bayar via QRIS.`;
       <!-- item tambahan DISIMPAN tapi tidak tampil -->
       <article class="catCard">
         <div class="catCard__media">
-          <img src="https://images.unsplash.com/photo-1598515213963-8b44bcd2d76c?auto=format&fit=crop&w=800&q=80" alt="Keripik Pisang">
+          <img src="https://images.unsplash.com/photo-1598515213963-8b44bcd2d76c?auto=format&fit=crop&w=1200&q=80" alt="Keripik">
         </div>
         <div class="catCard__body">
-          <div class="catCard__title">Keripik Pisang</div>
+          <div class="catCard__title">Keripik</div>
           <div class="catCard__desc">Renyah & favorit wisatawan.</div>
         </div>
       </article>
@@ -1002,15 +939,17 @@ Saya akan bayar via QRIS.`;
     </div>
 
     <div class="kategoriMore">
-      <a href="kategori.html" class="btn btn--primary">
-        Lihat selengkapnya
-      </a>
+      <a href="kategori.html" class="btn btn--primary">Lihat selengkapnya</a>
     </div>
 
   </div>
 </section>
 
 <style>
+  .sectionHead{ margin-bottom: 12px; }
+  .sectionHead h2{ margin:0 0 8px; letter-spacing:-.3px; }
+  .sectionHead p{ margin:0; color: var(--muted); font-weight:600; line-height:1.8; }
+
   .kategoriGrid{
     margin-top: 14px;
     display:grid;
@@ -1018,7 +957,6 @@ Saya akan bayar via QRIS.`;
     gap: 16px;
   }
 
-  /* tampilkan hanya 4 */
   .kategoriGrid .catCard:nth-child(n+5){
     display:none;
   }
@@ -1066,7 +1004,6 @@ Saya akan bayar via QRIS.`;
     justify-content:center;
   }
 
-  /* RESPONSIVE */
   @media (max-width: 980px){
     .kategoriGrid{ grid-template-columns: repeat(2, 1fr); }
   }
@@ -1074,8 +1011,6 @@ Saya akan bayar via QRIS.`;
     .kategoriGrid{ grid-template-columns: 1fr; }
   }
 </style>
-
-
 
 <!-- SECTION: PRODUK -->
 <section class="section" id="produk">
@@ -1092,37 +1027,37 @@ Saya akan bayar via QRIS.`;
 
       <article class="prodCard">
         <div class="prodCard__img">
-          <img src="https://images.unsplash.com/photo-1604908177522-402d5a9ef7c5?auto=format&fit=crop&w=800&q=80" alt="Suwar-suwir khas Jember">
+          <img src="assets/img/kuemanis.avif" alt="Suwar-suwir khas">
         </div>
         <h3>Suwar-suwir Khas</h3>
         <p>Manis legit, tekstur lembut. Cocok untuk oleh-oleh.</p>
         <div class="prodCard__row">
           <span class="price">Rp 28.000</span>
-          <a class="btn btn--primary" href="#cta">Beli</a>
+          <button class="btn btn--primary" type="button" onclick="openOrderWithProduct('Suwar-suwir Khas')">Beli</button>
         </div>
       </article>
 
       <article class="prodCard">
         <div class="prodCard__img">
-          <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=800&q=80" alt="Kopi Jember">
+          <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=1200&q=80" alt="Kopi">
         </div>
         <h3>Kopi Jember</h3>
         <p>Aroma wangi, nikmat untuk keluarga atau hadiah.</p>
         <div class="prodCard__row">
           <span class="price">Rp 55.000</span>
-          <a class="btn btn--primary" href="#cta">Beli</a>
+          <button class="btn btn--primary" type="button" onclick="openOrderWithProduct('Kopi Jember')">Beli</button>
         </div>
       </article>
 
       <article class="prodCard">
         <div class="prodCard__img">
-          <img src="https://images.unsplash.com/photo-1607344645866-009c320b63e0?auto=format&fit=crop&w=800&q=80" alt="Gift box oleh-oleh">
+          <img src="https://images.unsplash.com/photo-1512909006721-3d6018887383?auto=format&fit=crop&w=1200&q=80" alt="Gift box">
         </div>
         <h3>Gift Box Mix</h3>
         <p>Mix snack + kopi + kartu ucapan. Siap kirim.</p>
         <div class="prodCard__row">
           <span class="price">Mulai Rp 99.000</span>
-          <a class="btn btn--primary" href="#cta">Pesan</a>
+          <button class="btn btn--primary" type="button" onclick="openOrderWithProduct('Gift Box Mix')">Pesan</button>
         </div>
       </article>
 
@@ -1167,7 +1102,6 @@ Saya akan bayar via QRIS.`;
     padding: 18px;
   }
 
-  /* FOTO PRODUK */
   .prodCard__img{
     height: 160px;
     border-radius: 18px;
@@ -1214,8 +1148,7 @@ Saya akan bayar via QRIS.`;
   }
 </style>
 
-
-<!-- SECTION: TESTIMONI (BUTTON SLIDER) -->
+<!-- SECTION: TESTIMONI -->
 <section class="section" id="testimoni">
   <div class="container">
     <div class="sectionHead">
@@ -1225,10 +1158,8 @@ Saya akan bayar via QRIS.`;
 
     <div class="testiBox">
 
-      <!-- TOMBOL KIRI -->
       <button class="arrow arrow--left" aria-label="Sebelumnya">‹</button>
 
-      <!-- TRACK -->
       <div class="testiViewport">
         <div class="testiTrack" id="testiTrack">
 
@@ -1283,16 +1214,12 @@ Saya akan bayar via QRIS.`;
         </div>
       </div>
 
-      <!-- TOMBOL KANAN -->
       <button class="arrow arrow--right" aria-label="Berikutnya">›</button>
 
     </div>
 
-    <!-- ✅ TOMBOL LIHAT LEBIH BANYAK -->
     <div class="testiMore">
-      <a href="testimoni.html" class="btn btn--primary">
-        Lihat lebih banyak testimoni →
-      </a>
+      <a href="testimoni.html" class="btn btn--primary">Lihat lebih banyak testimoni →</a>
     </div>
 
   </div>
@@ -1366,7 +1293,6 @@ Saya akan bayar via QRIS.`;
     cursor: not-allowed;
   }
 
-  /* ✅ WRAPPER BUTTON BAWAH */
   .testiMore{
     margin-top: 22px;
     text-align: center;
@@ -1403,13 +1329,10 @@ Saya akan bayar via QRIS.`;
   update();
 </script>
 
-
-
-<!-- FOOTER (PROFESIONAL) -->
+<!-- FOOTER -->
 <footer class="footer">
   <div class="container footer__grid">
 
-    <!-- BRAND / ABOUT -->
     <div class="footer__brand">
       <div class="footerLogo">
         <span class="logo__mark" aria-hidden="true"></span>
@@ -1426,7 +1349,6 @@ Saya akan bayar via QRIS.`;
       </div>
     </div>
 
-    <!-- LINKS -->
     <div class="footer__col">
       <div class="footer__title">Menu</div>
       <a class="footer__link" href="#lokasi">Jember</a>
@@ -1435,7 +1357,6 @@ Saya akan bayar via QRIS.`;
       <a class="footer__link" href="#testimoni">Testimoni</a>
     </div>
 
-    <!-- HELP (POPUP TRIGGER) -->
     <div class="footer__col">
       <div class="footer__title">Bantuan</div>
       <button class="footer__linkBtn" type="button" data-help="cara">Cara Pesan</button>
@@ -1444,7 +1365,6 @@ Saya akan bayar via QRIS.`;
       <button class="footer__linkBtn" type="button" data-help="faq">FAQ</button>
     </div>
 
-    <!-- CONTACT -->
     <div class="footer__col">
       <div class="footer__title">Kontak</div>
 
@@ -1461,7 +1381,8 @@ Saya akan bayar via QRIS.`;
           <span class="fcIcon" aria-hidden="true">💬</span>
           <div>
             <div class="fcLabel">WhatsApp</div>
-            <a class="fcText fcLink" href="#" target="_blank" rel="noopener">Klik untuk chat</a>
+            <!-- GANTI nomor di bawah -->
+            <a class="fcText fcLink" href="https://wa.me/6281234567890" target="_blank" rel="noopener">Klik untuk chat</a>
           </div>
         </div>
 
@@ -1475,35 +1396,29 @@ Saya akan bayar via QRIS.`;
       </div>
 
       <div class="footerSocial" aria-label="Sosial media">
-
-        <!-- INSTAGRAM -->
         <a class="socialBtn" href="#" aria-label="Instagram" title="Instagram">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5.5A4.5 4.5 0 1 0 16.5 12 4.5 4.5 0 0 0 12 7.5zm0 7.4A2.9 2.9 0 1 1 14.9 12 2.9 2.9 0 0 1 12 14.9zM17.8 6.2a1 1 0 1 1-1-1 1 1 0 0 1 1 1z"/>
           </svg>
         </a>
-      
-        <!-- TIKTOK -->
+
         <a class="socialBtn" href="#" aria-label="TikTok" title="TikTok">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M16.5 2h-2.6v13.2a2.4 2.4 0 1 1-2-2.4V10a5 5 0 1 0 4.6 5V8.7a6.7 6.7 0 0 0 3.5 1.1V7.3a4.3 4.3 0 0 1-3.5-2.1z"/>
           </svg>
         </a>
-      
-        <!-- SHOPEE -->
+
         <a class="socialBtn" href="#" aria-label="Shopee" title="Shopee">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M5 7h14l-1 14H6L5 7zm7-5a4 4 0 0 0-4 4h2a2 2 0 0 1 4 0h2a4 4 0 0 0-4-4z"/>
           </svg>
         </a>
-      
       </div>
-      
+
     </div>
 
   </div>
 
-  <!-- BOTTOM BAR -->
   <div class="footer__bottom">
     <div class="container footer__bottomInner">
       <div class="footer__copy">
@@ -1531,9 +1446,7 @@ Saya akan bayar via QRIS.`;
       <button class="helpModal__close" type="button" aria-label="Tutup" data-close>✕</button>
     </div>
 
-    <div class="helpModal__body" id="helpBody">
-      <!-- diisi dari JS -->
-    </div>
+    <div class="helpModal__body" id="helpBody"></div>
 
     <div class="helpModal__foot">
       <button class="btn" type="button" data-close>Tutup</button>
@@ -1542,7 +1455,6 @@ Saya akan bayar via QRIS.`;
 </div>
 
 <style>
-  /* FOOTER BASE (punyamu tetap) */
   .footer{
     border-top: 1px solid var(--border);
     background: #fff;
@@ -1601,7 +1513,6 @@ Saya akan bayar via QRIS.`;
   }
   .footer__link:hover{ color: var(--ink); }
 
-  /* Bantuan jadi tombol */
   .footer__linkBtn{
     display:block;
     width: 100%;
@@ -1617,7 +1528,6 @@ Saya akan bayar via QRIS.`;
   }
   .footer__linkBtn:hover{ color: var(--ink); }
 
-  /* Contact */
   .footerContact{ display:grid; gap: 10px; margin-bottom: 14px; }
   .fcItem{ display:flex; gap: 10px; align-items:flex-start; }
   .fcIcon{
@@ -1643,7 +1553,6 @@ Saya akan bayar via QRIS.`;
   .fcLink{ color: var(--pink); font-weight: 900; }
   .fcLink:hover{ text-decoration: underline; }
 
-  /* Social */
   .footerSocial{ display:flex; gap: 10px; flex-wrap:wrap; }
   .socialBtn{
     width: 42px; height: 42px;
@@ -1660,7 +1569,6 @@ Saya akan bayar via QRIS.`;
     border-color: rgba(255,63,154,.26);
   }
 
-  /* Bottom bar */
   .footer__bottom{
     border-top: 1px solid var(--border);
     background: #fff;
@@ -1686,7 +1594,6 @@ Saya akan bayar via QRIS.`;
     .footer__grid{ grid-template-columns: 1fr; }
   }
 
-  /* FLOATING TO TOP */
   .toTopFloat{
     position: fixed;
     right: 18px;
@@ -1700,14 +1607,11 @@ Saya akan bayar via QRIS.`;
     font-weight: 900;
     box-shadow: var(--shadow);
     cursor:pointer;
-    display:none; /* muncul saat scroll */
+    display:none;
     z-index: 999;
   }
-  .toTopFloat:hover{
-    background: var(--pinkSoft);
-  }
+  .toTopFloat:hover{ background: var(--pinkSoft); }
 
-  /* MODAL BANTUAN */
   .helpModal[hidden]{ display:none; }
   .helpModal{ position:fixed; inset:0; z-index: 9999; }
   .helpModal__backdrop{ position:absolute; inset:0; background: rgba(0,0,0,.45); }
@@ -1762,11 +1666,7 @@ Saya akan bayar via QRIS.`;
     gap: 10px;
   }
 
-  .helpList{
-    display:grid;
-    gap: 10px;
-  }
-
+  .helpList{ display:grid; gap: 10px; }
   .helpItem{
     border: 1px solid var(--border);
     border-radius: 16px;
@@ -1790,9 +1690,7 @@ Saya akan bayar via QRIS.`;
   }
   window.addEventListener('scroll', toggleToTop, { passive:true });
   toggleToTop();
-  toTopFloat?.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
+  toTopFloat?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
   // HELP MODAL CONTENT
   const helpModal = document.getElementById('helpModal');
@@ -1901,3 +1799,6 @@ Saya akan bayar via QRIS.`;
     if(e.key === 'Escape' && helpModal && !helpModal.hasAttribute('hidden')) closeHelp();
   });
 </script>
+
+</body>
+</html>
