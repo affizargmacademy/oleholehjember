@@ -5,9 +5,77 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Oleh-Oleh Jember | Khas, Rapi, Siap Kirim</title>
   <meta name="description" content="Toko oleh-oleh khas Jember: suwar-suwir, kopi, snack, gift box. Tampilan putih bersih dengan aksen pink profesional." />
+
+  <!-- SEO: canonical + robots -->
+  <link rel="canonical" href="https://oleh-oleh-jember.example/" />
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+  <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+
+  <!-- Theme -->
+  <meta name="theme-color" content="#ff3f9a" />
+  <meta name="color-scheme" content="light" />
+
+  <!-- Open Graph -->
+  <meta property="og:locale" content="id_ID" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="OlehOlehJember" />
+  <meta property="og:title" content="Oleh-Oleh Jember | Khas, Rapi, Siap Kirim" />
+  <meta property="og:description" content="Toko oleh-oleh khas Jember: suwar-suwir, kopi, snack, gift box. Packing aman, siap kirim." />
+  <meta property="og:url" content="https://oleh-oleh-jember.example/" />
+  <meta property="og:image" content="https://oleh-oleh-jember.example/assets/img/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Oleh-Oleh Jember | Khas, Rapi, Siap Kirim" />
+  <meta name="twitter:description" content="Toko oleh-oleh khas Jember: suwar-suwir, kopi, snack, gift box. Packing aman, siap kirim." />
+  <meta name="twitter:image" content="https://oleh-oleh-jember.example/assets/img/og-image.jpg" />
+
+  <!-- Favicons (maksimal) -->
+  <link rel="icon" href="assets/favicon/favicon.ico" sizes="any">
+  <link rel="icon" href="assets/favicon/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="assets/favicon/site.webmanifest">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+
+  <!-- Perf: preconnect + preload font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Structured Data (AI Overview & Rich Results) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "OlehOlehJember",
+    "url": "https://oleh-oleh-jember.example/",
+    "image": "https://oleh-oleh-jember.example/assets/img/og-image.jpg",
+    "description": "Toko oleh-oleh khas Jember: suwar-suwir, kopi, snack, gift box. Packing aman, gift ready, siap kirim.",
+    "telephone": "+62-812-3456-7890",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Jember",
+      "addressRegion": "Jawa Timur",
+      "addressCountry": "ID"
+    },
+    "areaServed": "Indonesia",
+    "sameAs": [
+      "https://wa.me/6281234567890"
+    ],
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "08:00",
+        "closes": "21:00"
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
@@ -16,7 +84,7 @@
 <header class="nav">
   <div class="container nav__inner">
     <a class="logo" href="index.html" aria-label="Beranda">
-      <img class="logo__img" src="assets/img/logo.png" alt="OlehOlehJember">
+      <img class="logo__img" src="assets/img/logo.png" alt="OlehOlehJember" decoding="async">
     </a>
     
 
@@ -61,17 +129,17 @@
       <div class="formGrid">
         <label class="field">
           <span>Nama</span>
-          <input name="nama" required placeholder="Nama kamu" />
+          <input name="nama" required placeholder="Nama kamu" autocomplete="name" />
         </label>
 
         <label class="field">
           <span>No. WhatsApp</span>
-          <input name="wa" required placeholder="08xxxxxxxxxx" />
+          <input name="wa" required placeholder="08xxxxxxxxxx" inputmode="tel" autocomplete="tel" />
         </label>
 
         <label class="field field--full">
           <span>Alamat (untuk pengiriman)</span>
-          <textarea name="alamat" rows="3" required placeholder="Jalan, kecamatan, kota, kode pos"></textarea>
+          <textarea name="alamat" rows="3" required placeholder="Jalan, kecamatan, kota, kode pos" autocomplete="street-address"></textarea>
         </label>
 
         <label class="field">
@@ -158,13 +226,13 @@
         <div class="qrWrap">
           <div class="qrCard" id="qrisBCA">
             <div class="qrTitle">QRIS BCA</div>
-            <img class="qrImg" src="assets/qris-bca.png" alt="QRIS BCA (ganti dengan QR kamu)">
+            <img class="qrImg" src="assets/qris-bca.png" alt="QRIS BCA (ganti dengan QR kamu)" loading="lazy" decoding="async">
             <div class="qrNote">Ganti dengan QRIS BCA milikmu: <b>assets/qris-bca.png</b></div>
           </div>
 
           <div class="qrCard" id="qrisMandiri" hidden>
             <div class="qrTitle">QRIS Mandiri</div>
-            <img class="qrImg" src="assets/qris-mandiri.png" alt="QRIS Mandiri (ganti dengan QR kamu)">
+            <img class="qrImg" src="assets/qris-mandiri.png" alt="QRIS Mandiri (ganti dengan QR kamu)" loading="lazy" decoding="async">
             <div class="qrNote">Ganti dengan QRIS Mandiri milikmu: <b>assets/qris-mandiri.png</b></div>
           </div>
         </div>
@@ -218,6 +286,9 @@
     font-family:"Plus Jakarta Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
     background: var(--bg);
     color: var(--ink);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
   a{ color:inherit; text-decoration:none; }
   .container{ width:min(var(--container), 92vw); margin-inline:auto; }
@@ -666,7 +737,7 @@ Saya akan bayar via QRIS.`;
 
         <div class="hero__cta">
           <a class="btn btn--primary" href="#produk">Belanja Sekarang</a>
-          <a class="btn" href="#lokasi">Jember di mana?</a>
+          <a class="btn" href="jember.html">Jember di mana?</a>
         </div>
       </div>
 
@@ -684,16 +755,16 @@ Saya akan bayar via QRIS.`;
             <!-- FIXED UNSPLASH PHOTO IDs (stable) -->
             <img class="gallery__img"
               src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1400&q=80"
-              alt="Aneka snack dan camilan">
+              alt="Aneka snack dan camilan" decoding="async" fetchpriority="high">
             <img class="gallery__img"
               src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=1400&q=80"
-              alt="Kopi dan biji kopi">
+              alt="Kopi dan biji kopi" loading="lazy" decoding="async">
             <img class="gallery__img"
               src="https://images.unsplash.com/photo-1512909006721-3d6018887383?auto=format&fit=crop&w=1400&q=80"
-              alt="Gift box dan packaging">
+              alt="Gift box dan packaging" loading="lazy" decoding="async">
             <img class="gallery__img"
               src="https://images.unsplash.com/photo-1526318472351-c75fcf070305?auto=format&fit=crop&w=1400&q=80"
-              alt="Makanan manis dan oleh-oleh">
+              alt="Makanan manis dan oleh-oleh" loading="lazy" decoding="async">
           </div>
         </div>
       </div>
@@ -790,33 +861,31 @@ Saya akan bayar via QRIS.`;
   <div class="container lokasiGrid">
 
     <div class="lokasiText">
-      <h2>Jember, Jawa Timur</h2>
+      <h2>OlehOlehJember</h2>
 
       <p>
-        Jember merupakan salah satu kabupaten yang berada di <b>Provinsi Jawa Timur</b>,
-        tepatnya di bagian timur Pulau Jawa. Wilayah ini dikenal sebagai daerah yang
-        berkembang pesat dalam sektor kuliner, UMKM, dan produk lokal.
+        OlehOlehJember adalah toko oleh-oleh khas Jember yang menyediakan <b>suwar-suwir</b>, <b>kopi</b>, aneka <b>snack</b>,
+        hingga <b>gift box</b> untuk kebutuhan keluarga, teman, maupun acara kantor.
       </p>
-
+      
       <p>
-        Banyak wisatawan yang datang ke Jember tidak hanya untuk berkunjung,
-        tetapi juga untuk mencari <b>oleh-oleh khas</b>. Mulai dari makanan manis,
-        snack gurih, hingga kopi, semuanya mudah ditemukan dan cocok dibawa pulang.
+        Kami mengutamakan kualitas produk dan <b>packing rapi</b> agar aman sampai tujuan.
+        Pesanan diproses cepat, siap kirim, dan bisa request catatan seperti kartu ucapan atau paket hampers.
       </p>
-
+      
       <p>
-        Karena jenis produknya beragam dan mudah dikemas, oleh-oleh khas Jember
-        sangat cocok untuk <b>keluarga</b>, <b>teman</b>, maupun <b>kebutuhan kantor</b>.
-        Inilah alasan kenapa Jember sering menjadi pilihan untuk buah tangan.
+        Ingin pesan praktis? Klik tombol <b>Pesan</b> atau chat WhatsApp untuk konsultasi produk,
+        konfirmasi ongkir, dan bantuan rekap pesanan dalam jumlah banyak.
       </p>
+      
     </div>
 
     <!-- KANAN : FOTO FIXED (tidak berubah) -->
     <div class="lokasiImage">
       <!-- NOTE: ini bukan random query. Ini foto fixed ID (stabil) -->
-      <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1400&q=80" alt="Pemandangan alam Jawa Timur">
-      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=80" alt="Suasana perjalanan wisata">
-      <img src="https://images.unsplash.com/photo-1498654896293-37aacf113fd9?auto=format&fit=crop&w=1400&q=80" alt="Kuliner dan kopi">
+      <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1400&q=80" alt="Pemandangan alam Jawa Timur" loading="lazy" decoding="async">
+      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=80" alt="Suasana perjalanan wisata" loading="lazy" decoding="async">
+      <img src="https://images.unsplash.com/photo-1498654896293-37aacf113fd9?auto=format&fit=crop&w=1400&q=80" alt="Kuliner dan kopi" loading="lazy" decoding="async">
     </div>
 
   </div>
@@ -894,7 +963,7 @@ Saya akan bayar via QRIS.`;
 
       <article class="catCard">
         <div class="catCard__media">
-          <img src="assets/img/kue manis 2.avif" alt="Manisan khas">
+          <img src="assets/img/kue manis 2.avif" alt="Manisan khas" loading="lazy" decoding="async">
         </div>
         <div class="catCard__body">
           <div class="catCard__title">Manisan & Kue</div>
@@ -904,7 +973,7 @@ Saya akan bayar via QRIS.`;
 
       <article class="catCard">
         <div class="catCard__media">
-          <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=1200&q=80" alt="Kopi">
+          <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=1200&q=80" alt="Kopi" loading="lazy" decoding="async">
         </div>
         <div class="catCard__body">
           <div class="catCard__title">Kopi</div>
@@ -914,7 +983,7 @@ Saya akan bayar via QRIS.`;
 
       <article class="catCard">
         <div class="catCard__media">
-          <img src="https://images.unsplash.com/photo-1546549032-9571cd6b27df?auto=format&fit=crop&w=1200&q=80" alt="Snack">
+          <img src="https://images.unsplash.com/photo-1546549032-9571cd6b27df?auto=format&fit=crop&w=1200&q=80" alt="Snack" loading="lazy" decoding="async">
         </div>
         <div class="catCard__body">
           <div class="catCard__title">Snack</div>
@@ -924,7 +993,7 @@ Saya akan bayar via QRIS.`;
 
       <article class="catCard">
         <div class="catCard__media">
-          <img src="https://images.unsplash.com/photo-1512909006721-3d6018887383?auto=format&fit=crop&w=1200&q=80" alt="Gift box">
+          <img src="https://images.unsplash.com/photo-1512909006721-3d6018887383?auto=format&fit=crop&w=1200&q=80" alt="Gift box" loading="lazy" decoding="async">
         </div>
         <div class="catCard__body">
           <div class="catCard__title">Gift Box</div>
@@ -935,7 +1004,7 @@ Saya akan bayar via QRIS.`;
       <!-- item tambahan DISIMPAN tapi tidak tampil -->
       <article class="catCard">
         <div class="catCard__media">
-          <img src="https://images.unsplash.com/photo-1598515213963-8b44bcd2d76c?auto=format&fit=crop&w=1200&q=80" alt="Keripik">
+          <img src="https://images.unsplash.com/photo-1598515213963-8b44bcd2d76c?auto=format&fit=crop&w=1200&q=80" alt="Keripik" loading="lazy" decoding="async">
         </div>
         <div class="catCard__body">
           <div class="catCard__title">Keripik</div>
@@ -1034,7 +1103,7 @@ Saya akan bayar via QRIS.`;
 
       <article class="prodCard">
         <div class="prodCard__img">
-          <img src="assets/img/kuemanis.avif" alt="Suwar-suwir khas">
+          <img src="assets/img/kuemanis.avif" alt="Suwar-suwir khas" loading="lazy" decoding="async">
         </div>
         <h3>Suwar-suwir Khas</h3>
         <p>Manis legit, tekstur lembut. Cocok untuk oleh-oleh.</p>
@@ -1046,7 +1115,7 @@ Saya akan bayar via QRIS.`;
 
       <article class="prodCard">
         <div class="prodCard__img">
-          <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=1200&q=80" alt="Kopi">
+          <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=1200&q=80" alt="Kopi" loading="lazy" decoding="async">
         </div>
         <h3>Kopi Jember</h3>
         <p>Aroma wangi, nikmat untuk keluarga atau hadiah.</p>
@@ -1058,7 +1127,7 @@ Saya akan bayar via QRIS.`;
 
       <article class="prodCard">
         <div class="prodCard__img">
-          <img src="https://images.unsplash.com/photo-1512909006721-3d6018887383?auto=format&fit=crop&w=1200&q=80" alt="Gift box">
+          <img src="https://images.unsplash.com/photo-1512909006721-3d6018887383?auto=format&fit=crop&w=1200&q=80" alt="Gift box" loading="lazy" decoding="async">
         </div>
         <h3>Gift Box Mix</h3>
         <p>Mix snack + kopi + kartu ucapan. Siap kirim.</p>
@@ -1342,7 +1411,7 @@ Saya akan bayar via QRIS.`;
 
     <div class="footer__brand">
       <div class="footerLogo">
-        <img class="logo__img" src="assets/img/logo.png" alt="OlehOlehJember">
+        <img class="logo__img" src="assets/img/logo.png" alt="OlehOlehJember" loading="lazy" decoding="async">
       </div>
       <p class="footerMuted">
         Oleh-oleh khas Jember dengan pengemasan rapi, cocok untuk keluarga, teman, dan kebutuhan kantor.
@@ -1388,7 +1457,7 @@ Saya akan bayar via QRIS.`;
           <div>
             <div class="fcLabel">WhatsApp</div>
             <!-- GANTI nomor di bawah -->
-            <a class="fcText fcLink" href="https://wa.me/6281234567890" target="_blank" rel="noopener">Klik untuk chat</a>
+            <a class="fcText fcLink" href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer">Klik untuk chat</a>
           </div>
         </div>
 
@@ -1438,6 +1507,16 @@ Saya akan bayar via QRIS.`;
 <button class="toTopFloat" id="toTopFloat" type="button" aria-label="Kembali ke atas" title="Kembali ke atas">
   ↑
 </button>
+
+<!-- FLOATING WHATSAPP (di bawah floating top) -->
+<a class="waFloat" id="waFloat" href="https://wa.me/6281234567890" target="_blank" rel="noopener" aria-label="Chat WhatsApp" title="Chat WhatsApp">
+  <span>Chat WhatsApp</span>
+  <svg viewBox="0 0 32 32" aria-hidden="true">
+    <path d="M19.11 17.93c-.27-.14-1.61-.79-1.86-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.19-1.33-.81-.72-1.36-1.61-1.52-1.88-.16-.27-.02-.42.12-.56.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.02-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27 0 1.34.98 2.63 1.11 2.82.14.18 1.93 2.95 4.69 4.13.66.28 1.17.45 1.57.58.66.21 1.26.18 1.73.11.53-.08 1.61-.66 1.84-1.29.23-.63.23-1.18.16-1.29-.07-.11-.25-.18-.52-.32zM16.03 3C9.41 3 4 8.38 4 14.99c0 2.64.87 5.08 2.34 7.05L4 29l7.18-2.29a12.9 12.9 0 0 0 4.85.94C22.65 27.65 28 22.28 28 15.67 28 9.06 22.65 3 16.03 3zm0 22.27c-1.55 0-3.07-.42-4.4-1.22l-.32-.19-4.26 1.36 1.39-4.15-.21-.33a9.13 9.13 0 0 1-1.4-4.91c0-5.06 4.13-9.18 9.2-9.18 5.07 0 9.2 4.12 9.2 9.18s-4.13 9.18-9.2 9.18z"/>
+  </svg>
+</a>
+
+
 
 <!-- MODAL BANTUAN -->
 <div class="helpModal" id="helpModal" hidden aria-hidden="true">
@@ -1617,6 +1696,43 @@ Saya akan bayar via QRIS.`;
     z-index: 999;
   }
   .toTopFloat:hover{ background: var(--pinkSoft); }
+
+/* FLOATING WHATSAPP (di bawah floating top) */
+.waFloat{
+  position: fixed;
+  right: 18px;
+  bottom: 82px; /* di bawah toTop (52px + gap) */
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  border: 1px solid rgba(37,211,102,.22);
+  background: #fff;
+  box-shadow: var(--shadow);
+  cursor:pointer;
+  display:grid;
+  place-items:center;
+  z-index: 8500;
+}
+.waFloat:hover{ background: rgba(37,211,102,.08); }
+.waFloat svg{ width: 24px; height: 24px; fill: #25D366; }
+.waFloat span{
+  position:absolute;
+  right: 62px;
+  background:#fff;
+  border:1px solid rgba(30,26,31,.10);
+  box-shadow: var(--shadow2);
+  padding: 8px 10px;
+  border-radius: 12px;
+  font-weight: 800;
+  color: var(--ink);
+  white-space: nowrap;
+  opacity:0;
+  transform: translateY(2px);
+  pointer-events:none;
+  transition: opacity .12s ease, transform .12s ease;
+}
+.waFloat:hover span{ opacity:1; transform: translateY(0); }
+
 
   .helpModal[hidden]{ display:none; }
   .helpModal{ position:fixed; inset:0; z-index: 9999; }
