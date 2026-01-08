@@ -5,10 +5,81 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Kategori & Produk | OlehOlehJember</title>
 
-  <!-- FONT -->
+  <!-- SEO -->
+  <meta name="description" content="Kategori & produk OlehOlehJember: filter kategori, pencarian cepat, dan pesan via WhatsApp. Oleh-oleh khas Jember dengan packing rapi, siap kirim." />
+  <link rel="canonical" href="https://oleh-oleh-jember.example/kategori.html" />
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+  <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+
+  <!-- Theme -->
+  <meta name="theme-color" content="#ff3f9a" />
+  <meta name="color-scheme" content="light" />
+
+  <!-- Open Graph -->
+  <meta property="og:locale" content="id_ID" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="OlehOlehJember" />
+  <meta property="og:title" content="Kategori & Produk | OlehOlehJember" />
+  <meta property="og:description" content="Pilih kategori, cari produk, lalu pesan. Oleh-oleh khas Jember dengan packing rapi, siap kirim." />
+  <meta property="og:url" content="https://oleh-oleh-jember.example/kategori.html" />
+  <meta property="og:image" content="https://oleh-oleh-jember.example/assets/img/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Kategori & Produk | OlehOlehJember" />
+  <meta name="twitter:description" content="Pilih kategori, cari produk, lalu pesan. Oleh-oleh khas Jember dengan packing rapi, siap kirim." />
+  <meta name="twitter:image" content="https://oleh-oleh-jember.example/assets/img/og-image.jpg" />
+
+  <!-- Favicons (maksimal) -->
+  <link rel="icon" href="assets/favicon/favicon.ico" sizes="any">
+  <link rel="icon" href="assets/favicon/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="assets/favicon/site.webmanifest">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+  <meta name="apple-mobile-web-app-title" content="OlehOlehJember">
+  <meta name="application-name" content="OlehOlehJember">
+  <meta name="format-detection" content="telephone=no">
+
+  <!-- Perf: preconnect + preload font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&display=swap">
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Structured Data (AI Overview & Rich Results) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Kategori & Produk | OlehOlehJember",
+    "url": "https://oleh-oleh-jember.example/kategori.html",
+    "description": "Kategori & produk OlehOlehJember: filter kategori, pencarian cepat, dan pesan via WhatsApp.",
+    "inLanguage": "id-ID",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "OlehOlehJember",
+      "url": "https://oleh-oleh-jember.example/"
+    },
+    "about": {
+      "@type": "LocalBusiness",
+      "name": "OlehOlehJember",
+      "areaServed": "Indonesia",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Jember",
+        "addressRegion": "Jawa Timur",
+        "addressCountry": "ID"
+      },
+      "telephone": "+62-812-3456-7890",
+      "sameAs": [
+        "https://wa.me/6281234567890"
+      ]
+    }
+  }
+  </script>
 
   <style>
     :root{
@@ -86,11 +157,11 @@
       box-shadow: 0 0 0 6px var(--pinkSoft);
     }
     .logo__img{
-  height: 40px;      /* ukuran aman untuk navbar 72px */
-  width: auto;
-  display: block;
-  object-fit: contain;
-}
+      height: 40px;
+      width: auto;
+      display: block;
+      object-fit: contain;
+    }
 
     .nav__links{
       display:flex;
@@ -659,6 +730,25 @@
     }
     .toTopFloat:hover{ background: var(--pinkSoft); }
 
+    /* FLOATING WHATSAPP (di bawah floating top) */
+    .waFloat{
+      position: fixed;
+      right: 18px;
+      bottom: 82px; /* 52px (toTop) + gap */
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      border: 1px solid rgba(37,211,102,.22);
+      background: #fff;
+      box-shadow: var(--shadow);
+      cursor:pointer;
+      display:grid;
+      place-items:center;
+      z-index: 8490;
+    }
+    .waFloat:hover{ background: rgba(37,211,102,.08); }
+    .waFloat svg{ width: 24px; height: 24px; fill: #25D366; }
+
     /* HELP MODAL */
     .helpModal[hidden]{ display:none; }
     .helpModal{ position:fixed; inset:0; z-index: 9999; }
@@ -723,7 +813,7 @@
 <header class="nav">
   <div class="container nav__inner">
     <a class="logo" href="index.html" aria-label="Beranda">
-      <img class="logo__img" src="assets/img/logo.png" alt="OlehOlehJember">
+      <img class="logo__img" src="assets/img/logo.png" alt="OlehOlehJember" decoding="async">
     </a>
 
     <nav class="nav__links" aria-label="Navigasi">
@@ -767,17 +857,17 @@
       <div class="formGrid">
         <label class="field">
           <span>Nama</span>
-          <input name="nama" required placeholder="Nama kamu" />
+          <input name="nama" required placeholder="Nama kamu" autocomplete="name" />
         </label>
 
         <label class="field">
           <span>No. WhatsApp</span>
-          <input name="wa" required placeholder="08xxxxxxxxxx" />
+          <input name="wa" required placeholder="08xxxxxxxxxx" inputmode="tel" autocomplete="tel" />
         </label>
 
         <label class="field field--full">
           <span>Alamat (untuk pengiriman)</span>
-          <textarea name="alamat" rows="3" required placeholder="Jalan, kecamatan, kota, kode pos"></textarea>
+          <textarea name="alamat" rows="3" required placeholder="Jalan, kecamatan, kota, kode pos" autocomplete="street-address"></textarea>
         </label>
 
         <label class="field">
@@ -861,13 +951,13 @@
         <div class="qrWrap">
           <div class="qrCard" id="qrisBCA">
             <div class="qrTitle">QRIS BCA</div>
-            <img class="qrImg" src="assets/qris-bca.png" alt="QRIS BCA (ganti dengan QR kamu)">
+            <img class="qrImg" src="assets/qris-bca.png" alt="QRIS BCA (ganti dengan QR kamu)" loading="lazy" decoding="async">
             <div class="qrNote">Ganti dengan QRIS BCA milikmu: <b>assets/qris-bca.png</b></div>
           </div>
 
           <div class="qrCard" id="qrisMandiri" hidden>
             <div class="qrTitle">QRIS Mandiri</div>
-            <img class="qrImg" src="assets/qris-mandiri.png" alt="QRIS Mandiri (ganti dengan QR kamu)">
+            <img class="qrImg" src="assets/qris-mandiri.png" alt="QRIS Mandiri (ganti dengan QR kamu)" loading="lazy" decoding="async">
             <div class="qrNote">Ganti dengan QRIS Mandiri milikmu: <b>assets/qris-mandiri.png</b></div>
           </div>
         </div>
@@ -901,13 +991,13 @@
 
       <div class="heroActions">
         <a class="btn btn--primary" href="#kategori">Mulai dari Kategori</a>
-        <a class="btn" href="#produk">Langsung ke Produk</a>
+        <a class="btn" href="#produk">Lihat Produk</a>
       </div>
 
     </div>
 
     <div class="heroImgPink">
-      <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1400&q=80" alt="Oleh-oleh">
+      <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1400&q=80" alt="Oleh-oleh" loading="lazy" decoding="async">
     </div>
   </div>
 </section>
@@ -923,7 +1013,7 @@
     <div class="gridK">
       <article class="kCard">
         <div class="kCard__media">
-          <img src="assets/img/kuemanis.avif" alt="Makanan manis">
+          <img src="assets/img/kuemanis.avif" alt="Makanan manis" loading="lazy" decoding="async">
         </div>
         <div class="kCard__body">
           <h3>Makanan Manis</h3>
@@ -941,7 +1031,7 @@
 
       <article class="kCard">
         <div class="kCard__media">
-          <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=1200&q=80" alt="Kopi">
+          <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=1200&q=80" alt="Kopi" loading="lazy" decoding="async">
         </div>
         <div class="kCard__body">
           <h3>Minuman</h3>
@@ -959,7 +1049,7 @@
 
       <article class="kCard">
         <div class="kCard__media">
-          <img src="assets/img/kue manis 2.avif" alt="Snack">
+          <img src="assets/img/kue manis 2.avif" alt="Snack" loading="lazy" decoding="async">
         </div>
         <div class="kCard__body">
           <h3>Snack</h3>
@@ -977,7 +1067,7 @@
 
       <article class="kCard">
         <div class="kCard__media">
-          <img src="https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&w=1200&q=80" alt="Hampers">
+          <img src="https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&w=1200&q=80" alt="Hampers" loading="lazy" decoding="async">
         </div>
         <div class="kCard__body">
           <h3>Hampers</h3>
@@ -995,7 +1085,7 @@
 
       <article class="kCard">
         <div class="kCard__media">
-          <img src="https://images.unsplash.com/photo-1546549032-9571cd6b27df?auto=format&fit=crop&w=1200&q=80" alt="Paket">
+          <img src="https://images.unsplash.com/photo-1546549032-9571cd6b27df?auto=format&fit=crop&w=1200&q=80" alt="Paket" loading="lazy" decoding="async">
         </div>
         <div class="kCard__body">
           <h3>Paket</h3>
@@ -1013,7 +1103,7 @@
 
       <article class="kCard">
         <div class="kCard__media">
-          <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=1200&q=80" alt="Oleh-oleh kering">
+          <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=1200&q=80" alt="Oleh-oleh kering" loading="lazy" decoding="async">
         </div>
         <div class="kCard__body">
           <h3>Oleh-oleh Kering</h3>
@@ -1073,7 +1163,7 @@
 
     <div class="footer__brand">
       <div class="footerLogo">
-        <img class="logo__img" src="assets/img/logo.png" alt="OlehOlehJember">
+        <img class="logo__img" src="assets/img/logo.png" alt="OlehOlehJember" loading="lazy" decoding="async">
       </div>
       <p class="footerMuted">
         Oleh-oleh khas Jember dengan pengemasan rapi, cocok untuk keluarga, teman, dan kebutuhan kantor.
@@ -1118,7 +1208,7 @@
           <span class="fcIcon" aria-hidden="true">💬</span>
           <div>
             <div class="fcLabel">WhatsApp</div>
-            <a class="fcText fcLink" href="#" target="_blank" rel="noopener">Klik untuk chat</a>
+            <a class="fcText fcLink" href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer">Klik untuk chat</a>
           </div>
         </div>
 
@@ -1169,6 +1259,19 @@
 
 <!-- FLOATING TO TOP -->
 <button class="toTopFloat" id="toTopFloat" type="button" aria-label="Kembali ke atas" title="Kembali ke atas">↑</button>
+
+<!-- FLOATING WHATSAPP (di bawah floating top) -->
+<a class="waFloat"
+   id="waFloat"
+   href="https://wa.me/6281234567890"
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="Chat WhatsApp"
+   title="Chat WhatsApp">
+  <svg viewBox="0 0 32 32" aria-hidden="true">
+    <path d="M19.11 17.93c-.27-.14-1.61-.79-1.86-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.19-1.33-.81-.72-1.36-1.61-1.52-1.88-.16-.27-.02-.42.12-.56.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.02-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27 0 1.34.98 2.63 1.11 2.82.14.18 1.93 2.95 4.69 4.13.66.28 1.17.45 1.57.58.66.21 1.26.18 1.73.11.53-.08 1.61-.66 1.84-1.29.23-.63.23-1.18.16-1.29-.07-.11-.25-.18-.52-.32zM16.03 3C9.41 3 4 8.38 4 14.99c0 2.64.87 5.08 2.34 7.05L4 29l7.18-2.29a12.9 12.9 0 0 0 4.85.94C22.65 27.65 28 22.28 28 15.67 28 9.06 22.65 3 16.03 3zm0 22.27c-1.55 0-3.07-.42-4.4-1.22l-.32-.19-4.26 1.36 1.39-4.15-.21-.33a9.13 9.13 0 0 1-1.4-4.91c0-5.06 4.13-9.18 9.2-9.18 5.07 0 9.2 4.12 9.2 9.18s-4.13 9.18-9.2 9.18z"/>
+  </svg>
+</a>
 
 <!-- HELP MODAL -->
 <div class="helpModal" id="helpModal" hidden aria-hidden="true">
@@ -1264,7 +1367,7 @@
     productGrid.innerHTML = list.map(p => `
       <article class="pCard">
         <div class="pMedia">
-          <img src="${p.img}" alt="${p.name}">
+          <img src="${p.img}" alt="${p.name}" loading="lazy" decoding="async">
         </div>
         <div class="pBody">
           <div class="pTitleRow">
