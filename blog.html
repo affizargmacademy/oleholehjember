@@ -5,10 +5,51 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Blog | OlehOlehJember</title>
 
-  <!-- FONT -->
+  <!-- SEO BASIC -->
+  <meta name="description" content="Blog OlehOlehJember: tips oleh-oleh khas Jember, cara pesan, pembayaran QRIS, packing aman, pengiriman, dan rekomendasi hampers." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="blog.html" />
+
+  <!-- OPEN GRAPH -->
+  <meta property="og:locale" content="id_ID" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Blog | OlehOlehJember" />
+  <meta property="og:description" content="Temukan artikel terbaru: cara pesan, QRIS, packing aman, pengiriman, dan rekomendasi oleh-oleh khas Jember." />
+  <meta property="og:url" content="blog.html" />
+  <meta property="og:image" content="assets/img/logo.png" />
+
+  <!-- TWITTER CARD -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Blog | OlehOlehJember" />
+  <meta name="twitter:description" content="Temukan artikel terbaru: cara pesan, QRIS, packing aman, pengiriman, dan rekomendasi oleh-oleh khas Jember." />
+  <meta name="twitter:image" content="assets/img/logo.png" />
+
+  <!-- FAVICON -->
+  <link rel="icon" href="assets/favicon/favicon.ico" sizes="any">
+  <link rel="icon" href="assets/favicon/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="assets/favicon/site.webmanifest">
+
+  <!-- PERFORMANCE: FONT -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- STRUCTURED DATA -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Blog",
+    "name":"Blog OlehOlehJember",
+    "url":"blog.html",
+    "description":"Artikel seputar oleh-oleh khas Jember: cara pesan, QRIS, packing aman, pengiriman, dan rekomendasi hampers.",
+    "publisher":{
+      "@type":"Organization",
+      "name":"OlehOlehJember",
+      "logo":{"@type":"ImageObject","url":"assets/img/logo.png"}
+    }
+  }
+  </script>
 
   <style>
     :root{
@@ -43,7 +84,7 @@
     img{ max-width:100%; display:block; }
     .container{ width:min(var(--container), 92vw); margin-inline:auto; }
 
-    /* BUTTON (SAMA KAYAK TESTIMONI) */
+    /* BUTTON */
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
       padding: 10px 14px;
@@ -65,7 +106,7 @@
       box-shadow: 0 18px 40px rgba(255,63,154,.18);
     }
 
-    /* NAV (AMBIL DARI TESTIMONI) */
+    /* NAV */
     .nav{
       position: sticky;
       top: 0;
@@ -88,11 +129,11 @@
       box-shadow: 0 0 0 6px var(--pinkSoft);
     }
     .logo__img{
-  height: 40px;      /* ukuran aman untuk navbar 72px */
-  width: auto;
-  display: block;
-  object-fit: contain;
-}
+      height: 40px;
+      width: auto;
+      display: block;
+      object-fit: contain;
+    }
 
     .nav__links{
       display:flex;
@@ -142,58 +183,10 @@
       .menuBtn{ display:inline-grid; place-items:center; }
     }
 
-    /* HERO (BLOG) */
-    .hero{
-      padding: 54px 0 34px;
-      background: linear-gradient(180deg, var(--pinkSoft), #fff);
-    }
-    .heroGrid{
-      display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap: 26px;
-      align-items:center;
-    }
-    .heroBadge{
-      display:inline-flex;
-      padding: 8px 10px;
-      border-radius: 999px;
-      background: #fff;
-      border: 1px solid rgba(255,63,154,.18);
-      font-weight: 900;
-      color: var(--muted);
-      margin-bottom: 12px;
-    }
-    .heroText h1{
-      margin:0 0 10px;
-      font-size: clamp(28px, 3vw, 44px);
-      letter-spacing:-.7px;
-      line-height:1.15;
-    }
-    .heroText p{
-      margin:0;
-      color: var(--muted);
-      font-weight: 650;
-      line-height: 1.9;
-      max-width: 66ch;
-    }
-    .heroActions{ display:flex; gap: 10px; flex-wrap:wrap; margin-top: 14px; }
-
-    .heroImgPink{
-      border-radius: var(--r2);
-      overflow:hidden;
-      border: 1px solid rgba(255,63,154,.18);
-      box-shadow: var(--shadow);
-      background:#fff;
-    }
-    .heroImgPink img{ width:100%; height: 340px; object-fit: cover; }
-
-    @media (max-width: 980px){
-      .heroGrid{ grid-template-columns: 1fr; }
-      .heroImgPink img{ height: 260px; }
-    }
-
     /* SECTION GLOBAL */
-    .section{ padding: 72px 0; background:#fff; }
+    .section{ padding: 54px 0 72px; background:#fff; }
+    #blog.section{ padding-top: 42px; }
+
     .sectionHead{ margin-bottom: 18px; }
     .sectionHead h2{
       margin: 0 0 8px;
@@ -255,6 +248,7 @@
       grid-template-columns: repeat(3, minmax(0,1fr));
       gap: 16px;
       margin-top: 12px;
+      align-items: stretch;
     }
     .blogCard{
       border-radius: var(--r2);
@@ -271,8 +265,20 @@
       background: linear-gradient(135deg, var(--pinkSoft), #fff);
       border-bottom: 1px solid var(--border);
     }
-    .blogCard__img img{ width:100%; height:100%; object-fit: cover; }
-    .blogCard__body{ padding: 14px 14px; display:grid; gap: 8px; }
+    .blogCard__img img{
+      width:100%;
+      height:100%;
+      object-fit: cover;
+    }
+
+    /* FIX RATA */
+    .blogCard__body{
+      padding: 14px 14px;
+      display:flex;
+      flex-direction:column;
+      gap: 10px;
+      flex: 1 1 auto;
+    }
     .blogCard__body h3{
       margin:0;
       font-size: 16px;
@@ -285,8 +291,14 @@
       font-weight: 650;
       line-height: 1.85;
       font-size: 13.5px;
+      flex: 1 1 auto;
     }
-    .blogCard__tags{ display:flex; gap: 8px; flex-wrap:wrap; margin-top: 6px; }
+    .blogCard__tags{
+      display:flex;
+      gap: 8px;
+      flex-wrap:wrap;
+      margin-top: 2px;
+    }
     .tag{
       padding: 8px 10px;
       border-radius: 999px;
@@ -296,12 +308,15 @@
       font-size: 12px;
       color: var(--ink);
     }
-
-    /* CTA button di tiap kotak */
-    .blogCard__cta{ margin-top: 6px; }
+    .blogCard__cta{
+      margin-top: 6px;
+    }
     .blogCard__cta .btn{ width:100%; }
 
-    @media (max-width: 980px){
+    @media (max-width: 1100px){
+      .gridB{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+    }
+    @media (max-width: 740px){
       .gridB{ grid-template-columns: 1fr; }
     }
 
@@ -319,7 +334,49 @@
     .emptyState h3{ margin: 8px 0 6px; }
     .emptyState p{ margin: 0 0 12px; color: var(--muted); font-weight: 650; line-height:1.75; }
 
-    /* MODAL BASE (ORDER) - AMBIL DARI TESTIMONI */
+    /* PAGINATION */
+    .pager{
+      margin-top: 16px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap: 10px;
+      flex-wrap:wrap;
+    }
+    .pager__nums{
+      display:flex;
+      gap: 8px;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:center;
+    }
+    .pageBtn{
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background:#fff;
+      box-shadow: var(--shadow2);
+      font-weight: 900;
+      cursor:pointer;
+      font-family: inherit;
+    }
+    .pageBtn:hover{ background: var(--pinkSoft); }
+    .pageBtn.isActive{
+      border: none;
+      background: linear-gradient(135deg, var(--pink), var(--pink2));
+      color:#fff;
+      box-shadow: 0 18px 40px rgba(255,63,154,.18);
+    }
+    .pager .btn[disabled],
+    .pageBtn[disabled]{
+      opacity: .55;
+      cursor:not-allowed;
+      transform:none !important;
+      box-shadow: var(--shadow2);
+    }
+
+    /* MODAL BASE (ORDER) */
     .modal[hidden]{ display:none; }
     .modal{ position:fixed; inset:0; z-index: 9000; }
     .modal__backdrop{ position:absolute; inset:0; background: rgba(0,0,0,.45); }
@@ -387,6 +444,7 @@
       border-color: rgba(255,63,154,.35);
       box-shadow: 0 0 0 4px rgba(255,63,154,.10);
     }
+    .hint{ color: var(--muted); font-weight: 650; line-height:1.6; }
 
     .nota{
       border: 1px solid rgba(255,63,154,.18);
@@ -465,7 +523,7 @@
       .modal__dialog{ margin: 4vh auto; }
     }
 
-    /* FOOTER + HELP MODAL + TOTOP (SAMA) */
+    /* FOOTER + HELP MODAL + TOTOP */
     .footer{
       border-top: 1px solid var(--border);
       background: #fff;
@@ -608,6 +666,42 @@
     }
     .toTopFloat:hover{ background: var(--pinkSoft); }
 
+    /* FLOATING WHATSAPP */
+    .waFloat{
+      position: fixed;
+      right: 18px;
+      bottom: 82px;
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      border: 1px solid rgba(37,211,102,.22);
+      background: #fff;
+      box-shadow: var(--shadow);
+      cursor:pointer;
+      display:grid;
+      place-items:center;
+      z-index: 8500;
+    }
+    .waFloat:hover{ background: rgba(37,211,102,.08); }
+    .waFloat svg{ width: 24px; height: 24px; fill: #25D366; }
+    .waFloat span{
+      position:absolute;
+      right: 62px;
+      background:#fff;
+      border:1px solid rgba(30,26,31,.10);
+      box-shadow: var(--shadow2);
+      padding: 8px 10px;
+      border-radius: 12px;
+      font-weight: 800;
+      color: var(--ink);
+      white-space: nowrap;
+      opacity:0;
+      transform: translateY(2px);
+      pointer-events:none;
+      transition: opacity .12s ease, transform .12s ease;
+    }
+    .waFloat:hover span{ opacity:1; transform: translateY(0); }
+
     .helpModal[hidden]{ display:none; }
     .helpModal{ position:fixed; inset:0; z-index: 9999; }
     .helpModal__backdrop{ position:absolute; inset:0; background: rgba(0,0,0,.45); }
@@ -677,346 +771,176 @@
 
 <body id="home">
 
- <!-- NAVBAR -->
-<header class="nav">
-  <div class="container nav__inner">
-    <a class="logo" href="index.html" aria-label="Beranda">
-      <img class="logo__img" src="assets/img/logo.png" alt="OlehOlehJember">
-    </a>
+  <!-- NAVBAR -->
+  <header class="nav">
+    <div class="container nav__inner">
+      <a class="logo" href="index.html" aria-label="Beranda">
+        <img class="logo__img" src="assets/img/logo.png" alt="OlehOlehJember">
+      </a>
 
-    <nav class="nav__links" aria-label="Navigasi">
-      <a href="index.html">Beranda</a>
-      <a href="jember.html">Tentang Jember</a>
-      <a href="kategori.html">Kategori</a>
-      <a href="blog.html" class="isActive">Blog</a>
-    </nav>
+      <nav class="nav__links" aria-label="Navigasi">
+        <a href="index.html">Beranda</a>
+        <a href="jember.html">Tentang Jember</a>
+        <a href="kategori.html">Kategori</a>
+        <a href="blog.html" class="isActive">Blog</a>
+      </nav>
 
-    <div class="nav__actions">
-      <button class="btn btn--primary" id="openOrder" type="button">Pesan</button>
-      <button class="menuBtn" id="menuBtn" aria-label="Buka menu" aria-expanded="false" aria-controls="mobileMenu">☰</button>
-    </div>
-  </div>
-
-  <div class="mobileMenu" id="mobileMenu" hidden>
-    <div class="container mobileMenu__inner">
-      <a href="index.html">Beranda</a>
-      <a href="jember.html">Tentang Jember</a>
-      <a href="kategori.html">Kategori</a>
-      <a href="blog.html">Blog</a>
-      <button class="btn btn--primary" id="openOrderMobile" type="button">Pesan</button>
-    </div>
-  </div>
-</header>
-
-<!-- POPUP ORDER + PAYMENT (SCROLL + NOTA) -->
-<div class="modal" id="orderModal" hidden aria-hidden="true">
-  <div class="modal__backdrop" data-close></div>
-
-  <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="orderTitle">
-    <div class="modal__head">
-      <div>
-        <div class="modal__kicker">Form Pemesanan</div>
-        <h3 class="modal__title" id="orderTitle">Pesan Oleh-Oleh Jember</h3>
+      <div class="nav__actions">
+        <button class="btn btn--primary" id="openOrder" type="button">Pesan</button>
+        <button class="menuBtn" id="menuBtn" aria-label="Buka menu" aria-expanded="false" aria-controls="mobileMenu">☰</button>
       </div>
-      <button class="modal__close" type="button" aria-label="Tutup" data-close>✕</button>
     </div>
 
-    <form class="modal__body" id="orderForm">
-      <div class="formGrid">
-        <label class="field">
-          <span>Nama</span>
-          <input name="nama" required placeholder="Nama kamu" />
-        </label>
+    <div class="mobileMenu" id="mobileMenu" hidden>
+      <div class="container mobileMenu__inner">
+        <a href="index.html">Beranda</a>
+        <a href="jember.html">Tentang Jember</a>
+        <a href="kategori.html">Kategori</a>
+        <a href="blog.html" class="isActive">Blog</a>
+        <button class="btn btn--primary" id="openOrderMobile" type="button">Pesan</button>
+      </div>
+    </div>
+  </header>
 
-        <label class="field">
-          <span>No. WhatsApp</span>
-          <input name="wa" required placeholder="08xxxxxxxxxx" />
-        </label>
+  <!-- POPUP ORDER + PAYMENT -->
+  <div class="modal" id="orderModal" hidden aria-hidden="true">
+    <div class="modal__backdrop" data-close></div>
 
-        <label class="field field--full">
-          <span>Alamat (untuk pengiriman)</span>
-          <textarea name="alamat" rows="3" required placeholder="Jalan, kecamatan, kota, kode pos"></textarea>
-        </label>
-
-        <label class="field">
-          <span>Pilih Produk</span>
-          <select name="produk" required>
-            <option value="">— Pilih —</option>
-            <option>Suwar-suwir Khas</option>
-            <option>Kopi Jember</option>
-            <option>Gift Box Mix</option>
-          </select>
-        </label>
-
-        <label class="field">
-          <span>Jumlah</span>
-          <input name="qty" type="number" min="1" value="1" required />
-        </label>
-
-        <label class="field field--full">
-          <span>Catatan (opsional)</span>
-          <input name="catatan" placeholder="Misal: minta kartu ucapan, pedas, tanpa kacang, dll." />
-        </label>
+    <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="orderTitle">
+      <div class="modal__head">
+        <div>
+          <div class="modal__kicker">Form Pemesanan</div>
+          <h3 class="modal__title" id="orderTitle">Pesan Oleh-Oleh Jember</h3>
+        </div>
+        <button class="modal__close" type="button" aria-label="Tutup" data-close>✕</button>
       </div>
 
-      <div class="divider"></div>
-
-      <!-- NOTA SEMENTARA -->
-      <div class="nota" aria-label="Nota sementara">
-        <div class="nota__head">
-          <h4>Nota sementara</h4>
-          <span class="nota__badge">Belum dibayar</span>
-        </div>
-
-        <div class="nota__grid">
-          <div class="nota__row">
-            <span class="k">Produk</span>
-            <span class="v" id="notaProduk">—</span>
-          </div>
-          <div class="nota__row">
-            <span class="k">Jumlah</span>
-            <span class="v" id="notaQty">1</span>
-          </div>
-          <div class="nota__row">
-            <span class="k">Harga</span>
-            <span class="v" id="notaHarga">Rp 0</span>
-          </div>
-
-          <div class="nota__row nota__row--total">
-            <span class="k">Total Sementara</span>
-            <span class="v" id="notaTotal">Rp 0</span>
-          </div>
-        </div>
-
-        <div class="nota__note">
-          *Total ini sementara. Ongkir/biaya tambahan (jika ada) akan dikonfirmasi admin.
-        </div>
-      </div>
-
-      <div class="divider"></div>
-
-      <div class="pay">
-        <div class="pay__head">
-          <h4>Pembayaran</h4>
-          <p>Pilih metode QRIS. Scan QR di bawah, lalu simpan bukti pembayaran.</p>
-        </div>
-
-        <div class="payMethods">
-          <label class="payOption">
-            <input type="radio" name="metode" value="QRIS BCA" checked />
-            <div class="payOption__box">
-              <div class="payOption__title">QRIS BCA</div>
-              <div class="payOption__sub">Scan QRIS BCA / aplikasi apa pun</div>
-            </div>
+      <form class="modal__body" id="orderForm">
+        <div class="formGrid">
+          <label class="field">
+            <span>Nama</span>
+            <input name="nama" required placeholder="Nama kamu" />
           </label>
 
-          <label class="payOption">
-            <input type="radio" name="metode" value="QRIS Mandiri" />
-            <div class="payOption__box">
-              <div class="payOption__title">QRIS Mandiri</div>
-              <div class="payOption__sub">Scan QRIS Mandiri / aplikasi apa pun</div>
-            </div>
+          <label class="field">
+            <span>No. WhatsApp</span>
+            <input name="wa" required placeholder="08xxxxxxxxxx" />
+          </label>
+
+          <label class="field field--full">
+            <span>Alamat (untuk pengiriman)</span>
+            <textarea name="alamat" rows="3" required placeholder="Jalan, kecamatan, kota, kode pos"></textarea>
+          </label>
+
+          <label class="field">
+            <span>Pilih Produk</span>
+            <select name="produk" required>
+              <option value="">— Pilih —</option>
+              <option>Suwar-suwir Khas</option>
+              <option>Kopi Jember</option>
+              <option>Gift Box Mix</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span>Jumlah</span>
+            <input name="qty" type="number" min="1" value="1" required />
+          </label>
+
+          <label class="field field--full">
+            <span>Catatan (opsional)</span>
+            <input name="catatan" placeholder="Misal: minta kartu ucapan, pedas, tanpa kacang, dll." />
           </label>
         </div>
 
-        <div class="qrWrap">
-          <div class="qrCard" id="qrisBCA">
-            <div class="qrTitle">QRIS BCA</div>
-            <img class="qrImg" src="assets/qris-bca.png" alt="QRIS BCA (ganti dengan QR kamu)">
-            <div class="qrNote">Ganti dengan QRIS BCA milikmu: <b>assets/qris-bca.png</b></div>
+        <div class="divider"></div>
+
+        <!-- NOTA SEMENTARA -->
+        <div class="nota" aria-label="Nota sementara">
+          <div class="nota__head">
+            <h4>Nota sementara</h4>
+            <span class="nota__badge">Belum dibayar</span>
           </div>
 
-          <div class="qrCard" id="qrisMandiri" hidden>
-            <div class="qrTitle">QRIS Mandiri</div>
-            <img class="qrImg" src="assets/qris-mandiri.png" alt="QRIS Mandiri (ganti dengan QR kamu)">
-            <div class="qrNote">Ganti dengan QRIS Mandiri milikmu: <b>assets/qris-mandiri.png</b></div>
+          <div class="nota__grid">
+            <div class="nota__row">
+              <span class="k">Produk</span>
+              <span class="v" id="notaProduk">—</span>
+            </div>
+            <div class="nota__row">
+              <span class="k">Jumlah</span>
+              <span class="v" id="notaQty">1</span>
+            </div>
+            <div class="nota__row">
+              <span class="k">Harga</span>
+              <span class="v" id="notaHarga">Rp 0</span>
+            </div>
+
+            <div class="nota__row nota__row--total">
+              <span class="k">Total Sementara</span>
+              <span class="v" id="notaTotal">Rp 0</span>
+            </div>
+          </div>
+
+          <div class="nota__note">
+            *Total ini sementara. Ongkir/biaya tambahan (jika ada) akan dikonfirmasi admin.
           </div>
         </div>
 
-        <label class="field field--full">
-          <span>Upload bukti bayar (opsional)</span>
-          <input type="file" name="bukti" accept="image/*" />
-          <small class="hint">Atau kirim bukti via WhatsApp setelah klik “Kirim Pesanan”.</small>
-        </label>
-      </div>
+        <div class="divider"></div>
 
-      <div class="modal__foot">
-        <button class="btn" type="button" data-close>Batal</button>
-        <button class="btn btn--primary" type="submit">Kirim Pesanan</button>
-      </div>
-    </form>
-  </div>
-</div>
+        <div class="pay">
+          <div class="pay__head">
+            <h4>Pembayaran</h4>
+            <p>Pilih metode QRIS. Scan QR di bawah, lalu simpan bukti pembayaran.</p>
+          </div>
 
-<script>
-  (() => {
-    // Mobile menu toggle
-    const btnMenu = document.getElementById('menuBtn');
-    const menu = document.getElementById('mobileMenu');
-    btnMenu?.addEventListener('click', () => {
-      const open = !menu.hasAttribute('hidden');
-      if(open){
-        menu.setAttribute('hidden','');
-        btnMenu.setAttribute('aria-expanded','false');
-      } else {
-        menu.removeAttribute('hidden');
-        btnMenu.setAttribute('aria-expanded','true');
-      }
-    });
+          <div class="payMethods">
+            <label class="payOption">
+              <input type="radio" name="metode" value="QRIS BCA" checked />
+              <div class="payOption__box">
+                <div class="payOption__title">QRIS BCA</div>
+                <div class="payOption__sub">Scan QRIS BCA / aplikasi apa pun</div>
+              </div>
+            </label>
 
-    // Modal logic
-    const orderModal = document.getElementById('orderModal');
-    const openOrder = document.getElementById('openOrder');
-    const openOrderMobile = document.getElementById('openOrderMobile');
+            <label class="payOption">
+              <input type="radio" name="metode" value="QRIS Mandiri" />
+              <div class="payOption__box">
+                <div class="payOption__title">QRIS Mandiri</div>
+                <div class="payOption__sub">Scan QRIS Mandiri / aplikasi apa pun</div>
+              </div>
+            </label>
+          </div>
 
-    function showModal(){
-      orderModal.removeAttribute('hidden');
-      orderModal.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
-      setTimeout(updateNota, 0);
-    }
-    function hideModal(){
-      orderModal.setAttribute('hidden','');
-      orderModal.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-    }
+          <div class="qrWrap">
+            <div class="qrCard" id="qrisBCA">
+              <div class="qrTitle">QRIS BCA</div>
+              <img class="qrImg" src="assets/qris-bca.png" alt="QRIS BCA (ganti dengan QR kamu)" loading="lazy" decoding="async">
+              <div class="qrNote">Ganti dengan QRIS BCA milikmu: <b>assets/qris-bca.png</b></div>
+            </div>
 
-    openOrder?.addEventListener('click', showModal);
-    openOrderMobile?.addEventListener('click', () => {
-      menu?.setAttribute('hidden','');
-      btnMenu?.setAttribute('aria-expanded','false');
-      showModal();
-    });
+            <div class="qrCard" id="qrisMandiri" hidden>
+              <div class="qrTitle">QRIS Mandiri</div>
+              <img class="qrImg" src="assets/qris-mandiri.png" alt="QRIS Mandiri (ganti dengan QR kamu)" loading="lazy" decoding="async">
+              <div class="qrNote">Ganti dengan QRIS Mandiri milikmu: <b>assets/qris-mandiri.png</b></div>
+            </div>
+          </div>
 
-    // close on backdrop / close button
-    orderModal?.addEventListener('click', (e) => {
-      const t = e.target;
-      if (t && t.hasAttribute('data-close')) hideModal();
-    });
-
-    // close on ESC
-    window.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && !orderModal.hasAttribute('hidden')) hideModal();
-    });
-
-    // toggle QR cards
-    const qrisBCA = document.getElementById('qrisBCA');
-    const qrisMandiri = document.getElementById('qrisMandiri');
-
-    document.getElementById('orderForm')?.addEventListener('change', (e) => {
-      const el = e.target;
-      if (el && el.name === 'metode') {
-        if (el.value === 'QRIS BCA') {
-          qrisBCA.hidden = false;
-          qrisMandiri.hidden = true;
-        } else {
-          qrisBCA.hidden = true;
-          qrisMandiri.hidden = false;
-        }
-      }
-    });
-
-    // NOTA SEMENTARA (auto update)
-    const hargaProduk = {
-      "Suwar-suwir Khas": 28000,
-      "Kopi Jember": 55000,
-      "Gift Box Mix": 99000
-    };
-
-    function rupiah(n){
-      return "Rp " + (n || 0).toLocaleString("id-ID");
-    }
-
-    function updateNota(){
-      const form = document.getElementById("orderForm");
-      if(!form) return;
-
-      const produk = form.produk.value;
-      const qty = parseInt(form.qty.value || "1", 10);
-
-      const harga = hargaProduk[produk] || 0;
-      const total = harga * (isNaN(qty) ? 1 : qty);
-
-      document.getElementById("notaProduk").textContent = produk || "—";
-      document.getElementById("notaQty").textContent = isNaN(qty) ? "1" : String(qty);
-      document.getElementById("notaHarga").textContent = rupiah(harga);
-      document.getElementById("notaTotal").textContent = rupiah(total);
-    }
-
-    document.getElementById("orderForm")?.addEventListener("input", (e) => {
-      if(["produk","qty"].includes(e.target.name)) updateNota();
-    });
-    document.getElementById("orderForm")?.addEventListener("change", (e) => {
-      if(["produk","qty"].includes(e.target.name)) updateNota();
-    });
-
-    // submit -> WhatsApp
-    document.getElementById('orderForm')?.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const form = e.target;
-
-      const nama = form.nama.value.trim();
-      const wa = form.wa.value.trim();
-      const alamat = form.alamat.value.trim();
-      const produk = form.produk.value;
-      const qty = form.qty.value;
-      const catatan = form.catatan.value.trim();
-      const metode = form.metode.value;
-
-      const harga = hargaProduk[produk] || 0;
-      const total = harga * parseInt(qty || "1", 10);
-
-      const pesan =
-`Halo, saya mau pesan:
-- Nama: ${nama}
-- WA: ${wa}
-- Produk: ${produk}
-- Jumlah: ${qty}
-- Alamat: ${alamat}
-- Metode Bayar: ${metode}
-- Total Sementara: ${rupiah(total)}
-- Catatan: ${catatan || '-'}
-
-Saya akan bayar via QRIS.`;
-
-      // GANTI nomor WA toko kamu di sini (format internasional tanpa +)
-      const nomorToko = "6281234567890";
-      const url = `https://wa.me/${nomorToko}?text=${encodeURIComponent(pesan)}`;
-
-      window.open(url, "_blank", "noopener");
-
-      hideModal();
-      form.reset();
-      qrisBCA.hidden = false;
-      qrisMandiri.hidden = true;
-      updateNota();
-    });
-  })();
-</script>
-
-
-  <!-- ================= HERO ================= -->
-  <section class="hero heroPink">
-    <div class="container heroGrid">
-      <div class="heroText">
-        <span class="heroBadge">📰 Blog OlehOlehJember</span>
-        <h1>Info, Tips, dan Cerita Oleh-Oleh Khas Jember</h1>
-        <p>
-          Blog ini berisi penjelasan tentang web <b>OlehOlehJember</b>, cara belanja, rekomendasi produk, hingga tips
-          memilih oleh-oleh yang aman dibawa perjalanan.
-        </p>
-
-        <div class="heroActions">
-          <a class="btn btn--primary" href="#blog">Baca Artikel</a>
-          <a class="btn" href="kategori.html">Lihat Produk</a>
+          <label class="field field--full">
+            <span>Upload bukti bayar (opsional)</span>
+            <input type="file" name="bukti" accept="image/*" />
+            <small class="hint">Atau kirim bukti via WhatsApp setelah klik “Kirim Pesanan”.</small>
+          </label>
         </div>
-      </div>
 
-      <div class="heroImgPink">
-        <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1400&q=80" alt="Blog OlehOlehJember" />
-      </div>
+        <div class="modal__foot">
+          <button class="btn" type="button" data-close>Batal</button>
+          <button class="btn btn--primary" type="submit">Kirim Pesanan</button>
+        </div>
+      </form>
     </div>
-  </section>
+  </div>
 
   <!-- ================= BLOG ================= -->
   <section class="section" id="blog">
@@ -1031,7 +955,7 @@ Saya akan bayar via QRIS.`;
         <div class="searchWrap">
           <input class="searchInput" id="searchBlog" type="search" placeholder="Cari blog... (contoh: cara pesan, qris, hampers)" aria-label="Cari blog" />
         </div>
-        <div class="hintBox" id="blogHint" aria-live="polite">Menampilkan: <b>5 blog</b></div>
+        <div class="hintBox" id="blogHint" aria-live="polite">Menampilkan: <b>0 blog</b></div>
       </div>
 
       <div class="gridB" id="blogGrid">
@@ -1043,6 +967,13 @@ Saya akan bayar via QRIS.`;
         <h3>Blog tidak ditemukan</h3>
         <p>Coba kata kunci lain, misal: “produk”, “pengiriman”, atau “pembayaran”.</p>
         <button class="btn btn--primary" type="button" id="blogReset">Reset</button>
+      </div>
+
+      <!-- PAGINATION -->
+      <div class="pager" id="pager" hidden aria-label="Navigasi halaman blog">
+        <button class="btn" id="prevPage" type="button">← Prev</button>
+        <div class="pager__nums" id="pageNums" aria-label="Nomor halaman"></div>
+        <button class="btn" id="nextPage" type="button">Next →</button>
       </div>
 
     </div>
@@ -1145,6 +1076,14 @@ Saya akan bayar via QRIS.`;
   <!-- FLOATING TO TOP -->
   <button class="toTopFloat" id="toTopFloat" type="button" aria-label="Kembali ke atas" title="Kembali ke atas">↑</button>
 
+  <!-- FLOATING WHATSAPP -->
+  <a class="waFloat" id="waFloat" href="https://wa.me/6281234567890" target="_blank" rel="noopener" aria-label="Chat WhatsApp" title="Chat WhatsApp">
+    <span>Chat WhatsApp</span>
+    <svg viewBox="0 0 32 32" aria-hidden="true">
+      <path d="M19.11 17.93c-.27-.14-1.61-.79-1.86-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.19-1.33-.81-.72-1.36-1.61-1.52-1.88-.16-.27-.02-.42.12-.56.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.02-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27 0 1.34.98 2.63 1.11 2.82.14.18 1.93 2.95 4.69 4.13.66.28 1.17.45 1.57.58.66.21 1.26.18 1.73.11.53-.08 1.61-.66 1.84-1.29.23-.63.23-1.18.16-1.29-.07-.11-.25-.18-.52-.32zM16.03 3C9.41 3 4 8.38 4 14.99c0 2.64.87 5.08 2.34 7.05L4 29l7.18-2.29a12.9 12.9 0 0 0 4.85.94C22.65 27.65 28 22.28 28 15.67 28 9.06 22.65 3 16.03 3zm0 22.27c-1.55 0-3.07-.42-4.4-1.22l-.32-.19-4.26 1.36 1.39-4.15-.21-.33a9.13 9.13 0 0 1-1.4-4.91c0-5.06 4.13-9.18 9.2-9.18 5.07 0 9.2 4.12 9.2 9.18s-4.13 9.18-9.2 9.18z"/>
+    </svg>
+  </a>
+
   <!-- HELP MODAL -->
   <div class="helpModal" id="helpModal" hidden aria-hidden="true">
     <div class="helpModal__backdrop" data-close></div>
@@ -1168,22 +1107,155 @@ Saya akan bayar via QRIS.`;
 
   <script>
     (() => {
+      // ====== KONFIG ======
+      const nomorToko = "6281234567890";
+
       // YEAR
       const y = document.getElementById('year');
-      if(y) y.textContent = new Date().getFullYear();
+      if (y) y.textContent = new Date().getFullYear();
 
-      // Mobile menu
+      // set link WA footer + float
+      const waFooter = document.getElementById('waFooter');
+      if (waFooter) waFooter.href = `https://wa.me/${nomorToko}`;
+
+      const waFloat = document.getElementById('waFloat');
+      if (waFloat) waFloat.href = `https://wa.me/${nomorToko}`;
+
+      // Mobile menu toggle
       const btnMenu = document.getElementById('menuBtn');
       const menu = document.getElementById('mobileMenu');
       btnMenu?.addEventListener('click', () => {
         const open = !menu.hasAttribute('hidden');
-        if(open){
+        if (open) {
           menu.setAttribute('hidden','');
           btnMenu.setAttribute('aria-expanded','false');
         } else {
           menu.removeAttribute('hidden');
           btnMenu.setAttribute('aria-expanded','true');
         }
+      });
+
+      // ====== MODAL ORDER ======
+      const orderModal = document.getElementById('orderModal');
+      const openOrder = document.getElementById('openOrder');
+      const openOrderMobile = document.getElementById('openOrderMobile');
+
+      function showModal(){
+        orderModal.removeAttribute('hidden');
+        orderModal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        setTimeout(updateNota, 0);
+      }
+      function hideModal(){
+        orderModal.setAttribute('hidden','');
+        orderModal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      openOrder?.addEventListener('click', showModal);
+      openOrderMobile?.addEventListener('click', () => {
+        menu?.setAttribute('hidden','');
+        btnMenu?.setAttribute('aria-expanded','false');
+        showModal();
+      });
+
+      orderModal?.addEventListener('click', (e) => {
+        const t = e.target;
+        if (t && t.hasAttribute('data-close')) hideModal();
+      });
+
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && orderModal && !orderModal.hasAttribute('hidden')) hideModal();
+      });
+
+      // toggle QR cards
+      const qrisBCA = document.getElementById('qrisBCA');
+      const qrisMandiri = document.getElementById('qrisMandiri');
+
+      document.getElementById('orderForm')?.addEventListener('change', (e) => {
+        const el = e.target;
+        if (el && el.name === 'metode') {
+          if (el.value === 'QRIS BCA') {
+            qrisBCA.hidden = false;
+            qrisMandiri.hidden = true;
+          } else {
+            qrisBCA.hidden = true;
+            qrisMandiri.hidden = false;
+          }
+        }
+      });
+
+      // NOTA SEMENTARA (auto update)
+      const hargaProduk = {
+        "Suwar-suwir Khas": 28000,
+        "Kopi Jember": 55000,
+        "Gift Box Mix": 99000
+      };
+
+      function rupiah(n){
+        return "Rp " + (n || 0).toLocaleString("id-ID");
+      }
+
+      function updateNota(){
+        const form = document.getElementById("orderForm");
+        if(!form) return;
+
+        const produk = form.produk.value;
+        const qty = parseInt(form.qty.value || "1", 10);
+
+        const harga = hargaProduk[produk] || 0;
+        const total = harga * (isNaN(qty) ? 1 : qty);
+
+        document.getElementById("notaProduk").textContent = produk || "—";
+        document.getElementById("notaQty").textContent = isNaN(qty) ? "1" : String(qty);
+        document.getElementById("notaHarga").textContent = rupiah(harga);
+        document.getElementById("notaTotal").textContent = rupiah(total);
+      }
+
+      document.getElementById("orderForm")?.addEventListener("input", (e) => {
+        if (e.target && ["produk","qty"].includes(e.target.name)) updateNota();
+      });
+      document.getElementById("orderForm")?.addEventListener("change", (e) => {
+        if (e.target && ["produk","qty"].includes(e.target.name)) updateNota();
+      });
+
+      // submit -> WhatsApp
+      document.getElementById('orderForm')?.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const form = e.target;
+
+        const nama = form.nama.value.trim();
+        const wa = form.wa.value.trim();
+        const alamat = form.alamat.value.trim();
+        const produk = form.produk.value;
+        const qty = form.qty.value;
+        const catatan = form.catatan.value.trim();
+        const metode = form.metode.value;
+
+        const harga = hargaProduk[produk] || 0;
+        const total = harga * parseInt(qty || "1", 10);
+
+        const pesan =
+`Halo, saya mau pesan:
+- Nama: ${nama}
+- WA: ${wa}
+- Produk: ${produk}
+- Jumlah: ${qty}
+- Alamat: ${alamat}
+- Metode Bayar: ${metode}
+- Total Sementara: ${rupiah(total)}
+- Catatan: ${catatan || '-'}
+
+Saya akan bayar via QRIS.`;
+
+        const url = `https://wa.me/${nomorToko}?text=${encodeURIComponent(pesan)}`;
+        window.open(url, "_blank", "noopener");
+
+        hideModal();
+        form.reset();
+        qrisBCA.hidden = false;
+        qrisMandiri.hidden = true;
+        updateNota();
       });
 
       // TO TOP FLOAT
@@ -1196,14 +1268,23 @@ Saya akan bayar via QRIS.`;
       toggleToTop();
       toTopFloat?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-      // ====== BLOG DATA + SEARCH ======
+      // ====== BLOG (PAGINATION + SEARCH) ======
       const blogGrid = document.getElementById('blogGrid');
       const blogHint = document.getElementById('blogHint');
       const blogEmpty = document.getElementById('blogEmpty');
       const blogReset = document.getElementById('blogReset');
       const searchBlog = document.getElementById('searchBlog');
 
-      // DIHUBUNGKAN KE: artikel1.html ... artikel5.html
+      const pager = document.getElementById('pager');
+      const prevPageBtn = document.getElementById('prevPage');
+      const nextPageBtn = document.getElementById('nextPage');
+      const pageNums = document.getElementById('pageNums');
+
+      const PAGE_SIZE = 6; // <<< ubah jadi 3/6/9 sesuai kebutuhan
+      let currentPage = 1;
+      let currentList = [];
+      let totalPages = 1;
+
       const blogPosts = [
         {
           title: "Cara Pesan di OlehOlehJember",
@@ -1214,7 +1295,7 @@ Saya akan bayar via QRIS.`;
         },
         {
           title: "Pembayaran QRIS: Aman & Praktis",
-          excerpt: "Kenapa QRIS memudahkan pembayaran dan cara memastikan bukti transfer tersimpan.",
+          excerpt: "Kenapa QRIS memudahkan pembayaran dan cara memastikan bukti transfer tersimpan rapi.",
           image: "assets/img/qris.avif",
           tags: ["qris","pembayaran","aman"],
           url: "artikel2.html"
@@ -1228,64 +1309,164 @@ Saya akan bayar via QRIS.`;
         },
         {
           title: "Oleh-oleh Tahan Lama untuk Perjalanan",
-          excerpt: "Pilihan oleh-oleh kering yang tahan lama dan aman dibawa jauh.",
+          excerpt: "Pilihan oleh-oleh kering yang tahan lama dan aman dibawa jauh, cocok buat mudik/travel.",
           image: "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=1200&q=80",
           tags: ["tahan lama","perjalanan","snack"],
           url: "artikel4.html"
         },
         {
           title: "Cara Packing Aman Biar Tidak Remuk",
-          excerpt: "Teknik packing + tips tambahan agar produk tetap aman sampai tujuan.",
+          excerpt: "Teknik packing + tips tambahan agar produk tetap aman sampai tujuan, termasuk untuk kirim luar kota.",
           image: "https://images.unsplash.com/photo-1580674285054-bed31e145f59?auto=format&fit=crop&w=1200&q=80",
           tags: ["packing","aman","pengiriman"],
           url: "artikel5.html"
+        },
+        {
+          title: "Rekomendasi Oleh-oleh Khas Jember Paling Dicari",
+          excerpt: "Daftar oleh-oleh favorit yang sering dicari: suwar-suwir, kopi, gift box, dan pilihan untuk keluarga.",
+          image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=80",
+          tags: ["oleh-oleh","favorit","jember"],
+          url: "artikel6.html"
+        },
+        {
+          title: "Panduan Kirim Paket: Resi, Estimasi, dan Tips Aman",
+          excerpt: "Cara cek resi, estimasi pengiriman, serta tips penting supaya paket aman sampai rumah.",
+          image: "https://images.unsplash.com/photo-1586528116493-da8b6bb03f13?auto=format&fit=crop&w=1200&q=80",
+          tags: ["resi","kurir","estimasi"],
+          url: "artikel7.html"
+        },
+        {
+          title: "Cara Simpan Kopi Jember Biar Tetap Fresh",
+          excerpt: "Tips penyimpanan kopi: wadah, suhu, dan cara seduh singkat agar aroma tetap terjaga.",
+          image: "https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=1200&q=80",
+          tags: ["kopi","tips","fresh"],
+          url: "artikel8.html"
+        },
+        {
+          title: "Checklist Oleh-oleh untuk Acara Kantor & Keluarga",
+          excerpt: "Panduan cepat menentukan jenis oleh-oleh sesuai acara: rapat, ulang tahun kantor, atau kumpul keluarga.",
+          image: "https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&w=1200&q=80",
+          tags: ["checklist","kantor","keluarga"],
+          url: "artikel9.html"
         }
       ];
 
-      function blogCardHTML(p){
+      function escHTML(s){
+        return String(s)
+          .replaceAll("&","&amp;")
+          .replaceAll("<","&lt;")
+          .replaceAll(">","&gt;")
+          .replaceAll('"',"&quot;")
+          .replaceAll("'","&#39;");
+      }
+
+      function blogCardHTML(p, i){
+        const imgLoading = i < 3 ? 'loading="eager" fetchpriority="high"' : 'loading="lazy"';
         return `
           <article class="blogCard">
             <div class="blogCard__img">
-              <img src="${p.image}" alt="${p.title}">
+              <img src="${escHTML(p.image)}" alt="${escHTML(p.title)}" decoding="async" ${imgLoading}>
             </div>
             <div class="blogCard__body">
-              <h3>${p.title}</h3>
-              <p>${p.excerpt}</p>
-              <div class="blogCard__tags">${p.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
+              <h3>${escHTML(p.title)}</h3>
+              <p>${escHTML(p.excerpt)}</p>
+              <div class="blogCard__tags">${p.tags.map(t=>`<span class="tag">${escHTML(t)}</span>`).join('')}</div>
               <div class="blogCard__cta">
-                <a class="btn btn--primary" href="${p.url}">Baca selengkapnya</a>
+                <a class="btn btn--primary" href="${escHTML(p.url)}">Baca selengkapnya</a>
               </div>
             </div>
           </article>
         `;
       }
 
+      function calcTotalPages(list){
+        return Math.max(1, Math.ceil(list.length / PAGE_SIZE));
+      }
+
+      function clampPage(p){
+        return Math.min(Math.max(1, p), totalPages);
+      }
+
+      function renderPager(){
+        if (!pager || !pageNums) return;
+
+        totalPages = calcTotalPages(currentList);
+        currentPage = clampPage(currentPage);
+
+        pager.hidden = (currentList.length === 0) || (totalPages <= 1);
+
+        if (prevPageBtn) prevPageBtn.disabled = currentPage <= 1;
+        if (nextPageBtn) nextPageBtn.disabled = currentPage >= totalPages;
+
+        pageNums.innerHTML = "";
+        for (let p=1; p<=totalPages; p++){
+          const b = document.createElement("button");
+          b.type = "button";
+          b.className = "pageBtn" + (p === currentPage ? " isActive" : "");
+          b.textContent = String(p);
+          b.addEventListener("click", () => {
+            currentPage = p;
+            renderBlogs(currentList);
+            window.scrollTo({ top: document.getElementById("blog")?.offsetTop || 0, behavior: "smooth" });
+          });
+          pageNums.appendChild(b);
+        }
+      }
+
       function renderBlogs(list){
         if(!blogGrid) return;
-        blogGrid.innerHTML = list.map(blogCardHTML).join('');
 
-        if(blogHint) blogHint.innerHTML = `Menampilkan: <b>${list.length} blog</b>`;
-        if(blogEmpty) blogEmpty.hidden = list.length !== 0;
-        blogGrid.style.display = list.length === 0 ? 'none' : 'grid';
+        currentList = list.slice();
+        totalPages = calcTotalPages(currentList);
+        currentPage = clampPage(currentPage);
+
+        const start = (currentPage - 1) * PAGE_SIZE;
+        const pageItems = currentList.slice(start, start + PAGE_SIZE);
+
+        blogGrid.innerHTML = pageItems.map(blogCardHTML).join('');
+
+        if(blogHint) blogHint.innerHTML = `Menampilkan: <b>${currentList.length} blog</b> • Halaman <b>${currentPage}/${totalPages}</b>`;
+        if(blogEmpty) blogEmpty.hidden = currentList.length !== 0;
+
+        blogGrid.style.display = currentList.length === 0 ? 'none' : 'grid';
+        renderPager();
       }
 
       function applyBlogSearch(){
         const q = (searchBlog?.value || '').trim().toLowerCase();
+        currentPage = 1;
+
         if(!q){
           renderBlogs(blogPosts);
           return;
         }
+
         const filtered = blogPosts.filter(p => {
           const text = (p.title + " " + p.excerpt + " " + p.tags.join(" ")).toLowerCase();
           return text.includes(q);
         });
+
         renderBlogs(filtered);
       }
 
       searchBlog?.addEventListener('input', applyBlogSearch);
+
       blogReset?.addEventListener('click', () => {
         if(searchBlog) searchBlog.value = '';
+        currentPage = 1;
         renderBlogs(blogPosts);
+      });
+
+      prevPageBtn?.addEventListener("click", () => {
+        currentPage = Math.max(1, currentPage - 1);
+        renderBlogs(currentList);
+        window.scrollTo({ top: document.getElementById("blog")?.offsetTop || 0, behavior: "smooth" });
+      });
+
+      nextPageBtn?.addEventListener("click", () => {
+        currentPage = Math.min(totalPages, currentPage + 1);
+        renderBlogs(currentList);
+        window.scrollTo({ top: document.getElementById("blog")?.offsetTop || 0, behavior: "smooth" });
       });
 
       // ====== HELP MODAL ======
@@ -1363,13 +1544,7 @@ Saya akan bayar via QRIS.`;
 
       // INIT
       renderBlogs(blogPosts);
-
-      // OPTIONAL: set link WA footer (biar beneran ada)
-      const waFooter = document.getElementById('waFooter');
-      if(waFooter){
-        const nomorToko = "6281234567890";
-        waFooter.href = `https://wa.me/${nomorToko}`;
-      }
+      updateNota();
     })();
   </script>
 </body>
