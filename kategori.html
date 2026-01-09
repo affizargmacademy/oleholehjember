@@ -34,7 +34,7 @@
   <meta name="twitter:description" content="Pilih kategori, cari produk, lalu pesan. Oleh-oleh khas Jember dengan packing rapi, siap kirim." />
   <meta name="twitter:image" content="https://oleh-oleh-jember.example/assets/img/og-image.jpg" />
 
-  <!-- Favicons (maksimal) -->
+  <!-- Favicons -->
   <link rel="icon" href="assets/favicon/favicon.ico" sizes="any">
   <link rel="icon" href="assets/favicon/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.png">
@@ -130,7 +130,6 @@
     img{ max-width:100%; display:block; }
     .container{ width:min(var(--container), 92vw); margin-inline:auto; }
 
-    /* BUTTON */
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
       padding: 10px 14px;
@@ -152,7 +151,6 @@
       box-shadow: 0 18px 40px rgba(255,63,154,.18);
     }
 
-    /* NAV */
     .nav{
       position: sticky;
       top: 0;
@@ -168,14 +166,12 @@
       justify-content:space-between;
       gap: 14px;
     }
-    .logo{ display:flex; align-items:center; gap:10px; font-weight: 900; letter-spacing:-.2px; }
     .logo__img{
       height: 40px;
       width: 160px;
       display: block;
       object-fit: contain;
     }
-
     .nav__links{
       display:flex;
       gap: 18px;
@@ -186,7 +182,6 @@
     .nav__links a{ padding: 10px 10px; border-radius: 12px; }
     .nav__links a:hover{ background: var(--pinkSoft); color: var(--ink); }
     .nav__links .isHere{ background: var(--pinkSoft); color: var(--ink); }
-
     .nav__actions{ display:flex; gap:10px; align-items:center; }
 
     .menuBtn{
@@ -199,15 +194,8 @@
       font-size: 18px;
       cursor:pointer;
     }
-    .mobileMenu{
-      border-top: 1px solid var(--border);
-      background: #fff;
-    }
-    .mobileMenu__inner{
-      padding: 14px 0 18px;
-      display:grid;
-      gap: 10px;
-    }
+    .mobileMenu{ border-top: 1px solid var(--border); background: #fff; }
+    .mobileMenu__inner{ padding: 14px 0 18px; display:grid; gap: 10px; }
     .mobileMenu__inner a{
       padding: 12px 12px;
       border-radius: 14px;
@@ -224,7 +212,6 @@
       .menuBtn{ display:inline-grid; place-items:center; }
     }
 
-    /* SECTION GLOBAL */
     .section{ padding: 72px 0; background:#fff; }
     .sectionHead{ margin-bottom: 18px; }
     .sectionHead h2{
@@ -239,7 +226,6 @@
       line-height: 1.8;
     }
 
-    /* HERO */
     .heroPink{
       padding: 54px 0 34px;
       background: linear-gradient(180deg, var(--pinkSoft), #fff);
@@ -283,13 +269,11 @@
       background:#fff;
     }
     .heroImgPink .uImg{ width:100%; height: 340px; object-fit: cover; }
-
     @media (max-width: 980px){
       .heroGrid{ grid-template-columns: 1fr; }
       .heroImgPink .uImg{ height: 260px; }
     }
 
-    /* TAG */
     .tag{
       display:inline-flex;
       padding: 7px 10px;
@@ -302,7 +286,6 @@
     }
     .tagSoft{ background: var(--pinkSoft); }
 
-    /* KATEGORI GRID */
     .gridK{
       display:grid;
       grid-template-columns: repeat(3, minmax(0,1fr));
@@ -323,11 +306,7 @@
       background: #fff;
       border-bottom: 1px solid var(--border);
     }
-    .kCard__media img{
-      width:100%;
-      height:100%;
-      object-fit: cover;
-    }
+    .kCard__media img{ width:100%; height:100%; object-fit: cover; }
     .kCard__body{ padding: 16px; }
     .kCard__body h3{ margin:0 0 8px; letter-spacing:-.2px; }
     .kCard__body p{ margin:0 0 12px; color: var(--muted); font-weight: 650; line-height:1.75; }
@@ -341,7 +320,6 @@
 
     .moreWrap{ margin-top: 18px; display:flex; justify-content:center; }
 
-    /* PRODUK TOP */
     .prodTop{
       display:grid;
       grid-template-columns: 1fr auto;
@@ -383,7 +361,6 @@
       .hintBox{ text-align:left; min-width: auto; }
     }
 
-    /* GRID PRODUK */
     .gridP{
       display:grid;
       grid-template-columns: repeat(3, minmax(0,1fr));
@@ -440,7 +417,6 @@
     .emptyState h3{ margin: 8px 0 6px; }
     .emptyState p{ margin: 0 0 12px; color: var(--muted); font-weight: 650; line-height:1.75; }
 
-    /* MODAL BASE */
     .modal[hidden]{ display:none; }
     .modal{ position:fixed; inset:0; z-index: 9000; }
     .modal__backdrop{ position:absolute; inset:0; background: rgba(0,0,0,.45); }
@@ -490,7 +466,6 @@
       flex: 0 0 auto;
     }
 
-    /* FORM ORDER */
     .formGrid{ display:grid; grid-template-columns: 1fr 1fr; gap: 12px; }
     .field{ display:grid; gap: 8px; }
     .field--full{ grid-column: 1 / -1; }
@@ -590,7 +565,6 @@
       .modal__dialog{ margin: 4vh auto; }
     }
 
-    /* FOOTER */
     .footer{
       border-top: 1px solid var(--border);
       background: #fff;
@@ -715,7 +689,6 @@
       .footer__grid{ grid-template-columns: 1fr; }
     }
 
-    /* FLOATING TO TOP */
     .toTopFloat{
       position: fixed;
       right: 18px;
@@ -734,7 +707,6 @@
     }
     .toTopFloat:hover{ background: var(--pinkSoft); }
 
-    /* FLOATING WHATSAPP */
     .waFloat{
       position: fixed;
       right: 18px;
@@ -753,7 +725,6 @@
     .waFloat:hover{ background: rgba(37,211,102,.08); }
     .waFloat svg{ width: 24px; height: 24px; fill: #25D366; }
 
-    /* HELP MODAL */
     .helpModal[hidden]{ display:none; }
     .helpModal{ position:fixed; inset:0; z-index: 9999; }
     .helpModal__backdrop{ position:absolute; inset:0; background: rgba(0,0,0,.45); }
@@ -809,7 +780,7 @@
     .helpItem b{ display:block; margin-bottom: 6px; }
     .helpItem p{ margin:0; color: var(--muted); font-weight: 650; line-height:1.75; }
 
-    /* Utility: Unsplash image box */
+    /* Utility (Unsplash) */
     .uWrap, .uWrap picture{ display:block; width:100%; height:100%; }
     .uImg{ width:100%; height:100%; object-fit:cover; }
   </style>
@@ -817,11 +788,10 @@
 
 <body id="home">
 
-<!-- NAVBAR -->
 <header class="nav">
   <div class="container nav__inner">
     <a class="logo" href="index.html" aria-label="Beranda">
-      <img class="logo__img" src="assets/img/logo.webp" alt="OlehOlehJember" decoding="async" width="160" height="40" fetchpriority="high">
+      <img class="logo__img" src="assets/img/logo.png" alt="OlehOlehJember" decoding="async" width="160" height="40" fetchpriority="high">
     </a>
 
     <nav class="nav__links" aria-label="Navigasi">
@@ -848,7 +818,6 @@
   </div>
 </header>
 
-<!-- POPUP ORDER + PAYMENT (SCROLL + NOTA) -->
 <div class="modal" id="orderModal" hidden aria-hidden="true">
   <div class="modal__backdrop" data-close></div>
 
@@ -898,7 +867,6 @@
 
       <div class="divider"></div>
 
-      <!-- NOTA SEMENTARA -->
       <div class="nota" aria-label="Nota sementara">
         <div class="nota__head">
           <h4>Nota sementara</h4>
@@ -1004,36 +972,29 @@
     </div>
 
     <div class="heroImgPink">
-      <!-- Target ukuran render: ~ (mobile) 92vw tinggi 260px, (desktop) kolom kanan tinggi 340px
-           Turunkan bytes: w responsif + q rendah + format modern -->
+      <!-- Lebih kecil: AVIF q35, WebP q45 + max w 640 -->
       <picture class="uWrap">
-        <source
-          type="image/avif"
+        <source type="image/avif"
           srcset="
-            https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&fm=avif&w=480&q=45 480w,
-            https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&fm=avif&w=768&q=45 768w,
-            https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&fm=avif&w=1024&q=45 1024w
+            https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&fm=avif&w=360&q=35 360w,
+            https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&fm=avif&w=480&q=35 480w,
+            https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&fm=avif&w=640&q=35 640w
           "
-          sizes="(max-width: 980px) 92vw, 40vw"
-        />
-        <source
-          type="image/webp"
+          sizes="(max-width: 980px) 92vw, 40vw">
+        <source type="image/webp"
           srcset="
-            https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&fm=webp&w=480&q=55 480w,
-            https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&fm=webp&w=768&q=55 768w,
-            https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&fm=webp&w=1024&q=55 1024w
+            https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&fm=webp&w=360&q=45 360w,
+            https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&fm=webp&w=480&q=45 480w,
+            https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&fm=webp&w=640&q=45 640w
           "
-          sizes="(max-width: 980px) 92vw, 40vw"
-        />
-        <img
-          class="uImg"
-          src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=768&q=55"
+          sizes="(max-width: 980px) 92vw, 40vw">
+        <img class="uImg"
+          src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&fm=webp&w=480&q=45"
           alt="Oleh-oleh"
           decoding="async"
           fetchpriority="high"
-          width="1024"
-          height="768"
-        />
+          width="640"
+          height="480">
       </picture>
     </div>
   </div>
@@ -1069,31 +1030,27 @@
       <article class="kCard">
         <div class="kCard__media">
           <picture class="uWrap">
-            <source
-              type="image/avif"
+            <source type="image/avif"
               srcset="
-                https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&fm=avif&w=480&q=45 480w,
-                https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&fm=avif&w=640&q=45 640w
+                https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&fm=avif&w=360&q=35 360w,
+                https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&fm=avif&w=480&q=35 480w,
+                https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&fm=avif&w=640&q=35 640w
               "
-              sizes="(max-width: 980px) 92vw, 33vw"
-            />
-            <source
-              type="image/webp"
+              sizes="(max-width: 980px) 92vw, 33vw">
+            <source type="image/webp"
               srcset="
-                https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&fm=webp&w=480&q=55 480w,
-                https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&fm=webp&w=640&q=55 640w
+                https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&fm=webp&w=360&q=45 360w,
+                https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&fm=webp&w=480&q=45 480w,
+                https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&fm=webp&w=640&q=45 640w
               "
-              sizes="(max-width: 980px) 92vw, 33vw"
-            />
-            <img
-              class="uImg"
-              src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=640&q=55"
+              sizes="(max-width: 980px) 92vw, 33vw">
+            <img class="uImg"
+              src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&fm=webp&w=480&q=45"
               alt="Kopi"
               loading="lazy"
               decoding="async"
               width="640"
-              height="420"
-            />
+              height="420">
           </picture>
         </div>
         <div class="kCard__body">
@@ -1131,31 +1088,27 @@
       <article class="kCard">
         <div class="kCard__media">
           <picture class="uWrap">
-            <source
-              type="image/avif"
+            <source type="image/avif"
               srcset="
-                https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&fm=avif&w=480&q=45 480w,
-                https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&fm=avif&w=640&q=45 640w
+                https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&fm=avif&w=360&q=35 360w,
+                https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&fm=avif&w=480&q=35 480w,
+                https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&fm=avif&w=640&q=35 640w
               "
-              sizes="(max-width: 980px) 92vw, 33vw"
-            />
-            <source
-              type="image/webp"
+              sizes="(max-width: 980px) 92vw, 33vw">
+            <source type="image/webp"
               srcset="
-                https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&fm=webp&w=480&q=55 480w,
-                https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&fm=webp&w=640&q=55 640w
+                https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&fm=webp&w=360&q=45 360w,
+                https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&fm=webp&w=480&q=45 480w,
+                https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&fm=webp&w=640&q=45 640w
               "
-              sizes="(max-width: 980px) 92vw, 33vw"
-            />
-            <img
-              class="uImg"
-              src="https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&w=640&q=55"
+              sizes="(max-width: 980px) 92vw, 33vw">
+            <img class="uImg"
+              src="https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&fm=webp&w=480&q=45"
               alt="Hampers"
               loading="lazy"
               decoding="async"
               width="640"
-              height="420"
-            />
+              height="420">
           </picture>
         </div>
         <div class="kCard__body">
@@ -1175,31 +1128,27 @@
       <article class="kCard">
         <div class="kCard__media">
           <picture class="uWrap">
-            <source
-              type="image/avif"
+            <source type="image/avif"
               srcset="
-                https://images.unsplash.com/photo-1546549032-9571cd6b27df?auto=format&fit=crop&fm=avif&w=480&q=45 480w,
-                https://images.unsplash.com/photo-1546549032-9571cd6b27df?auto=format&fit=crop&fm=avif&w=640&q=45 640w
+                https://images.unsplash.com/photo-1546549032-9571cd6b27df?auto=format&fit=crop&fm=avif&w=360&q=35 360w,
+                https://images.unsplash.com/photo-1546549032-9571cd6b27df?auto=format&fit=crop&fm=avif&w=480&q=35 480w,
+                https://images.unsplash.com/photo-1546549032-9571cd6b27df?auto=format&fit=crop&fm=avif&w=640&q=35 640w
               "
-              sizes="(max-width: 980px) 92vw, 33vw"
-            />
-            <source
-              type="image/webp"
+              sizes="(max-width: 980px) 92vw, 33vw">
+            <source type="image/webp"
               srcset="
-                https://images.unsplash.com/photo-1546549032-9571cd6b27df?auto=format&fit=crop&fm=webp&w=480&q=55 480w,
-                https://images.unsplash.com/photo-1546549032-9571cd6b27df?auto=format&fit=crop&fm=webp&w=640&q=55 640w
+                https://images.unsplash.com/photo-1546549032-9571cd6b27df?auto=format&fit=crop&fm=webp&w=360&q=45 360w,
+                https://images.unsplash.com/photo-1546549032-9571cd6b27df?auto=format&fit=crop&fm=webp&w=480&q=45 480w,
+                https://images.unsplash.com/photo-1546549032-9571cd6b27df?auto=format&fit=crop&fm=webp&w=640&q=45 640w
               "
-              sizes="(max-width: 980px) 92vw, 33vw"
-            />
-            <img
-              class="uImg"
-              src="https://images.unsplash.com/photo-1546549032-9571cd6b27df?auto=format&fit=crop&w=640&q=55"
+              sizes="(max-width: 980px) 92vw, 33vw">
+            <img class="uImg"
+              src="https://images.unsplash.com/photo-1546549032-9571cd6b27df?auto=format&fit=crop&fm=webp&w=480&q=45"
               alt="Paket"
               loading="lazy"
               decoding="async"
               width="640"
-              height="420"
-            />
+              height="420">
           </picture>
         </div>
         <div class="kCard__body">
@@ -1219,31 +1168,27 @@
       <article class="kCard">
         <div class="kCard__media">
           <picture class="uWrap">
-            <source
-              type="image/avif"
+            <source type="image/avif"
               srcset="
-                https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&fm=avif&w=480&q=45 480w,
-                https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&fm=avif&w=640&q=45 640w
+                https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&fm=avif&w=360&q=35 360w,
+                https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&fm=avif&w=480&q=35 480w,
+                https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&fm=avif&w=640&q=35 640w
               "
-              sizes="(max-width: 980px) 92vw, 33vw"
-            />
-            <source
-              type="image/webp"
+              sizes="(max-width: 980px) 92vw, 33vw">
+            <source type="image/webp"
               srcset="
-                https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&fm=webp&w=480&q=55 480w,
-                https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&fm=webp&w=640&q=55 640w
+                https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&fm=webp&w=360&q=45 360w,
+                https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&fm=webp&w=480&q=45 480w,
+                https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&fm=webp&w=640&q=45 640w
               "
-              sizes="(max-width: 980px) 92vw, 33vw"
-            />
-            <img
-              class="uImg"
-              src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=640&q=55"
+              sizes="(max-width: 980px) 92vw, 33vw">
+            <img class="uImg"
+              src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&fm=webp&w=480&q=45"
               alt="Oleh-oleh kering"
               loading="lazy"
               decoding="async"
               width="640"
-              height="420"
-            />
+              height="420">
           </picture>
         </div>
         <div class="kCard__body">
@@ -1263,7 +1208,6 @@
   </div>
 </section>
 
-<!-- PRODUK -->
 <section class="section" id="produk">
   <div class="container">
     <div class="sectionHead">
@@ -1277,7 +1221,6 @@
                placeholder="Cari produk... (contoh: kopi, suwar, keripik)"
                aria-label="Cari produk">
       </div>
-
       <div class="hintBox" id="activeFilterHint" aria-live="polite">
         Filter aktif: <b>Semua</b>
       </div>
@@ -1298,18 +1241,15 @@
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer class="footer">
   <div class="container footer__grid">
-
     <div class="footer__brand">
       <div class="footerLogo">
-        <img class="logo__img" src="assets/img/logo.webp" alt="OlehOlehJember" loading="lazy" decoding="async" width="160" height="40">
+        <img class="logo__img" src="assets/img/logo.png" alt="OlehOlehJember" loading="lazy" decoding="async" width="160" height="40">
       </div>
       <p class="footerMuted">
         Oleh-oleh khas Jember dengan pengemasan rapi, cocok untuk keluarga, teman, dan kebutuhan kantor.
       </p>
-
       <div class="footerBadges" aria-label="Keunggulan singkat">
         <span class="fBadge">📦 Packing Aman</span>
         <span class="fBadge">✅ QC</span>
@@ -1382,7 +1322,6 @@
         </a>
       </div>
     </div>
-
   </div>
 
   <div class="footer__bottom">
@@ -1394,10 +1333,8 @@
   </div>
 </footer>
 
-<!-- FLOATING TO TOP -->
 <button class="toTopFloat" id="toTopFloat" type="button" aria-label="Kembali ke atas" title="Kembali ke atas">↑</button>
 
-<!-- FLOATING WHATSAPP -->
 <a class="waFloat"
    id="waFloat"
    href="https://wa.me/6281234567890"
@@ -1410,7 +1347,6 @@
   </svg>
 </a>
 
-<!-- HELP MODAL -->
 <div class="helpModal" id="helpModal" hidden aria-hidden="true">
   <div class="helpModal__backdrop" data-close></div>
 
@@ -1432,11 +1368,9 @@
 </div>
 
 <script>
-  // YEAR
   const y = document.getElementById('year');
   if(y) y.textContent = new Date().getFullYear();
 
-  // Mobile menu
   const btnMenu = document.getElementById('menuBtn');
   const menu = document.getElementById('mobileMenu');
   btnMenu?.addEventListener('click', () => {
@@ -1450,21 +1384,15 @@
     }
   });
 
-  // Helpers
   const rupiah = (n) => "Rp " + (n || 0).toLocaleString("id-ID");
 
-  // Unsplash helper (lebih kecil + format modern)
-  // Catatan: target <100KB sangat bergantung pada foto & detailnya, tapi ini biasanya turun drastis.
-  const u = (idUrl, w=700, q=55, fm="webp") => {
-    // Terima full URL unsplash "https://images.unsplash.com/photo-...."
-    const base = idUrl.split("?")[0];
+  // ✅ LEBIH KECIL LAGI (agresif)
+  // cards: max 640, q avif 35 / webp 45
+  const u = (baseUrl, w=480, q=45, fm="webp") => {
+    const base = baseUrl.split("?")[0];
     return `${base}?auto=format&fit=crop&fm=${fm}&w=${w}&q=${q}`;
   };
 
-  const uSrcset = (idUrl, sizes=[480, 700, 900], q=55, fm="webp") =>
-    sizes.map(s => `${u(idUrl, s, q, fm)} ${s}w`).join(", ");
-
-  // PRODUCTS DATA (turunkan w dari 1200 -> 700/900 via srcset)
   const products = [
     { id:"suwar", name:"Suwar-suwir Khas", cat:"makanan", catLabel:"Makanan Manis", badge:"Terlaris", price:28000,
       img:"https://images.unsplash.com/photo-1515003197210-e0cd71810b5f", desc:"Manisan khas Jember yang lembut, manisnya pas, cocok untuk oleh-oleh keluarga." },
@@ -1486,7 +1414,6 @@
       img:"https://images.unsplash.com/photo-1540189549336-e6e99c3679fe", desc:"Paket campur praktis dengan harga hemat. Cocok untuk yang ingin banyak varian." }
   ];
 
-  // ✅ LINK DETAIL PER PRODUK
   const detailLinks = {
     suwar: "detailproduksuwarsuwir.html",
     dodol: "detailprodukdodol.html",
@@ -1499,7 +1426,6 @@
     paket: "detailprodukpakethemat.html"
   };
 
-  // DOM
   const productGrid = document.getElementById("productGrid");
   const emptyState = document.getElementById("emptyState");
   const resetBtn = document.getElementById("resetBtn");
@@ -1509,24 +1435,29 @@
   let activeCat = "all";
   let keyword = "";
 
-  function productCardMedia(p){
-    // Local asset (avif/png/etc)
+  function mediaMarkup(p){
     if(!String(p.img).startsWith("https://images.unsplash.com/")){
-      return `
-        <img src="${p.img}" alt="${p.name}" loading="lazy" decoding="async" width="900" height="600">
-      `;
+      return `<img src="${p.img}" alt="${p.name}" loading="lazy" decoding="async" width="800" height="520">`;
     }
 
-    // Unsplash: pakai picture + srcset agar tidak kebesaran
     const base = p.img;
-    const avifSet = uSrcset(base, [480, 700, 900], 45, "avif");
-    const webpSet = uSrcset(base, [480, 700, 900], 55, "webp");
+    // Maks 640 saja
+    const avif = `
+      ${u(base, 360, 35, "avif")} 360w,
+      ${u(base, 480, 35, "avif")} 480w,
+      ${u(base, 640, 35, "avif")} 640w
+    `.trim().replace(/\s+/g,' ');
+    const webp = `
+      ${u(base, 360, 45, "webp")} 360w,
+      ${u(base, 480, 45, "webp")} 480w,
+      ${u(base, 640, 45, "webp")} 640w
+    `.trim().replace(/\s+/g,' ');
 
     return `
       <picture class="uWrap">
-        <source type="image/avif" srcset="${avifSet}" sizes="(max-width: 980px) 92vw, 33vw">
-        <source type="image/webp" srcset="${webpSet}" sizes="(max-width: 980px) 92vw, 33vw">
-        <img class="uImg" src="${u(base, 700, 55, "webp")}" alt="${p.name}" loading="lazy" decoding="async" width="900" height="600">
+        <source type="image/avif" srcset="${avif}" sizes="(max-width: 980px) 92vw, 33vw">
+        <source type="image/webp" srcset="${webp}" sizes="(max-width: 980px) 92vw, 33vw">
+        <img class="uImg" src="${u(base, 480, 45, "webp")}" alt="${p.name}" loading="lazy" decoding="async" width="640" height="420">
       </picture>
     `;
   }
@@ -1542,9 +1473,7 @@
 
     productGrid.innerHTML = list.map(p => `
       <article class="pCard">
-        <div class="pMedia">
-          ${productCardMedia(p)}
-        </div>
+        <div class="pMedia">${mediaMarkup(p)}</div>
         <div class="pBody">
           <div class="pTitleRow">
             <h3 class="pTitle">${p.name}</h3>
@@ -1576,14 +1505,12 @@
     activeFilterHint.innerHTML = `Filter aktif: <b>${map[activeCat] || "Semua"}</b>`;
   }
 
-  // Fill select produk
   const produkSelect = document.getElementById("produkSelect");
   function fillProdukSelect(){
     const opt = products.map(p => `<option value="${p.name}">${p.name} — ${rupiah(p.price)}</option>`).join("");
     produkSelect.insertAdjacentHTML("beforeend", opt);
   }
 
-  // ORDER MODAL
   const orderModal = document.getElementById('orderModal');
   const openOrder = document.getElementById('openOrder');
   const openOrderMobile = document.getElementById('openOrderMobile');
@@ -1593,10 +1520,7 @@
     orderModal.removeAttribute('hidden');
     orderModal.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
-
-    if(selectedProductName){
-      produkSelect.value = selectedProductName;
-    }
+    if(selectedProductName) produkSelect.value = selectedProductName;
     setTimeout(updateNota, 0);
   }
   function hideOrder(){
@@ -1622,23 +1546,19 @@
     if (e.key === 'Escape' && orderModal && !orderModal.hasAttribute('hidden')) hideOrder();
   });
 
-  // QR toggle
   const qrisBCA = document.getElementById('qrisBCA');
   const qrisMandiri = document.getElementById('qrisMandiri');
   document.getElementById('orderForm')?.addEventListener('change', (e) => {
     const el = e.target;
     if (el && el.name === 'metode') {
       if (el.value === 'QRIS BCA') {
-        qrisBCA.hidden = false;
-        qrisMandiri.hidden = true;
+        qrisBCA.hidden = false; qrisMandiri.hidden = true;
       } else {
-        qrisBCA.hidden = true;
-        qrisMandiri.hidden = false;
+        qrisBCA.hidden = true; qrisMandiri.hidden = false;
       }
     }
   });
 
-  // Nota
   const priceMap = Object.fromEntries(products.map(p => [p.name, p.price]));
   function updateNota(){
     const form = document.getElementById("orderForm");
@@ -1662,7 +1582,6 @@
     if(["produk","qty"].includes(e.target.name)) updateNota();
   });
 
-  // submit -> WhatsApp
   document.getElementById('orderForm')?.addEventListener('submit', (e) => {
     e.preventDefault();
     const form = e.target;
@@ -1702,28 +1621,23 @@ Saya akan bayar via QRIS.`;
     updateNota();
   });
 
-  // Jump filter
   document.querySelectorAll('[data-jump-filter]').forEach(a => {
     a.addEventListener('click', (e) => {
       e.preventDefault();
-
       activeCat = a.getAttribute('data-jump-filter') || "all";
       keyword = "";
       searchInput.value = "";
       setHint();
       renderProducts();
-
       document.getElementById("produk")?.scrollIntoView({ behavior: "smooth" });
     });
   });
 
-  // Search
   searchInput?.addEventListener("input", (e) => {
     keyword = (e.target.value || "").trim().toLowerCase();
     renderProducts();
   });
 
-  // Reset
   resetBtn?.addEventListener("click", () => {
     activeCat = "all";
     keyword = "";
@@ -1732,7 +1646,6 @@ Saya akan bayar via QRIS.`;
     renderProducts();
   });
 
-  // Click handlers for dynamic buttons (order)
   document.addEventListener("click", (e) => {
     const btn = e.target.closest("[data-order]");
     if(!btn) return;
@@ -1740,7 +1653,6 @@ Saya akan bayar via QRIS.`;
     showOrder(productName);
   });
 
-  // TO TOP FLOAT
   const toTopFloat = document.getElementById('toTopFloat');
   function toggleToTop(){
     if(!toTopFloat) return;
@@ -1750,47 +1662,34 @@ Saya akan bayar via QRIS.`;
   toggleToTop();
   toTopFloat?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-  // HELP MODAL
   const helpModal = document.getElementById('helpModal');
   const helpTitle = document.getElementById('helpTitle');
   const helpBody = document.getElementById('helpBody');
 
   const helpContent = {
-    cara: {
-      title: 'Cara Pesan',
-      html: `
-        <div class="helpList">
-          <div class="helpItem"><b>1) Klik tombol “Pesan”</b><p>Isi nama, WhatsApp, alamat, produk, dan jumlah.</p></div>
-          <div class="helpItem"><b>2) Cek nota sementara</b><p>Total muncul otomatis (ongkir dikonfirmasi admin).</p></div>
-          <div class="helpItem"><b>3) Bayar via QRIS</b><p>Scan QR, simpan bukti bayar, lalu klik “Kirim Pesanan”.</p></div>
-        </div>`
-    },
-    pengiriman: {
-      title: 'Pengiriman',
-      html: `
-        <div class="helpList">
-          <div class="helpItem"><b>Estimasi proses</b><p>Biasanya 24–48 jam setelah konfirmasi.</p></div>
-          <div class="helpItem"><b>Packaging</b><p>Bubble wrap + kardus, QC sebelum kirim.</p></div>
-          <div class="helpItem"><b>Resi</b><p>Resi dikirim setelah paket diserahkan ke ekspedisi.</p></div>
-        </div>`
-    },
-    pembayaran: {
-      title: 'Pembayaran',
-      html: `
-        <div class="helpList">
-          <div class="helpItem"><b>Metode</b><p>QRIS (BCA / Mandiri). Bisa pakai aplikasi bank / e-wallet.</p></div>
-          <div class="helpItem"><b>Bukti bayar</b><p>Upload bukti (opsional) atau kirim via WhatsApp setelah submit.</p></div>
-        </div>`
-    },
-    faq: {
-      title: 'FAQ',
-      html: `
-        <div class="helpList">
-          <div class="helpItem"><b>Apakah bisa pesan banyak untuk kantor?</b><p>Bisa. Tulis jumlah & catatan, admin bantu rekap.</p></div>
-          <div class="helpItem"><b>Apakah bisa request kartu ucapan?</b><p>Bisa. Isi di kolom catatan.</p></div>
-          <div class="helpItem"><b>Ongkir gimana?</b><p>Ongkir dikonfirmasi admin sesuai alamat & berat paket.</p></div>
-        </div>`
-    }
+    cara: { title: 'Cara Pesan', html: `
+      <div class="helpList">
+        <div class="helpItem"><b>1) Klik tombol “Pesan”</b><p>Isi nama, WhatsApp, alamat, produk, dan jumlah.</p></div>
+        <div class="helpItem"><b>2) Cek nota sementara</b><p>Total muncul otomatis (ongkir dikonfirmasi admin).</p></div>
+        <div class="helpItem"><b>3) Bayar via QRIS</b><p>Scan QR, simpan bukti bayar, lalu klik “Kirim Pesanan”.</p></div>
+      </div>`},
+    pengiriman: { title: 'Pengiriman', html: `
+      <div class="helpList">
+        <div class="helpItem"><b>Estimasi proses</b><p>Biasanya 24–48 jam setelah konfirmasi.</p></div>
+        <div class="helpItem"><b>Packaging</b><p>Bubble wrap + kardus, QC sebelum kirim.</p></div>
+        <div class="helpItem"><b>Resi</b><p>Resi dikirim setelah paket diserahkan ke ekspedisi.</p></div>
+      </div>`},
+    pembayaran: { title: 'Pembayaran', html: `
+      <div class="helpList">
+        <div class="helpItem"><b>Metode</b><p>QRIS (BCA / Mandiri). Bisa pakai aplikasi bank / e-wallet.</p></div>
+        <div class="helpItem"><b>Bukti bayar</b><p>Upload bukti (opsional) atau kirim via WhatsApp setelah submit.</p></div>
+      </div>`},
+    faq: { title: 'FAQ', html: `
+      <div class="helpList">
+        <div class="helpItem"><b>Apakah bisa pesan banyak untuk kantor?</b><p>Bisa. Tulis jumlah & catatan, admin bantu rekap.</p></div>
+        <div class="helpItem"><b>Apakah bisa request kartu ucapan?</b><p>Bisa. Isi di kolom catatan.</p></div>
+        <div class="helpItem"><b>Ongkir gimana?</b><p>Ongkir dikonfirmasi admin sesuai alamat & berat paket.</p></div>
+      </div>`}
   };
 
   function openHelp(key){
@@ -1798,7 +1697,6 @@ Saya akan bayar via QRIS.`;
     if(!data || !helpModal) return;
     helpTitle.textContent = data.title;
     helpBody.innerHTML = data.html;
-
     helpModal.removeAttribute('hidden');
     helpModal.setAttribute('aria-hidden','false');
     document.body.style.overflow = 'hidden';
@@ -1820,7 +1718,6 @@ Saya akan bayar via QRIS.`;
     if(e.key === 'Escape' && helpModal && !helpModal.hasAttribute('hidden')) closeHelp();
   });
 
-  // INIT
   fillProdukSelect();
   setHint();
   renderProducts();
