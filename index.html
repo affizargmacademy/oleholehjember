@@ -40,11 +40,16 @@
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
 
-  <!-- Perf: preconnect + preload font -->
+  <!-- ✅ Perf: fonts non-blocking + weight dipangkas -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap"
+        onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap">
+  </noscript>
 
   <!-- Structured Data (AI Overview & Rich Results) -->
   <script type="application/ld+json">
@@ -84,9 +89,9 @@
 <header class="nav">
   <div class="container nav__inner">
     <a class="logo" href="index.html" aria-label="Beranda">
-      <img class="logo__img" src="assets/img/logo.png" alt="OlehOlehJember" decoding="async">
+      <!-- ✅ width/height biar CLS aman -->
+      <img class="logo__img" src="assets/img/logo.png" alt="OlehOlehJember" decoding="async" width="160" height="50">
     </a>
-    
 
     <nav class="nav__links" aria-label="Navigasi">
       <a href="index.html">Beranda</a>
@@ -97,7 +102,7 @@
 
     <div class="nav__actions">
       <button class="btn btn--primary" id="openOrder" type="button">Pesan</button>
-      <button class="menuBtn" id="menuBtn" aria-label="Buka menu" aria-expanded="false" aria-controls="mobileMenu">☰</button>
+      <button class="menuBtn" id="menuBtn" aria-label="Buka menu" aria-expanded="false" aria-controls="mobileMenu" type="button">☰</button>
     </div>
   </div>
 
@@ -226,13 +231,15 @@
         <div class="qrWrap">
           <div class="qrCard" id="qrisBCA">
             <div class="qrTitle">QRIS BCA</div>
-            <img class="qrImg" src="assets/qris-bca.png" alt="QRIS BCA (ganti dengan QR kamu)" loading="lazy" decoding="async">
+            <!-- ✅ width/height -->
+            <img class="qrImg" src="assets/qris-bca.png" alt="QRIS BCA (ganti dengan QR kamu)" loading="lazy" decoding="async" width="320" height="320">
             <div class="qrNote">Ganti dengan QRIS BCA milikmu: <b>assets/qris-bca.png</b></div>
           </div>
 
           <div class="qrCard" id="qrisMandiri" hidden>
             <div class="qrTitle">QRIS Mandiri</div>
-            <img class="qrImg" src="assets/qris-mandiri.png" alt="QRIS Mandiri (ganti dengan QR kamu)" loading="lazy" decoding="async">
+            <!-- ✅ width/height -->
+            <img class="qrImg" src="assets/qris-mandiri.png" alt="QRIS Mandiri (ganti dengan QR kamu)" loading="lazy" decoding="async" width="320" height="320">
             <div class="qrNote">Ganti dengan QRIS Mandiri milikmu: <b>assets/qris-mandiri.png</b></div>
           </div>
         </div>
@@ -254,10 +261,10 @@
 
 <style>
   .logo__img{
-  height: 50px;
-  width: auto;
-  display: block;
-}
+    height: 50px;
+    width: auto;
+    display: block;
+  }
 
   :root{
     --bg: #ffffff;
@@ -752,19 +759,51 @@ Saya akan bayar via QRIS.`;
           </div>
 
           <div class="gallery" aria-label="Slider foto oleh-oleh">
-            <!-- FIXED UNSPLASH PHOTO IDs (stable) -->
+            <!-- ✅ UNSPLASH diperkecil + srcset/sizes -->
             <img class="gallery__img"
-              src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1400&q=80"
-              alt="Aneka snack dan camilan" decoding="async" fetchpriority="high">
+              src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=960&q=55"
+              srcset="
+                https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=520&q=45 520w,
+                https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=760&q=50 760w,
+                https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=960&q=55 960w"
+              sizes="(max-width:980px) 92vw, 520px"
+              alt="Aneka snack dan camilan"
+              decoding="async"
+              fetchpriority="high"
+              width="960" height="600">
+
             <img class="gallery__img"
-              src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=1400&q=80"
-              alt="Kopi dan biji kopi" loading="lazy" decoding="async">
+              src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=960&q=55"
+              srcset="
+                https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=520&q=45 520w,
+                https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=760&q=50 760w,
+                https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=960&q=55 960w"
+              sizes="(max-width:980px) 92vw, 520px"
+              alt="Kopi dan biji kopi"
+              loading="lazy" decoding="async"
+              width="960" height="600">
+
             <img class="gallery__img"
-              src="https://images.unsplash.com/photo-1512909006721-3d6018887383?auto=format&fit=crop&w=1400&q=80"
-              alt="Gift box dan packaging" loading="lazy" decoding="async">
+              src="https://images.unsplash.com/photo-1512909006721-3d6018887383?auto=format&fit=crop&w=960&q=55"
+              srcset="
+                https://images.unsplash.com/photo-1512909006721-3d6018887383?auto=format&fit=crop&w=520&q=45 520w,
+                https://images.unsplash.com/photo-1512909006721-3d6018887383?auto=format&fit=crop&w=760&q=50 760w,
+                https://images.unsplash.com/photo-1512909006721-3d6018887383?auto=format&fit=crop&w=960&q=55 960w"
+              sizes="(max-width:980px) 92vw, 520px"
+              alt="Gift box dan packaging"
+              loading="lazy" decoding="async"
+              width="960" height="600">
+
             <img class="gallery__img"
-              src="https://images.unsplash.com/photo-1526318472351-c75fcf070305?auto=format&fit=crop&w=1400&q=80"
-              alt="Makanan manis dan oleh-oleh" loading="lazy" decoding="async">
+              src="https://images.unsplash.com/photo-1526318472351-c75fcf070305?auto=format&fit=crop&w=960&q=55"
+              srcset="
+                https://images.unsplash.com/photo-1526318472351-c75fcf070305?auto=format&fit=crop&w=520&q=45 520w,
+                https://images.unsplash.com/photo-1526318472351-c75fcf070305?auto=format&fit=crop&w=760&q=50 760w,
+                https://images.unsplash.com/photo-1526318472351-c75fcf070305?auto=format&fit=crop&w=960&q=55 960w"
+              sizes="(max-width:980px) 92vw, 520px"
+              alt="Makanan manis dan oleh-oleh"
+              loading="lazy" decoding="async"
+              width="960" height="600">
           </div>
         </div>
       </div>
@@ -867,25 +906,52 @@ Saya akan bayar via QRIS.`;
         OlehOlehJember adalah toko oleh-oleh khas Jember yang menyediakan <b>suwar-suwir</b>, <b>kopi</b>, aneka <b>snack</b>,
         hingga <b>gift box</b> untuk kebutuhan keluarga, teman, maupun acara kantor.
       </p>
-      
+
       <p>
         Kami mengutamakan kualitas produk dan <b>packing rapi</b> agar aman sampai tujuan.
         Pesanan diproses cepat, siap kirim, dan bisa request catatan seperti kartu ucapan atau paket hampers.
       </p>
-      
+
       <p>
         Ingin pesan praktis? Klik tombol <b>Pesan</b> atau chat WhatsApp untuk konsultasi produk,
         konfirmasi ongkir, dan bantuan rekap pesanan dalam jumlah banyak.
       </p>
-      
+
     </div>
 
     <!-- KANAN : FOTO FIXED (tidak berubah) -->
     <div class="lokasiImage">
-      <!-- NOTE: ini bukan random query. Ini foto fixed ID (stabil) -->
-      <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1400&q=80" alt="Pemandangan alam Jawa Timur" loading="lazy" decoding="async">
-      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=80" alt="Suasana perjalanan wisata" loading="lazy" decoding="async">
-      <img src="https://images.unsplash.com/photo-1498654896293-37aacf113fd9?auto=format&fit=crop&w=1400&q=80" alt="Kuliner dan kopi" loading="lazy" decoding="async">
+      <!-- ✅ UNSPLASH diperkecil + srcset/sizes -->
+      <img
+        src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=960&q=55"
+        srcset="
+          https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=420&q=45 420w,
+          https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=640&q=50 640w,
+          https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=960&q=55 960w"
+        sizes="(max-width:980px) 92vw, 520px"
+        alt="Pemandangan alam Jawa Timur"
+        loading="lazy" decoding="async"
+        width="960" height="640">
+
+      <img
+        src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=640&q=50"
+        srcset="
+          https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=420&q=45 420w,
+          https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=640&q=50 640w"
+        sizes="(max-width:980px) 92vw, 260px"
+        alt="Suasana perjalanan wisata"
+        loading="lazy" decoding="async"
+        width="640" height="426">
+
+      <img
+        src="https://images.unsplash.com/photo-1498654896293-37aacf113fd9?auto=format&fit=crop&w=640&q=50"
+        srcset="
+          https://images.unsplash.com/photo-1498654896293-37aacf113fd9?auto=format&fit=crop&w=420&q=45 420w,
+          https://images.unsplash.com/photo-1498654896293-37aacf113fd9?auto=format&fit=crop&w=640&q=50 640w"
+        sizes="(max-width:980px) 92vw, 260px"
+        alt="Kuliner dan kopi"
+        loading="lazy" decoding="async"
+        width="640" height="426">
     </div>
 
   </div>
@@ -963,7 +1029,7 @@ Saya akan bayar via QRIS.`;
 
       <article class="catCard">
         <div class="catCard__media">
-          <img src="assets/img/kue manis 2.avif" alt="Manisan khas" loading="lazy" decoding="async">
+          <img src="assets/img/kue manis 2.avif" alt="Manisan khas" loading="lazy" decoding="async" width="1200" height="800">
         </div>
         <div class="catCard__body">
           <div class="catCard__title">Manisan & Kue</div>
@@ -973,7 +1039,15 @@ Saya akan bayar via QRIS.`;
 
       <article class="catCard">
         <div class="catCard__media">
-          <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=1200&q=80" alt="Kopi" loading="lazy" decoding="async">
+          <img
+            src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=760&q=50"
+            srcset="
+              https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=420&q=45 420w,
+              https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=760&q=50 760w"
+            sizes="(max-width:980px) 92vw, 360px"
+            alt="Kopi"
+            loading="lazy" decoding="async"
+            width="760" height="507">
         </div>
         <div class="catCard__body">
           <div class="catCard__title">Kopi</div>
@@ -983,7 +1057,15 @@ Saya akan bayar via QRIS.`;
 
       <article class="catCard">
         <div class="catCard__media">
-          <img src="https://images.unsplash.com/photo-1546549032-9571cd6b27df?auto=format&fit=crop&w=1200&q=80" alt="Snack" loading="lazy" decoding="async">
+          <img
+            src="https://images.unsplash.com/photo-1546549032-9571cd6b27df?auto=format&fit=crop&w=760&q=50"
+            srcset="
+              https://images.unsplash.com/photo-1546549032-9571cd6b27df?auto=format&fit=crop&w=420&q=45 420w,
+              https://images.unsplash.com/photo-1546549032-9571cd6b27df?auto=format&fit=crop&w=760&q=50 760w"
+            sizes="(max-width:980px) 92vw, 360px"
+            alt="Snack"
+            loading="lazy" decoding="async"
+            width="760" height="507">
         </div>
         <div class="catCard__body">
           <div class="catCard__title">Snack</div>
@@ -993,7 +1075,15 @@ Saya akan bayar via QRIS.`;
 
       <article class="catCard">
         <div class="catCard__media">
-          <img src="https://images.unsplash.com/photo-1512909006721-3d6018887383?auto=format&fit=crop&w=1200&q=80" alt="Gift box" loading="lazy" decoding="async">
+          <img
+            src="https://images.unsplash.com/photo-1512909006721-3d6018887383?auto=format&fit=crop&w=760&q=50"
+            srcset="
+              https://images.unsplash.com/photo-1512909006721-3d6018887383?auto=format&fit=crop&w=420&q=45 420w,
+              https://images.unsplash.com/photo-1512909006721-3d6018887383?auto=format&fit=crop&w=760&q=50 760w"
+            sizes="(max-width:980px) 92vw, 360px"
+            alt="Gift box"
+            loading="lazy" decoding="async"
+            width="760" height="507">
         </div>
         <div class="catCard__body">
           <div class="catCard__title">Gift Box</div>
@@ -1004,7 +1094,15 @@ Saya akan bayar via QRIS.`;
       <!-- item tambahan DISIMPAN tapi tidak tampil -->
       <article class="catCard">
         <div class="catCard__media">
-          <img src="https://images.unsplash.com/photo-1598515213963-8b44bcd2d76c?auto=format&fit=crop&w=1200&q=80" alt="Keripik" loading="lazy" decoding="async">
+          <img
+            src="https://images.unsplash.com/photo-1598515213963-8b44bcd2d76c?auto=format&fit=crop&w=760&q=50"
+            srcset="
+              https://images.unsplash.com/photo-1598515213963-8b44bcd2d76c?auto=format&fit=crop&w=420&q=45 420w,
+              https://images.unsplash.com/photo-1598515213963-8b44bcd2d76c?auto=format&fit=crop&w=760&q=50 760w"
+            sizes="(max-width:980px) 92vw, 360px"
+            alt="Keripik"
+            loading="lazy" decoding="async"
+            width="760" height="507">
         </div>
         <div class="catCard__body">
           <div class="catCard__title">Keripik</div>
@@ -1103,7 +1201,7 @@ Saya akan bayar via QRIS.`;
 
       <article class="prodCard">
         <div class="prodCard__img">
-          <img src="assets/img/kuemanis.avif" alt="Suwar-suwir khas" loading="lazy" decoding="async">
+          <img src="assets/img/kuemanis.avif" alt="Suwar-suwir khas" loading="lazy" decoding="async" width="1200" height="800">
         </div>
         <h3>Suwar-suwir Khas</h3>
         <p>Manis legit, tekstur lembut. Cocok untuk oleh-oleh.</p>
@@ -1115,7 +1213,16 @@ Saya akan bayar via QRIS.`;
 
       <article class="prodCard">
         <div class="prodCard__img">
-          <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=1200&q=80" alt="Kopi" loading="lazy" decoding="async">
+          <img
+            src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=960&q=55"
+            srcset="
+              https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=520&q=45 520w,
+              https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=760&q=50 760w,
+              https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=960&q=55 960w"
+            sizes="(max-width:980px) 92vw, 420px"
+            alt="Kopi"
+            loading="lazy" decoding="async"
+            width="960" height="640">
         </div>
         <h3>Kopi Jember</h3>
         <p>Aroma wangi, nikmat untuk keluarga atau hadiah.</p>
@@ -1127,7 +1234,16 @@ Saya akan bayar via QRIS.`;
 
       <article class="prodCard">
         <div class="prodCard__img">
-          <img src="https://images.unsplash.com/photo-1512909006721-3d6018887383?auto=format&fit=crop&w=1200&q=80" alt="Gift box" loading="lazy" decoding="async">
+          <img
+            src="https://images.unsplash.com/photo-1512909006721-3d6018887383?auto=format&fit=crop&w=960&q=55"
+            srcset="
+              https://images.unsplash.com/photo-1512909006721-3d6018887383?auto=format&fit=crop&w=520&q=45 520w,
+              https://images.unsplash.com/photo-1512909006721-3d6018887383?auto=format&fit=crop&w=760&q=50 760w,
+              https://images.unsplash.com/photo-1512909006721-3d6018887383?auto=format&fit=crop&w=960&q=55 960w"
+            sizes="(max-width:980px) 92vw, 420px"
+            alt="Gift box"
+            loading="lazy" decoding="async"
+            width="960" height="640">
         </div>
         <h3>Gift Box Mix</h3>
         <p>Mix snack + kopi + kartu ucapan. Siap kirim.</p>
@@ -1411,7 +1527,8 @@ Saya akan bayar via QRIS.`;
 
     <div class="footer__brand">
       <div class="footerLogo">
-        <img class="logo__img" src="assets/img/logo.png" alt="OlehOlehJember" loading="lazy" decoding="async">
+        <!-- ✅ width/height -->
+        <img class="logo__img" src="assets/img/logo.png" alt="OlehOlehJember" loading="lazy" decoding="async" width="160" height="50">
       </div>
       <p class="footerMuted">
         Oleh-oleh khas Jember dengan pengemasan rapi, cocok untuk keluarga, teman, dan kebutuhan kantor.
@@ -1456,7 +1573,6 @@ Saya akan bayar via QRIS.`;
           <span class="fcIcon" aria-hidden="true">💬</span>
           <div>
             <div class="fcLabel">WhatsApp</div>
-            <!-- GANTI nomor di bawah -->
             <a class="fcText fcLink" href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer">Klik untuk chat</a>
           </div>
         </div>
@@ -1515,8 +1631,6 @@ Saya akan bayar via QRIS.`;
     <path d="M19.11 17.93c-.27-.14-1.61-.79-1.86-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.19-1.33-.81-.72-1.36-1.61-1.52-1.88-.16-.27-.02-.42.12-.56.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.02-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27 0 1.34.98 2.63 1.11 2.82.14.18 1.93 2.95 4.69 4.13.66.28 1.17.45 1.57.58.66.21 1.26.18 1.73.11.53-.08 1.61-.66 1.84-1.29.23-.63.23-1.18.16-1.29-.07-.11-.25-.18-.52-.32zM16.03 3C9.41 3 4 8.38 4 14.99c0 2.64.87 5.08 2.34 7.05L4 29l7.18-2.29a12.9 12.9 0 0 0 4.85.94C22.65 27.65 28 22.28 28 15.67 28 9.06 22.65 3 16.03 3zm0 22.27c-1.55 0-3.07-.42-4.4-1.22l-.32-.19-4.26 1.36 1.39-4.15-.21-.33a9.13 9.13 0 0 1-1.4-4.91c0-5.06 4.13-9.18 9.2-9.18 5.07 0 9.2 4.12 9.2 9.18s-4.13 9.18-9.2 9.18z"/>
   </svg>
 </a>
-
-
 
 <!-- MODAL BANTUAN -->
 <div class="helpModal" id="helpModal" hidden aria-hidden="true">
@@ -1697,42 +1811,40 @@ Saya akan bayar via QRIS.`;
   }
   .toTopFloat:hover{ background: var(--pinkSoft); }
 
-/* FLOATING WHATSAPP (di bawah floating top) */
-.waFloat{
-  position: fixed;
-  right: 18px;
-  bottom: 82px; /* di bawah toTop (52px + gap) */
-  width: 52px;
-  height: 52px;
-  border-radius: 16px;
-  border: 1px solid rgba(37,211,102,.22);
-  background: #fff;
-  box-shadow: var(--shadow);
-  cursor:pointer;
-  display:grid;
-  place-items:center;
-  z-index: 8500;
-}
-.waFloat:hover{ background: rgba(37,211,102,.08); }
-.waFloat svg{ width: 24px; height: 24px; fill: #25D366; }
-.waFloat span{
-  position:absolute;
-  right: 62px;
-  background:#fff;
-  border:1px solid rgba(30,26,31,.10);
-  box-shadow: var(--shadow2);
-  padding: 8px 10px;
-  border-radius: 12px;
-  font-weight: 800;
-  color: var(--ink);
-  white-space: nowrap;
-  opacity:0;
-  transform: translateY(2px);
-  pointer-events:none;
-  transition: opacity .12s ease, transform .12s ease;
-}
-.waFloat:hover span{ opacity:1; transform: translateY(0); }
-
+  .waFloat{
+    position: fixed;
+    right: 18px;
+    bottom: 82px;
+    width: 52px;
+    height: 52px;
+    border-radius: 16px;
+    border: 1px solid rgba(37,211,102,.22);
+    background: #fff;
+    box-shadow: var(--shadow);
+    cursor:pointer;
+    display:grid;
+    place-items:center;
+    z-index: 8500;
+  }
+  .waFloat:hover{ background: rgba(37,211,102,.08); }
+  .waFloat svg{ width: 24px; height: 24px; fill: #25D366; }
+  .waFloat span{
+    position:absolute;
+    right: 62px;
+    background:#fff;
+    border:1px solid rgba(30,26,31,.10);
+    box-shadow: var(--shadow2);
+    padding: 8px 10px;
+    border-radius: 12px;
+    font-weight: 800;
+    color: var(--ink);
+    white-space: nowrap;
+    opacity:0;
+    transform: translateY(2px);
+    pointer-events:none;
+    transition: opacity .12s ease, transform .12s ease;
+  }
+  .waFloat:hover span{ opacity:1; transform: translateY(0); }
 
   .helpModal[hidden]{ display:none; }
   .helpModal{ position:fixed; inset:0; z-index: 9999; }
@@ -1804,13 +1916,21 @@ Saya akan bayar via QRIS.`;
   const y = document.getElementById('year');
   if(y) y.textContent = new Date().getFullYear();
 
-  // TO TOP FLOAT
+  // TO TOP FLOAT (pakai rAF biar lebih ringan)
   const toTopFloat = document.getElementById('toTopFloat');
+  let ticking = false;
+
   function toggleToTop(){
     if(!toTopFloat) return;
     toTopFloat.style.display = window.scrollY > 500 ? 'grid' : 'none';
+    ticking = false;
   }
-  window.addEventListener('scroll', toggleToTop, { passive:true });
+  window.addEventListener('scroll', () => {
+    if(!ticking){
+      window.requestAnimationFrame(toggleToTop);
+      ticking = true;
+    }
+  }, { passive:true });
   toggleToTop();
   toTopFloat?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
