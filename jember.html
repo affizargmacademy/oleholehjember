@@ -10,7 +10,7 @@
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="jember.html" />
 
-  <!-- OPEN GRAPH (AI Overview + share preview) -->
+  <!-- OPEN GRAPH -->
   <meta property="og:locale" content="id_ID" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Tentang Jember | OlehOlehJember" />
@@ -24,18 +24,18 @@
   <meta name="twitter:description" content="Kenali Jember sekaligus toko OlehOlehJember: oleh-oleh khas, packing aman, siap kirim, dan bisa chat WhatsApp." />
   <meta name="twitter:image" content="assets/img/logo.png" />
 
-  <!-- FAVICON (maksimalkan) -->
+  <!-- FAVICON -->
   <link rel="icon" href="assets/favicon/favicon.ico" sizes="any">
   <link rel="icon" href="assets/favicon/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.png">
   <link rel="manifest" href="assets/favicon/site.webmanifest">
 
-  <!-- PERFORMANCE: FONT (keep, tapi optimasi) -->
+  <!-- PERFORMANCE: FONT -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
 
-  <!-- STRUCTURED DATA (AI Overview / SEO) -->
+  <!-- STRUCTURED DATA -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -88,7 +88,7 @@
     img{ max-width:100%; display:block; }
     .container{ width:min(var(--container), 92vw); margin-inline:auto; }
 
-    /* BUTTON (satu definisi saja supaya ga tabrakan) */
+    /* BUTTON */
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
       padding: 10px 14px;
@@ -127,13 +127,8 @@
       gap: 14px;
     }
     .logo{ display:flex; align-items:center; gap:10px; font-weight: 900; letter-spacing:-.2px; }
-    .logo__mark{
-      width: 12px; height: 12px; border-radius: 999px;
-      background: linear-gradient(135deg, var(--pink), var(--pink2));
-      box-shadow: 0 0 0 6px var(--pinkSoft);
-    }
     .logo__img{
-      height: 40px;      /* ukuran aman untuk navbar 72px */
+      height: 40px;
       width: auto;
       display: block;
       object-fit: contain;
@@ -386,7 +381,7 @@
       .mapFrame{ min-height: 280px; }
     }
 
-    /* MODAL ORDER (z-index lebih kecil dari helpModal biar tidak tabrakan) */
+    /* MODAL ORDER */
     .modal[hidden]{ display:none; }
     .modal{ position:fixed; inset:0; z-index: 9000; }
     .modal__backdrop{ position:absolute; inset:0; background: rgba(0,0,0,.45); }
@@ -581,7 +576,6 @@
     }
     .footer__link:hover{ color: var(--ink); }
 
-    /* Bantuan jadi tombol */
     .footer__linkBtn{
       display:block;
       width: 100%;
@@ -597,7 +591,6 @@
     }
     .footer__linkBtn:hover{ color: var(--ink); }
 
-    /* Contact */
     .footerContact{ display:grid; gap: 10px; margin-bottom: 14px; }
     .fcItem{ display:flex; gap: 10px; align-items:flex-start; }
     .fcIcon{
@@ -623,7 +616,6 @@
     .fcLink{ color: var(--pink); font-weight: 900; }
     .fcLink:hover{ text-decoration: underline; }
 
-    /* Social icon */
     .footerSocial{ display:flex; gap: 10px; flex-wrap:wrap; }
     .socialBtn{
       width: 42px; height: 42px;
@@ -640,7 +632,6 @@
     .socialBtn svg{ width:20px; height:20px; fill: var(--ink); }
     .socialBtn:hover svg{ fill: var(--pink); }
 
-    /* Bottom bar */
     .footer__bottom{
       border-top: 1px solid var(--border);
       background: #fff;
@@ -682,11 +673,11 @@
     }
     .toTopFloat:hover{ background: var(--pinkSoft); }
 
-    /* FLOATING WHATSAPP (di bawah floating top) */
+    /* FLOATING WHATSAPP */
     .waFloat{
       position: fixed;
       right: 18px;
-      bottom: 82px; /* di bawah toTop (52px + gap) */
+      bottom: 82px;
       width: 52px;
       height: 52px;
       border-radius: 16px;
@@ -718,7 +709,7 @@
     }
     .waFloat:hover span{ opacity:1; transform: translateY(0); }
 
-    /* HELP MODAL (z-index lebih tinggi dari orderModal supaya tidak tabrakan) */
+    /* HELP MODAL */
     .helpModal[hidden]{ display:none; }
     .helpModal{ position:fixed; inset:0; z-index: 9500; }
     .helpModal__backdrop{ position:absolute; inset:0; background: rgba(0,0,0,.45); }
@@ -811,7 +802,7 @@
   </div>
 </header>
 
-<!-- POPUP ORDER + PAYMENT (SCROLL + NOTA) -->
+<!-- POPUP ORDER + PAYMENT -->
 <div class="modal" id="orderModal" hidden aria-hidden="true">
   <div class="modal__backdrop" data-close></div>
 
@@ -833,7 +824,7 @@
 
         <label class="field">
           <span>No. WhatsApp</span>
-          <input name="wa" required placeholder="08xxxxxxxxxx" />
+          <input name="wa" required placeholder="08xxxxxxxxxx" inputmode="tel" />
         </label>
 
         <label class="field field--full">
@@ -925,13 +916,13 @@
         <div class="qrWrap">
           <div class="qrCard" id="qrisBCA">
             <div class="qrTitle">QRIS BCA</div>
-            <img class="qrImg" src="assets/qris-bca.png" alt="QRIS BCA (ganti dengan QR kamu)">
+            <img class="qrImg" src="assets/qris-bca.png" alt="QRIS BCA (ganti dengan QR kamu)" loading="lazy" decoding="async">
             <div class="qrNote">Ganti dengan QRIS BCA milikmu: <b>assets/qris-bca.png</b></div>
           </div>
 
           <div class="qrCard" id="qrisMandiri" hidden>
             <div class="qrTitle">QRIS Mandiri</div>
-            <img class="qrImg" src="assets/qris-mandiri.png" alt="QRIS Mandiri (ganti dengan QR kamu)">
+            <img class="qrImg" src="assets/qris-mandiri.png" alt="QRIS Mandiri (ganti dengan QR kamu)" loading="lazy" decoding="async">
             <div class="qrNote">Ganti dengan QRIS Mandiri milikmu: <b>assets/qris-mandiri.png</b></div>
           </div>
         </div>
@@ -951,382 +942,408 @@
   </div>
 </div>
 
-  <!-- HERO -->
-  <section class="heroPink">
-    <div class="container heroGrid">
-      <div class="heroText">
-        <span class="heroBadge">Kabupaten di Jawa Timur</span>
-        <h1>Mengenal Jember Lebih Dekat</h1>
+<!-- HERO -->
+<section class="heroPink">
+  <div class="container heroGrid">
+    <div class="heroText">
+      <span class="heroBadge">Kabupaten di Jawa Timur</span>
+      <h1>Mengenal Jember Lebih Dekat</h1>
+      <p>
+        Jember adalah salah satu kabupaten di Provinsi Jawa Timur yang dikenal
+        dengan kekayaan kuliner, hasil perkebunan, dan produk UMKM yang beragam.
+        Tak heran jika Jember menjadi tujuan favorit untuk mencari oleh-oleh khas.
+      </p>
+    </div>
+
+    <div class="heroImgPink">
+      <img src="assets/img/kota.avif" alt="Jember" width="960" height="640" decoding="async" />
+    </div>
+  </div>
+</section>
+
+<!-- KARAKTER -->
+<section class="section" id="karakter">
+  <div class="container contentGrid">
+    <div class="contentText karakterCard">
+      <div class="kChip">🌸 Karakteristik</div>
+      <h2>Letak & Karakteristik Jember</h2>
+      <p>
+        Kabupaten Jember terletak di bagian timur Pulau Jawa dan berbatasan
+        langsung dengan Samudera Hindia. Posisi geografis ini membuat Jember
+        memiliki kekayaan alam yang melimpah, mulai dari pertanian hingga perkebunan.
+      </p>
+
+      <p>
+        Jember dikenal sebagai daerah penghasil kopi, kakao, dan edamame.
+        Produk-produk inilah yang kemudian diolah menjadi berbagai
+        <b>oleh-oleh khas Jember</b> yang digemari wisatawan.
+      </p>
+
+      <p style="margin-bottom:0">
+        Selain itu, budaya masyarakat yang ramah serta perkembangan UMKM
+        yang pesat menjadikan Jember sebagai daerah yang aktif dalam
+        inovasi produk lokal.
+      </p>
+    </div>
+
+    <!-- ✅ UNSPLASH SUPER KECIL + RESPONSIVE -->
+    <div class="contentImages">
+      <img
+        src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=420&q=45&fm=webp"
+        srcset="
+          https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=320&q=45&fm=webp 320w,
+          https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=360&q=45&fm=webp 360w,
+          https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=420&q=45&fm=webp 420w,
+          https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=480&q=45&fm=webp 480w
+        "
+        sizes="(max-width: 980px) 100vw, 420px"
+        width="420"
+        height="280"
+        alt="Pantai di sekitar Jember"
+        loading="lazy"
+        decoding="async"
+      />
+
+      <img
+        src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=420&q=45&fm=webp"
+        srcset="
+          https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=320&q=45&fm=webp 320w,
+          https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=360&q=45&fm=webp 360w,
+          https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=420&q=45&fm=webp 420w,
+          https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=480&q=45&fm=webp 480w
+        "
+        sizes="(max-width: 980px) 100vw, 420px"
+        width="420"
+        height="280"
+        alt="Kopi khas Jember"
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="section" id="why">
+  <div class="container">
+    <div class="sectionHead">
+      <h2>Kenapa Oleh-oleh Jember?</h2>
+      <p>Alasan kenapa produk dari Jember cocok dibawa pulang.</p>
+    </div>
+
+    <div class="grid3">
+      <div class="infoCard">
+        <h3>Beragam Produk</h3>
+        <p>Mulai dari manisan khas, kopi lokal, snack, hingga hampers siap kirim.</p>
+      </div>
+      <div class="infoCard">
+        <h3>Mudah Dibawa</h3>
+        <p>Dikemas rapi dan aman sehingga cocok untuk perjalanan jauh.</p>
+      </div>
+      <div class="infoCard">
+        <h3>Cocok untuk Semua</h3>
+        <p>Pilihan tepat untuk keluarga, teman, hingga kebutuhan kantor.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAP -->
+<section class="section" id="map">
+  <div class="container">
+    <div class="mapGrid">
+      <div class="mapText">
+        <span class="mapBadge">📍 Lokasi Toko</span>
+        <h2>Datang langsung ke toko kami</h2>
         <p>
-          Jember adalah salah satu kabupaten di Provinsi Jawa Timur yang dikenal
-          dengan kekayaan kuliner, hasil perkebunan, dan produk UMKM yang beragam.
-          Tak heran jika Jember menjadi tujuan favorit untuk mencari oleh-oleh khas.
-        </p>
-      </div>
-
-      <div class="heroImgPink">
-        <img src="assets/img/kota.avif" alt="Jember" />
-      </div>
-    </div>
-  </section>
-
-  <!-- KARAKTER -->
-  <section class="section" id="karakter">
-    <div class="container contentGrid">
-      <div class="contentText karakterCard">
-        <div class="kChip">🌸 Karakteristik</div>
-        <h2>Letak & Karakteristik Jember</h2>
-        <p>
-          Kabupaten Jember terletak di bagian timur Pulau Jawa dan berbatasan
-          langsung dengan Samudera Hindia. Posisi geografis ini membuat Jember
-          memiliki kekayaan alam yang melimpah, mulai dari pertanian hingga perkebunan.
+          Kamu bisa ambil langsung / tanya stok di tempat. Klik tombol arahkan untuk membuka Google Maps.
+          (Silakan ganti alamat dan titik map sesuai lokasi toko kamu.)
         </p>
 
-        <p>
-          Jember dikenal sebagai daerah penghasil kopi, kakao, dan edamame.
-          Produk-produk inilah yang kemudian diolah menjadi berbagai
-          <b>oleh-oleh khas Jember</b> yang digemari wisatawan.
-        </p>
-
-        <p style="margin-bottom:0">
-          Selain itu, budaya masyarakat yang ramah serta perkembangan UMKM
-          yang pesat menjadikan Jember sebagai daerah yang aktif dalam
-          inovasi produk lokal.
-        </p>
-      </div>
-
-      <div class="contentImages">
-        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80" alt="Pantai" loading="lazy" decoding="async" />
-        <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=1200&q=80" alt="Kopi" loading="lazy" decoding="async" />
-      </div>
-    </div>
-  </section>
-
-  <!-- WHY -->
-  <section class="section" id="why">
-    <div class="container">
-      <div class="sectionHead">
-        <h2>Kenapa Oleh-oleh Jember?</h2>
-        <p>Alasan kenapa produk dari Jember cocok dibawa pulang.</p>
-      </div>
-
-      <div class="grid3">
-        <div class="infoCard">
-          <h3>Beragam Produk</h3>
-          <p>Mulai dari manisan khas, kopi lokal, snack, hingga hampers siap kirim.</p>
-        </div>
-        <div class="infoCard">
-          <h3>Mudah Dibawa</h3>
-          <p>Dikemas rapi dan aman sehingga cocok untuk perjalanan jauh.</p>
-        </div>
-        <div class="infoCard">
-          <h3>Cocok untuk Semua</h3>
-          <p>Pilihan tepat untuk keluarga, teman, hingga kebutuhan kantor.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- MAP -->
-  <section class="section" id="map">
-    <div class="container">
-      <div class="mapGrid">
-        <div class="mapText">
-          <span class="mapBadge">📍 Lokasi Toko</span>
-          <h2>Datang langsung ke toko kami</h2>
-          <p>
-            Kamu bisa ambil langsung / tanya stok di tempat. Klik tombol arahkan untuk membuka Google Maps.
-            (Silakan ganti alamat dan titik map sesuai lokasi toko kamu.)
-          </p>
-
-          <div class="mapActions">
-            <a class="btn btn--primary" href="https://www.google.com/maps?q=Oleh+Oleh+Jember" target="_blank" rel="noopener">
-              Buka Google Maps
-            </a>
-            <a class="btn" href="index.html">Kembali ke Home</a>
-          </div>
-
-          <div class="mapInfo">
-            <div class="mapInfoItem">
-              <span class="miIcon" aria-hidden="true">📍</span>
-              <div>
-                <div class="miLabel">Alamat</div>
-                <div class="miText">Jember, Jawa Timur</div>
-              </div>
-            </div>
-
-            <div class="mapInfoItem">
-              <span class="miIcon" aria-hidden="true">⏰</span>
-              <div>
-                <div class="miLabel">Jam Operasional</div>
-                <div class="miText">Setiap hari • 08.00–21.00</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="mapBox" aria-label="Peta toko">
-          <iframe
-            class="mapFrame"
-            src="https://www.google.com/maps?q=Oleh+Oleh+Jember&output=embed"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            allowfullscreen>
-          </iframe>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container footer__grid">
-
-      <div class="footer__brand">
-        <div class="footerLogo">
-          <img class="logo__img" src="assets/img/logo.png" alt="OlehOlehJember">
-        </div>
-        <p class="footerMuted">
-          Oleh-oleh khas Jember dengan pengemasan rapi, cocok untuk keluarga, teman, dan kebutuhan kantor.
-        </p>
-
-        <div class="footerBadges" aria-label="Keunggulan singkat">
-          <span class="fBadge">📦 Packing Aman</span>
-          <span class="fBadge">✅ QC</span>
-          <span class="fBadge">🧾 Resi</span>
-        </div>
-      </div>
-
-      <div class="footer__col">
-        <div class="footer__title">Menu</div>
-        <a class="footer__link" href="#karakter">Karakter</a>
-        <a class="footer__link" href="#why">Kenapa</a>
-        <a class="footer__link" href="#map">Lokasi</a>
-        <a class="footer__link" href="index.html">Home</a>
-      </div>
-
-      <div class="footer__col">
-        <div class="footer__title">Bantuan</div>
-        <button class="footer__linkBtn" type="button" data-help="cara">Cara Pesan</button>
-        <button class="footer__linkBtn" type="button" data-help="pengiriman">Pengiriman</button>
-        <button class="footer__linkBtn" type="button" data-help="pembayaran">Pembayaran</button>
-        <button class="footer__linkBtn" type="button" data-help="faq">FAQ</button>
-      </div>
-
-      <div class="footer__col">
-        <div class="footer__title">Kontak</div>
-
-        <div class="footerContact">
-          <div class="fcItem">
-            <span class="fcIcon" aria-hidden="true">📍</span>
-            <div>
-              <div class="fcLabel">Lokasi</div>
-              <div class="fcText">Jember, Jawa Timur</div>
-            </div>
-          </div>
-
-          <div class="fcItem">
-            <span class="fcIcon" aria-hidden="true">💬</span>
-            <div>
-              <div class="fcLabel">WhatsApp</div>
-              <a class="fcText fcLink" href="https://wa.me/6281234567890" target="_blank" rel="noopener">Klik untuk chat</a>
-            </div>
-          </div>
-
-          <div class="fcItem">
-            <span class="fcIcon" aria-hidden="true">⏰</span>
-            <div>
-              <div class="fcLabel">Jam Operasional</div>
-              <div class="fcText">Setiap hari • 08.00–21.00</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="footerSocial" aria-label="Sosial media">
-          <a class="socialBtn" href="#" aria-label="Instagram" title="Instagram">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5.5A4.5 4.5 0 1 0 16.5 12 4.5 4.5 0 0 0 12 7.5zm0 7.4A2.9 2.9 0 1 1 14.9 12 2.9 2.9 0 0 1 12 14.9zM17.8 6.2a1 1 0 1 1-1-1 1 1 0 0 1 1 1z"/>
-            </svg>
+        <div class="mapActions">
+          <a class="btn btn--primary" href="https://www.google.com/maps?q=Oleh+Oleh+Jember" target="_blank" rel="noopener">
+            Buka Google Maps
           </a>
+          <a class="btn" href="index.html">Kembali ke Home</a>
+        </div>
 
-          <a class="socialBtn" href="#" aria-label="TikTok" title="TikTok">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M16.5 2h-2.6v13.2a2.4 2.4 0 1 1-2-2.4V10a5 5 0 1 0 4.6 5V8.7a6.7 6.7 0 0 0 3.5 1.1V7.3a4.3 4.3 0 0 1-3.5-2.1z"/>
-            </svg>
-          </a>
+        <div class="mapInfo">
+          <div class="mapInfoItem">
+            <span class="miIcon" aria-hidden="true">📍</span>
+            <div>
+              <div class="miLabel">Alamat</div>
+              <div class="miText">Jember, Jawa Timur</div>
+            </div>
+          </div>
 
-          <a class="socialBtn" href="#" aria-label="Shopee" title="Shopee">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M5 7h14l-1 14H6L5 7zm7-5a4 4 0 0 0-4 4h2a2 2 0 0 1 4 0h2a4 4 0 0 0-4-4z"/>
-            </svg>
-          </a>
+          <div class="mapInfoItem">
+            <span class="miIcon" aria-hidden="true">⏰</span>
+            <div>
+              <div class="miLabel">Jam Operasional</div>
+              <div class="miText">Setiap hari • 08.00–21.00</div>
+            </div>
+          </div>
         </div>
       </div>
 
+      <div class="mapBox" aria-label="Peta toko">
+        <iframe
+          class="mapFrame"
+          src="https://www.google.com/maps?q=Oleh+Oleh+Jember&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container footer__grid">
+    <div class="footer__brand">
+      <div class="footerLogo">
+        <img class="logo__img" src="assets/img/logo.png" alt="OlehOlehJember">
+      </div>
+      <p class="footerMuted">
+        Oleh-oleh khas Jember dengan pengemasan rapi, cocok untuk keluarga, teman, dan kebutuhan kantor.
+      </p>
+
+      <div class="footerBadges" aria-label="Keunggulan singkat">
+        <span class="fBadge">📦 Packing Aman</span>
+        <span class="fBadge">✅ QC</span>
+        <span class="fBadge">🧾 Resi</span>
+      </div>
     </div>
 
-    <div class="footer__bottom">
-      <div class="container footer__bottomInner">
-        <div class="footer__copy">
-          © <span id="year"></span> OlehOlehJember • All rights reserved
-        </div>
-      </div>
+    <div class="footer__col">
+      <div class="footer__title">Menu</div>
+      <a class="footer__link" href="#karakter">Karakter</a>
+      <a class="footer__link" href="#why">Kenapa</a>
+      <a class="footer__link" href="#map">Lokasi</a>
+      <a class="footer__link" href="index.html">Home</a>
     </div>
-  </footer>
 
-  <!-- FLOATING TO TOP -->
-  <button class="toTopFloat" id="toTopFloat" type="button" aria-label="Kembali ke atas" title="Kembali ke atas">
-    ↑
-  </button>
+    <div class="footer__col">
+      <div class="footer__title">Bantuan</div>
+      <button class="footer__linkBtn" type="button" data-help="cara">Cara Pesan</button>
+      <button class="footer__linkBtn" type="button" data-help="pengiriman">Pengiriman</button>
+      <button class="footer__linkBtn" type="button" data-help="pembayaran">Pembayaran</button>
+      <button class="footer__linkBtn" type="button" data-help="faq">FAQ</button>
+    </div>
 
-  <!-- FLOATING WHATSAPP (di bawah floating top) -->
-  <a class="waFloat" id="waFloat" href="https://wa.me/6281234567890" target="_blank" rel="noopener" aria-label="Chat WhatsApp" title="Chat WhatsApp">
-    <span>Chat WhatsApp</span>
-    <svg viewBox="0 0 32 32" aria-hidden="true">
-      <path d="M19.11 17.93c-.27-.14-1.61-.79-1.86-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.19-1.33-.81-.72-1.36-1.61-1.52-1.88-.16-.27-.02-.42.12-.56.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.02-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27 0 1.34.98 2.63 1.11 2.82.14.18 1.93 2.95 4.69 4.13.66.28 1.17.45 1.57.58.66.21 1.26.18 1.73.11.53-.08 1.61-.66 1.84-1.29.23-.63.23-1.18.16-1.29-.07-.11-.25-.18-.52-.32zM16.03 3C9.41 3 4 8.38 4 14.99c0 2.64.87 5.08 2.34 7.05L4 29l7.18-2.29a12.9 12.9 0 0 0 4.85.94C22.65 27.65 28 22.28 28 15.67 28 9.06 22.65 3 16.03 3zm0 22.27c-1.55 0-3.07-.42-4.4-1.22l-.32-.19-4.26 1.36 1.39-4.15-.21-.33a9.13 9.13 0 0 1-1.4-4.91c0-5.06 4.13-9.18 9.2-9.18 5.07 0 9.2 4.12 9.2 9.18s-4.13 9.18-9.2 9.18z"/>
-    </svg>
-  </a>
+    <div class="footer__col">
+      <div class="footer__title">Kontak</div>
 
-  <!-- MODAL BANTUAN -->
-  <div class="helpModal" id="helpModal" hidden aria-hidden="true">
-    <div class="helpModal__backdrop" data-close></div>
-
-    <div class="helpModal__dialog" role="dialog" aria-modal="true" aria-labelledby="helpTitle">
-      <div class="helpModal__head">
-        <div>
-          <div class="helpModal__kicker">Bantuan</div>
-          <h3 class="helpModal__title" id="helpTitle">FAQ</h3>
+      <div class="footerContact">
+        <div class="fcItem">
+          <span class="fcIcon" aria-hidden="true">📍</span>
+          <div>
+            <div class="fcLabel">Lokasi</div>
+            <div class="fcText">Jember, Jawa Timur</div>
+          </div>
         </div>
-        <button class="helpModal__close" type="button" aria-label="Tutup" data-close>✕</button>
+
+        <div class="fcItem">
+          <span class="fcIcon" aria-hidden="true">💬</span>
+          <div>
+            <div class="fcLabel">WhatsApp</div>
+            <a class="fcText fcLink" href="https://wa.me/6281234567890" target="_blank" rel="noopener">Klik untuk chat</a>
+          </div>
+        </div>
+
+        <div class="fcItem">
+          <span class="fcIcon" aria-hidden="true">⏰</span>
+          <div>
+            <div class="fcLabel">Jam Operasional</div>
+            <div class="fcText">Setiap hari • 08.00–21.00</div>
+          </div>
+        </div>
       </div>
 
-      <div class="helpModal__body" id="helpBody"></div>
+      <div class="footerSocial" aria-label="Sosial media">
+        <a class="socialBtn" href="#" aria-label="Instagram" title="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5.5A4.5 4.5 0 1 0 16.5 12 4.5 4.5 0 0 0 12 7.5zm0 7.4A2.9 2.9 0 1 1 14.9 12 2.9 2.9 0 0 1 12 14.9zM17.8 6.2a1 1 0 1 1-1-1 1 1 0 0 1 1 1z"/>
+          </svg>
+        </a>
 
-      <div class="helpModal__foot">
-        <button class="btn" type="button" data-close>Tutup</button>
+        <a class="socialBtn" href="#" aria-label="TikTok" title="TikTok">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M16.5 2h-2.6v13.2a2.4 2.4 0 1 1-2-2.4V10a5 5 0 1 0 4.6 5V8.7a6.7 6.7 0 0 0 3.5 1.1V7.3a4.3 4.3 0 0 1-3.5-2.1z"/>
+          </svg>
+        </a>
+
+        <a class="socialBtn" href="#" aria-label="Shopee" title="Shopee">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M5 7h14l-1 14H6L5 7zm7-5a4 4 0 0 0-4 4h2a2 2 0 0 1 4 0h2a4 4 0 0 0-4-4z"/>
+          </svg>
+        </a>
       </div>
     </div>
   </div>
 
-  <script>
-    // YEAR
-    const y = document.getElementById('year');
-    if(y) y.textContent = new Date().getFullYear();
+  <div class="footer__bottom">
+    <div class="container footer__bottomInner">
+      <div class="footer__copy">
+        © <span id="year"></span> OlehOlehJember • All rights reserved
+      </div>
+    </div>
+  </div>
+</footer>
 
-    // Mobile menu toggle
-    const btnMenu = document.getElementById('menuBtn');
-    const menu = document.getElementById('mobileMenu');
-    btnMenu?.addEventListener('click', () => {
-      const open = !menu.hasAttribute('hidden');
-      if(open){
-        menu.setAttribute('hidden','');
-        btnMenu.setAttribute('aria-expanded','false');
+<!-- FLOATING TO TOP -->
+<button class="toTopFloat" id="toTopFloat" type="button" aria-label="Kembali ke atas" title="Kembali ke atas">↑</button>
+
+<!-- FLOATING WHATSAPP -->
+<a class="waFloat" id="waFloat" href="https://wa.me/6281234567890" target="_blank" rel="noopener" aria-label="Chat WhatsApp" title="Chat WhatsApp">
+  <span>Chat WhatsApp</span>
+  <svg viewBox="0 0 32 32" aria-hidden="true">
+    <path d="M19.11 17.93c-.27-.14-1.61-.79-1.86-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.19-1.33-.81-.72-1.36-1.61-1.52-1.88-.16-.27-.02-.42.12-.56.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.02-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27 0 1.34.98 2.63 1.11 2.82.14.18 1.93 2.95 4.69 4.13.66.28 1.17.45 1.57.58.66.21 1.26.18 1.73.11.53-.08 1.61-.66 1.84-1.29.23-.63.23-1.18.16-1.29-.07-.11-.25-.18-.52-.32zM16.03 3C9.41 3 4 8.38 4 14.99c0 2.64.87 5.08 2.34 7.05L4 29l7.18-2.29a12.9 12.9 0 0 0 4.85.94C22.65 27.65 28 22.28 28 15.67 28 9.06 22.65 3 16.03 3zm0 22.27c-1.55 0-3.07-.42-4.4-1.22l-.32-.19-4.26 1.36 1.39-4.15-.21-.33a9.13 9.13 0 0 1-1.4-4.91c0-5.06 4.13-9.18 9.2-9.18 5.07 0 9.2 4.12 9.2 9.18s-4.13 9.18-9.2 9.18z"/>
+  </svg>
+</a>
+
+<!-- HELP MODAL -->
+<div class="helpModal" id="helpModal" hidden aria-hidden="true">
+  <div class="helpModal__backdrop" data-close></div>
+
+  <div class="helpModal__dialog" role="dialog" aria-modal="true" aria-labelledby="helpTitle">
+    <div class="helpModal__head">
+      <div>
+        <div class="helpModal__kicker">Bantuan</div>
+        <h3 class="helpModal__title" id="helpTitle">FAQ</h3>
+      </div>
+      <button class="helpModal__close" type="button" aria-label="Tutup" data-close>✕</button>
+    </div>
+
+    <div class="helpModal__body" id="helpBody"></div>
+
+    <div class="helpModal__foot">
+      <button class="btn" type="button" data-close>Tutup</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // YEAR
+  const y = document.getElementById('year');
+  if(y) y.textContent = new Date().getFullYear();
+
+  // Mobile menu toggle
+  const btnMenu = document.getElementById('menuBtn');
+  const menu = document.getElementById('mobileMenu');
+  btnMenu?.addEventListener('click', () => {
+    const open = !menu.hasAttribute('hidden');
+    if(open){
+      menu.setAttribute('hidden','');
+      btnMenu.setAttribute('aria-expanded','false');
+    } else {
+      menu.removeAttribute('hidden');
+      btnMenu.setAttribute('aria-expanded','true');
+    }
+  });
+
+  // Modal order logic
+  const orderModal = document.getElementById('orderModal');
+  const openOrder = document.getElementById('openOrder');
+  const openOrderMobile = document.getElementById('openOrderMobile');
+
+  function showOrder(){
+    orderModal.removeAttribute('hidden');
+    orderModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    setTimeout(updateNota, 0);
+  }
+  function hideOrder(){
+    orderModal.setAttribute('hidden','');
+    orderModal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  openOrder?.addEventListener('click', showOrder);
+  openOrderMobile?.addEventListener('click', () => {
+    menu?.setAttribute('hidden','');
+    btnMenu?.setAttribute('aria-expanded','false');
+    showOrder();
+  });
+
+  orderModal?.addEventListener('click', (e) => {
+    const t = e.target;
+    if (t && t.hasAttribute('data-close')) hideOrder();
+  });
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && orderModal && !orderModal.hasAttribute('hidden')) hideOrder();
+  });
+
+  // toggle QR cards
+  const qrisBCA = document.getElementById('qrisBCA');
+  const qrisMandiri = document.getElementById('qrisMandiri');
+  document.getElementById('orderForm')?.addEventListener('change', (e) => {
+    const el = e.target;
+    if (el && el.name === 'metode') {
+      if (el.value === 'QRIS BCA') {
+        qrisBCA.hidden = false;
+        qrisMandiri.hidden = true;
       } else {
-        menu.removeAttribute('hidden');
-        btnMenu.setAttribute('aria-expanded','true');
+        qrisBCA.hidden = true;
+        qrisMandiri.hidden = false;
       }
-    });
-
-    // Modal order logic
-    const orderModal = document.getElementById('orderModal');
-    const openOrder = document.getElementById('openOrder');
-    const openOrderMobile = document.getElementById('openOrderMobile');
-
-    function showOrder(){
-      orderModal.removeAttribute('hidden');
-      orderModal.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
-      setTimeout(updateNota, 0);
     }
-    function hideOrder(){
-      orderModal.setAttribute('hidden','');
-      orderModal.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-    }
+  });
 
-    openOrder?.addEventListener('click', showOrder);
-    openOrderMobile?.addEventListener('click', () => {
-      menu?.setAttribute('hidden','');
-      btnMenu?.setAttribute('aria-expanded','false');
-      showOrder();
-    });
+  // NOTA SEMENTARA
+  const hargaProduk = {
+    "Suwar-suwir Khas": 28000,
+    "Kopi Jember": 55000,
+    "Gift Box Mix": 99000
+  };
 
-    orderModal?.addEventListener('click', (e) => {
-      const t = e.target;
-      if (t && t.hasAttribute('data-close')) hideOrder();
-    });
+  function rupiah(n){
+    return "Rp " + (n || 0).toLocaleString("id-ID");
+  }
 
-    window.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && orderModal && !orderModal.hasAttribute('hidden')) hideOrder();
-    });
+  function updateNota(){
+    const form = document.getElementById("orderForm");
+    if(!form) return;
 
-    // toggle QR cards
-    const qrisBCA = document.getElementById('qrisBCA');
-    const qrisMandiri = document.getElementById('qrisMandiri');
-    document.getElementById('orderForm')?.addEventListener('change', (e) => {
-      const el = e.target;
-      if (el && el.name === 'metode') {
-        if (el.value === 'QRIS BCA') {
-          qrisBCA.hidden = false;
-          qrisMandiri.hidden = true;
-        } else {
-          qrisBCA.hidden = true;
-          qrisMandiri.hidden = false;
-        }
-      }
-    });
+    const produk = form.produk.value;
+    const qty = parseInt(form.qty.value || "1", 10);
 
-    // NOTA SEMENTARA
-    const hargaProduk = {
-      "Suwar-suwir Khas": 28000,
-      "Kopi Jember": 55000,
-      "Gift Box Mix": 99000
-    };
+    const harga = hargaProduk[produk] || 0;
+    const total = harga * (isNaN(qty) ? 1 : qty);
 
-    function rupiah(n){
-      return "Rp " + (n || 0).toLocaleString("id-ID");
-    }
+    document.getElementById("notaProduk").textContent = produk || "—";
+    document.getElementById("notaQty").textContent = isNaN(qty) ? "1" : String(qty);
+    document.getElementById("notaHarga").textContent = rupiah(harga);
+    document.getElementById("notaTotal").textContent = rupiah(total);
+  }
 
-    function updateNota(){
-      const form = document.getElementById("orderForm");
-      if(!form) return;
+  document.getElementById("orderForm")?.addEventListener("input", (e) => {
+    if(["produk","qty"].includes(e.target.name)) updateNota();
+  });
+  document.getElementById("orderForm")?.addEventListener("change", (e) => {
+    if(["produk","qty"].includes(e.target.name)) updateNota();
+  });
 
-      const produk = form.produk.value;
-      const qty = parseInt(form.qty.value || "1", 10);
+  // submit -> WhatsApp
+  document.getElementById('orderForm')?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const form = e.target;
 
-      const harga = hargaProduk[produk] || 0;
-      const total = harga * (isNaN(qty) ? 1 : qty);
+    const nama = form.nama.value.trim();
+    const wa = form.wa.value.trim();
+    const alamat = form.alamat.value.trim();
+    const produk = form.produk.value;
+    const qty = form.qty.value;
+    const catatan = form.catatan.value.trim();
+    const metode = form.metode.value;
 
-      document.getElementById("notaProduk").textContent = produk || "—";
-      document.getElementById("notaQty").textContent = isNaN(qty) ? "1" : String(qty);
-      document.getElementById("notaHarga").textContent = rupiah(harga);
-      document.getElementById("notaTotal").textContent = rupiah(total);
-    }
+    const harga = hargaProduk[produk] || 0;
+    const total = harga * parseInt(qty || "1", 10);
 
-    document.getElementById("orderForm")?.addEventListener("input", (e) => {
-      if(["produk","qty"].includes(e.target.name)) updateNota();
-    });
-    document.getElementById("orderForm")?.addEventListener("change", (e) => {
-      if(["produk","qty"].includes(e.target.name)) updateNota();
-    });
-
-    // submit -> WhatsApp
-    document.getElementById('orderForm')?.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const form = e.target;
-
-      const nama = form.nama.value.trim();
-      const wa = form.wa.value.trim();
-      const alamat = form.alamat.value.trim();
-      const produk = form.produk.value;
-      const qty = form.qty.value;
-      const catatan = form.catatan.value.trim();
-      const metode = form.metode.value;
-
-      const harga = hargaProduk[produk] || 0;
-      const total = harga * parseInt(qty || "1", 10);
-
-      const pesan =
+    const pesan =
 `Halo, saya mau pesan:
 - Nama: ${nama}
 - WA: ${wa}
@@ -1339,103 +1356,106 @@
 
 Saya akan bayar via QRIS.`;
 
-      const nomorToko = "6281234567890";
-      const url = `https://wa.me/${nomorToko}?text=${encodeURIComponent(pesan)}`;
-      window.open(url, "_blank", "noopener");
+    const nomorToko = "6281234567890";
+    const url = `https://wa.me/${nomorToko}?text=${encodeURIComponent(pesan)}`;
+    window.open(url, "_blank", "noopener");
 
-      hideOrder();
-      form.reset();
-      qrisBCA.hidden = false;
-      qrisMandiri.hidden = true;
-      updateNota();
-    });
+    hideOrder();
+    form.reset();
+    qrisBCA.hidden = false;
+    qrisMandiri.hidden = true;
+    updateNota();
+  });
 
-    // TO TOP FLOAT
-    const toTopFloat = document.getElementById('toTopFloat');
-    function toggleToTop(){
-      if(!toTopFloat) return;
-      toTopFloat.style.display = window.scrollY > 500 ? 'grid' : 'none';
+  // TO TOP FLOAT
+  const toTopFloat = document.getElementById('toTopFloat');
+  function toggleToTop(){
+    if(!toTopFloat) return;
+    toTopFloat.style.display = window.scrollY > 500 ? 'grid' : 'none';
+  }
+  window.addEventListener('scroll', toggleToTop, { passive:true });
+  toggleToTop();
+  toTopFloat?.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // HELP MODAL
+  const helpModal = document.getElementById('helpModal');
+  const helpTitle = document.getElementById('helpTitle');
+  const helpBody = document.getElementById('helpBody');
+
+  const helpContent = {
+    cara: {
+      title: 'Cara Pesan',
+      html: `
+        <div class="helpList">
+          <div class="helpItem"><b>1) Klik tombol “Pesan”</b><p>Isi nama, WhatsApp, alamat, produk, dan jumlah.</p></div>
+          <div class="helpItem"><b>2) Cek nota sementara</b><p>Total muncul otomatis (ongkir dikonfirmasi admin).</p></div>
+          <div class="helpItem"><b>3) Bayar via QRIS</b><p>Scan QR, simpan bukti bayar, lalu klik “Kirim Pesanan”.</p></div>
+        </div>`
+    },
+    pengiriman: {
+      title: 'Pengiriman',
+      html: `
+        <div class="helpList">
+          <div class="helpItem"><b>Estimasi proses</b><p>Biasanya 24–48 jam setelah konfirmasi.</p></div>
+          <div class="helpItem"><b>Packaging</b><p>Bubble wrap + kardus, QC sebelum kirim.</p></div>
+          <div class="helpItem"><b>Resi</b><p>Resi dikirim setelah paket diserahkan ke ekspedisi.</p></div>
+        </div>`
+    },
+    pembayaran: {
+      title: 'Pembayaran',
+      html: `
+        <div class="helpList">
+          <div class="helpItem"><b>Metode</b><p>QRIS (BCA / Mandiri). Bisa pakai aplikasi bank / e-wallet.</p></div>
+          <div class="helpItem"><b>Bukti bayar</b><p>Upload bukti (opsional) atau kirim via WhatsApp setelah submit.</p></div>
+        </div>`
+    },
+    faq: {
+      title: 'FAQ',
+      html: `
+        <div class="helpList">
+          <div class="helpItem"><b>Apakah bisa pesan banyak untuk kantor?</b><p>Bisa. Tulis jumlah & catatan, admin bantu rekap.</p></div>
+          <div class="helpItem"><b>Apakah bisa request kartu ucapan?</b><p>Bisa. Isi di kolom catatan.</p></div>
+          <div class="helpItem"><b>Ongkir gimana?</b><p>Ongkir dikonfirmasi admin sesuai alamat & berat paket.</p></div>
+        </div>`
     }
-    window.addEventListener('scroll', toggleToTop, { passive:true });
-    toggleToTop();
-    toTopFloat?.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+  };
 
-    // HELP MODAL
-    const helpModal = document.getElementById('helpModal');
-    const helpTitle = document.getElementById('helpTitle');
-    const helpBody = document.getElementById('helpBody');
+  function openHelp(key){
+    const data = helpContent[key];
+    if(!data || !helpModal) return;
+    helpTitle.textContent = data.title;
+    helpBody.innerHTML = data.html;
 
-    const helpContent = {
-      cara: {
-        title: 'Cara Pesan',
-        html: `
-          <div class="helpList">
-            <div class="helpItem"><b>1) Klik tombol “Pesan”</b><p>Isi nama, WhatsApp, alamat, produk, dan jumlah.</p></div>
-            <div class="helpItem"><b>2) Cek nota sementara</b><p>Total muncul otomatis (ongkir dikonfirmasi admin).</p></div>
-            <div class="helpItem"><b>3) Bayar via QRIS</b><p>Scan QR, simpan bukti bayar, lalu klik “Kirim Pesanan”.</p></div>
-          </div>`
-      },
-      pengiriman: {
-        title: 'Pengiriman',
-        html: `
-          <div class="helpList">
-            <div class="helpItem"><b>Estimasi proses</b><p>Biasanya 24–48 jam setelah konfirmasi.</p></div>
-            <div class="helpItem"><b>Packaging</b><p>Bubble wrap + kardus, QC sebelum kirim.</p></div>
-            <div class="helpItem"><b>Resi</b><p>Resi dikirim setelah paket diserahkan ke ekspedisi.</p></div>
-          </div>`
-      },
-      pembayaran: {
-        title: 'Pembayaran',
-        html: `
-          <div class="helpList">
-            <div class="helpItem"><b>Metode</b><p>QRIS (BCA / Mandiri). Bisa pakai aplikasi bank / e-wallet.</p></div>
-            <div class="helpItem"><b>Bukti bayar</b><p>Upload bukti (opsional) atau kirim via WhatsApp setelah submit.</p></div>
-          </div>`
-      },
-      faq: {
-        title: 'FAQ',
-        html: `
-          <div class="helpList">
-            <div class="helpItem"><b>Apakah bisa pesan banyak untuk kantor?</b><p>Bisa. Tulis jumlah & catatan, admin bantu rekap.</p></div>
-            <div class="helpItem"><b>Apakah bisa request kartu ucapan?</b><p>Bisa. Isi di kolom catatan.</p></div>
-            <div class="helpItem"><b>Ongkir gimana?</b><p>Ongkir dikonfirmasi admin sesuai alamat & berat paket.</p></div>
-          </div>`
-      }
-    };
+    helpModal.removeAttribute('hidden');
+    helpModal.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+  }
 
-    function openHelp(key){
-      const data = helpContent[key];
-      if(!data || !helpModal) return;
-      helpTitle.textContent = data.title;
-      helpBody.innerHTML = data.html;
+  function closeHelp(){
+    if(!helpModal) return;
+    helpModal.setAttribute('hidden','');
+    helpModal.setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+  }
 
-      helpModal.removeAttribute('hidden');
-      helpModal.setAttribute('aria-hidden','false');
-      document.body.style.overflow = 'hidden';
-    }
+  document.querySelectorAll('[data-help]').forEach(btn => {
+    btn.addEventListener('click', () => openHelp(btn.getAttribute('data-help')));
+  });
 
-    function closeHelp(){
-      if(!helpModal) return;
-      helpModal.setAttribute('hidden','');
-      helpModal.setAttribute('aria-hidden','true');
-      document.body.style.overflow = '';
-    }
+  helpModal?.addEventListener('click', (e) => {
+    const t = e.target;
+    if(t && t.hasAttribute('data-close')) closeHelp();
+  });
 
-    document.querySelectorAll('[data-help]').forEach(btn => {
-      btn.addEventListener('click', () => openHelp(btn.getAttribute('data-help')));
-    });
+  window.addEventListener('keydown', (e) => {
+    if(e.key === 'Escape' && helpModal && !helpModal.hasAttribute('hidden')) closeHelp();
+  });
 
-    helpModal?.addEventListener('click', (e) => {
-      const t = e.target;
-      if(t && t.hasAttribute('data-close')) closeHelp();
-    });
-
-    window.addEventListener('keydown', (e) => {
-      if(e.key === 'Escape' && helpModal && !helpModal.hasAttribute('hidden')) closeHelp();
-    });
-  </script>
+  // init
+  updateNota();
+</script>
 
 </body>
 </html>
