@@ -5,10 +5,93 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Testimoni | OlehOlehJember</title>
 
-  <!-- FONT -->
+  <!-- SEO CORE -->
+  <meta name="description" content="Testimoni pelanggan OlehOlehJember: ulasan asli tentang rasa, packing aman, dan pengiriman cepat. Pesan oleh-oleh khas Jember via WhatsApp." />
+  <meta name="keywords" content="testimoni oleh-oleh jember, ulasan oleh oleh jember, suwar suwir jember, kopi jember, hampers jember, gift box jember, oleh-oleh khas jember, packing aman, pengiriman cepat, pesan via whatsapp" />
+  <meta name="author" content="OlehOlehJember" />
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+  <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+  <link rel="canonical" href="https://oleh-oleh-jember.example/testimoni.html" />
+
+  <!-- THEME -->
+  <meta name="theme-color" content="#ff3f9a" />
+  <meta name="color-scheme" content="light" />
+  <meta name="format-detection" content="telephone=no" />
+
+  <!-- OPEN GRAPH -->
+  <meta property="og:locale" content="id_ID" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="OlehOlehJember" />
+  <meta property="og:title" content="Testimoni | OlehOlehJember" />
+  <meta property="og:description" content="Ulasan asli pelanggan tentang rasa, packing aman, dan pengiriman cepat. Pesan oleh-oleh khas Jember via WhatsApp." />
+  <meta property="og:url" content="https://oleh-oleh-jember.example/testimoni.html" />
+  <meta property="og:image" content="https://oleh-oleh-jember.example/assets/img/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- TWITTER -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Testimoni | OlehOlehJember" />
+  <meta name="twitter:description" content="Ulasan asli pelanggan tentang rasa, packing aman, dan pengiriman cepat." />
+  <meta name="twitter:image" content="https://oleh-oleh-jember.example/assets/img/og-image.jpg" />
+
+  <!-- FAVICONS (sesuaikan path jika perlu) -->
+  <link rel="icon" href="assets/favicon/favicon.ico" sizes="any">
+  <link rel="icon" href="assets/favicon/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="assets/favicon/site.webmanifest">
+  <meta name="apple-mobile-web-app-title" content="OlehOlehJember">
+  <meta name="application-name" content="OlehOlehJember">
+
+  <!-- PERF -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&display=swap">
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- STRUCTURED DATA -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"WebSite",
+        "name":"OlehOlehJember",
+        "url":"https://oleh-oleh-jember.example/",
+        "inLanguage":"id-ID"
+      },
+      {
+        "@type":"WebPage",
+        "name":"Testimoni | OlehOlehJember",
+        "url":"https://oleh-oleh-jember.example/testimoni.html",
+        "description":"Testimoni pelanggan OlehOlehJember: ulasan asli tentang rasa, packing aman, dan pengiriman cepat.",
+        "inLanguage":"id-ID",
+        "isPartOf":{"@type":"WebSite","name":"OlehOlehJember","url":"https://oleh-oleh-jember.example/"},
+        "about":{
+          "@type":"LocalBusiness",
+          "name":"OlehOlehJember",
+          "areaServed":"Indonesia",
+          "address":{
+            "@type":"PostalAddress",
+            "addressLocality":"Jember",
+            "addressRegion":"Jawa Timur",
+            "addressCountry":"ID"
+          },
+          "telephone":"+62-812-3456-7890",
+          "sameAs":["https://wa.me/6281234567890"]
+        }
+      },
+      {
+        "@type":"BreadcrumbList",
+        "itemListElement":[
+          {"@type":"ListItem","position":1,"name":"Beranda","item":"https://oleh-oleh-jember.example/"},
+          {"@type":"ListItem","position":2,"name":"Testimoni","item":"https://oleh-oleh-jember.example/testimoni.html"}
+        ]
+      }
+    ]
+  }
+  </script>
 
   <style>
     :root{
@@ -36,6 +119,9 @@
       font-family:"Plus Jakarta Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       background: var(--bg);
       color: var(--ink);
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
     a{ color:inherit; text-decoration:none; }
     img{ max-width:100%; display:block; }
@@ -79,13 +165,12 @@
       justify-content:space-between;
       gap: 14px;
     }
-    .logo{ display:flex; align-items:center; gap:10px; font-weight: 900; letter-spacing:-.2px; }
-    .logo__mark{
-      width: 12px; height: 12px; border-radius: 999px;
-      background: linear-gradient(135deg, var(--pink), var(--pink2));
-      box-shadow: 0 0 0 6px var(--pinkSoft);
+    .logo__img{
+      height: 40px;
+      width: 160px;
+      display: block;
+      object-fit: contain;
     }
-
     .nav__links{
       display:flex;
       gap: 18px;
@@ -202,11 +287,14 @@
       box-shadow: var(--shadow);
       background:#fff;
     }
-    .heroImgPink img{ width:100%; height: 340px; object-fit: cover; }
-
+    .heroImgPink .heroImg{
+      width:100%;
+      height: 340px;
+      object-fit: cover;
+    }
     @media (max-width: 980px){
       .heroGrid{ grid-template-columns: 1fr; }
-      .heroImgPink img{ height: 260px; }
+      .heroImgPink .heroImg{ height: 260px; }
     }
 
     /* STATS */
@@ -292,7 +380,6 @@
       color: var(--muted);
       margin-bottom: 14px;
     }
-
     @media (max-width: 980px){
       .toolRow{ grid-template-columns: 1fr; }
     }
@@ -320,10 +407,7 @@
       justify-content:space-between;
       margin-bottom: 10px;
     }
-    .tTop > div:nth-child(2){
-      flex: 1 1 auto;
-      margin-left: 2px;
-    }
+    .tTop > div:nth-child(2){ flex: 1 1 auto; margin-left: 2px; }
     .avatar{
       width: 44px; height: 44px;
       border-radius: 16px;
@@ -371,7 +455,6 @@
       color: var(--muted);
     }
     .tDate{ margin-left:auto; color: var(--muted); font-weight: 800; font-size: 12px; }
-
     @media (max-width: 980px){
       .gridT{ grid-template-columns: 1fr; }
     }
@@ -388,7 +471,6 @@
     .emptyIcon{ font-size: 28px; }
     .emptyState h3{ margin: 8px 0 6px; }
     .emptyState p{ margin: 0 0 12px; color: var(--muted); font-weight: 650; line-height:1.75; }
-
     .centerRow{ margin-top: 18px; display:flex; justify-content:center; }
 
     /* FORM DEMO */
@@ -419,12 +501,11 @@
     }
     .demoActions{ display:flex; align-items:center; gap: 12px; flex-wrap:wrap; }
     .hint{ color: var(--muted); font-weight: 650; line-height:1.6; }
-
     @media (max-width: 700px){
       .demoGrid{ grid-template-columns: 1fr; }
     }
 
-    /* MODAL BASE (ORDER) */
+    /* MODAL (ORDER) */
     .modal[hidden]{ display:none; }
     .modal{ position:fixed; inset:0; z-index: 9000; }
     .modal__backdrop{ position:absolute; inset:0; background: rgba(0,0,0,.45); }
@@ -472,7 +553,6 @@
       background:#fff;
       flex: 0 0 auto;
     }
-
     .formGrid{ display:grid; grid-template-columns: 1fr 1fr; gap: 12px; }
     .divider{ height:1px; background: var(--border); margin: 16px 0; }
 
@@ -701,7 +781,6 @@
     .helpModal[hidden]{ display:none; }
     .helpModal{ position:fixed; inset:0; z-index: 9999; }
     .helpModal__backdrop{ position:absolute; inset:0; background: rgba(0,0,0,.45); }
-
     .helpModal__dialog{
       position: relative;
       width: min(760px, 92vw);
@@ -715,7 +794,6 @@
       display:flex;
       flex-direction:column;
     }
-
     .helpModal__head{
       padding: 16px 18px;
       display:flex;
@@ -725,10 +803,8 @@
       border-bottom: 1px solid var(--border);
       background: linear-gradient(135deg, var(--pinkSoft), #fff);
     }
-
     .helpModal__kicker{ color: var(--muted); font-weight: 800; font-size: 12px; }
     .helpModal__title{ margin: 4px 0 0; letter-spacing:-.3px; }
-
     .helpModal__close{
       width: 42px; height: 42px;
       border-radius: 14px;
@@ -738,12 +814,7 @@
       font-size: 16px;
       cursor:pointer;
     }
-
-    .helpModal__body{
-      padding: 16px 18px;
-      overflow:auto;
-    }
-
+    .helpModal__body{ padding: 16px 18px; overflow:auto; }
     .helpModal__foot{
       padding: 14px 18px 18px;
       border-top: 1px solid var(--border);
@@ -752,7 +823,6 @@
       gap: 10px;
       background:#fff;
     }
-
     .helpList{ display:grid; gap: 10px; }
     .helpItem{
       border: 1px solid var(--border);
@@ -762,6 +832,10 @@
     }
     .helpItem b{ display:block; margin-bottom: 6px; }
     .helpItem p{ margin:0; color: var(--muted); font-weight: 650; line-height:1.75; }
+
+    /* UNSPLASH OPTIMIZED PICTURE */
+    .uWrap, .uWrap picture{ display:block; width:100%; height:100%; }
+    .uImg{ width:100%; height:100%; object-fit:cover; }
   </style>
 </head>
 
@@ -771,7 +845,7 @@
 <header class="nav">
   <div class="container nav__inner">
     <a class="logo" href="index.html" aria-label="Beranda">
-      <img class="logo__img" src="assets/img/logo.png" alt="OlehOlehJember">
+      <img class="logo__img" src="assets/img/logo.png" alt="OlehOlehJember" width="160" height="40" decoding="async" fetchpriority="high" />
     </a>
 
     <nav class="nav__links" aria-label="Navigasi">
@@ -779,6 +853,7 @@
       <a href="jember.html">Tentang Jember</a>
       <a href="kategori.html">Kategori</a>
       <a href="blog.html">Blog</a>
+      <a class="isActive" href="testimoni.html" aria-current="page">Testimoni</a>
     </nav>
 
     <div class="nav__actions">
@@ -793,6 +868,7 @@
       <a href="jember.html">Tentang Jember</a>
       <a href="kategori.html">Kategori</a>
       <a href="blog.html">Blog</a>
+      <a class="isActive" href="testimoni.html" aria-current="page">Testimoni</a>
       <button class="btn btn--primary" id="openOrderMobile" type="button">Pesan</button>
     </div>
   </div>
@@ -815,26 +891,23 @@
       <div class="formGrid">
         <label class="field">
           <span>Nama</span>
-          <input name="nama" required placeholder="Nama kamu" />
+          <input name="nama" required placeholder="Nama kamu" autocomplete="name" />
         </label>
 
         <label class="field">
           <span>No. WhatsApp</span>
-          <input name="wa" required placeholder="08xxxxxxxxxx" />
+          <input name="wa" required placeholder="08xxxxxxxxxx" inputmode="tel" autocomplete="tel" />
         </label>
 
         <label class="field field--full">
           <span>Alamat (untuk pengiriman)</span>
-          <textarea name="alamat" rows="3" required placeholder="Jalan, kecamatan, kota, kode pos"></textarea>
+          <textarea name="alamat" rows="3" required placeholder="Jalan, kecamatan, kota, kode pos" autocomplete="street-address"></textarea>
         </label>
 
         <label class="field">
           <span>Pilih Produk</span>
-          <select name="produk" required>
+          <select name="produk" id="produkSelect" required>
             <option value="">— Pilih —</option>
-            <option>Suwar-suwir Khas</option>
-            <option>Kopi Jember</option>
-            <option>Gift Box Mix</option>
           </select>
         </label>
 
@@ -912,13 +985,13 @@
         <div class="qrWrap">
           <div class="qrCard" id="qrisBCA">
             <div class="qrTitle">QRIS BCA</div>
-            <img class="qrImg" src="assets/qris-bca.png" alt="QRIS BCA (ganti dengan QR kamu)">
+            <img class="qrImg" src="assets/qris-bca.png" alt="QRIS BCA (ganti dengan QR kamu)" loading="lazy" decoding="async" width="320" height="320">
             <div class="qrNote">Ganti dengan QRIS BCA milikmu: <b>assets/qris-bca.png</b></div>
           </div>
 
           <div class="qrCard" id="qrisMandiri" hidden>
             <div class="qrTitle">QRIS Mandiri</div>
-            <img class="qrImg" src="assets/qris-mandiri.png" alt="QRIS Mandiri (ganti dengan QR kamu)">
+            <img class="qrImg" src="assets/qris-mandiri.png" alt="QRIS Mandiri (ganti dengan QR kamu)" loading="lazy" decoding="async" width="320" height="320">
             <div class="qrNote">Ganti dengan QRIS Mandiri milikmu: <b>assets/qris-mandiri.png</b></div>
           </div>
         </div>
@@ -938,991 +1011,573 @@
   </div>
 </div>
 
-<style>
-  :root{
-    --bg: #ffffff;
-    --ink: #1e1a1f;
-    --muted: rgba(30,26,31,.70);
+<!-- HERO -->
+<section class="heroPink" id="testimoni">
+  <div class="container heroGrid">
+    <div class="heroText">
+      <span class="heroBadge">💗 Testimoni Pelanggan</span>
+      <h1>Ulasan Asli yang Bikin Tenang</h1>
+      <p>
+        Kumpulan testimoni pelanggan tentang rasa, packing, dan ketepatan pengiriman.
+        Kamu bisa ganti nama/isi sesuai testimoni asli pelangganmu.
+      </p>
 
-    --pink: #ff3f9a;
-    --pink2:#ff78c3;
-    --pinkSoft: rgba(255,63,154,.10);
-    --pinkSoft2: rgba(255,63,154,.16);
-
-    --border: rgba(30,26,31,.10);
-    --card: #ffffff;
-    --shadow: 0 18px 45px rgba(17,12,18,.08);
-    --shadow2: 0 10px 24px rgba(17,12,18,.06);
-
-    --r: 16px;
-    --r2: 22px;
-    --container: 1120px;
-  }
-
-  *{ box-sizing:border-box; }
-  html,body{ height:100%; }
-  body{
-    margin:0;
-    font-family:"Plus Jakarta Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-    background: var(--bg);
-    color: var(--ink);
-  }
-  a{ color:inherit; text-decoration:none; }
-  .container{ width:min(var(--container), 92vw); margin-inline:auto; }
-
-  /* NAV */
-  .nav{
-    position: sticky;
-    top: 0;
-    z-index: 30;
-    background: rgba(255,255,255,.92);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--border);
-  }
-  .nav__inner{
-    height: 72px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap: 14px;
-  }
-  .logo{ display:flex; align-items:center; gap:10px; font-weight: 900; letter-spacing:-.2px; }
-  .logo__mark{
-    width: 12px; height: 12px; border-radius: 999px;
-    background: linear-gradient(135deg, var(--pink), var(--pink2));
-    box-shadow: 0 0 0 6px var(--pinkSoft);
-  }
-  .logo__img{
-  height: 40px;      /* ukuran aman untuk navbar 72px */
-  width: auto;
-  display: block;
-  object-fit: contain;
-}
-
-  .nav__links{
-    display:flex;
-    gap: 18px;
-    align-items:center;
-    color: var(--muted);
-    font-weight: 700;
-  }
-  .nav__links a{ padding: 10px 10px; border-radius: 12px; }
-  .nav__links a:hover{ background: var(--pinkSoft); color: var(--ink); }
-
-  .nav__actions{ display:flex; gap:10px; align-items:center; }
-
-  .btn{
-    display:inline-flex; align-items:center; justify-content:center;
-    padding: 10px 14px;
-    border-radius: 12px;
-    border: 1px solid var(--border);
-    background: #fff;
-    box-shadow: var(--shadow2);
-    font-weight: 800;
-    transition: transform .12s ease, box-shadow .12s ease;
-    white-space:nowrap;
-    cursor:pointer;
-  }
-  .btn:hover{ transform: translateY(-1px); box-shadow: var(--shadow); }
-
-  .btn--primary{
-    border: none;
-    background: linear-gradient(135deg, var(--pink), var(--pink2));
-    color:#fff;
-    box-shadow: 0 18px 40px rgba(255,63,154,.18);
-  }
-
-  .menuBtn{
-    display:none;
-    width:42px; height:42px;
-    border-radius: 12px;
-    border: 1px solid var(--border);
-    background: #fff;
-    box-shadow: var(--shadow2);
-    font-size: 18px;
-    cursor:pointer;
-  }
-
-  .mobileMenu{
-    border-top: 1px solid var(--border);
-    background: #fff;
-  }
-  .mobileMenu__inner{
-    padding: 14px 0 18px;
-    display:grid;
-    gap: 10px;
-  }
-  .mobileMenu__inner a{
-    padding: 12px 12px;
-    border-radius: 14px;
-    border: 1px solid var(--border);
-    background: #fff;
-    font-weight: 800;
-    color: var(--muted);
-  }
-  .mobileMenu__inner a:hover{ background: var(--pinkSoft); color: var(--ink); }
-
-  @media (max-width: 920px){
-    .nav__links{ display:none; }
-    .menuBtn{ display:inline-grid; place-items:center; }
-  }
-
-  /* MODAL (SCROLLABLE) */
-  .modal[hidden]{ display:none; }
-  .modal{ position:fixed; inset:0; z-index: 999; }
-  .modal__backdrop{ position:absolute; inset:0; background: rgba(0,0,0,.45); }
-
-  .modal__dialog{
-    position: relative;
-    width: min(860px, 92vw);
-    margin: 6vh auto;
-    border-radius: 22px;
-    border: 1px solid rgba(255,63,154,.18);
-    background:#fff;
-    box-shadow: var(--shadow);
-    overflow:hidden;
-
-    max-height: 88vh;
-    display:flex;
-    flex-direction:column;
-  }
-
-  .modal__head{
-    padding: 16px 18px;
-    display:flex;
-    align-items:flex-start;
-    justify-content:space-between;
-    gap: 12px;
-    border-bottom: 1px solid var(--border);
-    background: linear-gradient(135deg, var(--pinkSoft), #fff);
-    flex: 0 0 auto;
-  }
-  .modal__kicker{ color: var(--muted); font-weight: 800; font-size: 12px; }
-  .modal__title{ margin: 4px 0 0; letter-spacing:-.3px; }
-  .modal__close{
-    width: 42px; height: 42px;
-    border-radius: 14px;
-    border: 1px solid var(--border);
-    background:#fff;
-    box-shadow: var(--shadow2);
-    font-size: 16px;
-    cursor:pointer;
-  }
-
-  .modal__body{
-    padding: 16px 18px;
-    overflow:auto;
-    flex: 1 1 auto;
-  }
-
-  .formGrid{ display:grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-
-  .field{ display:grid; gap: 8px; }
-  .field--full{ grid-column: 1 / -1; }
-
-  .field span{ font-weight: 900; font-size: 13px; letter-spacing:-.1px; }
-  .field input, .field select, .field textarea{
-    width: 100%;
-    padding: 12px 12px;
-    border-radius: 14px;
-    border: 1px solid var(--border);
-    outline: none;
-    font-weight: 650;
-    background:#fff;
-  }
-  .field input:focus, .field select:focus, .field textarea:focus{
-    border-color: rgba(255,63,154,.35);
-    box-shadow: 0 0 0 4px rgba(255,63,154,.10);
-  }
-  .hint{ color: var(--muted); font-weight: 650; line-height:1.6; }
-
-  .divider{ height:1px; background: var(--border); margin: 16px 0; }
-
-  /* NOTA */
-  .nota{
-    border: 1px solid rgba(255,63,154,.18);
-    background: linear-gradient(135deg, var(--pinkSoft), #fff);
-    border-radius: 18px;
-    padding: 14px;
-    margin-bottom: 8px;
-  }
-  .nota__head{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap: 10px;
-    margin-bottom: 10px;
-  }
-  .nota__head h4{ margin:0; letter-spacing:-.2px; }
-  .nota__badge{
-    padding: 8px 10px;
-    border-radius: 999px;
-    border: 1px solid rgba(255,63,154,.18);
-    background:#fff;
-    font-weight: 900;
-    font-size: 12px;
-    color: var(--muted);
-  }
-  .nota__grid{ display:grid; gap: 8px; }
-  .nota__row{
-    display:flex;
-    justify-content:space-between;
-    gap: 12px;
-    padding: 10px 10px;
-    border-radius: 14px;
-    border: 1px solid var(--border);
-    background:#fff;
-  }
-  .nota__row .k{ color: var(--muted); font-weight: 800; }
-  .nota__row .v{ font-weight: 900; }
-  .nota__row--total{ border-color: rgba(255,63,154,.22); }
-  .nota__row--total .v{ color: var(--pink); }
-  .nota__note{
-    margin-top: 10px;
-    color: var(--muted);
-    font-weight: 650;
-    font-size: 13px;
-    line-height: 1.7;
-  }
-
-  .pay__head h4{ margin: 0 0 6px; letter-spacing:-.2px; }
-  .pay__head p{ margin:0 0 12px; color: var(--muted); font-weight: 650; line-height:1.7; }
-
-  .payMethods{ display:grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
-  .payOption{
-    display:flex;
-    gap: 10px;
-    align-items:flex-start;
-    border: 1px solid var(--border);
-    border-radius: 18px;
-    padding: 12px;
-    background:#fff;
-    box-shadow: var(--shadow2);
-    cursor:pointer;
-  }
-  .payOption input{ margin-top: 4px; }
-  .payOption__title{ font-weight: 900; }
-  .payOption__sub{ color: var(--muted); font-weight: 650; font-size: 13px; margin-top: 4px; line-height:1.6; }
-
-  .qrWrap{ display:grid; grid-template-columns: 1fr; gap: 12px; margin-bottom: 12px; }
-  .qrCard{
-    border: 1px solid rgba(255,63,154,.18);
-    border-radius: 18px;
-    padding: 12px;
-    background: linear-gradient(135deg, var(--pinkSoft), #fff);
-  }
-  .qrTitle{ font-weight: 900; margin-bottom: 10px; }
-  .qrImg{
-    width: 100%;
-    max-width: 320px;
-    aspect-ratio: 1 / 1;
-    object-fit: contain;
-    border-radius: 16px;
-    border: 1px solid var(--border);
-    background:#fff;
-    display:block;
-  }
-  .qrNote{ margin-top: 10px; color: var(--muted); font-weight: 650; font-size: 13px; line-height:1.6; }
-
-  .modal__foot{
-    padding: 14px 18px 18px;
-    display:flex;
-    justify-content:flex-end;
-    gap: 10px;
-  }
-
-  @media (max-width: 700px){
-    .formGrid{ grid-template-columns: 1fr; }
-    .payMethods{ grid-template-columns: 1fr; }
-    .modal__dialog{ margin: 4vh auto; }
-  }
-</style>
-
-<!-- ✅ PERBAIKAN: script ini dibungkus IIFE supaya tidak bentrok deklarasi const dengan script di bawah -->
-<script>
-  (() => {
-    // Mobile menu toggle
-    const btnMenu = document.getElementById('menuBtn');
-    const menu = document.getElementById('mobileMenu');
-    btnMenu?.addEventListener('click', () => {
-      const open = !menu.hasAttribute('hidden');
-      if(open){
-        menu.setAttribute('hidden','');
-        btnMenu.setAttribute('aria-expanded','false');
-      } else {
-        menu.removeAttribute('hidden');
-        btnMenu.setAttribute('aria-expanded','true');
-      }
-    });
-
-    // Modal logic
-    const orderModal = document.getElementById('orderModal');
-    const openOrder = document.getElementById('openOrder');
-    const openOrderMobile = document.getElementById('openOrderMobile');
-
-    function showModal(){
-      orderModal.removeAttribute('hidden');
-      orderModal.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
-      setTimeout(updateNota, 0);
-    }
-    function hideModal(){
-      orderModal.setAttribute('hidden','');
-      orderModal.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-    }
-
-    openOrder?.addEventListener('click', showModal);
-    openOrderMobile?.addEventListener('click', () => {
-      menu?.setAttribute('hidden','');
-      btnMenu?.setAttribute('aria-expanded','false');
-      showModal();
-    });
-
-    // close on backdrop / close button
-    orderModal?.addEventListener('click', (e) => {
-      const t = e.target;
-      if (t && t.hasAttribute('data-close')) hideModal();
-    });
-
-    // close on ESC
-    window.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && !orderModal.hasAttribute('hidden')) hideModal();
-    });
-
-    // toggle QR cards
-    const qrisBCA = document.getElementById('qrisBCA');
-    const qrisMandiri = document.getElementById('qrisMandiri');
-
-    document.getElementById('orderForm')?.addEventListener('change', (e) => {
-      const el = e.target;
-      if (el && el.name === 'metode') {
-        if (el.value === 'QRIS BCA') {
-          qrisBCA.hidden = false;
-          qrisMandiri.hidden = true;
-        } else {
-          qrisBCA.hidden = true;
-          qrisMandiri.hidden = false;
-        }
-      }
-    });
-
-    // NOTA SEMENTARA (auto update)
-    const hargaProduk = {
-      "Suwar-suwir Khas": 28000,
-      "Kopi Jember": 55000,
-      "Gift Box Mix": 99000
-    };
-
-    function rupiah(n){
-      return "Rp " + (n || 0).toLocaleString("id-ID");
-    }
-
-    function updateNota(){
-      const form = document.getElementById("orderForm");
-      if(!form) return;
-
-      const produk = form.produk.value;
-      const qty = parseInt(form.qty.value || "1", 10);
-
-      const harga = hargaProduk[produk] || 0;
-      const total = harga * (isNaN(qty) ? 1 : qty);
-
-      document.getElementById("notaProduk").textContent = produk || "—";
-      document.getElementById("notaQty").textContent = isNaN(qty) ? "1" : String(qty);
-      document.getElementById("notaHarga").textContent = rupiah(harga);
-      document.getElementById("notaTotal").textContent = rupiah(total);
-    }
-
-    document.getElementById("orderForm")?.addEventListener("input", (e) => {
-      if(["produk","qty"].includes(e.target.name)) updateNota();
-    });
-    document.getElementById("orderForm")?.addEventListener("change", (e) => {
-      if(["produk","qty"].includes(e.target.name)) updateNota();
-    });
-
-    // submit -> WhatsApp
-    document.getElementById('orderForm')?.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const form = e.target;
-
-      const nama = form.nama.value.trim();
-      const wa = form.wa.value.trim();
-      const alamat = form.alamat.value.trim();
-      const produk = form.produk.value;
-      const qty = form.qty.value;
-      const catatan = form.catatan.value.trim();
-      const metode = form.metode.value;
-
-      const harga = hargaProduk[produk] || 0;
-      const total = harga * parseInt(qty || "1", 10);
-
-      const pesan =
-`Halo, saya mau pesan:
-- Nama: ${nama}
-- WA: ${wa}
-- Produk: ${produk}
-- Jumlah: ${qty}
-- Alamat: ${alamat}
-- Metode Bayar: ${metode}
-- Total Sementara: ${rupiah(total)}
-- Catatan: ${catatan || '-'}
-
-Saya akan bayar via QRIS.`;
-
-      // GANTI nomor WA toko kamu di sini (format internasional tanpa +)
-      const nomorToko = "6281234567890";
-      const url = `https://wa.me/${nomorToko}?text=${encodeURIComponent(pesan)}`;
-
-      window.open(url, "_blank", "noopener");
-
-      hideModal();
-      form.reset();
-      qrisBCA.hidden = false;
-      qrisMandiri.hidden = true;
-      updateNota();
-    });
-  })();
-</script>
-
-  <!-- HERO -->
-  <section class="heroPink" id="testimoni">
-    <div class="container heroGrid">
-      <div class="heroText">
-        <span class="heroBadge">💗 Testimoni Pelanggan</span>
-        <h1>Ulasan Asli yang Bikin Tenang</h1>
-        <p>
-          Kumpulan testimoni pelanggan tentang rasa, packing, dan ketepatan pengiriman.
-          Kamu bisa ganti nama/isi sesuai testimoni asli pelangganmu.
-        </p>
-
-        <div class="heroActions">
-          <a class="btn btn--primary" href="#list">Lihat Semua</a>
-          <button class="btn" type="button" id="scrollForm">Tambah Testimoni</button>
-        </div>
-
-        <div class="heroMini">
-          <div class="miniCard">★★★★★ Rata-rata</div>
-          <div class="miniCard">📦 Packing aman</div>
-          <div class="miniCard">⚡ Fast response</div>
-        </div>
+      <div class="heroActions">
+        <a class="btn btn--primary" href="#list">Lihat Semua</a>
+        <button class="btn" type="button" id="scrollForm">Tambah Testimoni</button>
       </div>
 
-      <div class="heroImgPink">
-        <img src="https://images.unsplash.com/photo-1520201163981-8cc95007dd2a?auto=format&fit=crop&w=1400&q=80" alt="Testimoni pelanggan">
-      </div>
-    </div>
-  </section>
-
-  <!-- STATS -->
-  <section class="section sectionSoft">
-    <div class="container">
-      <div class="statsGrid">
-        <div class="statCard">
-          <div class="statTop">
-            <span class="statIcon">⭐</span>
-            <div class="statValue">4.9/5</div>
-          </div>
-          <div class="statLabel">Rating rata-rata</div>
-          <div class="statNote">Berdasarkan ulasan pelanggan.</div>
-        </div>
-
-        <div class="statCard">
-          <div class="statTop">
-            <span class="statIcon">📦</span>
-            <div class="statValue">98%</div>
-          </div>
-          <div class="statLabel">Packing aman</div>
-          <div class="statNote">Sampai tanpa penyok/pecah.</div>
-        </div>
-
-        <div class="statCard">
-          <div class="statTop">
-            <span class="statIcon">⚡</span>
-            <div class="statValue">&lt; 10 mnt</div>
-          </div>
-          <div class="statLabel">Respon cepat</div>
-          <div class="statNote">Jam operasional 08.00–21.00.</div>
-        </div>
-
-        <div class="statCard">
-          <div class="statTop">
-            <span class="statIcon">🧾</span>
-            <div class="statValue">Resi</div>
-          </div>
-          <div class="statLabel">Update pengiriman</div>
-          <div class="statNote">Dikirim setelah pembayaran.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FILTER + LIST -->
-  <section class="section" id="list">
-    <div class="container">
-      <div class="sectionHead">
-        <h2>Daftar Testimoni</h2>
-        <p>Pakai filter untuk mencari testimoni sesuai kebutuhan.</p>
-      </div>
-
-      <div class="toolRow">
-        <div class="chipRow" role="tablist" aria-label="Filter testimoni">
-          <button class="chip isActive" type="button" role="tab" aria-selected="true" data-filter="all">Semua</button>
-          <button class="chip" type="button" role="tab" aria-selected="false" data-filter="rasa">Rasa</button>
-          <button class="chip" type="button" role="tab" aria-selected="false" data-filter="packing">Packing</button>
-          <button class="chip" type="button" role="tab" aria-selected="false" data-filter="pengiriman">Pengiriman</button>
-          <button class="chip" type="button" role="tab" aria-selected="false" data-filter="hadiah">Hadiah</button>
-        </div>
-
-        <div class="searchWrap">
-          <input class="searchInput" id="searchInput" type="search" placeholder="Cari (contoh: kopi, kantor, aman)..." aria-label="Cari testimoni">
-        </div>
-      </div>
-
-      <div class="hintBar" id="activeHint" aria-live="polite">
-        Filter aktif: <b>Semua</b>
-      </div>
-
-      <div class="gridT" id="gridT">
-        <article class="tCard" data-cat="packing" data-name="Rani" data-text="packing rapi aman suwar-suwir enak">
-          <div class="tTop">
-            <div class="avatar">R</div>
-            <div>
-              <div class="tName">Rani</div>
-              <div class="tMeta">Surabaya • <span class="stars">★★★★★</span></div>
-            </div>
-            <div class="tTag">Packing</div>
-          </div>
-          <p class="tQuote">“Packing rapi, sampai aman. Suwar-suwirnya enak banget!”</p>
-          <div class="tFoot">
-            <span class="pill">Suwar-suwir</span>
-            <span class="pill">Aman</span>
-            <span class="pill">Repeat</span>
-            <span class="tDate">2025</span>
-          </div>
-        </article>
-
-        <article class="tCard" data-cat="hadiah" data-name="Arif" data-text="gift box cantik kantor admin responsif">
-          <div class="tTop">
-            <div class="avatar">A</div>
-            <div>
-              <div class="tName">Arif</div>
-              <div class="tMeta">Malang • <span class="stars">★★★★★</span></div>
-            </div>
-            <div class="tTag">Hadiah</div>
-          </div>
-          <p class="tQuote">“Gift box-nya cantik, cocok buat oleh-oleh kantor. Admin responsif.”</p>
-          <div class="tFoot">
-            <span class="pill">Gift box</span>
-            <span class="pill">Kantor</span>
-            <span class="pill">Rapi</span>
-            <span class="tDate">2025</span>
-          </div>
-        </article>
-
-        <article class="tCard" data-cat="rasa" data-name="Dinda" data-text="kopi jember wangi mantap repeat">
-          <div class="tTop">
-            <div class="avatar">D</div>
-            <div>
-              <div class="tName">Dinda</div>
-              <div class="tMeta">Jakarta • <span class="stars">★★★★★</span></div>
-            </div>
-            <div class="tTag">Rasa</div>
-          </div>
-          <p class="tQuote">“Kopi Jembernya wangi. Rasanya mantap, repeat order!”</p>
-          <div class="tFoot">
-            <span class="pill">Kopi</span>
-            <span class="pill">Wangi</span>
-            <span class="pill">Favorit</span>
-            <span class="tDate">2025</span>
-          </div>
-        </article>
-
-        <article class="tCard" data-cat="pengiriman" data-name="Salsa" data-text="pengiriman cepat resi rapi aman">
-          <div class="tTop">
-            <div class="avatar">S</div>
-            <div>
-              <div class="tName">Salsa</div>
-              <div class="tMeta">Bali • <span class="stars">★★★★★</span></div>
-            </div>
-            <div class="tTag">Pengiriman</div>
-          </div>
-          <p class="tQuote">“Pengiriman cepat, resi langsung dikirim. Barang sampai rapi.”</p>
-          <div class="tFoot">
-            <span class="pill">Resi</span>
-            <span class="pill">Cepat</span>
-            <span class="pill">Aman</span>
-            <span class="tDate">2025</span>
-          </div>
-        </article>
-
-        <article class="tCard" data-cat="packing" data-name="Bima" data-text="kemasan premium kado aman">
-          <div class="tTop">
-            <div class="avatar">B</div>
-            <div>
-              <div class="tName">Bima</div>
-              <div class="tMeta">Jember • <span class="stars">★★★★★</span></div>
-            </div>
-            <div class="tTag">Packing</div>
-          </div>
-          <p class="tQuote">“Kemasannya premium. Cocok buat kado, aman banget.”</p>
-          <div class="tFoot">
-            <span class="pill">Premium</span>
-            <span class="pill">Kado</span>
-            <span class="pill">Aman</span>
-            <span class="tDate">2025</span>
-          </div>
-        </article>
-
-        <article class="tCard" data-cat="rasa" data-name="Nisa" data-text="edamame renyah bumbu pas camilan keluarga">
-          <div class="tTop">
-            <div class="avatar">N</div>
-            <div>
-              <div class="tName">Nisa</div>
-              <div class="tMeta">Bandung • <span class="stars">★★★★★</span></div>
-            </div>
-            <div class="tTag">Rasa</div>
-          </div>
-          <p class="tQuote">“Edamamenya renyah, bumbunya pas. Camilan keluarga.”</p>
-          <div class="tFoot">
-            <span class="pill">Edamame</span>
-            <span class="pill">Renyah</span>
-            <span class="pill">Gurih</span>
-            <span class="tDate">2025</span>
-          </div>
-        </article>
-      </div>
-
-      <div class="emptyState" id="emptyState" hidden>
-        <div class="emptyIcon">🔎</div>
-        <h3>Testimoni tidak ditemukan</h3>
-        <p>Coba ganti filter atau kata kunci pencarian.</p>
-        <button class="btn btn--primary" type="button" id="resetBtn">Reset</button>
-      </div>
-
-      <div class="centerRow">
-        <button class="btn btn--primary" type="button" id="openOrderBottom">Pesan Sekarang</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- FORM TAMBAH TESTIMONI (DEMO) -->
-  <section class="section sectionSoft" id="formTesti">
-    <div class="container">
-      <div class="sectionHead">
-        <h2>Tambah Testimoni</h2>
-        <p>Form ini untuk demo tampilan. Kalau mau tersimpan, butuh backend.</p>
-      </div>
-
-      <div class="formCard">
-        <form id="demoForm">
-          <div class="demoGrid">
-            <label class="field">
-              <span>Nama</span>
-              <input name="nama" required placeholder="Nama" />
-            </label>
-
-            <label class="field">
-              <span>Kota</span>
-              <input name="kota" required placeholder="Kota" />
-            </label>
-
-            <label class="field">
-              <span>Kategori</span>
-              <select name="kategori" required>
-                <option value="">— Pilih —</option>
-                <option value="rasa">Rasa</option>
-                <option value="packing">Packing</option>
-                <option value="pengiriman">Pengiriman</option>
-                <option value="hadiah">Hadiah</option>
-              </select>
-            </label>
-
-            <label class="field">
-              <span>Rating</span>
-              <select name="rating" required>
-                <option>★★★★★</option>
-                <option>★★★★☆</option>
-                <option>★★★☆☆</option>
-                <option>★★☆☆☆</option>
-                <option>★☆☆☆☆</option>
-              </select>
-            </label>
-
-            <label class="field field--full">
-              <span>Isi Testimoni</span>
-              <textarea name="isi" rows="4" required placeholder="Tulis testimoni..."></textarea>
-            </label>
-
-            <div class="demoActions field--full">
-              <button class="btn btn--primary" type="submit">Tambah ke Daftar (Demo)</button>
-              <small class="hint">Akan ditambahkan ke atas daftar (hanya di halaman ini).</small>
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container footer__grid">
-      <div class="footer__brand">
-        <div class="footerLogo">
-          <img class="logo__img" src="assets/img/logo.png" alt="OlehOlehJember">
-        </div>
-        <p class="footerMuted">
-          Oleh-oleh khas Jember dengan pengemasan rapi, cocok untuk keluarga, teman, dan kebutuhan kantor.
-        </p>
-
-        <div class="footerBadges" aria-label="Keunggulan singkat">
-          <span class="fBadge">📦 Packing Aman</span>
-          <span class="fBadge">✅ QC</span>
-          <span class="fBadge">🧾 Resi</span>
-        </div>
-      </div>
-
-      <div class="footer__col">
-        <div class="footer__title">Menu</div>
-        <a class="footer__link" href="jember.html">Jember</a>
-        <a class="footer__link" href="kategori.html">Kategori</a>
-        <a class="footer__link" href="#list">Testimoni</a>
-        <a class="footer__link" href="blog.html">Blog</a>
-      </div>
-
-      <div class="footer__col">
-        <div class="footer__title">Bantuan</div>
-        <button class="footer__linkBtn" type="button" data-help="cara">Cara Pesan</button>
-        <button class="footer__linkBtn" type="button" data-help="pengiriman">Pengiriman</button>
-        <button class="footer__linkBtn" type="button" data-help="pembayaran">Pembayaran</button>
-        <button class="footer__linkBtn" type="button" data-help="faq">FAQ</button>
-      </div>
-
-      <div class="footer__col">
-        <div class="footer__title">Kontak</div>
-
-        <div class="footerContact">
-          <div class="fcItem">
-            <span class="fcIcon" aria-hidden="true">📍</span>
-            <div>
-              <div class="fcLabel">Lokasi</div>
-              <div class="fcText">Jember, Jawa Timur</div>
-            </div>
-          </div>
-
-          <div class="fcItem">
-            <span class="fcIcon" aria-hidden="true">💬</span>
-            <div>
-              <div class="fcLabel">WhatsApp</div>
-              <a class="fcText fcLink" id="waFooter" href="#" target="_blank" rel="noopener">Klik untuk chat</a>
-            </div>
-          </div>
-
-          <div class="fcItem">
-            <span class="fcIcon" aria-hidden="true">⏰</span>
-            <div>
-              <div class="fcLabel">Jam Operasional</div>
-              <div class="fcText">Setiap hari • 08.00–21.00</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="footerSocial" aria-label="Sosial media">
-          <a class="socialBtn" href="#" aria-label="Instagram" title="Instagram">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5.5A4.5 4.5 0 1 0 16.5 12 4.5 4.5 0 0 0 12 7.5zm0 7.4A2.9 2.9 0 1 1 14.9 12 2.9 2.9 0 0 1 12 14.9zM17.8 6.2a1 1 0 1 1-1-1 1 1 0 0 1 1 1z"/>
-            </svg>
-          </a>
-
-          <a class="socialBtn" href="#" aria-label="TikTok" title="TikTok">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M16.5 2h-2.6v13.2a2.4 2.4 0 1 1-2-2.4V10a5 5 0 1 0 4.6 5V8.7a6.7 6.7 0 0 0 3.5 1.1V7.3a4.3 4.3 0 0 1-3.5-2.1z"/>
-            </svg>
-          </a>
-
-          <a class="socialBtn" href="#" aria-label="Shopee" title="Shopee">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M5 7h14l-1 14H6L5 7zm7-5a4 4 0 0 0-4 4h2a2 2 0 0 1 4 0h2a4 4 0 0 0-4-4z"/>
-            </svg>
-          </a>
-        </div>
+      <div class="heroMini">
+        <div class="miniCard">★★★★★ Rata-rata</div>
+        <div class="miniCard">📦 Packing aman</div>
+        <div class="miniCard">⚡ Fast response</div>
       </div>
     </div>
 
-    <div class="footer__bottom">
-      <div class="container footer__bottomInner">
-        <div class="footer__copy">
-          © <span id="year"></span> OlehOlehJember • All rights reserved
+    <!-- ✅ OPTIMASI GAMBAR: target kecil (biasanya <100KB) via AVIF/WebP + max 640 -->
+    <div class="heroImgPink">
+      <picture class="uWrap">
+        <source type="image/avif"
+          srcset="
+            https://images.unsplash.com/photo-1520201163981-8cc95007dd2a?auto=format&fit=crop&fm=avif&w=360&q=30 360w,
+            https://images.unsplash.com/photo-1520201163981-8cc95007dd2a?auto=format&fit=crop&fm=avif&w=480&q=30 480w,
+            https://images.unsplash.com/photo-1520201163981-8cc95007dd2a?auto=format&fit=crop&fm=avif&w=640&q=30 640w
+          "
+          sizes="(max-width: 980px) 92vw, 40vw">
+        <source type="image/webp"
+          srcset="
+            https://images.unsplash.com/photo-1520201163981-8cc95007dd2a?auto=format&fit=crop&fm=webp&w=360&q=40 360w,
+            https://images.unsplash.com/photo-1520201163981-8cc95007dd2a?auto=format&fit=crop&fm=webp&w=480&q=40 480w,
+            https://images.unsplash.com/photo-1520201163981-8cc95007dd2a?auto=format&fit=crop&fm=webp&w=640&q=40 640w
+          "
+          sizes="(max-width: 980px) 92vw, 40vw">
+        <img class="heroImg uImg"
+          src="https://images.unsplash.com/photo-1520201163981-8cc95007dd2a?auto=format&fit=crop&fm=webp&w=480&q=40"
+          alt="Testimoni pelanggan"
+          width="640"
+          height="480"
+          decoding="async"
+          fetchpriority="high">
+      </picture>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="section sectionSoft">
+  <div class="container">
+    <div class="statsGrid">
+      <div class="statCard">
+        <div class="statTop">
+          <span class="statIcon">⭐</span>
+          <div class="statValue">4.9/5</div>
         </div>
+        <div class="statLabel">Rating rata-rata</div>
+        <div class="statNote">Berdasarkan ulasan pelanggan.</div>
+      </div>
+
+      <div class="statCard">
+        <div class="statTop">
+          <span class="statIcon">📦</span>
+          <div class="statValue">98%</div>
+        </div>
+        <div class="statLabel">Packing aman</div>
+        <div class="statNote">Sampai tanpa penyok/pecah.</div>
+      </div>
+
+      <div class="statCard">
+        <div class="statTop">
+          <span class="statIcon">⚡</span>
+          <div class="statValue">&lt; 10 mnt</div>
+        </div>
+        <div class="statLabel">Respon cepat</div>
+        <div class="statNote">Jam operasional 08.00–21.00.</div>
+      </div>
+
+      <div class="statCard">
+        <div class="statTop">
+          <span class="statIcon">🧾</span>
+          <div class="statValue">Resi</div>
+        </div>
+        <div class="statLabel">Update pengiriman</div>
+        <div class="statNote">Dikirim setelah pembayaran.</div>
       </div>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <!-- FLOATING TO TOP -->
-  <button class="toTopFloat" id="toTopFloat" type="button" aria-label="Kembali ke atas" title="Kembali ke atas">↑</button>
+<!-- FILTER + LIST -->
+<section class="section" id="list">
+  <div class="container">
+    <div class="sectionHead">
+      <h2>Daftar Testimoni</h2>
+      <p>Pakai filter untuk mencari testimoni sesuai kebutuhan.</p>
+    </div>
 
-  <!-- HELP MODAL -->
-  <div class="helpModal" id="helpModal" hidden aria-hidden="true">
-    <div class="helpModal__backdrop" data-close></div>
-
-    <div class="helpModal__dialog" role="dialog" aria-modal="true" aria-labelledby="helpTitle">
-      <div class="helpModal__head">
-        <div>
-          <div class="helpModal__kicker">Bantuan</div>
-          <h3 class="helpModal__title" id="helpTitle">FAQ</h3>
-        </div>
-        <button class="helpModal__close" type="button" aria-label="Tutup" data-close>✕</button>
+    <div class="toolRow">
+      <div class="chipRow" role="tablist" aria-label="Filter testimoni">
+        <button class="chip isActive" type="button" role="tab" aria-selected="true" data-filter="all">Semua</button>
+        <button class="chip" type="button" role="tab" aria-selected="false" data-filter="rasa">Rasa</button>
+        <button class="chip" type="button" role="tab" aria-selected="false" data-filter="packing">Packing</button>
+        <button class="chip" type="button" role="tab" aria-selected="false" data-filter="pengiriman">Pengiriman</button>
+        <button class="chip" type="button" role="tab" aria-selected="false" data-filter="hadiah">Hadiah</button>
       </div>
 
-      <div class="helpModal__body" id="helpBody"></div>
+      <div class="searchWrap">
+        <input class="searchInput" id="searchInput" type="search" placeholder="Cari (contoh: kopi, kantor, aman)..." aria-label="Cari testimoni">
+      </div>
+    </div>
 
-      <div class="helpModal__foot">
-        <button class="btn" type="button" data-close>Tutup</button>
+    <div class="hintBar" id="activeHint" aria-live="polite">
+      Filter aktif: <b>Semua</b>
+    </div>
+
+    <div class="gridT" id="gridT">
+      <article class="tCard" data-cat="packing" data-name="Rani" data-text="packing rapi aman suwar-suwir enak">
+        <div class="tTop">
+          <div class="avatar">R</div>
+          <div>
+            <div class="tName">Rani</div>
+            <div class="tMeta">Surabaya • <span class="stars">★★★★★</span></div>
+          </div>
+          <div class="tTag">Packing</div>
+        </div>
+        <p class="tQuote">“Packing rapi, sampai aman. Suwar-suwirnya enak banget!”</p>
+        <div class="tFoot">
+          <span class="pill">Suwar-suwir</span>
+          <span class="pill">Aman</span>
+          <span class="pill">Repeat</span>
+          <span class="tDate">2025</span>
+        </div>
+      </article>
+
+      <article class="tCard" data-cat="hadiah" data-name="Arif" data-text="gift box cantik kantor admin responsif">
+        <div class="tTop">
+          <div class="avatar">A</div>
+          <div>
+            <div class="tName">Arif</div>
+            <div class="tMeta">Malang • <span class="stars">★★★★★</span></div>
+          </div>
+          <div class="tTag">Hadiah</div>
+        </div>
+        <p class="tQuote">“Gift box-nya cantik, cocok buat oleh-oleh kantor. Admin responsif.”</p>
+        <div class="tFoot">
+          <span class="pill">Gift box</span>
+          <span class="pill">Kantor</span>
+          <span class="pill">Rapi</span>
+          <span class="tDate">2025</span>
+        </div>
+      </article>
+
+      <article class="tCard" data-cat="rasa" data-name="Dinda" data-text="kopi jember wangi mantap repeat">
+        <div class="tTop">
+          <div class="avatar">D</div>
+          <div>
+            <div class="tName">Dinda</div>
+            <div class="tMeta">Jakarta • <span class="stars">★★★★★</span></div>
+          </div>
+          <div class="tTag">Rasa</div>
+        </div>
+        <p class="tQuote">“Kopi Jembernya wangi. Rasanya mantap, repeat order!”</p>
+        <div class="tFoot">
+          <span class="pill">Kopi</span>
+          <span class="pill">Wangi</span>
+          <span class="pill">Favorit</span>
+          <span class="tDate">2025</span>
+        </div>
+      </article>
+
+      <article class="tCard" data-cat="pengiriman" data-name="Salsa" data-text="pengiriman cepat resi rapi aman">
+        <div class="tTop">
+          <div class="avatar">S</div>
+          <div>
+            <div class="tName">Salsa</div>
+            <div class="tMeta">Bali • <span class="stars">★★★★★</span></div>
+          </div>
+          <div class="tTag">Pengiriman</div>
+        </div>
+        <p class="tQuote">“Pengiriman cepat, resi langsung dikirim. Barang sampai rapi.”</p>
+        <div class="tFoot">
+          <span class="pill">Resi</span>
+          <span class="pill">Cepat</span>
+          <span class="pill">Aman</span>
+          <span class="tDate">2025</span>
+        </div>
+      </article>
+
+      <article class="tCard" data-cat="packing" data-name="Bima" data-text="kemasan premium kado aman">
+        <div class="tTop">
+          <div class="avatar">B</div>
+          <div>
+            <div class="tName">Bima</div>
+            <div class="tMeta">Jember • <span class="stars">★★★★★</span></div>
+          </div>
+          <div class="tTag">Packing</div>
+        </div>
+        <p class="tQuote">“Kemasannya premium. Cocok buat kado, aman banget.”</p>
+        <div class="tFoot">
+          <span class="pill">Premium</span>
+          <span class="pill">Kado</span>
+          <span class="pill">Aman</span>
+          <span class="tDate">2025</span>
+        </div>
+      </article>
+
+      <article class="tCard" data-cat="rasa" data-name="Nisa" data-text="edamame renyah bumbu pas camilan keluarga">
+        <div class="tTop">
+          <div class="avatar">N</div>
+          <div>
+            <div class="tName">Nisa</div>
+            <div class="tMeta">Bandung • <span class="stars">★★★★★</span></div>
+          </div>
+          <div class="tTag">Rasa</div>
+        </div>
+        <p class="tQuote">“Edamamenya renyah, bumbunya pas. Camilan keluarga.”</p>
+        <div class="tFoot">
+          <span class="pill">Edamame</span>
+          <span class="pill">Renyah</span>
+          <span class="pill">Gurih</span>
+          <span class="tDate">2025</span>
+        </div>
+      </article>
+    </div>
+
+    <div class="emptyState" id="emptyState" hidden>
+      <div class="emptyIcon">🔎</div>
+      <h3>Testimoni tidak ditemukan</h3>
+      <p>Coba ganti filter atau kata kunci pencarian.</p>
+      <button class="btn btn--primary" type="button" id="resetBtn">Reset</button>
+    </div>
+
+    <div class="centerRow">
+      <button class="btn btn--primary" type="button" id="openOrderBottom">Pesan Sekarang</button>
+    </div>
+  </div>
+</section>
+
+<!-- FORM TAMBAH TESTIMONI (DEMO) -->
+<section class="section sectionSoft" id="formTesti">
+  <div class="container">
+    <div class="sectionHead">
+      <h2>Tambah Testimoni</h2>
+      <p>Form ini untuk demo tampilan. Kalau mau tersimpan, butuh backend.</p>
+    </div>
+
+    <div class="formCard">
+      <form id="demoForm">
+        <div class="demoGrid">
+          <label class="field">
+            <span>Nama</span>
+            <input name="nama" required placeholder="Nama" />
+          </label>
+
+          <label class="field">
+            <span>Kota</span>
+            <input name="kota" required placeholder="Kota" />
+          </label>
+
+          <label class="field">
+            <span>Kategori</span>
+            <select name="kategori" required>
+              <option value="">— Pilih —</option>
+              <option value="rasa">Rasa</option>
+              <option value="packing">Packing</option>
+              <option value="pengiriman">Pengiriman</option>
+              <option value="hadiah">Hadiah</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span>Rating</span>
+            <select name="rating" required>
+              <option>★★★★★</option>
+              <option>★★★★☆</option>
+              <option>★★★☆☆</option>
+              <option>★★☆☆☆</option>
+              <option>★☆☆☆☆</option>
+            </select>
+          </label>
+
+          <label class="field field--full">
+            <span>Isi Testimoni</span>
+            <textarea name="isi" rows="4" required placeholder="Tulis testimoni..."></textarea>
+          </label>
+
+          <div class="demoActions field--full">
+            <button class="btn btn--primary" type="submit">Tambah ke Daftar (Demo)</button>
+            <small class="hint">Akan ditambahkan ke atas daftar (hanya di halaman ini).</small>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container footer__grid">
+    <div class="footer__brand">
+      <div class="footerLogo">
+        <img class="logo__img" src="assets/img/logo.png" alt="OlehOlehJember" loading="lazy" decoding="async" width="160" height="40" />
+      </div>
+      <p class="footerMuted">
+        Oleh-oleh khas Jember dengan pengemasan rapi, cocok untuk keluarga, teman, dan kebutuhan kantor.
+      </p>
+
+      <div class="footerBadges" aria-label="Keunggulan singkat">
+        <span class="fBadge">📦 Packing Aman</span>
+        <span class="fBadge">✅ QC</span>
+        <span class="fBadge">🧾 Resi</span>
+      </div>
+    </div>
+
+    <div class="footer__col">
+      <div class="footer__title">Menu</div>
+      <a class="footer__link" href="jember.html">Jember</a>
+      <a class="footer__link" href="kategori.html">Kategori</a>
+      <a class="footer__link" href="#list">Testimoni</a>
+      <a class="footer__link" href="blog.html">Blog</a>
+    </div>
+
+    <div class="footer__col">
+      <div class="footer__title">Bantuan</div>
+      <button class="footer__linkBtn" type="button" data-help="cara">Cara Pesan</button>
+      <button class="footer__linkBtn" type="button" data-help="pengiriman">Pengiriman</button>
+      <button class="footer__linkBtn" type="button" data-help="pembayaran">Pembayaran</button>
+      <button class="footer__linkBtn" type="button" data-help="faq">FAQ</button>
+    </div>
+
+    <div class="footer__col">
+      <div class="footer__title">Kontak</div>
+
+      <div class="footerContact">
+        <div class="fcItem">
+          <span class="fcIcon" aria-hidden="true">📍</span>
+          <div>
+            <div class="fcLabel">Lokasi</div>
+            <div class="fcText">Jember, Jawa Timur</div>
+          </div>
+        </div>
+
+        <div class="fcItem">
+          <span class="fcIcon" aria-hidden="true">💬</span>
+          <div>
+            <div class="fcLabel">WhatsApp</div>
+            <a class="fcText fcLink" id="waFooter" href="#" target="_blank" rel="noopener noreferrer">Klik untuk chat</a>
+          </div>
+        </div>
+
+        <div class="fcItem">
+          <span class="fcIcon" aria-hidden="true">⏰</span>
+          <div>
+            <div class="fcLabel">Jam Operasional</div>
+            <div class="fcText">Setiap hari • 08.00–21.00</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footerSocial" aria-label="Sosial media">
+        <a class="socialBtn" href="#" aria-label="Instagram" title="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5.5A4.5 4.5 0 1 0 16.5 12 4.5 4.5 0 0 0 12 7.5zm0 7.4A2.9 2.9 0 1 1 14.9 12 2.9 2.9 0 0 1 12 14.9zM17.8 6.2a1 1 0 1 1-1-1 1 1 0 0 1 1 1z"/>
+          </svg>
+        </a>
+
+        <a class="socialBtn" href="#" aria-label="TikTok" title="TikTok">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M16.5 2h-2.6v13.2a2.4 2.4 0 1 1-2-2.4V10a5 5 0 1 0 4.6 5V8.7a6.7 6.7 0 0 0 3.5 1.1V7.3a4.3 4.3 0 0 1-3.5-2.1z"/>
+          </svg>
+        </a>
+
+        <a class="socialBtn" href="#" aria-label="Shopee" title="Shopee">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M5 7h14l-1 14H6L5 7zm7-5a4 4 0 0 0-4 4h2a2 2 0 0 1 4 0h2a4 4 0 0 0-4-4z"/>
+          </svg>
+        </a>
       </div>
     </div>
   </div>
 
-  <script>
-    // YEAR
-    const y = document.getElementById('year');
-    if(y) y.textContent = new Date().getFullYear();
+  <div class="footer__bottom">
+    <div class="container footer__bottomInner">
+      <div class="footer__copy">
+        © <span id="year"></span> OlehOlehJember • All rights reserved
+      </div>
+    </div>
+  </div>
+</footer>
 
-    // Mobile menu
-    const btnMenu = document.getElementById('menuBtn');
-    const menu = document.getElementById('mobileMenu');
-    btnMenu?.addEventListener('click', () => {
-      const open = !menu.hasAttribute('hidden');
-      if(open){
-        menu.setAttribute('hidden','');
-        btnMenu.setAttribute('aria-expanded','false');
+<!-- FLOATING TO TOP -->
+<button class="toTopFloat" id="toTopFloat" type="button" aria-label="Kembali ke atas" title="Kembali ke atas">↑</button>
+
+<!-- HELP MODAL -->
+<div class="helpModal" id="helpModal" hidden aria-hidden="true">
+  <div class="helpModal__backdrop" data-close></div>
+
+  <div class="helpModal__dialog" role="dialog" aria-modal="true" aria-labelledby="helpTitle">
+    <div class="helpModal__head">
+      <div>
+        <div class="helpModal__kicker">Bantuan</div>
+        <h3 class="helpModal__title" id="helpTitle">FAQ</h3>
+      </div>
+      <button class="helpModal__close" type="button" aria-label="Tutup" data-close>✕</button>
+    </div>
+
+    <div class="helpModal__body" id="helpBody"></div>
+
+    <div class="helpModal__foot">
+      <button class="btn" type="button" data-close>Tutup</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // YEAR
+  const y = document.getElementById('year');
+  if (y) y.textContent = new Date().getFullYear();
+
+  // Mobile menu toggle
+  const btnMenu = document.getElementById('menuBtn');
+  const menu = document.getElementById('mobileMenu');
+  btnMenu?.addEventListener('click', () => {
+    const open = !menu.hasAttribute('hidden');
+    if(open){
+      menu.setAttribute('hidden','');
+      btnMenu.setAttribute('aria-expanded','false');
+    } else {
+      menu.removeAttribute('hidden');
+      btnMenu.setAttribute('aria-expanded','true');
+    }
+  });
+
+  // Scroll to form
+  document.getElementById('scrollForm')?.addEventListener('click', () => {
+    document.getElementById('formTesti')?.scrollIntoView({ behavior:'smooth' });
+  });
+
+  // TO TOP FLOAT
+  const toTopFloat = document.getElementById('toTopFloat');
+  function toggleToTop(){
+    if(!toTopFloat) return;
+    toTopFloat.style.display = window.scrollY > 500 ? 'grid' : 'none';
+  }
+  window.addEventListener('scroll', toggleToTop, { passive:true });
+  toggleToTop();
+  toTopFloat?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  // ====== ORDER MODAL ======
+  const orderModal = document.getElementById('orderModal');
+  const openOrder = document.getElementById('openOrder');
+  const openOrderMobile = document.getElementById('openOrderMobile');
+  const openOrderBottom = document.getElementById('openOrderBottom');
+
+  function showOrder(){
+    orderModal.removeAttribute('hidden');
+    orderModal.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+    setTimeout(updateNota, 0);
+  }
+  function hideOrder(){
+    orderModal.setAttribute('hidden','');
+    orderModal.setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+  }
+
+  openOrder?.addEventListener('click', showOrder);
+  openOrderBottom?.addEventListener('click', showOrder);
+  openOrderMobile?.addEventListener('click', () => {
+    menu?.setAttribute('hidden','');
+    btnMenu?.setAttribute('aria-expanded','false');
+    showOrder();
+  });
+
+  orderModal?.addEventListener('click', (e) => {
+    const t = e.target;
+    if (t && t.hasAttribute('data-close')) hideOrder();
+  });
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && orderModal && !orderModal.hasAttribute('hidden')) hideOrder();
+  });
+
+  // QR toggle
+  const qrisBCA = document.getElementById('qrisBCA');
+  const qrisMandiri = document.getElementById('qrisMandiri');
+  document.getElementById('orderForm')?.addEventListener('change', (e) => {
+    const el = e.target;
+    if (el && el.name === 'metode') {
+      if (el.value === 'QRIS BCA') {
+        qrisBCA.hidden = false;
+        qrisMandiri.hidden = true;
       } else {
-        menu.removeAttribute('hidden');
-        btnMenu.setAttribute('aria-expanded','true');
+        qrisBCA.hidden = true;
+        qrisMandiri.hidden = false;
       }
-    });
-
-    // TO TOP FLOAT
-    const toTopFloat = document.getElementById('toTopFloat');
-    function toggleToTop(){
-      if(!toTopFloat) return;
-      toTopFloat.style.display = window.scrollY > 500 ? 'grid' : 'none';
     }
-    window.addEventListener('scroll', toggleToTop, { passive:true });
-    toggleToTop();
-    toTopFloat?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  });
 
-    // Scroll to form
-    const scrollForm = document.getElementById('scrollForm');
-    scrollForm?.addEventListener('click', () => {
-      document.getElementById('formTesti')?.scrollIntoView({ behavior:'smooth' });
-    });
+  // Nota
+  const rupiah = (n) => "Rp " + (n || 0).toLocaleString("id-ID");
+  const priceMap = {
+    "Suwar-suwir Khas": 28000,
+    "Kopi Jember": 55000,
+    "Gift Box Mix": 89000,
+    "Keripik Pisang": 24000,
+    "Edamame Crispy": 26000,
+    "Dodol Jember": 25000,
+    "Cookies Susu": 30000,
+    "Teh Rempah": 32000,
+    "Hampers Kantor": 99000,
+    "Paket Campur Hemat": 75000
+  };
 
-    // ====== ORDER MODAL ======
-    const orderModal = document.getElementById('orderModal');
-    const openOrder = document.getElementById('openOrder');
-    const openOrderMobile = document.getElementById('openOrderMobile');
-    const openOrderBottom = document.getElementById('openOrderBottom');
+  // Isi select produk otomatis (biar sinkron dengan priceMap)
+  const produkSelect = document.getElementById('produkSelect');
+  if (produkSelect) {
+    const opts = Object.keys(priceMap).map(n => `<option value="${n}">${n} — ${rupiah(priceMap[n])}</option>`).join("");
+    produkSelect.insertAdjacentHTML("beforeend", opts);
+  }
 
-    function showOrder(){
-      orderModal.removeAttribute('hidden');
-      orderModal.setAttribute('aria-hidden','false');
-      document.body.style.overflow = 'hidden';
-      setTimeout(updateNota, 0);
-    }
-    function hideOrder(){
-      orderModal.setAttribute('hidden','');
-      orderModal.setAttribute('aria-hidden','true');
-      document.body.style.overflow = '';
-    }
+  function updateNota(){
+    const form = document.getElementById("orderForm");
+    if(!form) return;
 
-    openOrder?.addEventListener('click', showOrder);
-    openOrderBottom?.addEventListener('click', showOrder);
-    openOrderMobile?.addEventListener('click', () => {
-      menu?.setAttribute('hidden','');
-      btnMenu?.setAttribute('aria-expanded','false');
-      showOrder();
-    });
+    const produk = form.produk.value;
+    const qty = parseInt(form.qty.value || "1", 10);
 
-    orderModal?.addEventListener('click', (e) => {
-      const t = e.target;
-      if (t && t.hasAttribute('data-close')) hideOrder();
-    });
+    const harga = priceMap[produk] || 0;
+    const total = harga * (isNaN(qty) ? 1 : qty);
 
-    window.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && orderModal && !orderModal.hasAttribute('hidden')) hideOrder();
-    });
+    document.getElementById("notaProduk").textContent = produk || "—";
+    document.getElementById("notaQty").textContent = isNaN(qty) ? "1" : String(qty);
+    document.getElementById("notaHarga").textContent = rupiah(harga);
+    document.getElementById("notaTotal").textContent = rupiah(total);
+  }
 
-    // QR toggle
-    const qrisBCA = document.getElementById('qrisBCA');
-    const qrisMandiri = document.getElementById('qrisMandiri');
-    document.getElementById('orderForm')?.addEventListener('change', (e) => {
-      const el = e.target;
-      if (el && el.name === 'metode') {
-        if (el.value === 'QRIS BCA') {
-          qrisBCA.hidden = false;
-          qrisMandiri.hidden = true;
-        } else {
-          qrisBCA.hidden = true;
-          qrisMandiri.hidden = false;
-        }
-      }
-    });
+  document.getElementById("orderForm")?.addEventListener("input", (e) => {
+    if(["produk","qty"].includes(e.target.name)) updateNota();
+  });
+  document.getElementById("orderForm")?.addEventListener("change", (e) => {
+    if(["produk","qty"].includes(e.target.name)) updateNota();
+  });
 
-    // Nota (ubah harga sesuai produkmu)
-    const rupiah = (n) => "Rp " + (n || 0).toLocaleString("id-ID");
-    const priceMap = {
-      "Suwar-suwir Khas": 28000,
-      "Kopi Jember": 55000,
-      "Gift Box Mix": 89000,
-      "Keripik Pisang": 24000,
-      "Edamame Crispy": 26000,
-      "Dodol Jember": 25000,
-      "Cookies Susu": 30000,
-      "Teh Rempah": 32000,
-      "Hampers Kantor": 99000,
-      "Paket Campur Hemat": 75000
-    };
+  // submit -> WhatsApp (ganti nomor toko)
+  document.getElementById('orderForm')?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const form = e.target;
 
-    function updateNota(){
-      const form = document.getElementById("orderForm");
-      if(!form) return;
+    const nama = form.nama.value.trim();
+    const wa = form.wa.value.trim();
+    const alamat = form.alamat.value.trim();
+    const produk = form.produk.value;
+    const qty = form.qty.value;
+    const catatan = form.catatan.value.trim();
+    const metode = form.metode.value;
 
-      const produk = form.produk.value;
-      const qty = parseInt(form.qty.value || "1", 10);
+    const harga = priceMap[produk] || 0;
+    const total = harga * parseInt(qty || "1", 10);
 
-      const harga = priceMap[produk] || 0;
-      const total = harga * (isNaN(qty) ? 1 : qty);
-
-      document.getElementById("notaProduk").textContent = produk || "—";
-      document.getElementById("notaQty").textContent = isNaN(qty) ? "1" : String(qty);
-      document.getElementById("notaHarga").textContent = rupiah(harga);
-      document.getElementById("notaTotal").textContent = rupiah(total);
-    }
-
-    document.getElementById("orderForm")?.addEventListener("input", (e) => {
-      if(["produk","qty"].includes(e.target.name)) updateNota();
-    });
-    document.getElementById("orderForm")?.addEventListener("change", (e) => {
-      if(["produk","qty"].includes(e.target.name)) updateNota();
-    });
-
-    // submit -> WhatsApp (ganti nomor toko)
-    document.getElementById('orderForm')?.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const form = e.target;
-
-      const nama = form.nama.value.trim();
-      const wa = form.wa.value.trim();
-      const alamat = form.alamat.value.trim();
-      const produk = form.produk.value;
-      const qty = form.qty.value;
-      const catatan = form.catatan.value.trim();
-      const metode = form.metode.value;
-
-      const harga = priceMap[produk] || 0;
-      const total = harga * parseInt(qty || "1", 10);
-
-      const pesan =
+    const pesan =
 `Halo, saya mau pesan:
 - Nama: ${nama}
 - WA: ${wa}
@@ -1935,220 +1590,217 @@ Saya akan bayar via QRIS.`;
 
 Saya akan bayar via QRIS.`;
 
-      const nomorToko = "6281234567890";
-      const url = `https://wa.me/${nomorToko}?text=${encodeURIComponent(pesan)}`;
-      window.open(url, "_blank", "noopener");
+    const nomorToko = "6281234567890";
+    const url = `https://wa.me/${nomorToko}?text=${encodeURIComponent(pesan)}`;
+    window.open(url, "_blank", "noopener,noreferrer");
 
-      hideOrder();
-      form.reset();
-      qrisBCA.hidden = false;
-      qrisMandiri.hidden = true;
-      updateNota();
-    });
-
-    // ====== FILTER + SEARCH TESTIMONI ======
-    const chips = Array.from(document.querySelectorAll('.chip[data-filter]'));
-    const gridT = document.getElementById('gridT');
-    const cards = () => Array.from(gridT.querySelectorAll('.tCard'));
-    const searchInput = document.getElementById('searchInput');
-    const activeHint = document.getElementById('activeHint');
-    const emptyState = document.getElementById('emptyState');
-    const resetBtn = document.getElementById('resetBtn');
-
-    let activeFilter = "all";
-    let keyword = "";
-
-    const labelMap = { all:"Semua", rasa:"Rasa", packing:"Packing", pengiriman:"Pengiriman", hadiah:"Hadiah" };
-
-    function applyFilter(){
-      const list = cards();
-      const visible = [];
-
-      list.forEach(card => {
-        const cat = (card.getAttribute('data-cat') || '').toLowerCase();
-        const name = (card.getAttribute('data-name') || '').toLowerCase();
-        const text = (card.getAttribute('data-text') || card.textContent || '').toLowerCase();
-
-        const byCat = activeFilter === "all" ? true : cat === activeFilter;
-        const byKey = keyword ? (name.includes(keyword) || text.includes(keyword)) : true;
-
-        const show = byCat && byKey;
-        card.style.display = show ? '' : 'none';
-        if(show) visible.push(card);
-      });
-
-      activeHint.innerHTML = `Filter aktif: <b>${labelMap[activeFilter] || "Semua"}</b>`;
-      emptyState.hidden = visible.length !== 0;
-      gridT.style.display = visible.length === 0 ? 'none' : 'grid';
-    }
-
-    chips.forEach(chip => {
-      chip.addEventListener('click', () => {
-        chips.forEach(c => {
-          c.classList.remove('isActive');
-          c.setAttribute('aria-selected','false');
-        });
-        chip.classList.add('isActive');
-        chip.setAttribute('aria-selected','true');
-
-        activeFilter = chip.getAttribute('data-filter');
-        applyFilter();
-      });
-    });
-
-    searchInput?.addEventListener('input', (e) => {
-      keyword = (e.target.value || "").trim().toLowerCase();
-      applyFilter();
-    });
-
-    resetBtn?.addEventListener('click', () => {
-      keyword = "";
-      searchInput.value = "";
-
-      activeFilter = "all";
-      chips.forEach(c => {
-        const isAll = c.getAttribute('data-filter') === 'all';
-        c.classList.toggle('isActive', isAll);
-        c.setAttribute('aria-selected', isAll ? 'true' : 'false');
-      });
-
-      applyFilter();
-    });
-
-    // ====== DEMO FORM: add card to list ======
-    const demoForm = document.getElementById('demoForm');
-
-    function catTitle(cat){
-      return labelMap[cat] || "Testimoni";
-    }
-
-    demoForm?.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const f = e.target;
-
-      const nama = f.nama.value.trim();
-      const kota = f.kota.value.trim();
-      const kategori = f.kategori.value;
-      const rating = f.rating.value;
-      const isi = f.isi.value.trim();
-
-      const firstLetter = (nama[0] || 'T').toUpperCase();
-      const year = new Date().getFullYear();
-
-      const newCard = document.createElement('article');
-      newCard.className = 'tCard';
-      newCard.setAttribute('data-cat', kategori);
-      newCard.setAttribute('data-name', nama);
-      newCard.setAttribute('data-text', `${nama} ${kota} ${kategori} ${isi}`.toLowerCase());
-
-      newCard.innerHTML = `
-        <div class="tTop">
-          <div class="avatar">${firstLetter}</div>
-          <div>
-            <div class="tName">${nama}</div>
-            <div class="tMeta">${kota} • <span class="stars">${rating}</span></div>
-          </div>
-          <div class="tTag">${catTitle(kategori)}</div>
-        </div>
-        <p class="tQuote">“${isi}”</p>
-        <div class="tFoot">
-          <span class="pill">Baru</span>
-          <span class="pill">Demo</span>
-          <span class="tDate">${year}</span>
-        </div>
-      `;
-
-      gridT.prepend(newCard);
-      f.reset();
-
-      // biar hasil langsung keliatan
-      document.getElementById('list')?.scrollIntoView({ behavior:'smooth' });
-      applyFilter();
-    });
-
-    // ====== HELP MODAL ======
-    const helpModal = document.getElementById('helpModal');
-    const helpTitle = document.getElementById('helpTitle');
-    const helpBody = document.getElementById('helpBody');
-
-    const helpContent = {
-      cara: {
-        title: 'Cara Pesan',
-        html: `
-          <div class="helpList">
-            <div class="helpItem"><b>1) Klik tombol “Pesan”</b><p>Isi nama, WhatsApp, alamat, produk, dan jumlah.</p></div>
-            <div class="helpItem"><b>2) Cek nota sementara</b><p>Total akan muncul otomatis (ongkir dikonfirmasi admin).</p></div>
-            <div class="helpItem"><b>3) Bayar via QRIS</b><p>Scan QR, simpan bukti bayar, lalu klik “Kirim Pesanan”.</p></div>
-          </div>`
-      },
-      pengiriman: {
-        title: 'Pengiriman',
-        html: `
-          <div class="helpList">
-            <div class="helpItem"><b>Estimasi proses</b><p>Biasanya 24–48 jam setelah konfirmasi.</p></div>
-            <div class="helpItem"><b>Packaging</b><p>Bubble wrap + kardus, QC sebelum kirim.</p></div>
-            <div class="helpItem"><b>Resi</b><p>Resi akan dikirim setelah paket diserahkan ke ekspedisi.</p></div>
-          </div>`
-      },
-      pembayaran: {
-        title: 'Pembayaran',
-        html: `
-          <div class="helpList">
-            <div class="helpItem"><b>Metode</b><p>QRIS (BCA / Mandiri). Bisa pakai aplikasi bank / e-wallet.</p></div>
-            <div class="helpItem"><b>Bukti bayar</b><p>Upload bukti (opsional) atau kirim via WhatsApp setelah submit.</p></div>
-          </div>`
-      },
-      faq: {
-        title: 'FAQ',
-        html: `
-          <div class="helpList">
-            <div class="helpItem"><b>Apakah bisa pesan banyak untuk kantor?</b><p>Bisa. Tulis jumlah & catatan di form, admin akan bantu rekap.</p></div>
-            <div class="helpItem"><b>Apakah bisa request kartu ucapan?</b><p>Bisa. Isi di kolom catatan.</p></div>
-            <div class="helpItem"><b>Ongkir gimana?</b><p>Ongkir dikonfirmasi admin sesuai alamat & berat paket.</p></div>
-          </div>`
-      }
-    };
-
-    function openHelp(key){
-      const data = helpContent[key];
-      if(!data || !helpModal) return;
-      helpTitle.textContent = data.title;
-      helpBody.innerHTML = data.html;
-
-      helpModal.removeAttribute('hidden');
-      helpModal.setAttribute('aria-hidden','false');
-      document.body.style.overflow = 'hidden';
-    }
-    function closeHelp(){
-      if(!helpModal) return;
-      helpModal.setAttribute('hidden','');
-      helpModal.setAttribute('aria-hidden','true');
-      document.body.style.overflow = '';
-    }
-
-    document.querySelectorAll('[data-help]').forEach(btn => {
-      btn.addEventListener('click', () => openHelp(btn.getAttribute('data-help')));
-    });
-
-    helpModal?.addEventListener('click', (e) => {
-      const t = e.target;
-      if(t && t.hasAttribute('data-close')) closeHelp();
-    });
-
-    window.addEventListener('keydown', (e) => {
-      if(e.key === 'Escape' && helpModal && !helpModal.hasAttribute('hidden')) closeHelp();
-    });
-
-    // INIT
-    applyFilter();
+    hideOrder();
+    form.reset();
+    qrisBCA.hidden = false;
+    qrisMandiri.hidden = true;
     updateNota();
+  });
 
-    // OPTIONAL: set link WA footer (biar beneran ada)
-    const waFooter = document.getElementById('waFooter');
-    if(waFooter){
-      const nomorToko = "6281234567890";
-      waFooter.href = `https://wa.me/${nomorToko}`;
+  // ====== FILTER + SEARCH TESTIMONI ======
+  const chips = Array.from(document.querySelectorAll('.chip[data-filter]'));
+  const gridT = document.getElementById('gridT');
+  const searchInput = document.getElementById('searchInput');
+  const activeHint = document.getElementById('activeHint');
+  const emptyState = document.getElementById('emptyState');
+  const resetBtn = document.getElementById('resetBtn');
+
+  const labelMap = { all:"Semua", rasa:"Rasa", packing:"Packing", pengiriman:"Pengiriman", hadiah:"Hadiah" };
+
+  let activeFilter = "all";
+  let keyword = "";
+
+  const getCards = () => Array.from(gridT.querySelectorAll('.tCard'));
+
+  function applyFilter(){
+    const list = getCards();
+    let shown = 0;
+
+    list.forEach(card => {
+      const cat = (card.getAttribute('data-cat') || '').toLowerCase();
+      const name = (card.getAttribute('data-name') || '').toLowerCase();
+      const text = (card.getAttribute('data-text') || card.textContent || '').toLowerCase();
+
+      const byCat = activeFilter === "all" ? true : cat === activeFilter;
+      const byKey = keyword ? (name.includes(keyword) || text.includes(keyword)) : true;
+
+      const show = byCat && byKey;
+      card.style.display = show ? '' : 'none';
+      if(show) shown++;
+    });
+
+    activeHint.innerHTML = `Filter aktif: <b>${labelMap[activeFilter] || "Semua"}</b>`;
+    emptyState.hidden = shown !== 0;
+    gridT.style.display = shown === 0 ? 'none' : 'grid';
+  }
+
+  chips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      chips.forEach(c => {
+        c.classList.remove('isActive');
+        c.setAttribute('aria-selected','false');
+      });
+      chip.classList.add('isActive');
+      chip.setAttribute('aria-selected','true');
+
+      activeFilter = chip.getAttribute('data-filter') || "all";
+      applyFilter();
+    });
+  });
+
+  searchInput?.addEventListener('input', (e) => {
+    keyword = (e.target.value || "").trim().toLowerCase();
+    applyFilter();
+  });
+
+  resetBtn?.addEventListener('click', () => {
+    keyword = "";
+    if (searchInput) searchInput.value = "";
+
+    activeFilter = "all";
+    chips.forEach(c => {
+      const isAll = c.getAttribute('data-filter') === 'all';
+      c.classList.toggle('isActive', isAll);
+      c.setAttribute('aria-selected', isAll ? 'true' : 'false');
+    });
+
+    applyFilter();
+  });
+
+  // ====== DEMO FORM: add card to list ======
+  const demoForm = document.getElementById('demoForm');
+  function catTitle(cat){ return labelMap[cat] || "Testimoni"; }
+
+  demoForm?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const f = e.target;
+
+    const nama = f.nama.value.trim();
+    const kota = f.kota.value.trim();
+    const kategori = f.kategori.value;
+    const rating = f.rating.value;
+    const isi = f.isi.value.trim();
+
+    const firstLetter = (nama[0] || 'T').toUpperCase();
+    const year = new Date().getFullYear();
+
+    const newCard = document.createElement('article');
+    newCard.className = 'tCard';
+    newCard.setAttribute('data-cat', kategori);
+    newCard.setAttribute('data-name', nama);
+    newCard.setAttribute('data-text', `${nama} ${kota} ${kategori} ${isi}`.toLowerCase());
+
+    newCard.innerHTML = `
+      <div class="tTop">
+        <div class="avatar">${firstLetter}</div>
+        <div>
+          <div class="tName">${nama}</div>
+          <div class="tMeta">${kota} • <span class="stars">${rating}</span></div>
+        </div>
+        <div class="tTag">${catTitle(kategori)}</div>
+      </div>
+      <p class="tQuote">“${isi}”</p>
+      <div class="tFoot">
+        <span class="pill">Baru</span>
+        <span class="pill">Demo</span>
+        <span class="tDate">${year}</span>
+      </div>
+    `;
+
+    gridT.prepend(newCard);
+    f.reset();
+    document.getElementById('list')?.scrollIntoView({ behavior:'smooth' });
+    applyFilter();
+  });
+
+  // ====== HELP MODAL ======
+  const helpModal = document.getElementById('helpModal');
+  const helpTitle = document.getElementById('helpTitle');
+  const helpBody = document.getElementById('helpBody');
+
+  const helpContent = {
+    cara: {
+      title: 'Cara Pesan',
+      html: `
+        <div class="helpList">
+          <div class="helpItem"><b>1) Klik tombol “Pesan”</b><p>Isi nama, WhatsApp, alamat, produk, dan jumlah.</p></div>
+          <div class="helpItem"><b>2) Cek nota sementara</b><p>Total akan muncul otomatis (ongkir dikonfirmasi admin).</p></div>
+          <div class="helpItem"><b>3) Bayar via QRIS</b><p>Scan QR, simpan bukti bayar, lalu klik “Kirim Pesanan”.</p></div>
+        </div>`
+    },
+    pengiriman: {
+      title: 'Pengiriman',
+      html: `
+        <div class="helpList">
+          <div class="helpItem"><b>Estimasi proses</b><p>Biasanya 24–48 jam setelah konfirmasi.</p></div>
+          <div class="helpItem"><b>Packaging</b><p>Bubble wrap + kardus, QC sebelum kirim.</p></div>
+          <div class="helpItem"><b>Resi</b><p>Resi akan dikirim setelah paket diserahkan ke ekspedisi.</p></div>
+        </div>`
+    },
+    pembayaran: {
+      title: 'Pembayaran',
+      html: `
+        <div class="helpList">
+          <div class="helpItem"><b>Metode</b><p>QRIS (BCA / Mandiri). Bisa pakai aplikasi bank / e-wallet.</p></div>
+          <div class="helpItem"><b>Bukti bayar</b><p>Upload bukti (opsional) atau kirim via WhatsApp setelah submit.</p></div>
+        </div>`
+    },
+    faq: {
+      title: 'FAQ',
+      html: `
+        <div class="helpList">
+          <div class="helpItem"><b>Apakah bisa pesan banyak untuk kantor?</b><p>Bisa. Tulis jumlah & catatan di form, admin akan bantu rekap.</p></div>
+          <div class="helpItem"><b>Apakah bisa request kartu ucapan?</b><p>Bisa. Isi di kolom catatan.</p></div>
+          <div class="helpItem"><b>Ongkir gimana?</b><p>Ongkir dikonfirmasi admin sesuai alamat & berat paket.</p></div>
+        </div>`
     }
-  </script>
+  };
+
+  function openHelp(key){
+    const data = helpContent[key];
+    if(!data || !helpModal) return;
+    helpTitle.textContent = data.title;
+    helpBody.innerHTML = data.html;
+
+    helpModal.removeAttribute('hidden');
+    helpModal.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeHelp(){
+    if(!helpModal) return;
+    helpModal.setAttribute('hidden','');
+    helpModal.setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('[data-help]').forEach(btn => {
+    btn.addEventListener('click', () => openHelp(btn.getAttribute('data-help')));
+  });
+
+  helpModal?.addEventListener('click', (e) => {
+    const t = e.target;
+    if(t && t.hasAttribute('data-close')) closeHelp();
+  });
+
+  window.addEventListener('keydown', (e) => {
+    if(e.key === 'Escape' && helpModal && !helpModal.hasAttribute('hidden')) closeHelp();
+  });
+
+  // INIT
+  applyFilter();
+  updateNota();
+
+  // WA footer
+  const waFooter = document.getElementById('waFooter');
+  if(waFooter){
+    const nomorToko = "6281234567890";
+    waFooter.href = `https://wa.me/${nomorToko}`;
+  }
+</script>
+
 </body>
 </html>
