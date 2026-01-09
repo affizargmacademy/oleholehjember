@@ -7,6 +7,8 @@
 
   <!-- SEO -->
   <meta name="description" content="Kategori & produk OlehOlehJember: filter kategori, pencarian cepat, dan pesan via WhatsApp. Oleh-oleh khas Jember dengan packing rapi, siap kirim." />
+  <meta name="keywords" content="oleh-oleh jember, oleh oleh jember, suwar suwir jember, dodol susu, kopi jember, hampers jember, snack jember, paket oleh-oleh, kuliner jember, souvenir jember" />
+  <meta name="author" content="OlehOlehJember" />
   <link rel="canonical" href="https://oleh-oleh-jember.example/kategori.html" />
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
   <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
@@ -43,41 +45,54 @@
   <meta name="application-name" content="OlehOlehJember">
   <meta name="format-detection" content="telephone=no">
 
-  <!-- Perf: preconnect + preload font -->
+  <!-- Perf -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&display=swap">
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
-  <!-- Structured Data (AI Overview & Rich Results) -->
+  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Kategori & Produk | OlehOlehJember",
-    "url": "https://oleh-oleh-jember.example/kategori.html",
-    "description": "Kategori & produk OlehOlehJember: filter kategori, pencarian cepat, dan pesan via WhatsApp.",
-    "inLanguage": "id-ID",
-    "isPartOf": {
-      "@type": "WebSite",
-      "name": "OlehOlehJember",
-      "url": "https://oleh-oleh-jember.example/"
-    },
-    "about": {
-      "@type": "LocalBusiness",
-      "name": "OlehOlehJember",
-      "areaServed": "Indonesia",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Jember",
-        "addressRegion": "Jawa Timur",
-        "addressCountry": "ID"
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "name": "OlehOlehJember",
+        "url": "https://oleh-oleh-jember.example/",
+        "inLanguage": "id-ID"
       },
-      "telephone": "+62-812-3456-7890",
-      "sameAs": [
-        "https://wa.me/6281234567890"
-      ]
-    }
+      {
+        "@type": "WebPage",
+        "name": "Kategori & Produk | OlehOlehJember",
+        "url": "https://oleh-oleh-jember.example/kategori.html",
+        "description": "Kategori & produk OlehOlehJember: filter kategori, pencarian cepat, dan pesan via WhatsApp.",
+        "inLanguage": "id-ID",
+        "isPartOf": { "@type": "WebSite", "name": "OlehOlehJember", "url": "https://oleh-oleh-jember.example/" },
+        "about": {
+          "@type": "LocalBusiness",
+          "name": "OlehOlehJember",
+          "areaServed": "Indonesia",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Jember",
+            "addressRegion": "Jawa Timur",
+            "addressCountry": "ID"
+          },
+          "telephone": "+62-812-3456-7890",
+          "sameAs": ["https://wa.me/6281234567890"]
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://oleh-oleh-jember.example/" },
+          { "@type": "ListItem", "position": 2, "name": "Kategori", "item": "https://oleh-oleh-jember.example/kategori.html" }
+        ]
+      }
+    ]
   }
   </script>
 
@@ -107,6 +122,9 @@
       font-family:"Plus Jakarta Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       background: var(--bg);
       color: var(--ink);
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
     a{ color:inherit; text-decoration:none; }
     img{ max-width:100%; display:block; }
@@ -151,14 +169,9 @@
       gap: 14px;
     }
     .logo{ display:flex; align-items:center; gap:10px; font-weight: 900; letter-spacing:-.2px; }
-    .logo__mark{
-      width: 12px; height: 12px; border-radius: 999px;
-      background: linear-gradient(135deg, var(--pink), var(--pink2));
-      box-shadow: 0 0 0 6px var(--pinkSoft);
-    }
     .logo__img{
       height: 40px;
-      width: auto;
+      width: 160px;
       display: block;
       object-fit: contain;
     }
@@ -261,16 +274,7 @@
       max-width: 66ch;
     }
     .heroActions{ display:flex; gap: 10px; flex-wrap:wrap; margin-top: 14px; }
-    .heroMini{ display:flex; gap: 10px; flex-wrap:wrap; margin-top: 12px; }
-    .miniCard{
-      padding: 9px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,63,154,.18);
-      background: #fff;
-      font-weight: 850;
-      color: var(--muted);
-      box-shadow: var(--shadow2);
-    }
+
     .heroImgPink{
       border-radius: var(--r2);
       overflow:hidden;
@@ -278,11 +282,11 @@
       box-shadow: var(--shadow);
       background:#fff;
     }
-    .heroImgPink img{ width:100%; height: 340px; object-fit: cover; }
+    .heroImgPink .uImg{ width:100%; height: 340px; object-fit: cover; }
 
     @media (max-width: 980px){
       .heroGrid{ grid-template-columns: 1fr; }
-      .heroImgPink img{ height: 260px; }
+      .heroImgPink .uImg{ height: 260px; }
     }
 
     /* TAG */
@@ -730,11 +734,11 @@
     }
     .toTopFloat:hover{ background: var(--pinkSoft); }
 
-    /* FLOATING WHATSAPP (di bawah floating top) */
+    /* FLOATING WHATSAPP */
     .waFloat{
       position: fixed;
       right: 18px;
-      bottom: 82px; /* 52px (toTop) + gap */
+      bottom: 82px;
       width: 52px;
       height: 52px;
       border-radius: 16px;
@@ -804,6 +808,10 @@
     }
     .helpItem b{ display:block; margin-bottom: 6px; }
     .helpItem p{ margin:0; color: var(--muted); font-weight: 650; line-height:1.75; }
+
+    /* Utility: Unsplash image box */
+    .uWrap, .uWrap picture{ display:block; width:100%; height:100%; }
+    .uImg{ width:100%; height:100%; object-fit:cover; }
   </style>
 </head>
 
@@ -813,13 +821,13 @@
 <header class="nav">
   <div class="container nav__inner">
     <a class="logo" href="index.html" aria-label="Beranda">
-      <img class="logo__img" src="assets/img/logo.png" alt="OlehOlehJember" decoding="async">
+      <img class="logo__img" src="assets/img/logo.png" alt="OlehOlehJember" decoding="async" width="160" height="40" fetchpriority="high">
     </a>
 
     <nav class="nav__links" aria-label="Navigasi">
       <a href="index.html">Beranda</a>
       <a href="jember.html">Tentang Jember</a>
-      <a href="kategori.html">Kategori</a>
+      <a class="isHere" href="kategori.html" aria-current="page">Kategori</a>
       <a href="blog.html">Blog</a>
     </nav>
 
@@ -833,7 +841,7 @@
     <div class="container mobileMenu__inner">
       <a href="index.html">Beranda</a>
       <a href="jember.html">Tentang Jember</a>
-      <a href="kategori.html">Kategori</a>
+      <a class="isHere" href="kategori.html" aria-current="page">Kategori</a>
       <a href="blog.html">Blog</a>
       <button class="btn btn--primary" id="openOrderMobile" type="button">Pesan</button>
     </div>
@@ -951,13 +959,13 @@
         <div class="qrWrap">
           <div class="qrCard" id="qrisBCA">
             <div class="qrTitle">QRIS BCA</div>
-            <img class="qrImg" src="assets/qris-bca.png" alt="QRIS BCA (ganti dengan QR kamu)" loading="lazy" decoding="async">
+            <img class="qrImg" src="assets/qris-bca.png" alt="QRIS BCA (ganti dengan QR kamu)" loading="lazy" decoding="async" width="320" height="320">
             <div class="qrNote">Ganti dengan QRIS BCA milikmu: <b>assets/qris-bca.png</b></div>
           </div>
 
           <div class="qrCard" id="qrisMandiri" hidden>
             <div class="qrTitle">QRIS Mandiri</div>
-            <img class="qrImg" src="assets/qris-mandiri.png" alt="QRIS Mandiri (ganti dengan QR kamu)" loading="lazy" decoding="async">
+            <img class="qrImg" src="assets/qris-mandiri.png" alt="QRIS Mandiri (ganti dengan QR kamu)" loading="lazy" decoding="async" width="320" height="320">
             <div class="qrNote">Ganti dengan QRIS Mandiri milikmu: <b>assets/qris-mandiri.png</b></div>
           </div>
         </div>
@@ -977,7 +985,7 @@
   </div>
 </div>
 
-<!-- HERO -->
+<!-- HERO (LCP) -->
 <section class="heroPink">
   <div class="container heroGrid">
     <div class="heroText">
@@ -993,11 +1001,40 @@
         <a class="btn btn--primary" href="#kategori">Mulai dari Kategori</a>
         <a class="btn" href="#produk">Lihat Produk</a>
       </div>
-
     </div>
 
     <div class="heroImgPink">
-      <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1400&q=80" alt="Oleh-oleh" loading="lazy" decoding="async">
+      <!-- Target ukuran render: ~ (mobile) 92vw tinggi 260px, (desktop) kolom kanan tinggi 340px
+           Turunkan bytes: w responsif + q rendah + format modern -->
+      <picture class="uWrap">
+        <source
+          type="image/avif"
+          srcset="
+            https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&fm=avif&w=480&q=45 480w,
+            https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&fm=avif&w=768&q=45 768w,
+            https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&fm=avif&w=1024&q=45 1024w
+          "
+          sizes="(max-width: 980px) 92vw, 40vw"
+        />
+        <source
+          type="image/webp"
+          srcset="
+            https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&fm=webp&w=480&q=55 480w,
+            https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&fm=webp&w=768&q=55 768w,
+            https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&fm=webp&w=1024&q=55 1024w
+          "
+          sizes="(max-width: 980px) 92vw, 40vw"
+        />
+        <img
+          class="uImg"
+          src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=768&q=55"
+          alt="Oleh-oleh"
+          decoding="async"
+          fetchpriority="high"
+          width="1024"
+          height="768"
+        />
+      </picture>
     </div>
   </div>
 </section>
@@ -1013,7 +1050,7 @@
     <div class="gridK">
       <article class="kCard">
         <div class="kCard__media">
-          <img src="assets/img/kuemanis.avif" alt="Makanan manis" loading="lazy" decoding="async">
+          <img src="assets/img/kuemanis.avif" alt="Makanan manis" loading="lazy" decoding="async" width="800" height="500">
         </div>
         <div class="kCard__body">
           <h3>Makanan Manis</h3>
@@ -1031,7 +1068,33 @@
 
       <article class="kCard">
         <div class="kCard__media">
-          <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=1200&q=80" alt="Kopi" loading="lazy" decoding="async">
+          <picture class="uWrap">
+            <source
+              type="image/avif"
+              srcset="
+                https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&fm=avif&w=480&q=45 480w,
+                https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&fm=avif&w=640&q=45 640w
+              "
+              sizes="(max-width: 980px) 92vw, 33vw"
+            />
+            <source
+              type="image/webp"
+              srcset="
+                https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&fm=webp&w=480&q=55 480w,
+                https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&fm=webp&w=640&q=55 640w
+              "
+              sizes="(max-width: 980px) 92vw, 33vw"
+            />
+            <img
+              class="uImg"
+              src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=640&q=55"
+              alt="Kopi"
+              loading="lazy"
+              decoding="async"
+              width="640"
+              height="420"
+            />
+          </picture>
         </div>
         <div class="kCard__body">
           <h3>Minuman</h3>
@@ -1049,7 +1112,7 @@
 
       <article class="kCard">
         <div class="kCard__media">
-          <img src="assets/img/kue manis 2.avif" alt="Snack" loading="lazy" decoding="async">
+          <img src="assets/img/kue manis 2.avif" alt="Snack" loading="lazy" decoding="async" width="800" height="500">
         </div>
         <div class="kCard__body">
           <h3>Snack</h3>
@@ -1067,7 +1130,33 @@
 
       <article class="kCard">
         <div class="kCard__media">
-          <img src="https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&w=1200&q=80" alt="Hampers" loading="lazy" decoding="async">
+          <picture class="uWrap">
+            <source
+              type="image/avif"
+              srcset="
+                https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&fm=avif&w=480&q=45 480w,
+                https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&fm=avif&w=640&q=45 640w
+              "
+              sizes="(max-width: 980px) 92vw, 33vw"
+            />
+            <source
+              type="image/webp"
+              srcset="
+                https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&fm=webp&w=480&q=55 480w,
+                https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&fm=webp&w=640&q=55 640w
+              "
+              sizes="(max-width: 980px) 92vw, 33vw"
+            />
+            <img
+              class="uImg"
+              src="https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&w=640&q=55"
+              alt="Hampers"
+              loading="lazy"
+              decoding="async"
+              width="640"
+              height="420"
+            />
+          </picture>
         </div>
         <div class="kCard__body">
           <h3>Hampers</h3>
@@ -1085,7 +1174,33 @@
 
       <article class="kCard">
         <div class="kCard__media">
-          <img src="https://images.unsplash.com/photo-1546549032-9571cd6b27df?auto=format&fit=crop&w=1200&q=80" alt="Paket" loading="lazy" decoding="async">
+          <picture class="uWrap">
+            <source
+              type="image/avif"
+              srcset="
+                https://images.unsplash.com/photo-1546549032-9571cd6b27df?auto=format&fit=crop&fm=avif&w=480&q=45 480w,
+                https://images.unsplash.com/photo-1546549032-9571cd6b27df?auto=format&fit=crop&fm=avif&w=640&q=45 640w
+              "
+              sizes="(max-width: 980px) 92vw, 33vw"
+            />
+            <source
+              type="image/webp"
+              srcset="
+                https://images.unsplash.com/photo-1546549032-9571cd6b27df?auto=format&fit=crop&fm=webp&w=480&q=55 480w,
+                https://images.unsplash.com/photo-1546549032-9571cd6b27df?auto=format&fit=crop&fm=webp&w=640&q=55 640w
+              "
+              sizes="(max-width: 980px) 92vw, 33vw"
+            />
+            <img
+              class="uImg"
+              src="https://images.unsplash.com/photo-1546549032-9571cd6b27df?auto=format&fit=crop&w=640&q=55"
+              alt="Paket"
+              loading="lazy"
+              decoding="async"
+              width="640"
+              height="420"
+            />
+          </picture>
         </div>
         <div class="kCard__body">
           <h3>Paket</h3>
@@ -1103,7 +1218,33 @@
 
       <article class="kCard">
         <div class="kCard__media">
-          <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=1200&q=80" alt="Oleh-oleh kering" loading="lazy" decoding="async">
+          <picture class="uWrap">
+            <source
+              type="image/avif"
+              srcset="
+                https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&fm=avif&w=480&q=45 480w,
+                https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&fm=avif&w=640&q=45 640w
+              "
+              sizes="(max-width: 980px) 92vw, 33vw"
+            />
+            <source
+              type="image/webp"
+              srcset="
+                https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&fm=webp&w=480&q=55 480w,
+                https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&fm=webp&w=640&q=55 640w
+              "
+              sizes="(max-width: 980px) 92vw, 33vw"
+            />
+            <img
+              class="uImg"
+              src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=640&q=55"
+              alt="Oleh-oleh kering"
+              loading="lazy"
+              decoding="async"
+              width="640"
+              height="420"
+            />
+          </picture>
         </div>
         <div class="kCard__body">
           <h3>Oleh-oleh Kering</h3>
@@ -1163,7 +1304,7 @@
 
     <div class="footer__brand">
       <div class="footerLogo">
-        <img class="logo__img" src="assets/img/logo.png" alt="OlehOlehJember" loading="lazy" decoding="async">
+        <img class="logo__img" src="assets/img/logo.png" alt="OlehOlehJember" loading="lazy" decoding="async" width="160" height="40">
       </div>
       <p class="footerMuted">
         Oleh-oleh khas Jember dengan pengemasan rapi, cocok untuk keluarga, teman, dan kebutuhan kantor.
@@ -1222,28 +1363,24 @@
       </div>
 
       <div class="footerSocial" aria-label="Sosial media">
-        <!-- Instagram -->
         <a class="socialBtn" href="#" aria-label="Instagram" title="Instagram">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5.5A4.5 4.5 0 1 0 16.5 12 4.5 4.5 0 0 0 12 7.5zm0 7.4A2.9 2.9 0 1 1 14.9 12 2.9 2.9 0 0 1 12 14.9zM17.8 6.2a1 1 0 1 1-1-1 1 1 0 0 1 1 1z"/>
           </svg>
         </a>
 
-        <!-- TikTok -->
         <a class="socialBtn" href="#" aria-label="TikTok" title="TikTok">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M16.5 2h-2.6v13.2a2.4 2.4 0 1 1-2-2.4V10a5 5 0 1 0 4.6 5V8.7a6.7 6.7 0 0 0 3.5 1.1V7.3a4.3 4.3 0 0 1-3.5-2.1z"/>
           </svg>
         </a>
 
-        <!-- Shopee -->
         <a class="socialBtn" href="#" aria-label="Shopee" title="Shopee">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M5 7h14l-1 14H6L5 7zm7-5a4 4 0 0 0-4 4h2a2 2 0 0 1 4 0h2a4 4 0 0 0-4-4z"/>
           </svg>
         </a>
       </div>
-
     </div>
 
   </div>
@@ -1260,7 +1397,7 @@
 <!-- FLOATING TO TOP -->
 <button class="toTopFloat" id="toTopFloat" type="button" aria-label="Kembali ke atas" title="Kembali ke atas">↑</button>
 
-<!-- FLOATING WHATSAPP (di bawah floating top) -->
+<!-- FLOATING WHATSAPP -->
 <a class="waFloat"
    id="waFloat"
    href="https://wa.me/6281234567890"
@@ -1316,20 +1453,40 @@
   // Helpers
   const rupiah = (n) => "Rp " + (n || 0).toLocaleString("id-ID");
 
-  // PRODUCTS DATA
+  // Unsplash helper (lebih kecil + format modern)
+  // Catatan: target <100KB sangat bergantung pada foto & detailnya, tapi ini biasanya turun drastis.
+  const u = (idUrl, w=700, q=55, fm="webp") => {
+    // Terima full URL unsplash "https://images.unsplash.com/photo-...."
+    const base = idUrl.split("?")[0];
+    return `${base}?auto=format&fit=crop&fm=${fm}&w=${w}&q=${q}`;
+  };
+
+  const uSrcset = (idUrl, sizes=[480, 700, 900], q=55, fm="webp") =>
+    sizes.map(s => `${u(idUrl, s, q, fm)} ${s}w`).join(", ");
+
+  // PRODUCTS DATA (turunkan w dari 1200 -> 700/900 via srcset)
   const products = [
-    { id:"suwar", name:"Suwar-suwir Khas", cat:"makanan", catLabel:"Makanan Manis", badge:"Terlaris", price:28000, img:"https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1200&q=80", desc:"Manisan khas Jember yang lembut, manisnya pas, cocok untuk oleh-oleh keluarga." },
-    { id:"dodol", name:"Dodol Susu", cat:"makanan", catLabel:"Makanan Manis", badge:"Favorit", price:25000, img:"https://images.unsplash.com/photo-1599785209796-786432b228bc?auto=format&fit=crop&w=1200&q=80", desc:"Dodol lembut dengan rasa susu yang gurih, aman dibawa perjalanan." },
-    { id:"kopi", name:"Kopi Jember", cat:"minuman", catLabel:"Minuman", badge:"Wangi", price:55000, img:"https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=1200&q=80", desc:"Kopi pilihan dengan aroma khas. Cocok untuk hadiah maupun stok di rumah." },
-    { id:"teh", name:"Teh Rempah", cat:"minuman", catLabel:"Minuman", badge:"Hangat", price:32000, img:"assets/img/teh.avif", desc:"Teh rempah wangi dengan rasa hangat. Pas untuk dinikmati sore hari." },
-    { id:"edamame", name:"Edamame Crispy", cat:"snack", catLabel:"Snack", badge:"Gurih", price:26000, img:"https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=1200&q=80", desc:"Edamame crispy renyah, gurih, cocok untuk camilan dan sharing." },
-    { id:"pisang", name:"Keripik Pisang", cat:"snack", catLabel:"Snack", badge:"Renyah", price:24000, img:"assets/img/keripikpisang.avif", desc:"Keripik pisang renyah dan tidak eneg. Favorit wisatawan." },
-    { id:"hampers", name:"Hampers Kantor", cat:"hampers", catLabel:"Hampers", badge:"Rapi", price:99000, img:"https://images.unsplash.com/photo-1607344645866-009c320b63e0?auto=format&fit=crop&w=1200&q=80", desc:"Hampers siap kirim untuk kantor/keluarga. Kemasan rapi dan elegan." },
-    { id:"giftbox", name:"Gift Box Mix", cat:"hampers", catLabel:"Hampers", badge:"Hadiah", price:89000, img:"assets/img/gift.avif", desc:"Gift box isi campuran snack & manisan. Cocok buat hadiah." },
-    { id:"paket", name:"Paket Campur Hemat", cat:"paket", catLabel:"Paket", badge:"Hemat", price:75000, img:"https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=1200&q=80", desc:"Paket campur praktis dengan harga hemat. Cocok untuk yang ingin banyak varian." }
+    { id:"suwar", name:"Suwar-suwir Khas", cat:"makanan", catLabel:"Makanan Manis", badge:"Terlaris", price:28000,
+      img:"https://images.unsplash.com/photo-1515003197210-e0cd71810b5f", desc:"Manisan khas Jember yang lembut, manisnya pas, cocok untuk oleh-oleh keluarga." },
+    { id:"dodol", name:"Dodol Susu", cat:"makanan", catLabel:"Makanan Manis", badge:"Favorit", price:25000,
+      img:"https://images.unsplash.com/photo-1599785209796-786432b228bc", desc:"Dodol lembut dengan rasa susu yang gurih, aman dibawa perjalanan." },
+    { id:"kopi", name:"Kopi Jember", cat:"minuman", catLabel:"Minuman", badge:"Wangi", price:55000,
+      img:"https://images.unsplash.com/photo-1511920170033-f8396924c348", desc:"Kopi pilihan dengan aroma khas. Cocok untuk hadiah maupun stok di rumah." },
+    { id:"teh", name:"Teh Rempah", cat:"minuman", catLabel:"Minuman", badge:"Hangat", price:32000,
+      img:"assets/img/teh.avif", desc:"Teh rempah wangi dengan rasa hangat. Pas untuk dinikmati sore hari." },
+    { id:"edamame", name:"Edamame Crispy", cat:"snack", catLabel:"Snack", badge:"Gurih", price:26000,
+      img:"https://images.unsplash.com/photo-1541592106381-b31e9677c0e5", desc:"Edamame crispy renyah, gurih, cocok untuk camilan dan sharing." },
+    { id:"pisang", name:"Keripik Pisang", cat:"snack", catLabel:"Snack", badge:"Renyah", price:24000,
+      img:"assets/img/keripikpisang.avif", desc:"Keripik pisang renyah dan tidak eneg. Favorit wisatawan." },
+    { id:"hampers", name:"Hampers Kantor", cat:"hampers", catLabel:"Hampers", badge:"Rapi", price:99000,
+      img:"https://images.unsplash.com/photo-1607344645866-009c320b63e0", desc:"Hampers siap kirim untuk kantor/keluarga. Kemasan rapi dan elegan." },
+    { id:"giftbox", name:"Gift Box Mix", cat:"hampers", catLabel:"Hampers", badge:"Hadiah", price:89000,
+      img:"assets/img/gift.avif", desc:"Gift box isi campuran snack & manisan. Cocok buat hadiah." },
+    { id:"paket", name:"Paket Campur Hemat", cat:"paket", catLabel:"Paket", badge:"Hemat", price:75000,
+      img:"https://images.unsplash.com/photo-1540189549336-e6e99c3679fe", desc:"Paket campur praktis dengan harga hemat. Cocok untuk yang ingin banyak varian." }
   ];
 
-  // ✅ LINK DETAIL PER PRODUK (sesuai list kamu)
+  // ✅ LINK DETAIL PER PRODUK
   const detailLinks = {
     suwar: "detailproduksuwarsuwir.html",
     dodol: "detailprodukdodol.html",
@@ -1349,11 +1506,30 @@
   const searchInput = document.getElementById("searchInput");
   const activeFilterHint = document.getElementById("activeFilterHint");
 
-  // ✅ tombol scroll yang disembunyikan dulu
-  const scrollToProdukBtn = document.getElementById("scrollToProdukBtn");
-
   let activeCat = "all";
   let keyword = "";
+
+  function productCardMedia(p){
+    // Local asset (avif/png/etc)
+    if(!String(p.img).startsWith("https://images.unsplash.com/")){
+      return `
+        <img src="${p.img}" alt="${p.name}" loading="lazy" decoding="async" width="900" height="600">
+      `;
+    }
+
+    // Unsplash: pakai picture + srcset agar tidak kebesaran
+    const base = p.img;
+    const avifSet = uSrcset(base, [480, 700, 900], 45, "avif");
+    const webpSet = uSrcset(base, [480, 700, 900], 55, "webp");
+
+    return `
+      <picture class="uWrap">
+        <source type="image/avif" srcset="${avifSet}" sizes="(max-width: 980px) 92vw, 33vw">
+        <source type="image/webp" srcset="${webpSet}" sizes="(max-width: 980px) 92vw, 33vw">
+        <img class="uImg" src="${u(base, 700, 55, "webp")}" alt="${p.name}" loading="lazy" decoding="async" width="900" height="600">
+      </picture>
+    `;
+  }
 
   function renderProducts(){
     const list = products.filter(p => {
@@ -1367,7 +1543,7 @@
     productGrid.innerHTML = list.map(p => `
       <article class="pCard">
         <div class="pMedia">
-          <img src="${p.img}" alt="${p.name}" loading="lazy" decoding="async">
+          ${productCardMedia(p)}
         </div>
         <div class="pBody">
           <div class="pTitleRow">
@@ -1486,7 +1662,7 @@
     if(["produk","qty"].includes(e.target.name)) updateNota();
   });
 
-  // submit -> WhatsApp (ganti nomor toko)
+  // submit -> WhatsApp
   document.getElementById('orderForm')?.addEventListener('submit', (e) => {
     e.preventDefault();
     const form = e.target;
@@ -1526,7 +1702,7 @@ Saya akan bayar via QRIS.`;
     updateNota();
   });
 
-  // ✅ Jump filter (sekaligus munculkan tombol scroll-to-produk saat klik "Lihat Produk")
+  // Jump filter
   document.querySelectorAll('[data-jump-filter]').forEach(a => {
     a.addEventListener('click', (e) => {
       e.preventDefault();
@@ -1537,10 +1713,6 @@ Saya akan bayar via QRIS.`;
       setHint();
       renderProducts();
 
-      // munculkan tombol scroll
-      if(scrollToProdukBtn) scrollToProdukBtn.hidden = false;
-
-      // scroll ke produk
       document.getElementById("produk")?.scrollIntoView({ behavior: "smooth" });
     });
   });
@@ -1560,15 +1732,12 @@ Saya akan bayar via QRIS.`;
     renderProducts();
   });
 
-  // Click handlers for dynamic buttons (hanya order)
+  // Click handlers for dynamic buttons (order)
   document.addEventListener("click", (e) => {
     const btn = e.target.closest("[data-order]");
     if(!btn) return;
-
-    if(btn.hasAttribute("data-order")){
-      const productName = btn.getAttribute("data-order");
-      showOrder(productName);
-    }
+    const productName = btn.getAttribute("data-order");
+    showOrder(productName);
   });
 
   // TO TOP FLOAT
